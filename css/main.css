@@ -279,7 +279,7 @@ textarea {
     font-family: 'Prompt', Arial, sans-serif;
     font-size: 1em;
     padding: 3% 5%;
-    border: hidden;
+    border: .1em solid #f55252;
   }
   
   button:focus {

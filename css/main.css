@@ -47,7 +47,7 @@ body {
   display: block;
   position: relative;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 8%;
   background-color: #fff6f6;
   color: #f55252;
   font-family: 'Prompt', Arial, sans-serif;
@@ -64,6 +64,7 @@ button:focus {
   font-family: 'Prompt', Arial, sans-serif;
   font-size: 0.7em;
   padding-top: 1%;
+  padding-bottom: 5%;
   margin: auto;
   color: #f55252;
   background-color: transparent;

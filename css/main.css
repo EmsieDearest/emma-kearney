@@ -276,9 +276,9 @@ textarea {
     background-color: #fff6f6;
     color: #f55252;
     font-family: 'Prompt', Arial, sans-serif;
-    font-size: 1.2em;
-    padding: 3% 8%;
-    border: .2em dotted #f55252;
+    font-size: 1em;
+    padding: 3% 5%;
+    border: .1em dotted #f55252;
   }
   
   button:focus {
@@ -287,7 +287,7 @@ textarea {
   
   .hiddentext {
     font-family: 'Prompt', Arial, sans-serif;
-    font-size: 0.8em;
+    font-size: 0.7em;
     padding-top: 3%;
     margin: auto;
     color: #f55252;

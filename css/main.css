@@ -266,7 +266,7 @@ textarea {
    }
   
    button {
-    cursor: url('../img/peace.svg'),pointer;
+    cursor: url(../img/peace.svg),pointer;
   }
   
   .contact {

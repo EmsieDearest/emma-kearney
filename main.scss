@@ -1,0 +1,279 @@
+/* Color Variables */
+$cherry: #f55252;
+$blush: #fff6f6;
+$black: #000000;
+
+/* Dimension Variables */
+$full: 100%;
+
+/* Font Variables */
+$gopher: 'Gopher', sans-serif;
+$regular: 400;
+$bold: 700;
+$thin: 100;
+
+/* Template */
+$standard-border: 0.1em solid $cherry;
+
+html {
+  color: $cherry;
+  font-size: 1em;
+  line-height: 1.4;
+  height: $full;
+  padding: 2%;
+}
+
+/* Body */
+
+body {
+  background-color: $blush;
+  height: $full;
+}
+
+/* ****************  MAIN  **************** */
+
+/* Skip to main */
+#skip {
+  a {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+  }
+  a:focus {
+    position:static;
+    width:auto;
+    height:auto;
+    padding: 0.4em;
+    color: $blush;
+    background-color: $cherry;
+    font : {
+      family: 'Manjari', sans-serif;
+      weight: $bold;
+      size: 1em;
+    }
+  }
+}
+
+
+/* Focus styles */
+a:focus, li:focus, button:focus, input:focus,
+select:focus, textarea:focus, [role=link]:focus,
+[rolebutton]:focus, [role=tab]:focus {
+  outline: 0.2em dotted rebeccapurple;
+}
+
+/* Grid */
+.right {
+  margin-top: 25%;
+}
+
+.nopadding {
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Text Styles */
+p {
+  color: $cherry;
+  font : {
+    family: 'Gopher', sans-serif;
+    weight: $regular;
+    size: 1.3rem;
+  }
+}
+
+/* Cursor */
+.cursor {
+  position: relative;
+  i {
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    background-color: gray;
+    left: 5px;
+    top: 10%;
+    opacity: 1;
+    animation : {
+      name: blink;
+      duration: 800ms;
+      iteration-count: infinite;
+    }
+  }
+  input:focus + i {
+    display: none;
+  }
+}
+
+/* Header */
+header {
+  border-bottom: $standard-border;
+}
+
+/* Top Nav */
+.contrast-img {
+  width: 2.5%;
+}
+
+.contrast-p {
+  font : {
+    size: 1em;
+    weight: 700;
+  }
+}
+
+/* Nav */
+nav {
+  border: $standard-border;
+}
+
+.nav-link {
+  background-color: $blush;
+  color: $cherry;
+  text-align: center;
+  font : {
+    family: $gopher;
+    size: 1.3rem;
+  }
+}
+
+/* Main */
+.intro {
+  color: $cherry;
+  line-height: 1.2;
+  font : {
+    family: $gopher;
+    weight: $regular;
+    style: normal;
+    size: 4rem;
+  }
+}
+
+.logo {
+  width: 70%;
+}
+
+.E-logo-outline {
+  width: 90%;
+}
+
+/* Contact Form */
+label {
+  color: $cherry;
+  width: $full;
+    font : {
+      family: $gopher;
+      weight: $bold;
+      size: 1.3rem;
+    }
+}
+
+.form-group {
+  border-top: $standard-border;
+}
+
+.form-input {
+  background: $blush;
+  padding: 0.6em;
+  width: $full;
+  border-radius: 0px;
+  border: none;
+}
+
+.form-control:valid {
+  background-color: transparent;
+}
+
+.email {
+  border : {
+    top: 0;
+    bottom: 0;
+  }
+}
+
+input, textarea, form {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  width: $full;
+}
+
+.md-form {
+  margin: 0;
+}
+
+::-webkit-resizer {
+  color: $cherry;
+}
+
+.btn {
+  padding: 0.7em;
+  width: $full;
+    font : {
+      weight: $regular;
+      size: 2rem;
+      family: $gopher;
+    }
+  color: $blush;
+  border-radius: 0px;
+  background-color: $cherry;
+}
+
+.contactbtn {
+  transition: 8s transform ease-in-out;
+  .aboutbtn {
+    margin: 0;
+    padding: 0;
+    border: transparent;
+  }
+}
+
+.gotcha {
+  opacity: 0;
+  position: absolute;
+}
+
+input::placeholder {
+  font : {
+    family: $gopher;
+    weight: $regular;
+    size: 2rem;
+  }
+  color: $cherry !important;
+}
+
+input[type="text"], textarea[type="text"]
+{
+  font : {
+    size: 1.5rem;
+    family: $gopher;
+  }
+  color: $cherry !important;
+  padding-left: 0;
+}
+
+#my-form-status {
+  display: none;
+}
+
+.success {
+  text-align: center;
+  display: none;
+  border-top: $standard-border;
+}
+
+.success-p {
+  font-size: 3em;
+}
+
+/* Main */
+main {
+  border : {
+    left: $standard-border;
+    right: $standard-border;
+    bottom: $standard-border;
+  }
+}

@@ -11,68 +11,7 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
 
-/* This is my Portfolio styling */
-
-body {
-  background-color: #fff6f6;
-}
-
-.logo {
-  position: absolute;
-  width: 80%;
-  padding: 10%;
-  margin: auto;
-  z-index: -1;
-}
-
-.comingsoon {
-  z-index: 1;
-  display: block;
-  margin: auto;
-  padding: 12% 1% 5% 1%;
-  width: 85%;
- }
-
- button {
-  cursor: url('../img/peace.svg'), pointer;
-}
-
-.contact {
-  display: block;
-  position: relative;
-  margin: auto;
-  margin-top: 10%;
-  background-color: #fff6f6;
-  color: #f55252;
-  font-family: 'Prompt', Arial, sans-serif;
-  font-size: 1em;
-  padding: 1% 2% 1% 2%;
-  border: .1em solid #f55252;
-}
-
-button:focus {
-  outline:0;
-}
-
-.hiddentext {
-  font-family: 'Prompt', Arial, sans-serif;
-  font-size: 0.7em;
-  padding-top: 1%;
-  padding-bottom: 5%;
-  margin: auto;
-  color: #f55252;
-  background-color: transparent;
-  border: 0;
-  display: block;
-  position: relative;
-  text-align: center;
-}
 
 /*
  * Remove text-shadow in selection highlight:
@@ -249,55 +188,6 @@ textarea {
 }
 
 @media only screen and (max-width: 600px) {
-  .logo {
-    position: absolute;
-    width: 80%;
-    padding: 50% 10% 10% 10%;
-    margin: auto;
-    z-index: -1;
-  }
-  
-  .comingsoon {
-    z-index: 1;
-    display: block;
-    margin: auto;
-    padding: 52% 1% 5% 1%;
-    width: 85%;
-   }
-  
-   button {
-    cursor: url(../img/peace.svg),pointer;
-  }
-  
-  .contact {
-    display: block;
-    position: relative;
-    margin: auto;
-    margin-top: 50%;
-    background-color: #fff6f6;
-    color: #f55252;
-    font-family: 'Prompt', Arial, sans-serif;
-    font-size: 1em;
-    padding: 3% 5%;
-    border: .1em solid #f55252;
-  }
-  
-  button:focus {
-    outline:0;
-  }
-  
-  .hiddentext {
-    font-family: 'Prompt', Arial, sans-serif;
-    font-size: 0.7em;
-    padding-top: 3%;
-    margin: auto;
-    color: #f55252;
-    background-color: transparent;
-    border: 0;
-    display: block;
-    position: relative;
-    text-align: center;
-  }
 }
 
 @media print,
@@ -306,6 +196,11 @@ textarea {
   (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
+
+
+
+
+
 
 /* ==========================================================================
    Print styles.

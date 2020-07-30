@@ -3,41 +3,158 @@
 
 <head>
   <meta charset="utf-8">
-  <title>EMMA KEARNEY</title>
-  <meta name="description" content="Designer and front-end developer empowering small businesses and startups. Web design, UI/UX, Branding, Print design, Accessibility">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Place favicon.ico in the root directory -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+  <!-- My files -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <meta name="theme-color" content="#fafafa">
-
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/qkl2weg.css">
 
+  <title>EMMA KEARNEY / Contact</title>
+  <meta name="description" content="Designer and front-end developer empowering small businesses and startups. Web design, UI/UX, Branding, Print design, Accessibility">
+  <meta name="theme-color" content="#fafafa">
 </head>
 
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
 <body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
+  <div class="topnav row">
+    <div class="col">
+      <div id="skip"><a href="#main">skip to main</a></div>
+    </div>
+    <div class="col">
+      <p class="contrast-p">
+      <img class="contrast-img" src="img/contrast.svg" alt="" role="presentation">
+        contrast
+      </p>
+    </div>
+  </div>
 
-  <section>
-    <img src="img/EMMAKEARNEY_stacked.svg" alt="Emma Kearney" class="logo">
-    <img src="img/coming-soon.svg" alt="Coming soon!" class="comingsoon">
+  <header>
+    <!-- Shop to main -->
+    <nav>
+      <div class="navpanel">
+        <ul class="nav d-flex justify-content-between">
+          <!-- Contact -->
+          <li class="nav-item p-2" tabindex="0">
+            <button class="nav-link contactbtn pl-2"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapse-collapsed"
+                    aria-expanded="false"
+                    aria-controls="collapse-collapsed">contact</button>
+          </li>
+          <!-- About -->
+          <li class="nav-item p-2" tabindex="0">
+            <a href="about.html" class="nav-link aboutbtn pr-2">about</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Hidden Form -->
+      <div class="collapse" id="collapse-collapsed">
+          <form action="https://formspree.io/mzbjyrby"
+                method="post"
+                enctype="text/plain"
+                id="my-form"
+                role="form"
+                aria-label="Contact me"
+                aria-labelledby="contactform">
+            <!-- Grid row -->
+            <div class="row">
+              <!-- Grid column -->
+              <div class="col-md-12">
+                <!-- Name input -->
+                <div class="md-form form-group">
+                  <label for="name" class="pl-3 pr-3">
+                    name
+                    <input class="form-input form-control" type="text" name="user_name" id="name">
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- Grid column -->
 
-    <!-- The button used to copy the text -->  
-    <button onclick="whenBtnIsClicked()" class="contact" id="contact" alt="Contact">CONTACT</button>
-    <button onclick="copyToClipboard()" id="hiddentext" class="hiddentext"></button>
-  </section>
+            <!-- Grid row -->
+            <div class="row">
+              <!-- Grid column -->
+              <div class="col-md-12">
+                <!-- Email input -->
+                <div class="md-form form-group">
+                  <label for="email" class="pl-3 pr-3">
+                    email
+                    <input class="form-input form-control email" type="text" name="_replyto" id="email">
+                  </label>
+                </div>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="row">
+              <!-- Grid column -->
+              <div class="col-md-12">
+                <!-- Message input -->
+                <div class="md-form form-group">
+                  <label for="message" class="pl-3 pr-3">
+                    message
+                    <textarea class="form-input message-input form-control" type="text" placeholder="Message" rows="4" name="user_message" id="message">Hey Emma,</textarea>
+                  </label>
+                </div>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+            <input type="text" name="_gotcha" class="gotcha" style="display:none" />
+            <button type="submit" class="btn btn-md align-item-end" name="send" id="my-form-button" value="send">send</button>
+            <p id="my-form-status"></p>
+            <div class="success">
+              <p><span aria-label="Success"></span></p>
+              <p class="success-p">Thank you!</p>
+            </div>
+          </form>
+      </div>
+  </header>
+
+  <main id="main">
+    <div class="container m-1 pt-5">
+      <div class="top row">
+        <div class="left col-12 ml-auto">
+          <h1 class="blurb intro h-25">This site was designed and developed to meet WCAG AAA accessibility standards</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom row">
+      <div class="left col5 ">
+      </div>
+      <div class="middle col">
+      </div>
+      <div class="right col-4 align-items-end mr-4">
+        <a href="index.html"><img src="img/wave.svg" alt="Emma Kearney" class="logo"></a>
+      </div>
+    </div>
+
+  </main>
 
   <!-- JavaScript Sources -->
+
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

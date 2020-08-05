@@ -1,3 +1,21 @@
+// Contrast Activated
+$( document ).ready(function() {
+    $( "#contrast-img" ).click(function() {
+        $( "html" ).css('color', 'black');
+        $( ".logo" ).css('filter', 'grayscale(100%) contrast(2000%)');
+        $('#contrast-img').css('filter', 'grayscale(100%) contrast(2000%)');
+        $('p').css('color', 'black');
+        $('::-webkit-resizer').css('color', 'black');
+        $('.nav-link').css('filter', 'grayscale(100%) contrast(2000%)');
+        $('input::placeholder').css('color', 'black !important');
+        $('input[type="text"], textarea[type="text"]').css('filter', 'grayscale(100%) contrast(2000%) !important');
+        $('label').css('filter', 'grayscale(100%) contrast(2000%)');
+        $('.btn').css('backgroundColor', 'black');
+        $('#intro').css('color', 'black');
+    });
+});
+
+
 // Auto resizes the message input in the contact form
 
 // Targets all textareas with class "message-input"

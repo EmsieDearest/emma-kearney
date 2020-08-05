@@ -1,7 +1,31 @@
+/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+
 /* Color Variables */
-$cherry: #f55252;
+$cherry: #fa0636;
 $blush: #fff6f6;
-$black: #000000;
+$black: grayscale(100%) contrast(2000%);
 
 /* Dimension Variables */
 $full: 100%;
@@ -14,6 +38,11 @@ $thin: 100;
 
 /* Template */
 $standard-border: 0.1em solid $cherry;
+
+/* Black Overlay */
+$b-border: 0.1em solid $black;
+$b-text: $black;
+$b-bg: $black;
 
 html {
   color: $cherry;
@@ -31,31 +60,6 @@ body {
 }
 
 /* ****************  MAIN  **************** */
-
-/* Skip to main */
-#skip {
-  a {
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
-  }
-  a:focus {
-    position:static;
-    width:auto;
-    height:auto;
-    padding: 0.4em;
-    color: $blush;
-    background-color: $cherry;
-    font : {
-      family: 'Manjari', sans-serif;
-      weight: $bold;
-      size: 1em;
-    }
-  }
-}
 
 
 /* Focus styles */
@@ -108,30 +112,44 @@ p {
   }
 }
 
+
 /* Header */
-header {
-  border-bottom: $standard-border;
-}
 
-/* Top Nav */
-.contrast-img {
-  width: 2.5%;
-}
-
-.contrast-p {
-  font : {
-    size: 1em;
-    weight: 700;
+/* Top Nav (skip to main) */
+#skip {
+  a {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+  }
+  a:focus {
+    position:static;
+    width:auto;
+    height:auto;
+    padding: 0.4em;
+    color: $blush;
+    background-color: $cherry;
+    font : {
+      family: 'Manjari', sans-serif;
+      weight: $bold;
+      size: 1em;
+    }
   }
 }
 
+
 /* Nav */
 nav {
-  border: $standard-border;
+  margin : {
+    top: 7%;
+  }
 }
 
 .nav-link {
-  background-color: $blush;
+  background-color: transparent;
   color: $cherry;
   text-align: center;
   font : {
@@ -140,24 +158,34 @@ nav {
   }
 }
 
-/* Main */
-.intro {
-  color: $cherry;
-  line-height: 1.2;
-  font : {
-    family: $gopher;
-    weight: $regular;
-    style: normal;
-    size: 4rem;
+.contactbtn {
+  transition: 8s transform ease-in-out;
+  margin-top: 5%;
+  padding: 0;
+  border: transparent;
+}
+
+.aboutbtn {
+  margin: 0;
+  padding: 0;
+  border: transparent;
+}
+
+.contrast-img {
+  padding : {
+    right: 40%;
   }
+  width: 100%;
+  background-color: transparent;
 }
 
-.logo {
-  width: 70%;
+#contrast-img button {
+  border: $blush;
+  background-color: $blush;
 }
 
-.E-logo-outline {
-  width: 90%;
+.contrast-img:hover {
+  filter: $black;
 }
 
 /* Contact Form */
@@ -167,31 +195,20 @@ label {
     font : {
       family: $gopher;
       weight: $bold;
-      size: 1.3rem;
+      size: 1rem;
     }
-}
-
-.form-group {
-  border-top: $standard-border;
 }
 
 .form-input {
   background: $blush;
-  padding: 0.6em;
+  padding: 0.3em;
   width: $full;
   border-radius: 0px;
-  border: none;
+  border: $standard-border;
 }
 
 .form-control:valid {
   background-color: transparent;
-}
-
-.email {
-  border : {
-    top: 0;
-    bottom: 0;
-  }
 }
 
 input, textarea, form {
@@ -210,25 +227,20 @@ input, textarea, form {
 }
 
 .btn {
-  padding: 0.7em;
-  width: $full;
+  padding: 0.9em;
+  margin : {
+    left: 1rem;
+    top: 0.5rem;
+  }
+  width: 8%;
     font : {
-      weight: $regular;
-      size: 2rem;
+      weight: $bold;
+      size: 1rem;
       family: $gopher;
     }
   color: $blush;
   border-radius: 0px;
   background-color: $cherry;
-}
-
-.contactbtn {
-  transition: 8s transform ease-in-out;
-  .aboutbtn {
-    margin: 0;
-    padding: 0;
-    border: transparent;
-  }
 }
 
 .gotcha {
@@ -240,7 +252,7 @@ input::placeholder {
   font : {
     family: $gopher;
     weight: $regular;
-    size: 2rem;
+    size: 1rem;
   }
   color: $cherry !important;
 }
@@ -248,11 +260,13 @@ input::placeholder {
 input[type="text"], textarea[type="text"]
 {
   font : {
-    size: 1.5rem;
+    size: 1rem;
     family: $gopher;
   }
   color: $cherry !important;
-  padding-left: 0;
+  padding : {
+    left: 0.3rem;
+  }
 }
 
 #my-form-status {
@@ -270,10 +284,35 @@ input[type="text"], textarea[type="text"]
 }
 
 /* Main */
+.intro {
+  color: $cherry;
+  line-height: 1.2;
+  font : {
+    family: $gopher;
+    weight: $regular;
+    style: normal;
+    size: 4rem;
+  }
+}
+
+.compliance {
+  margin-top: 10%;
+}
+
+/*
 main {
   border : {
     left: $standard-border;
     right: $standard-border;
     bottom: $standard-border;
+  }
+}
+ */
+
+/* Footer */
+.logo {
+  margin : {
+    top: 20%;
+    bottom: 10%;
   }
 }

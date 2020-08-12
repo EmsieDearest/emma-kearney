@@ -30,6 +30,10 @@ html {
   padding: 2%;
 }
 
+html:hover {
+  cursor: url(/../img/arrow.png), auto;
+}
+
 /* Body */
 body {
   background-color: #fff6f6;
@@ -199,7 +203,7 @@ main {
 }
 
 abbr:hover {
-  cursor: url(../img/help.png), url(../img/help.cur), help;
+  cursor: url(../img/help.png), help;
 }
 
 /* Footer */

@@ -53,6 +53,10 @@ html {
   padding: 2%;
 }
 
+html:hover {
+  cursor: url(/../img/arrow.png), auto;
+}
+
 /* Body */
 
 body {
@@ -255,7 +259,7 @@ main {
 }
 
 abbr:hover {
-  cursor: url(../img/help.png), url(../img/help.cur), help;
+  cursor: url(../img/help.png), help;
 }
 
 /* Footer */

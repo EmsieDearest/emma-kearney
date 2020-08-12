@@ -22,10 +22,6 @@
 /* Font Variables */
 /* Template */
 /* Black Overlay */
-* html {
-  cursor: url("/img/arrow.png") 40 40, pointer;
-}
-
 html {
   color: #fa0636;
   font-size: 1em;
@@ -202,8 +198,8 @@ main {
   font-size: 3.5em;
 }
 
-abbr, abbr:hover {
-  cursor: url("img/help.png"), help;
+abbr {
+  cursor: url(img/help.png), url(img/help.cur);
 }
 
 /* Footer */

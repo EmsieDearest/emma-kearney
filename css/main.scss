@@ -45,10 +45,6 @@ $b-border: 0.1em solid $black;
 $b-text: $black;
 $b-bg: $black;
 
-* html {
-  cursor: url("/img/arrow.png") 40 40, pointer;
-}
-
 html {
   color: $cherry;
   font-size: 1em;
@@ -258,8 +254,8 @@ main {
   }
 }
 
-abbr, abbr:hover {
-  cursor: url('img/help.png'),help;
+abbr {
+  cursor: url(img/help.png), url(img/help.cur);
 }
 
 /* Footer */

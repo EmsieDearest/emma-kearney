@@ -254,8 +254,8 @@ main {
   }
 }
 
-abbr {
-  cursor: url(img/help.png), url(img/help.cur);
+abbr:hover {
+  cursor: url(../img/help.png), url(../img/help.cur), help;
 }
 
 /* Footer */

@@ -1,21 +1,3 @@
-// Custom Cursor
-let document.$('.abbr').onmousemove = abbr;
-
-abbr = function(mouseMovement) {
-    // when the mouse moves, set xPosition and yPosition to the x and y of the cursor,
-    // then assign those x and y to the bee in the css file (position absolute, use top and left)
-    let helpCursor = $('.helpCursor');
-    let xPosition;
-    let yPosition;
-    if (mouseMovement) {
-        xPosition = mouseMovement.pageX;
-        yPosition = mouseMovement.pageY;
-        helpCursor.style.top = yPosition + 1 + 'px';
-        // added 1 pixel to get the bee off of the cursor itself so you're clicking on what you want to click on not the bee image
-        helpCursor.style.left = xPosition + 'px';
-    };
-};
-
 // Contrast Activated
 $( document ).ready(function() {
     $( "#contrast-img" ).click(function() {

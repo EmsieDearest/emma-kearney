@@ -22,6 +22,10 @@
 /* Font Variables */
 /* Template */
 /* Black Overlay */
+* html {
+  cursor: url("/img/arrow.png") 40 40, pointer;
+}
+
 html {
   color: #fa0636;
   font-size: 1em;
@@ -34,19 +38,14 @@ html {
 body {
   background-color: #fff6f6;
   height: 100%;
+  padding: 4em;
 }
 
 /* ****************  MAIN  **************** */
 /* Focus styles */
-a:focus, li:focus, button:focus, input:focus,
-select:focus, textarea:focus, [role=link]:focus,
+a:focus, button:focus, input:focus, textarea:focus, [role=link]:focus,
 [rolebutton]:focus, [role=tab]:focus {
-  outline: 0.2em dotted rebeccapurple;
-}
-
-/* Grid */
-.right {
-  margin-top: 25%;
+  outline: 0.1rem solid #fa0636;
 }
 
 .nopadding {
@@ -60,26 +59,6 @@ p {
   font-family: "Gopher", sans-serif;
   font-weight: 400;
   font-size: 1.3rem;
-}
-
-/* Cursor */
-.cursor {
-  position: relative;
-}
-.cursor i {
-  position: absolute;
-  width: 1px;
-  height: 80%;
-  background-color: gray;
-  left: 5px;
-  top: 10%;
-  opacity: 1;
-  animation-name: blink;
-  animation-duration: 800ms;
-  animation-iteration-count: infinite;
-}
-.cursor input:focus + i {
-  display: none;
 }
 
 /* Header */
@@ -96,70 +75,52 @@ p {
   position: static;
   width: auto;
   height: auto;
+  color: #fa0636;
+  font-family: "Gopher", sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
   padding: 0.4em;
-  color: #fff6f6;
-  background-color: #fa0636;
-  font-family: "Manjari", sans-serif;
-  font-weight: 700;
-  font-size: 1em;
 }
 
 /* Nav */
-nav {
-  margin-top: 7%;
-}
-
 .nav-link {
   background-color: transparent;
   color: #fa0636;
   text-align: center;
   font-family: "Gopher", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.2em;
+  padding: 0.4em;
 }
 
 .contactbtn {
   transition: 8s transform ease-in-out;
-  margin-top: 5%;
-  padding: 0;
   border: transparent;
+  margin-left: 0.3em;
 }
 
-.aboutbtn {
-  margin: 0;
-  padding: 0;
-  border: transparent;
-}
-
-.contrast-img {
-  padding-right: 40%;
-  width: 100%;
-  background-color: transparent;
-}
-
-#contrast-img button {
-  border: #fff6f6;
-  background-color: #fff6f6;
-}
-
-.contrast-img:hover {
-  filter: grayscale(100%) contrast(2000%);
+.aboutbtn:hover {
+  filter: none;
 }
 
 /* Contact Form */
+form {
+  margin-top: 4%;
+}
+
 label {
   color: #fa0636;
   width: 100%;
   font-family: "Gopher", sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .form-input {
   background: #fff6f6;
-  padding: 0.3em;
+  padding: 0.7em;
   width: 100%;
   border-radius: 0px;
-  border: 0.1em solid #fa0636;
+  border: 0.1rem solid #fa0636;
 }
 
 .form-control:valid {
@@ -173,17 +134,12 @@ input, textarea, form {
   width: 100%;
 }
 
-.md-form {
-  margin: 0;
-}
-
 ::-webkit-resizer {
   color: #fa0636;
 }
 
 .btn {
   padding: 0.9em;
-  margin-left: 1rem;
   margin-top: 0.5rem;
   width: 8%;
   font-weight: 700;
@@ -207,53 +163,95 @@ input::placeholder {
 }
 
 input[type=text], textarea[type=text] {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: "Gopher", sans-serif;
   color: #fa0636 !important;
-  padding-left: 0.3rem;
+  padding-left: 1rem;
 }
 
 #my-form-status {
   display: none;
 }
 
+.err {
+  display: none;
+  font-weight: 400;
+}
+
 .success {
   text-align: center;
   display: none;
-  border-top: 0.1em solid #fa0636;
+  width: 50%;
 }
 
 .success-p {
-  font-size: 3em;
+  font-size: 1em;
 }
 
 /* Main */
+main {
+  padding-top: 8%;
+}
+
 .intro {
   color: #fa0636;
   line-height: 1.2;
   font-family: "Gopher", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4rem;
+  font-size: 3.5em;
 }
 
-.compliance {
-  margin-top: 10%;
+abbr, abbr:hover {
+  cursor: url("img/help.png"), help;
 }
 
-/*
-main {
-  border : {
-    left: $standard-border;
-    right: $standard-border;
-    bottom: $standard-border;
-  }
-}
- */
 /* Footer */
-.logo {
-  margin-top: 20%;
-  margin-bottom: 10%;
+.contrast-img {
+  width: 60%;
+  background-color: transparent;
+  border-radius: 0px;
+  -moz-outline-radius: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+.contrastbox {
+  margin-top: 8%;
+}
+
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0px;
+  -moz-outline-radius: 0px;
+}
+
+a:hover {
+  color: #fa0636;
+}
+
+#contrast-img {
+  border: #fff6f6;
+  background-color: #fff6f6;
+  -ms-transform: rotate(0deg);
+  /* IE 9 */
+  -webkit-transform: rotate(0deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(0deg);
+}
+
+.rotated {
+  -ms-transform: rotate(180deg);
+  /* IE 9 */
+  -webkit-transform: rotate(180deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(180deg);
+}
+
+.contrast-img:hover {
+  filter: grayscale(100%) contrast(2000%);
 }
 
 /*# sourceMappingURL=main.css.map */

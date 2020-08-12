@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/qkl2weg.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
 
   <title>EMMA KEARNEY / Contact</title>
   <meta name="description" content="Designer and front-end developer empowering small businesses and startups. Web design, UI/UX, Branding, Print design, Accessibility">
@@ -28,29 +29,37 @@
 <![endif]-->
 
 <body>
-  <div class="topnav row">
-      <div id="skip"><a href="#main">skip to main</a></div>
-  </div>
-
-  <header>
+<header>
     <nav>
-      <div class="navpanel align-middle">
-        <ul class="nav d-flex justify-content-start" id="nav">
-          <!-- Contact -->
-          <li class="nav-item p-2" tabindex="0">
-            <button class="nav-link contactbtn pl-2"
-                    id="nav-link"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapse-collapsed"
-                    aria-expanded="false"
-                    aria-controls="collapse-collapsed">contact</button>
-          </li>
-          <!-- About -->
-          <li class="nav-item p-2" tabindex="0">
-            <a href="about.html" class="nav-link aboutbtn pr-2" id="nav-link">about</a>
-          </li>
-        </ul>
+      <div class="row justify-content-between">
+        <div class="navpanel">
+          <ul class="nav d-flex" id="nav">
+            <div id="skip" class="nav-item align-self-center" tabindex="0"><a href="#main">skip to main</a></div>
+            <!------ Contact ------>
+            <li class="nav-item align-self-center">
+              <button class="nav-link contactbtn"
+                      id="nav-link"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapse-collapsed"
+                      aria-expanded="false"
+                      aria-controls="collapse-collapsed">
+                contact
+              </button>
+            </li>
+            <!------ About ------>
+            <li class="nav-item">
+              <a href="about.html"
+                 class="nav-link aboutbtn"
+                 id="nav-link">
+                about
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-5">
+          <a href="index.html"><img src="img/wave.svg" alt="Emma Kearney" id="logo" class="logo align-self-center"></a>
+        </div>
       </div>
       <!-- Hidden Form -->
       <div class="collapse" id="collapse-collapsed">
@@ -61,15 +70,27 @@
                 role="form"
                 aria-label="Contact me"
                 aria-labelledby="contactform">
+            <!-- Gotcha -->
+            <input type="text"
+                   name="_gotcha"
+                   class="gotcha"
+                   style="display:none" />
             <!-- Grid row -->
             <div class="row">
               <!-- Grid column -->
               <div class="col-md-6">
                 <!-- Name input -->
                 <div class="md-form form-group">
-                  <label for="name" class="pl-3 pr-3" id="label">
+                  <label for="name" id="label">
                     name
-                    <input class="form-input form-control" type="text" name="user_name" id="name">
+                    <input class="form-input form-control required"
+                           type="text"
+                           name="user_name"
+                           aria-invalid="true"
+                           id="name"
+                           aria-describedby="errName">
+                    <!-- Error Validation -->
+                    <span class="err errName" id="errName">Oops! Forget your name?</span>
                   </label>
                 </div>
               </div>
@@ -82,9 +103,16 @@
               <div class="col-md-6">
                 <!-- Email input -->
                 <div class="md-form form-group">
-                  <label for="email" class="pl-3 pr-3" id="label">
+                  <label for="email" id="label">
                     email
-                    <input class="form-input form-control email" type="text" name="_replyto" id="email">
+                    <input class="form-input form-control email required"
+                           type="text"
+                           name="_replyto"
+                           aria-invalid="true"
+                           id="email"
+                           aria-describedby="errEmail">
+                    <!-- Error Validation -->
+                    <span class="err errEmail" id="errEmail">Oops! Forget your email?</span>
                   </label>
                 </div>
               </div>
@@ -98,56 +126,58 @@
               <div class="col-md-6">
                 <!-- Message input -->
                 <div class="md-form form-group">
-                  <label for="message" class="pl-3 pr-3" id="label">
+                  <label for="message" id="label">
                     message
-                    <textarea class="form-input message-input form-control" type="text" placeholder="Message" rows="4" name="user_message" id="message">Hey Emma,</textarea>
+                    <textarea class="form-input message-input form-control required"
+                              type="text"
+                              rows="4"
+                              name="user_message"
+                              aria-invalid="true"
+                              id="message"
+                              aria-describedby="errMessage">
+                    </textarea>
+                    <!-- Error Validation -->
+                    <span class="err errMessage" id="errMessage">Oops! Forget your message?</span>
                   </label>
                 </div>
               </div>
-              <!-- Grid column -->
             </div>
-            <!-- Grid row -->
-            <input type="text" name="_gotcha" class="gotcha" style="display:none" />
-            <button type="submit" class="btn btn-md align-item-end" name="send" id="my-form-button" value="send">send</button>
+            <!-- Send Button -->
+            <button type="submit"
+                    class="btn btn-md align-item-end"
+                    name="send" id="my-form-button"
+                    value="send">send</button>
+            <!-- Success Validation -->
             <p id="my-form-status"></p>
             <div class="success">
-              <p><span aria-label="Success"></span></p>
-              <p class="success-p">Thank you!</p>
+              <p aria-label="Thank you!" class="success-p">Thank you!</p>
             </div>
           </form>
-      </div>
-      <!-- Contrast Button -->
-      <div class="row justify-content-end">
-        <div class="col-2">
-          <a title="Change contrast" id="contrast-img"">
-            <img class="contrast-img" src="img/contrast.svg" alt="Change contrast">
-          </a>
-        </div>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <div class="container m-1 pt-3">
+    <div class="container pt-3">
       <div class="top row">
-        <div class="left col-12 ml-auto">
-          <h1 class="intro h-25" id="intro">Programming accessibility into design looks pretty nice.</h1>
-          <p class="compliance"><abbr title="Web Content Accessibility Guidelines Highest Level">WCAG AAA</abbr> Compliant</p>
+        <div class="left col-sm-12 mx-3">
+          <h1 class="intro" id="intro">designer.<br>front-end developer.<br>accessibility specialist.<br>socially distanced high-five giver.</h1>
+          <p class="compliance">Making sites wicked cool and <abbr class="helpcursor" title="Web Content Accessibility Guidelines Moderate to Strictest Level">WCAG AA / AAA</abbr> compliant</p>
         </div>
       </div>
     </div>
-
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="row justify-content-end">
-        <div class="col-5">
-          <a href="index.html"><img src="img/wave.svg" alt="Emma Kearney" id="logo" class="logo"></a>
-        </div>
-      </div>
+<footer>
+  <!---------- Contrast Button ------------>
+  <div class="row justify-content-end">
+    <div class="col-2 contrastbox">
+      <a title="Change contrast" id="contrast-img" tabindex="0">
+        <img class="contrast-img" src="img/contrast.svg" alt="Change contrast">
+      </a>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <!-- JavaScript Sources -->
 

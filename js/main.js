@@ -1,6 +1,7 @@
 // Contrast Activated
 $( document ).ready(function() {
     $( "#contrast-img" ).click(function() {
+        $('.contrast-img').className = "rotated";
         $( "html" ).css('color', 'black');
         $( ".logo" ).css('filter', 'grayscale(100%) contrast(2000%)');
         $('#contrast-img').css('filter', 'grayscale(100%) contrast(2000%)');
@@ -95,27 +96,45 @@ window.addEventListener("DOMContentLoaded", function() {
 
     // get the form elements defined in your form HTML above
 
-    var form = document.getElementById("my-form");
-    var button = document.getElementById("my-form-button");
-    var status = document.getElementById("my-form-status");
+    let form = $("#my-form");
+    let button = $("#my-form-button");
+    let status = $("#my-form-status");
 
     // Success and Error functions for after the form is submitted
-    $(form).submit(function(){
+    form.submit(function(){
+        form.reset();
         $('#my-form-button').hide();
-        $('.md-form').hide();
         $('.success').show();
         event.preventDefault(); // if you want to send data only, do not reload page.
-    });
 
-    function error() {
-        status.innerHTML = "Oops! There was a problem.";
-    }
+        // Get the Login Name value and trim it
+        let errName = $.trim($('#name').val());
+        let errEmail = $.trim($('#email').val());
+        let errMessage = $.trim($('#message').val());
+
+        // Check if empty of not
+        if (errName === '') {
+            $('.errName').show();
+            return false;
+        }
+        else if (errEmail === '') {
+            $('.errEmail').show();
+            return false;
+        }
+        else if (errMessage === '') {
+            $('.errMessage').show();
+            return false;
+        }
+        else {
+            return true;
+        }
+    });
 
     // handle the form submission event
 
     form.addEventListener("submit", function(ev) {
         ev.preventDefault();
-        var data = new FormData(form);
+        let data = new FormData(form);
         ajax(form.method, form.action, data, success, error);
     });
 });
@@ -123,7 +142,7 @@ window.addEventListener("DOMContentLoaded", function() {
 // helper function for sending an AJAX request
 
 function ajax(method, url, data, success, error) {
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open(method, url);
     xhr.setRequestHeader("Accept", "application/json");
     xhr.onreadystatechange = function() {

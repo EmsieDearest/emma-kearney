@@ -32,17 +32,22 @@ $full: 100%;
 
 /* Font Variables */
 $gopher: 'Gopher', sans-serif;
+$dmserif: 'DM Serif Display', serif;
 $regular: 400;
 $bold: 700;
 $thin: 100;
 
 /* Template */
-$standard-border: 0.1em solid $cherry;
+$standard-border: 0.1rem solid $cherry;
 
 /* Black Overlay */
 $b-border: 0.1em solid $black;
 $b-text: $black;
 $b-bg: $black;
+
+* html {
+  cursor: url("/img/arrow.png") 40 40, pointer;
+}
 
 html {
   color: $cherry;
@@ -57,21 +62,16 @@ html {
 body {
   background-color: $blush;
   height: $full;
+  padding: 4em;
 }
 
 /* ****************  MAIN  **************** */
 
 
 /* Focus styles */
-a:focus, li:focus, button:focus, input:focus,
-select:focus, textarea:focus, [role=link]:focus,
+a:focus, button:focus, input:focus, textarea:focus, [role=link]:focus,
 [rolebutton]:focus, [role=tab]:focus {
-  outline: 0.2em dotted rebeccapurple;
-}
-
-/* Grid */
-.right {
-  margin-top: 25%;
+  outline: $standard-border;
 }
 
 .nopadding {
@@ -87,28 +87,6 @@ p {
     family: 'Gopher', sans-serif;
     weight: $regular;
     size: 1.3rem;
-  }
-}
-
-/* Cursor */
-.cursor {
-  position: relative;
-  i {
-    position: absolute;
-    width: 1px;
-    height: 80%;
-    background-color: gray;
-    left: 5px;
-    top: 10%;
-    opacity: 1;
-    animation : {
-      name: blink;
-      duration: 800ms;
-      iteration-count: infinite;
-    }
-  }
-  input:focus + i {
-    display: none;
   }
 }
 
@@ -129,24 +107,18 @@ p {
     position:static;
     width:auto;
     height:auto;
-    padding: 0.4em;
-    color: $blush;
-    background-color: $cherry;
+    color: $cherry;
     font : {
-      family: 'Manjari', sans-serif;
-      weight: $bold;
-      size: 1em;
+      family: $gopher;
+      weight: $regular;
+      size: 1.2em;
     }
+    padding: 0.4em;
   }
 }
 
 
 /* Nav */
-nav {
-  margin : {
-    top: 7%;
-  }
-}
 
 .nav-link {
   background-color: transparent;
@@ -154,54 +126,39 @@ nav {
   text-align: center;
   font : {
     family: $gopher;
-    size: 1.3rem;
+    size: 1.2em;
   }
+  padding: 0.4em;
 }
 
 .contactbtn {
   transition: 8s transform ease-in-out;
-  margin-top: 5%;
-  padding: 0;
   border: transparent;
+  margin-left: 0.3em;
 }
 
-.aboutbtn {
-  margin: 0;
-  padding: 0;
-  border: transparent;
-}
-
-.contrast-img {
-  padding : {
-    right: 40%;
-  }
-  width: 100%;
-  background-color: transparent;
-}
-
-#contrast-img button {
-  border: $blush;
-  background-color: $blush;
-}
-
-.contrast-img:hover {
-  filter: $black;
+.aboutbtn:hover {
+  filter: none;
 }
 
 /* Contact Form */
+form {
+  margin-top: 4%;
+}
+
 label {
   color: $cherry;
   width: $full;
     font : {
       family: $gopher;
       weight: $bold;
-      size: 1rem;
+      size: 1.3rem;
     }
 }
 
 .form-input {
   background: $blush;
-  padding: 0.3em;
+  padding: 0.7em;
   width: $full;
   border-radius: 0px;
   border: $standard-border;
@@ -218,9 +175,7 @@ input, textarea, form {
   width: $full;
 }
 
-.md-form {
-  margin: 0;
-}
+
 
 ::-webkit-resizer {
   color: $cherry;
@@ -229,7 +184,6 @@ input, textarea, form {
 .btn {
   padding: 0.9em;
   margin : {
-    left: 1rem;
     top: 0.5rem;
   }
   width: 8%;
@@ -260,12 +214,12 @@ input::placeholder {
 input[type="text"], textarea[type="text"]
 {
   font : {
-    size: 1rem;
+    size: 1.5rem;
     family: $gopher;
   }
   color: $cherry !important;
   padding : {
-    left: 0.3rem;
+    left: 1rem;
   }
 }
 
@@ -273,17 +227,26 @@ input[type="text"], textarea[type="text"]
   display: none;
 }
 
+.err {
+  display: none;
+  font-weight: $regular;
+}
+
 .success {
   text-align: center;
   display: none;
-  border-top: $standard-border;
+  width: 50%;
 }
 
 .success-p {
-  font-size: 3em;
+  font-size: 1em;
 }
 
 /* Main */
+main {
+  padding-top: 8%;
+}
+
 .intro {
   color: $cherry;
   line-height: 1.2;
@@ -291,28 +254,54 @@ input[type="text"], textarea[type="text"]
     family: $gopher;
     weight: $regular;
     style: normal;
-    size: 4rem;
+    size: 3.5em;
   }
 }
 
-.compliance {
-  margin-top: 10%;
+abbr, abbr:hover {
+  cursor: url('img/help.png'),help;
 }
-
-/*
-main {
-  border : {
-    left: $standard-border;
-    right: $standard-border;
-    bottom: $standard-border;
-  }
-}
- */
 
 /* Footer */
-.logo {
-  margin : {
-    top: 20%;
-    bottom: 10%;
-  }
+.contrast-img {
+  width: 60%;
+  background-color: transparent;
+  border-radius: 0px;
+  -moz-outline-radius: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+.contrastbox {
+  margin-top: 8%;
+}
+
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0px;
+  -moz-outline-radius: 0px;
+}
+
+a:hover {
+  color: $cherry;
+}
+
+#contrast-img {
+  border: $blush;
+  background-color: $blush;
+  -ms-transform: rotate(0deg); /* IE 9 */
+  -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+  transform: rotate(0deg);
+}
+
+.rotated {
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+  transform: rotate(180deg);
+}
+
+.contrast-img:hover {
+  filter: $black;
 }

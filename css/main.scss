@@ -51,10 +51,9 @@ html {
   line-height: 1.4;
   height: $full;
   padding: 2%;
-}
-
-html:hover {
-  cursor: url(/../img/arrow.png), auto;
+  :hover : {
+    cursor: url(../img/arrow.svg), auto;
+  }
 }
 
 /* Body */
@@ -259,7 +258,7 @@ main {
 }
 
 abbr:hover {
-  cursor: url(../img/help.png), help;
+  cursor: url(../img/help.svg), help;
 }
 
 /* Footer */

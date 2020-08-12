@@ -28,10 +28,8 @@ html {
   line-height: 1.4;
   height: 100%;
   padding: 2%;
-}
-
-html:hover {
-  cursor: url(/../img/arrow.png), auto;
+  :
+  cursor: url(../img/arrow.svg), auto;
 }
 
 /* Body */

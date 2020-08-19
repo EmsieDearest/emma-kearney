@@ -1,48 +1,46 @@
 // Cursor Animation
 
-const ElementCursor = {
+var ElementCursor = {
     cursorElement: "",
-    setCursor: function (hoverElement) {
-        $(document).ready(function(){
-            const html = $(document).ready($('html'));
-            html.css({
+    setCursor: function (cursorElement, hoverElement) {
+        $('html').css({
             'cursor': 'none'
-            });
-            html.mousedown(function (e) {return false;});
-            ElementCursor.cursorElement = $('#cursor');
-            ElementCursor.hoverElement = hoverElement;
-            ElementCursor.updateCursor();
         });
+        $('html').mousedown(function (e) {return false;});
+        ElementCursor.cursorElement = cursorElement;
+        ElementCursor.hoverElement = hoverElement;
+        ElementCursor.updateCursor();
     },
-    removeCursor: function() {
+    removeCursor: function () {
         $('html').css({
             'cursor': ''
         });
         ElementCursor.cursorElement = '';
     },
-    updateCursor: function() {
+    updateCursor: function () {
         $(document).mousemove(function (e) {
             ElementCursor.cursorElement.css({
                 'position': 'fixed',
                 'top': e.pageY + 'px',
                 'left': e.pageX + 'px'
             });
+            var width = ElementCursor.hoverElement.outerWidth();
+            var left = ElementCursor.hoverElement.offset().left;
+            if (e.pageX > left + (width / 2)) {
+                ElementCursor.cursorElement.addClass('right');
+            } else {
+                ElementCursor.cursorElement.removeClass('right');
+            }
         });
-
         ElementCursor.hoverElement.mouseenter(function(e) {
             ElementCursor.cursorElement.addClass('in');
         });
-
         ElementCursor.hoverElement.mouseleave(function(e) {
             ElementCursor.cursorElement.removeClass('in');
         });
-    },
+    }
 };
-
-ElementCursor.setCursor($('.nav-link'));
-ElementCursor.setCursor($('.logo'));
-ElementCursor.setCursor($('.btn'));
-ElementCursor.setCursor($('.form-input'));
+ElementCursor.setCursor($('#cursor'), ($('.btn'), $('.form-input'), $('.logo'), $('.nav-link')));
 
 
 
@@ -52,21 +50,21 @@ window.addEventListener("DOMContentLoaded", function() {
 
     // get the form elements defined in your form HTML above
 
-    let form = $("#my-form");
-    let button = $("#my-form-button");
-    let status = $("#my-form-status");
+    const form = $("#my-form");
+    const button = $("#my-form-button");
+    const successMessage = $('.success');
 
     // Success and Error functions for after the form is submitted
     form.submit(function(){
         form.reset();
-        $('#my-form-button').hide();
-        $('.success').show();
-        event.preventDefault(); // if you want to send data only, do not reload page.
+        button.hide();
+        successMessage.show();
+        Event.preventDefault(); // if you want to send data only, do not reload page.
 
         // Get the Login Name value and trim it
-        let errName = $.trim($('#name').val());
-        let errEmail = $.trim($('#email').val());
-        let errMessage = $.trim($('#message').val());
+        const errName = $.trim($('#name').val());
+        const errEmail = $.trim($('#email').val());
+        const errMessage = $.trim($('#message').val());
 
         // Check if empty of not
         if (errName === '') {

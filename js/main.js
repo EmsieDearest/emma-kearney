@@ -2,7 +2,7 @@
 
 const ElementCursor = {
     cursorElement: "",
-    setCursor: $(document).ready(function(hoverElement) {
+    setCursor: function (hoverElement) {
         $(document).ready(function(){
             const html = $(document).ready($('html'));
             html.css({
@@ -13,14 +13,14 @@ const ElementCursor = {
             ElementCursor.hoverElement = hoverElement;
             ElementCursor.updateCursor();
         });
-    }),
-    removeCursor: $(document).ready(function() {
+    },
+    removeCursor: function() {
         $('html').css({
             'cursor': ''
         });
         ElementCursor.cursorElement = '';
-    }),
-    updateCursor: $(document).ready(function() {
+    },
+    updateCursor: function() {
         $(document).mousemove(function (e) {
             ElementCursor.cursorElement.css({
                 'position': 'fixed',
@@ -36,7 +36,7 @@ const ElementCursor = {
         ElementCursor.hoverElement.mouseleave(function(e) {
             ElementCursor.cursorElement.removeClass('in');
         });
-    }),
+    },
 };
 
 ElementCursor.setCursor($('.nav-link'));

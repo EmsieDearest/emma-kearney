@@ -1,20 +1,118 @@
-// Contrast Activated
-$( document ).ready(function() {
-    $( "#contrast-img" ).click(function() {
-        $('.contrast-img').className = "rotated";
-        $( "html" ).css('color', 'black');
-        $( ".logo" ).css('filter', 'grayscale(100%) contrast(2000%)');
-        $('#contrast-img').css('filter', 'grayscale(100%) contrast(2000%)');
-        $('p').css('color', 'black');
-        $('::-webkit-resizer').css('color', 'black');
-        $('.nav-link').css('filter', 'grayscale(100%) contrast(2000%)');
-        $('input::placeholder').css('color', 'black !important');
-        $('input[type="text"], textarea[type="text"]').css('filter', 'grayscale(100%) contrast(2000%) !important');
-        $('label').css('filter', 'grayscale(100%) contrast(2000%)');
-        $('.btn').css('backgroundColor', 'black');
-        $('#intro').css('color', 'black');
+// Cursor Animation
+
+const ElementCursor = {
+    cursorElement: "",
+    setCursor: $(document).ready(function(hoverElement) {
+        $(document).ready(function(){
+            const html = $(document).ready($('html'));
+            html.css({
+            'cursor': 'none'
+            });
+            html.mousedown(function (e) {return false;});
+            ElementCursor.cursorElement = $('#cursor');
+            ElementCursor.hoverElement = hoverElement;
+            ElementCursor.updateCursor();
+        });
+    }),
+    removeCursor: $(document).ready(function() {
+        $('html').css({
+            'cursor': ''
+        });
+        ElementCursor.cursorElement = '';
+    }),
+    updateCursor: $(document).ready(function() {
+        $(document).mousemove(function (e) {
+            ElementCursor.cursorElement.css({
+                'position': 'fixed',
+                'top': e.pageY + 'px',
+                'left': e.pageX + 'px'
+            });
+        });
+
+        ElementCursor.hoverElement.mouseenter(function(e) {
+            ElementCursor.cursorElement.addClass('in');
+        });
+
+        ElementCursor.hoverElement.mouseleave(function(e) {
+            ElementCursor.cursorElement.removeClass('in');
+        });
+    }),
+};
+
+ElementCursor.setCursor($('.nav-link'));
+ElementCursor.setCursor($('.logo'));
+ElementCursor.setCursor($('.btn'));
+ElementCursor.setCursor($('.form-input'));
+
+
+
+// Contact form
+
+window.addEventListener("DOMContentLoaded", function() {
+
+    // get the form elements defined in your form HTML above
+
+    let form = $("#my-form");
+    let button = $("#my-form-button");
+    let status = $("#my-form-status");
+
+    // Success and Error functions for after the form is submitted
+    form.submit(function(){
+        form.reset();
+        $('#my-form-button').hide();
+        $('.success').show();
+        event.preventDefault(); // if you want to send data only, do not reload page.
+
+        // Get the Login Name value and trim it
+        let errName = $.trim($('#name').val());
+        let errEmail = $.trim($('#email').val());
+        let errMessage = $.trim($('#message').val());
+
+        // Check if empty of not
+        if (errName === '') {
+            $('.errName').show();
+            return false;
+        }
+        else if (errEmail === '') {
+            $('.errEmail').show();
+            return false;
+        }
+        else if (errMessage === '') {
+            $('.errMessage').show();
+            return false;
+        }
+        else {
+            return true;
+        }
+    });
+
+    // handle the form submission event
+
+    form.addEventListener("submit", function(ev) {
+        ev.preventDefault();
+        let data = new FormData(form);
+        ajax(form.method, form.action, data, success, error);
     });
 });
+
+// helper function for sending an AJAX request
+
+function ajax(method, url, data, success, error) {
+    let xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+            success(xhr.response, xhr.responseType);
+        } else {
+            error(xhr.status, xhr.response, xhr.responseType);
+        }
+    };
+    xhr.send(data);
+};
+
+
 
 
 // Auto resizes the message input in the contact form
@@ -83,75 +181,73 @@ for(let i of textareas) {
             hiddenDiv.style.display = 'none';
         });
     })(i);
-}
+};
 
 
 
 
 
 
-// Contact form
+// Contrast OnClick Switch Statement
+const changeColor = () => {
+    const contrastButton = document.getElementsByClassName('.contrast-img');
+    const cherry = '#fa0636';
+    const blush = '#fff6f6';
+    const blushFilter = 'contrast(0) sepia(100%) hue-rotate(663deg) brightness(1.7) saturate(0.35)';
 
-window.addEventListener("DOMContentLoaded", function() {
 
-    // get the form elements defined in your form HTML above
-
-    let form = $("#my-form");
-    let button = $("#my-form-button");
-    let status = $("#my-form-status");
-
-    // Success and Error functions for after the form is submitted
-    form.submit(function(){
-        form.reset();
-        $('#my-form-button').hide();
-        $('.success').show();
-        event.preventDefault(); // if you want to send data only, do not reload page.
-
-        // Get the Login Name value and trim it
-        let errName = $.trim($('#name').val());
-        let errEmail = $.trim($('#email').val());
-        let errMessage = $.trim($('#message').val());
-
-        // Check if empty of not
-        if (errName === '') {
-            $('.errName').show();
-            return false;
-        }
-        else if (errEmail === '') {
-            $('.errEmail').show();
-            return false;
-        }
-        else if (errMessage === '') {
-            $('.errMessage').show();
-            return false;
-        }
-        else {
-            return true;
-        }
+    // On click of the contrast button, the color scheme changes
+    contrastButton.onmouseup(function () {
+        const theme = ['black-on-blush', 'blush-on-black', 'blush-on-cherry', 'cherry-on-blush'];
+        let themePicker = theme[Math.floor(Math.random() * 3)];
+        if (themePicker === theme[0]) {
+            $("body").style.blackgroundColor = blush;
+            $(".logo").style.filter = 'grayscale(100%) contrast(2000%)';
+            contrastButton.style.filter = 'grayscale(100%) contrast(2000%)';
+            $('p').style.color = 'black';
+            $('::-webkit-resizer').style.color = 'black';
+            $('.nav-link').style.filter = 'grayscale(100%) contrast(2000%)';
+            $('input[type="text"], textarea[type="text"]').style.filter = 'grayscale(100%) contrast(2000%) !important';
+            $('label').style.filter = 'grayscale(100%) contrast(2000%)';
+            $('.btn').style.blackgroundColor = 'black';
+            $('#intro').style.color = 'black';
+        } else if (themePicker === theme[1]) {
+            $("body").style.blackgroundColor = 'black';
+            $(".logo").style.filter = blushFilter;
+            contrastButton.style.filter = blushFilter;
+            $('p').style.color = blushFilter;
+            $('::-webkit-resizer').style.color = blushFilter;
+            $('.nav-link').style.filter = blushFilter;
+            $('input[type="text"], textarea[type="text"]').style.filter = blushFilter
+            '!important';
+            $('label').style.filter = blushFilter;
+            $('.btn').style.blackgroundColor = blushFilter;
+            $('#intro').style.color = blushFilter;
+        } else if (themePicker === theme[2]) {
+            $("body").style.blackgroundColor = cherry;
+            $(".logo").style.filter = blushFilter;
+            contrastButton.style.filter = blushFilter;
+            $('p').style.color = blushFilter;
+            $('::-webkit-resizer').style.color = blushFilter;
+            $('.nav-link').style.filter = blushFilter;
+            $('input[type="text"], textarea[type="text"]').style.filter = blushFilter
+            '!important';
+            $('label').style.filter = blushFilter;
+            $('.btn').style.blackgroundColor = blushFilter;
+            $('#intro').style.color = blushFilter;
+        } else if (themePicker === theme[3]) {
+            contrastButton.className = "rotated";
+            $("body").style.blackgroundColor = blush;
+            $(".logo").style.filter = '0';
+            contrastButton.style.filter = '0';
+            $('p').style.color = cherry;
+            $('::-webkit-resizer').style.color = cherry;
+            $('.nav-link').style.filter = '0';
+            $('input[type="text"], textarea[type="text"]').style.filter = cherry
+            '!important';
+            $('label').style.filter = '0';
+            $('.btn').style.blackgroundColor = cherry;
+            $('#intro').style.color = cherry;
+        };
     });
-
-    // handle the form submission event
-
-    form.addEventListener("submit", function(ev) {
-        ev.preventDefault();
-        let data = new FormData(form);
-        ajax(form.method, form.action, data, success, error);
-    });
-});
-
-// helper function for sending an AJAX request
-
-function ajax(method, url, data, success, error) {
-    let xhr = new XMLHttpRequest();
-    xhr.open(method, url);
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState !== XMLHttpRequest.DONE) return;
-        if (xhr.status === 200) {
-            success(xhr.response, xhr.responseType);
-        } else {
-            error(xhr.status, xhr.response, xhr.responseType);
-        }
-    };
-    xhr.send(data);
 };

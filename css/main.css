@@ -28,27 +28,75 @@ html {
   line-height: 1.4;
   height: 100%;
   padding: 2%;
-  :
-  cursor: url(../img/arrow.svg), auto;
 }
 
-/* Body */
+/* ****************  CURSOR STYLES  **************** */
+#cursor:before,
+#cursor:after {
+  display: block;
+  content: "";
+  border-radius: 20%;
+  background-color: black;
+  position: absolute;
+  pointer-events: none;
+  transition: all 400ms;
+}
+
+#cursor:before {
+  width: 50px;
+  height: 3px;
+  transform: rotate(40deg);
+  top: -19px;
+  left: -25px;
+}
+
+#cursor:after {
+  width: 3px;
+  height: 50px;
+  transform: rotate(50deg);
+  top: -12px;
+  left: -2px;
+}
+
+#cursor.right:before {
+  transform: rotate(-40deg);
+}
+
+#cursor.right:after {
+  transform: rotate(-50deg);
+}
+
+#cursor.in:before {
+  transform: rotate(0);
+  top: -3px;
+  left: -25px;
+}
+
+#cursor.in:after {
+  transform: rotate(0);
+  top: -27px;
+  left: -2px;
+}
+
+#cursor.exit:before {
+  transform: rotate(44deg);
+}
+
+#cursor.exit:after {
+  transform: rotate(44deg);
+}
+
+/* ****************  BODY  **************** */
 body {
   background-color: #fff6f6;
   height: 100%;
   padding: 4em;
 }
 
-/* ****************  MAIN  **************** */
 /* Focus styles */
 a:focus, button:focus, input:focus, textarea:focus, [role=link]:focus,
 [rolebutton]:focus, [role=tab]:focus {
   outline: 0.1rem solid #fa0636;
-}
-
-.nopadding {
-  padding: 0;
-  margin: 0;
 }
 
 /* Text Styles */
@@ -56,10 +104,10 @@ p {
   color: #fa0636;
   font-family: "Gopher", sans-serif;
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: 1.2em;
 }
 
-/* Header */
+/* ****************  HEADER  **************** */
 /* Top Nav (skip to main) */
 #skip a {
   position: absolute;
@@ -80,7 +128,7 @@ p {
   padding: 0.4em;
 }
 
-/* Nav */
+/* ****************  NAV  **************** */
 .nav-link {
   background-color: transparent;
   color: #fa0636;
@@ -88,6 +136,7 @@ p {
   font-family: "Gopher", sans-serif;
   font-size: 1.2em;
   padding: 0.4em;
+  cursor: none;
 }
 
 .contactbtn {
@@ -96,13 +145,29 @@ p {
   margin-left: 0.3em;
 }
 
+.contactbtn:hover {
+  cursor: none;
+}
+
+[data-toggle=collapse].contactbtn .if-not-collapsed {
+  display: none;
+}
+[data-toggle=collapse]:not(.contactbtn) .if-collapsed {
+  display: none;
+}
+
 .aboutbtn:hover {
   filter: none;
 }
 
-/* Contact Form */
+.logo:hover {
+  cursor: none;
+}
+
+/* ****************  CONTACT FORM  **************** */
 form {
   margin-top: 4%;
+  cursor: none;
 }
 
 label {
@@ -111,6 +176,7 @@ label {
   font-family: "Gopher", sans-serif;
   font-weight: 700;
   font-size: 1.3rem;
+  cursor: none;
 }
 
 .form-input {
@@ -119,6 +185,7 @@ label {
   width: 100%;
   border-radius: 0px;
   border: 0.1rem solid #fa0636;
+  cursor: none;
 }
 
 .form-control:valid {
@@ -137,15 +204,16 @@ input, textarea, form {
 }
 
 .btn {
-  padding: 0.9em;
+  padding: 0.5em 0.9em;
   margin-top: 0.5rem;
   width: 8%;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-family: "Gopher", sans-serif;
   color: #fff6f6;
   border-radius: 0px;
   background-color: #fa0636;
+  cursor: none;
 }
 
 .gotcha {
@@ -186,7 +254,7 @@ input[type=text], textarea[type=text] {
   font-size: 1em;
 }
 
-/* Main */
+/* ****************  MAIN  **************** */
 main {
   padding-top: 8%;
 }
@@ -200,11 +268,7 @@ main {
   font-size: 3.5em;
 }
 
-abbr:hover {
-  cursor: url(../img/help.png), help;
-}
-
-/* Footer */
+/* ****************  FOOTER  **************** */
 .contrast-img {
   width: 60%;
   background-color: transparent;

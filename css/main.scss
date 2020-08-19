@@ -32,7 +32,6 @@ $full: 100%;
 
 /* Font Variables */
 $gopher: 'Gopher', sans-serif;
-$dmserif: 'DM Serif Display', serif;
 $regular: 400;
 $bold: 700;
 $thin: 100;
@@ -51,12 +50,59 @@ html {
   line-height: 1.4;
   height: $full;
   padding: 2%;
-  :hover : {
-    cursor: url(../img/arrow.svg), auto;
-  }
 }
 
-/* Body */
+/* ****************  CURSOR STYLES  **************** */
+#cursor:before,
+#cursor:after {
+  display: block;
+  content: "";
+  border-radius: 20%;
+  background-color: black;
+  position: absolute;
+  pointer-events: none;
+  transition: all 400ms;
+}
+#cursor:before {
+  width: 50px;
+  height: 3px;
+  transform: rotate(40deg);
+  top: -19px;
+  left: -25px;
+}
+#cursor:after {
+  width: 3px;
+  height: 50px;
+  transform: rotate(50deg);
+  top: -12px;
+  left: -2px;
+}
+#cursor.right:before {
+  transform: rotate(-40deg);
+}
+#cursor.right:after {
+  transform: rotate(-50deg);
+}
+#cursor.in:before {
+  transform: rotate(0);
+  top: -3px;
+  left: -25px;
+}
+#cursor.in:after {
+  transform: rotate(0);
+  top: -27px;
+  left: -2px;
+}
+#cursor.exit:before {
+  transform: rotate(44deg);
+}
+#cursor.exit:after {
+  transform: rotate(44deg);
+}
+
+
+
+/* ****************  BODY  **************** */
 
 body {
   background-color: $blush;
@@ -64,18 +110,11 @@ body {
   padding: 4em;
 }
 
-/* ****************  MAIN  **************** */
-
 
 /* Focus styles */
 a:focus, button:focus, input:focus, textarea:focus, [role=link]:focus,
 [rolebutton]:focus, [role=tab]:focus {
   outline: $standard-border;
-}
-
-.nopadding {
-  padding: 0;
-  margin: 0;
 }
 
 
@@ -85,12 +124,12 @@ p {
   font : {
     family: 'Gopher', sans-serif;
     weight: $regular;
-    size: 1.3rem;
+    size: 1.2em;
   }
 }
 
 
-/* Header */
+/* ****************  HEADER  **************** */
 
 /* Top Nav (skip to main) */
 #skip {
@@ -117,7 +156,7 @@ p {
 }
 
 
-/* Nav */
+/* ****************  NAV  **************** */
 
 .nav-link {
   background-color: transparent;
@@ -128,6 +167,7 @@ p {
     size: 1.2em;
   }
   padding: 0.4em;
+  cursor: none;
 }
 
 .contactbtn {
@@ -136,13 +176,31 @@ p {
   margin-left: 0.3em;
 }
 
+.contactbtn:hover {
+  cursor: none;
+}
+
+[data-toggle="collapse"] {
+  &.contactbtn .if-not-collapsed {
+    display: none;
+  }
+  &:not(.contactbtn) .if-collapsed {
+    display: none;
+  }
+}
+
 .aboutbtn:hover {
   filter: none;
 }
 
-/* Contact Form */
+.logo:hover {
+  cursor: none;
+}
+
+/* ****************  CONTACT FORM  **************** */
 form {
   margin-top: 4%;
+  cursor: none;
 }
 
 label {
@@ -153,6 +211,7 @@ label {
       weight: $bold;
       size: 1.3rem;
     }
+  cursor: none;
 }
 
 .form-input {
@@ -161,6 +220,7 @@ label {
   width: $full;
   border-radius: 0px;
   border: $standard-border;
+  cursor: none;
 }
 
 .form-control:valid {
@@ -174,26 +234,25 @@ input, textarea, form {
   width: $full;
 }
 
-
-
 ::-webkit-resizer {
   color: $cherry;
 }
 
 .btn {
-  padding: 0.9em;
+  padding: 0.5em 0.9em;
   margin : {
     top: 0.5rem;
   }
   width: 8%;
     font : {
       weight: $bold;
-      size: 1rem;
+      size: 1.3rem;
       family: $gopher;
     }
   color: $blush;
   border-radius: 0px;
   background-color: $cherry;
+  cursor: none;
 }
 
 .gotcha {
@@ -241,7 +300,7 @@ input[type="text"], textarea[type="text"]
   font-size: 1em;
 }
 
-/* Main */
+/* ****************  MAIN  **************** */
 main {
   padding-top: 8%;
 }
@@ -257,11 +316,7 @@ main {
   }
 }
 
-abbr:hover {
-  cursor: url(../img/help.svg), help;
-}
-
-/* Footer */
+/* ****************  FOOTER  **************** */
 .contrast-img {
   width: 60%;
   background-color: transparent;

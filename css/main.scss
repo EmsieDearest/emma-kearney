@@ -298,8 +298,7 @@ input[type="text"], textarea[type="text"]
 
 /* ****************  MAIN  **************** */
 main {
-  padding-top: 8%;
-  position: relative;
+  padding-top: 10%;
 }
 
 .intro {
@@ -315,7 +314,6 @@ main {
 
 /* ****************  FOOTER  **************** */
 .contrast-img {
-  position: relative;
   width: 60%;
   background-color: transparent;
   border-radius: 0px;
@@ -325,7 +323,7 @@ main {
 }
 
 .contrastbox {
-  margin-top: 8%;
+  padding-top: 8%;
 }
 
 button {

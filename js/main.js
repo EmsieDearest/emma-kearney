@@ -24,6 +24,7 @@ var ElementCursor = {
                 'top': e.pageY + 'px',
                 'left': e.pageX + 'px'
             });
+            /*
             var width = ElementCursor.hoverElement.outerWidth();
             var left = ElementCursor.hoverElement.offset().left;
             if (e.pageX > left + (width / 2)) {
@@ -31,6 +32,7 @@ var ElementCursor = {
             } else {
                 ElementCursor.cursorElement.removeClass('right');
             }
+            */
         });
         ElementCursor.hoverElement.onmouseenter(function(e) {
             ElementCursor.cursorElement.addClass('in');

@@ -1,12 +1,12 @@
 // Cursor Animation
 
-let ElementCursor = {
+var ElementCursor = {
     cursorElement: "",
     setCursor: function (hoverElement) {
         $('html').css({
             'cursor': 'none'
         });
-        $('html').mousedown(function (e) {return false;});
+        $('html').onmousedown(function (e) {return false;});
         ElementCursor.cursorElement = $('#cursor');
         ElementCursor.hoverElement = hoverElement;
         ElementCursor.updateCursor();
@@ -18,7 +18,7 @@ let ElementCursor = {
         ElementCursor.cursorElement = '';
     },
     updateCursor: function () {
-        $(document).mousemove(function (e) {
+        $(document).onmousemove(function (e) {
             ElementCursor.cursorElement.css({
                 'position': 'fixed',
                 'top': e.pageY + 'px',
@@ -32,10 +32,10 @@ let ElementCursor = {
                 ElementCursor.cursorElement.removeClass('right');
             }
         });
-        ElementCursor.hoverElement.mouseenter(function(e) {
+        ElementCursor.hoverElement.onmouseenter(function(e) {
             ElementCursor.cursorElement.addClass('in');
         });
-        ElementCursor.hoverElement.mouseleave(function(e) {
+        ElementCursor.hoverElement.onmouseleave(function(e) {
             ElementCursor.cursorElement.removeClass('in');
         });
     }
@@ -49,7 +49,7 @@ ElementCursor.setCursor($('.nav-link'));
 
 // Contact form
 
-window.addEventListener("DOMContentLoaded", function() {
+// window.addEventListener("DOMContentLoaded", function() {
 
     // get the form elements defined in your form HTML above
 
@@ -63,7 +63,7 @@ window.addEventListener("DOMContentLoaded", function() {
         const errEmail = $.trim($('#email').val());
         const errMessage = $.trim($('#message').val());
 
-        form.submit(function() {
+        form.onsubmit(function() {
             if (errName === null) {
                 $('.errName').show();
                 return false;
@@ -95,10 +95,10 @@ window.addEventListener("DOMContentLoaded", function() {
         let data = new FormData(form);
         ajax(form.method, form.action, data, success, error);
     });
-});
+// });
 
 // helper function for sending an AJAX request
-
+/*
 function ajax(method, url, data, success, error) {
     let xhr = new XMLHttpRequest();
     xhr.open(method, url);
@@ -113,6 +113,8 @@ function ajax(method, url, data, success, error) {
     };
     xhr.send(data);
 };
+
+ */
 
 
 

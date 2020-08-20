@@ -136,6 +136,9 @@ p {
   font-family: "Gopher", sans-serif;
   font-size: 1.2em;
   padding: 0.4em;
+}
+
+.nav-link:hover, .contactbtn:hover, .btn:hover, .logo:hover, .form-input:hover, label:hover {
   cursor: none;
 }
 
@@ -143,10 +146,6 @@ p {
   transition: 8s transform ease-in-out;
   border: transparent;
   margin-left: 0.3em;
-}
-
-.contactbtn:hover {
-  cursor: none;
 }
 
 [data-toggle=collapse].contactbtn .if-not-collapsed {
@@ -158,10 +157,6 @@ p {
 
 .aboutbtn:hover {
   filter: none;
-}
-
-.logo:hover {
-  cursor: none;
 }
 
 /* ****************  CONTACT FORM  **************** */
@@ -176,7 +171,6 @@ label {
   font-family: "Gopher", sans-serif;
   font-weight: 700;
   font-size: 1.3rem;
-  cursor: none;
 }
 
 .form-input {
@@ -185,7 +179,6 @@ label {
   width: 100%;
   border-radius: 0px;
   border: 0.1rem solid #fa0636;
-  cursor: none;
 }
 
 .form-control:valid {
@@ -213,7 +206,6 @@ input, textarea, form {
   color: #fff6f6;
   border-radius: 0px;
   background-color: #fa0636;
-  cursor: none;
 }
 
 .gotcha {

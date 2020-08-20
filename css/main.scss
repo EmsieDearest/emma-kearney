@@ -194,14 +194,12 @@ p {
 
 /* ****************  CONTACT FORM  **************** */
 .collapse {
-  position: absolute;
-  z-index: 1;
   background-color: $blush;
   width: $full;
 }
 
 form {
-  margin-top: 4%;
+  padding-top: 4%;
 }
 
 label {

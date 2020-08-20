@@ -167,11 +167,11 @@ p {
   }
   padding: 0.4em;
 }
-/*
-.nav-link:hover, .contactbtn:hover, .btn:hover, .logo:hover, .form-input:hover, label:hover {
+
+.nav-link:hover, .contactbtn:hover, .btn:hover, .logo:hover, .form-input:hover, label:hover, form:hover {
   cursor: none;
 }
- */
+
 
 .contactbtn {
   transition: 8s transform ease-in-out;
@@ -193,9 +193,15 @@ p {
 }
 
 /* ****************  CONTACT FORM  **************** */
+.collapse {
+  position: absolute;
+  z-index: 1;
+  background-color: $blush;
+  width: $full;
+}
+
 form {
   margin-top: 4%;
-  cursor: none;
 }
 
 label {
@@ -295,6 +301,7 @@ input[type="text"], textarea[type="text"]
 /* ****************  MAIN  **************** */
 main {
   padding-top: 8%;
+  position: relative;
 }
 
 .intro {
@@ -310,6 +317,7 @@ main {
 
 /* ****************  FOOTER  **************** */
 .contrast-img {
+  position: relative;
   width: 60%;
   background-color: transparent;
   border-radius: 0px;

@@ -1,13 +1,13 @@
 // Cursor Animation
 
-var ElementCursor = {
+let ElementCursor = {
     cursorElement: "",
-    setCursor: function (cursorElement, hoverElement) {
+    setCursor: function (hoverElement) {
         $('html').css({
             'cursor': 'none'
         });
         $('html').mousedown(function (e) {return false;});
-        ElementCursor.cursorElement = cursorElement;
+        ElementCursor.cursorElement = $('#cursor');
         ElementCursor.hoverElement = hoverElement;
         ElementCursor.updateCursor();
     },
@@ -40,7 +40,10 @@ var ElementCursor = {
         });
     }
 };
-ElementCursor.setCursor($('#cursor'), ($('.btn'), $('.form-input'), $('.logo'), $('.nav-link')));
+ElementCursor.setCursor($('.btn'));
+ElementCursor.setCursor($('.form-input'));
+ElementCursor.setCursor($('.logo'));
+ElementCursor.setCursor($('.nav-link'));
 
 
 
@@ -54,39 +57,40 @@ window.addEventListener("DOMContentLoaded", function() {
     const button = $("#my-form-button");
     const successMessage = $('.success');
 
-    // Success and Error functions for after the form is submitted
-    form.submit(function(){
-        form.reset();
-        button.hide();
-        successMessage.show();
-        Event.preventDefault(); // if you want to send data only, do not reload page.
-
+    async function error() {
         // Get the Login Name value and trim it
         const errName = $.trim($('#name').val());
         const errEmail = $.trim($('#email').val());
         const errMessage = $.trim($('#message').val());
 
-        // Check if empty of not
-        if (errName === '') {
-            $('.errName').show();
-            return false;
-        }
-        else if (errEmail === '') {
-            $('.errEmail').show();
-            return false;
-        }
-        else if (errMessage === '') {
-            $('.errMessage').show();
-            return false;
-        }
-        else {
-            return true;
-        }
+        form.submit(function() {
+            if (errName === null) {
+                $('.errName').show();
+                return false;
+            }
+            else if (errEmail === null) {
+                $('.errEmail').show();
+                return false;
+            }
+            else if (errMessage === null) {
+                $('.errMessage').show();
+                return false;
+            }
+            else {
+                form.reset();
+                button.hide();
+                successMessage.show();
+                return true;
+            };
+        };
     });
+
+    Event.preventDefault(); // if you want to send data only, do not reload page.
 
     // handle the form submission event
 
-    form.addEventListener("submit", function(ev) {
+    form.addEventListener("submit", async function(ev) {
+        await error();
         ev.preventDefault();
         let data = new FormData(form);
         ajax(form.method, form.action, data, success, error);

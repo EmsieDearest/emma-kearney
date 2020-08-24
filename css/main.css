@@ -236,7 +236,7 @@ input[type=text], textarea[type=text] {
 }
 
 .err, .err-p {
-  display: none;
+  visibility: hidden;
   font-weight: 400;
 }
 

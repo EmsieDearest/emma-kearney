@@ -140,17 +140,16 @@ form.addEventListener("submit", function(ev) {
     ajax(form.method, form.action, data, success, error);
 });
 
-// helper function for sending an AJAX request
 function ajax(method, url, data, success, error) {
-    let xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     xhr.open(method, url);
     xhr.setRequestHeader("Accept", "application/json");
     xhr.onreadystatechange = function() {
         if (xhr.readyState !== XMLHttpRequest.DONE) return;
         if (xhr.status === 200) {
-            success //(xhr.response, xhr.responseType);
+            success(xhr.response, xhr.responseType);
         } else {
-            error //(xhr.status, xhr.response, xhr.responseType);
+            error(xhr.status, xhr.response, xhr.responseType);
         }
     };
     xhr.send(data);

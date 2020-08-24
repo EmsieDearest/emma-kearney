@@ -235,7 +235,7 @@ input[type=text], textarea[type=text] {
   display: none;
 }
 
-.err {
+.err, .err-p {
   display: none;
   font-weight: 400;
 }

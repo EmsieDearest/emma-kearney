@@ -59,7 +59,7 @@
       <!-- Hidden Form -->
       <div class="collapse" id="collapse-collapsed">
           <form action="https://formspree.io/emma@emma-kearney.com"
-                method="post"
+                method="POST"
                 enctype="text/plain"
                 id="my-form"
                 role="form"
@@ -132,8 +132,7 @@
                               aria-invalid="true"
                               id="message"
                               tabindex="0"
-                              aria-describedby="errMessage">
-                    </textarea>
+                              aria-describedby="errMessage"></textarea>
                     <!-- Error Validation -->
                     <span class="err errMessage" id="errMessage">Oops! Forget your message?</span>
                   </label>
@@ -149,6 +148,9 @@
             <!-- Success Validation -->
             <div class="success">
               <p aria-label="Thank you!" class="success-p">Thank you!</p>
+            </div>
+            <div class="err-p">
+              <p aria-label="Something went wrong. Email me directly at emma@emma-kearney.com." class="err-p">Something went wrong. Email me directly at emma@emma-kearney.com.</p>
             </div>
           </form>
       </div>

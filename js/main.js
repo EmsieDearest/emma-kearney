@@ -2,13 +2,12 @@
 
 var ElementCursor = {
     cursorElement: "",
-    setCursor: function (hoverElement) {
+    setCursor: function () {
         $('html').css({
             'cursor': 'none'
-        });
-        $('html').onmousedown(function (e) {return false;});
-        ElementCursor.cursorElement = $('#cursor');
-        ElementCursor.hoverElement = hoverElement;
+        }).onmousedown(function (e) {return false;});
+        this.cursorElement = $('#cursor');
+        this.hoverElement = $('.btn'), $('.form-input'), $('.logo'), $('.nav-link');
         ElementCursor.updateCursor();
     },
     removeCursor: function () {
@@ -24,6 +23,45 @@ var ElementCursor = {
                 'top': e.pageY + 'px',
                 'left': e.pageX + 'px'
             });
+
+            // Prevents sticky cursor on vertical scroll
+            const $ = document.querySelector.bind(document);
+            const $on = document.addEventListener.bind(document);
+            const followMouse = () => {
+                key = requestAnimationFrame(followMouse);
+
+                if (!x || !y) {
+                    x = xmouse;
+                    y = ymouse;
+                } else {
+                    dx = (xmouse - x) * 0.125;
+                    dy = (ymouse - y) * 0.125;
+                    if (Math.abs(dx) + Math.abs(dy) < 0.1) {
+                        x = xmouse;
+                        y = ymouse;
+                    } else {
+                        x += dx;
+                        y += dy;
+                    }
+                }
+                $("#cursor").style.left = x + 'px';
+                $("#cursor").style.top = $("html").scrollTop + y + 'px';
+            };
+
+            const xmouse, ymouse;
+            let x = void 0,
+                y = void 0,
+                dx = void 0,
+                dy = void 0,
+                tx = 0,
+                ty = 0,
+                key = -1;
+
+            $on('mousemove', function(e) {
+                xmouse = e.clientX || e.pageX;
+                ymouse = e.clientY || e.pageY;
+            });
+
             /*
             var width = ElementCursor.hoverElement.outerWidth();
             var left = ElementCursor.hoverElement.offset().left;
@@ -42,10 +80,8 @@ var ElementCursor = {
         });
     }
 };
-ElementCursor.setCursor($('.btn'));
-ElementCursor.setCursor($('.form-input'));
-ElementCursor.setCursor($('.logo'));
-ElementCursor.setCursor($('.nav-link'));
+
+ElementCursor.setCursor;
 
 
 
@@ -53,54 +89,56 @@ ElementCursor.setCursor($('.nav-link'));
 
 // window.addEventListener("DOMContentLoaded", function() {
 
-    // get the form elements defined in your form HTML above
+// get the form elements defined in your form HTML above
+const form = $("#my-form");
+const button = $("#my-form-button");
+const successMessage = $('.success');
 
-    const form = $("#my-form");
-    const button = $("#my-form-button");
-    const successMessage = $('.success');
+// Get the values of the input
+const formInput = $('.form-input');
+const err = $('.err');
+const errP = $('.err-p');
+const errName = $.trim($('#name').val());
+const errEmail = $.trim($('#email').val());
+const errMessage = $.trim($('#message').val());
 
-    async function error() {
-        // Get the Login Name value and trim it
-        const errName = $.trim($('#name').val());
-        const errEmail = $.trim($('#email').val());
-        const errMessage = $.trim($('#message').val());
-
-        form.onsubmit(function() {
-            if (errName === null) {
-                $('.errName').show();
-                return false;
+// Handle the form submission event
+// Check to see if the input data is valid
+// If invalid, the error message will reveal
+// If corrected, error message will disappear
+// Prevent form from submitting if errors are present
+form.addEventListener('submit', function (event) {
+    const error = () => {
+        // if there are form fields that are not valid, we prevent the form from being sent by canceling the event
+        if (!err.validity.valid) {
+            // If it isn't, we display an appropriate error message
+            if (errName.validity.valueMissing) {
+                errName.show();
+            } else if (errEmail.validity.typeMismatch) {
+                errEmail.show();
+            } else if (errMessage.validity.valueMissing) {
+                errMessage.show();
+            } else {
+                errP.show();
             }
-            else if (errEmail === null) {
-                $('.errEmail').show();
-                return false;
-            }
-            else if (errMessage === null) {
-                $('.errMessage').show();
-                return false;
-            }
-            else {
-                form.reset();
-                button.hide();
-                successMessage.show();
-                return true;
-            };
+            event.preventDefault();
         };
-    });
+    };
+    // If the form fields are valid, let form submit and show success validation
+    const success = () => {
+        if (err.validity.valid) {
+            err.hide();
+            form.reset();
+            button.hide();
+            successMessage.show();
+        };
+    };
 
-    Event.preventDefault(); // if you want to send data only, do not reload page.
-
-    // handle the form submission event
-
-    form.addEventListener("submit", async function(ev) {
-        await error();
-        ev.preventDefault();
-        let data = new FormData(form);
-        ajax(form.method, form.action, data, success, error);
-    });
-// });
+    let data = new FormData(form);
+    ajax(form.method, form.action, data, success(), error());
+});
 
 // helper function for sending an AJAX request
-/*
 function ajax(method, url, data, success, error) {
     let xhr = new XMLHttpRequest();
     xhr.open(method, url);
@@ -108,15 +146,13 @@ function ajax(method, url, data, success, error) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState !== XMLHttpRequest.DONE) return;
         if (xhr.status === 200) {
-            success(xhr.response, xhr.responseType);
+            success //(xhr.response, xhr.responseType);
         } else {
-            error(xhr.status, xhr.response, xhr.responseType);
+            error //(xhr.status, xhr.response, xhr.responseType);
         }
     };
     xhr.send(data);
 };
-
- */
 
 
 

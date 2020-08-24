@@ -107,35 +107,37 @@ const errMessage = $.trim($('#message').val());
 // If invalid, the error message will reveal
 // If corrected, error message will disappear
 // Prevent form from submitting if errors are present
-form.addEventListener('submit', function (event) {
-    const error = () => {
-        // if there are form fields that are not valid, we prevent the form from being sent by canceling the event
-        if (!err.validity.valid) {
-            // If it isn't, we display an appropriate error message
-            if (errName.validity.valueMissing) {
-                errName.show();
-            } else if (errEmail.validity.typeMismatch) {
-                errEmail.show();
-            } else if (errMessage.validity.valueMissing) {
-                errMessage.show();
-            } else {
-                errP.show();
-            }
-            event.preventDefault();
-        };
-    };
-    // If the form fields are valid, let form submit and show success validation
-    const success = () => {
-        if (err.validity.valid) {
-            err.hide();
-            form.reset();
-            button.hide();
-            successMessage.show();
-        };
-    };
 
-    let data = new FormData(form);
-    ajax(form.method, form.action, data, success(), error());
+// If the form fields are valid, let form submit and show success validation
+const success = () => {
+    if (err.validity.valid) {
+        err.hide();
+        form.reset();
+        button.hide();
+        successMessage.show();
+    };
+};
+const error = () => {
+    // if there are form fields that are not valid, we prevent the form from being sent by canceling the event
+    if (!err.validity.valid) {
+        // If it isn't, we display an appropriate error message
+        if (errName.validity.valueMissing) {
+            errName.show();
+        } else if (errEmail.validity.typeMismatch) {
+            errEmail.show();
+        } else if (errMessage.validity.valueMissing) {
+            errMessage.show();
+        } else {
+            errP.show();
+        }
+        event.preventDefault();
+    };
+};
+
+form.addEventListener("submit", function(ev) {
+    ev.preventDefault();
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
 });
 
 // helper function for sending an AJAX request

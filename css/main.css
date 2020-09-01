@@ -31,6 +31,10 @@ html {
 }
 
 /* ****************  CURSOR STYLES  **************** */
+#cursor {
+  z-index: 100;
+}
+
 #cursor:before,
 #cursor:after {
   display: block;
@@ -90,7 +94,7 @@ html {
 body {
   background-color: #fff6f6;
   height: 100%;
-  padding: 4em;
+  padding: 1em;
 }
 
 /* Focus styles */
@@ -134,8 +138,8 @@ p {
   color: #fa0636;
   text-align: center;
   font-family: "Gopher", sans-serif;
-  font-size: 1.2em;
-  padding: 0.4em;
+  font-size: 1.5em;
+  padding: 0.7em;
 }
 
 .nav-link:hover, .contactbtn:hover, .btn:hover, .logo:hover, .form-input:hover, label:hover, form:hover {
@@ -143,16 +147,8 @@ p {
 }
 
 .contactbtn {
-  transition: 8s transform ease-in-out;
   border: transparent;
   margin-left: 0.3em;
-}
-
-[data-toggle=collapse].contactbtn .if-not-collapsed {
-  display: none;
-}
-[data-toggle=collapse]:not(.contactbtn) .if-collapsed {
-  display: none;
 }
 
 .funbtn:hover {
@@ -160,33 +156,125 @@ p {
 }
 
 /* ****************  CONTACT FORM  **************** */
-.collapse {
+.sidepanel {
+  height: 100%;
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  left: -10px;
   background-color: #fff6f6;
-  width: 100%;
+  border-right: 0.1rem solid #fa0636;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidepanel */
 }
 
-form {
-  padding-top: 4%;
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  font-size: 3em;
+  margin-left: 6em;
+  text-decoration: none;
+  color: #fa0636;
+  cursor: none;
 }
 
-label {
+form label {
   color: #fa0636;
   width: 100%;
   font-family: "Gopher", sans-serif;
-  font-weight: 700;
-  font-size: 1.3rem;
+  font-weight: 400;
+  font-size: 2rem;
 }
-
-.form-input {
-  background: #fff6f6;
-  padding: 0.7em;
+form .form-input {
+  background-color: #fff6f6;
+  padding: 1em;
+  min-height: 2em;
   width: 100%;
   border-radius: 0px;
   border: 0.1rem solid #fa0636;
 }
-
-.form-control:valid {
-  background-color: transparent;
+form input[type=text],
+form input[type=email], form textarea[type=text] {
+  background-color: transparent !important;
+  font-size: 2rem;
+  font-family: "Gopher", sans-serif;
+  color: #fa0636 !important;
+  padding-left: 1.7rem;
+}
+form input[type=text]:invalid:not(:focus):not(:placeholder-shown),
+form input[type=email]:invalid:not(:focus):not(:placeholder-shown), form textarea[type=text]:invalid:not(:focus):not(:placeholder-shown) {
+  background-color: transparent !important;
+  color: #fa0636 !important;
+}
+form input:focus, form textarea:focus {
+  border: 0.13em dashed #fa0636 !important;
+  outline-style: none !important;
+  box-shadow: none !important;
+}
+form .btn:focus {
+  outline-style: none !important;
+  box-shadow: none !important;
+  border: 0.1rem solid #fa0636 !important;
+  background-color: #fff6f6;
+  color: #fa0636;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+form input::placeholder {
+  font-family: "Gopher", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #fa0636 !important;
+  background-color: transparent !important;
+}
+form ::-webkit-resizer {
+  color: #fa0636;
+}
+form .err {
+  padding: 10px 30px 20px 0;
+  color: #fa0636;
+  max-height: 0;
+  transition: 0.28s;
+  display: none;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.2em;
+}
+form .err-p {
+  visibility: hidden;
+}
+form .btn {
+  padding: 0.5em 0.9em;
+  display: block;
+  margin-top: 0.5rem;
+  width: 100%;
+  font-weight: 400;
+  font-size: 2rem;
+  font-family: "Gopher", sans-serif;
+  color: #fff6f6;
+  border-radius: 0px;
+  background-color: #fa0636;
+}
+form .gotcha {
+  opacity: 0;
+  position: absolute;
+}
+form .success-p {
+  font-size: 1.5em;
+  color: #fa0636;
+  display: none;
 }
 
 input, textarea, form {
@@ -196,67 +284,11 @@ input, textarea, form {
   width: 100%;
 }
 
-::-webkit-resizer {
-  color: #fa0636;
-}
-
-.btn {
-  padding: 0.5em 0.9em;
-  margin-top: 0.5rem;
-  width: 8%;
-  font-weight: 700;
-  font-size: 1.3rem;
-  font-family: "Gopher", sans-serif;
-  color: #fff6f6;
-  border-radius: 0px;
-  background-color: #fa0636;
-}
-
-.gotcha {
-  opacity: 0;
-  position: absolute;
-}
-
-input::placeholder {
-  font-family: "Gopher", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  color: #fa0636 !important;
-}
-
-input[type=text], textarea[type=text] {
-  font-size: 1.5rem;
-  font-family: "Gopher", sans-serif;
-  color: #fa0636 !important;
-  padding-left: 1rem;
-}
-
-#my-form-status {
-  display: none;
-}
-
-.err, .err-p {
-  visibility: hidden;
-  font-weight: 400;
-}
-
-.success {
-  text-align: center;
-  display: none;
-  width: 50%;
-}
-
-.success-p {
-  font-size: 1em;
-}
-
 /* ****************  MAIN  **************** */
-main {
-  padding-top: 10%;
-}
-
 .intro {
   color: #fa0636;
+  padding-top: 8%;
+  padding-left: 10%;
   line-height: 1.2;
   font-family: "Gopher", sans-serif;
   font-weight: 400;
@@ -264,18 +296,22 @@ main {
   font-size: 3.5em;
 }
 
+.compliance {
+  padding-left: 10%;
+}
+
 /* ****************  FOOTER  **************** */
 .contrast-img {
-  width: 60%;
+  width: 100%;
   background-color: transparent;
   border-radius: 0px;
   -moz-outline-radius: 0px;
-  padding: 0;
-  margin: 0;
+  right: 1em;
 }
 
 .contrastbox {
-  padding-top: 8%;
+  padding-top: 25%;
+  padding-left: 10%;
 }
 
 button {
@@ -310,6 +346,7 @@ a:hover {
 
 .contrast-img:hover {
   filter: grayscale(100%) contrast(2000%);
+  cursor: none;
 }
 
 /*# sourceMappingURL=main.css.map */

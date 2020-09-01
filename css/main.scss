@@ -53,6 +53,10 @@ html {
 }
 
 /* ****************  CURSOR STYLES  **************** */
+#cursor {
+  z-index: 100;
+}
+
 #cursor:before,
 #cursor:after {
   display: block;
@@ -106,7 +110,7 @@ html {
 body {
   background-color: $blush;
   height: $full;
-  padding: 4em;
+  padding: 1em;
 }
 
 
@@ -163,29 +167,18 @@ p {
   text-align: center;
   font : {
     family: $gopher;
-    size: 1.2em;
+    size: 1.5em;
   }
-  padding: 0.4em;
+  padding: 0.7em;
 }
 
 .nav-link:hover, .contactbtn:hover, .btn:hover, .logo:hover, .form-input:hover, label:hover, form:hover {
   cursor: none;
 }
 
-
 .contactbtn {
-  transition: 8s transform ease-in-out;
   border: transparent;
   margin-left: 0.3em;
-}
-
-[data-toggle="collapse"] {
-  &.contactbtn .if-not-collapsed {
-    display: none;
-  }
-  &:not(.contactbtn) .if-collapsed {
-    display: none;
-  }
 }
 
 .funbtn:hover {
@@ -193,35 +186,160 @@ p {
 }
 
 /* ****************  CONTACT FORM  **************** */
-.collapse {
+
+.sidepanel {
+  height: 100%;
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left:-10px;
   background-color: $blush;
-  width: $full;
+  border-right: $standard-border;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  font-size: 3em;
+  margin-left: 6em;
+  text-decoration: none;
+  color: $cherry;
+  cursor: none;
 }
 
 form {
-  padding-top: 4%;
-}
 
-label {
-  color: $cherry;
-  width: $full;
-    font : {
+  // <label> -
+   label {
+    color: $cherry;
+    width: $full;
+    font: {
       family: $gopher;
-      weight: $bold;
-      size: 1.3rem;
+      weight: $regular;
+      size: 2rem;
     }
-}
+  }
 
-.form-input {
-  background: $blush;
-  padding: 0.7em;
-  width: $full;
-  border-radius: 0px;
-  border: $standard-border;
-}
+  // <input> -
+  .form-input {
+    background-color: $blush;
+    padding: 1em;
+    min-height: 2em;
+    width: $full;
+    border-radius: 0px;
+    border: $standard-border;
+  }
 
-.form-control:valid {
-  background-color: transparent;
+  input[type="text"],
+  input[type="email"], textarea[type="text"] {
+    background-color: transparent !important;
+    font: {
+      size: 2rem;
+      family: $gopher;
+    }
+    color: $cherry !important;
+    padding: {
+      left: 1.7rem;
+    }
+    // When input is...
+    //   1. NOT empty
+    //   2. NOT in focus
+    //   3. NOT valid
+    &:invalid:not(:focus):not(:placeholder-shown) {
+      // Show a light reminder
+      background-color: transparent !important;
+      color: $cherry !important;
+    }
+  }
+
+  input:focus, textarea:focus {
+    border: 0.13em dashed $cherry !important;
+    outline-style: none !important;
+    box-shadow: none !important;
+  }
+
+  .btn:focus {
+    outline-style: none !important;
+    box-shadow: none !important;
+    border: $standard-border !important;
+    background-color: $blush;
+    color: $cherry;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  input::placeholder {
+    font: {
+      family: $gopher;
+      weight: $regular;
+      size: 2rem;
+    }
+    color: $cherry !important;
+    background-color: transparent !important;
+  }
+
+  ::-webkit-resizer {
+    color: $cherry;
+  }
+  // end of </input>
+
+  // <span class="err">
+   .err {
+     padding: 10px 30px 20px 0;
+     color: $cherry;
+     max-height: 0;
+     transition: 0.28s;
+     display: none;
+     font : {
+       weight: $regular;
+       style: italic;
+       size: 1.2em;
+     }
+  }
+
+  .err-p {
+    visibility: hidden;
+  }
+
+  // <button class="btn">
+   .btn {
+     padding: 0.5em 0.9em;
+     display: block;
+     margin : {
+      top: 0.5rem;
+     }
+     width: 100%;
+     font : {
+      weight: $regular;
+      size: 2rem;
+      family: $gopher;
+     }
+     color: $blush;
+     border-radius: 0px;
+     background-color: $cherry;
+  }
+
+  // <input class="gotcha">
+   .gotcha {
+    opacity: 0;
+    position: absolute;
+  }
+
+  // <p class="success-p">
+  .success-p {
+    font-size: 1.5em;
+    color: $cherry;
+    display: none;
+  }
 }
 
 input, textarea, form {
@@ -231,78 +349,13 @@ input, textarea, form {
   width: $full;
 }
 
-::-webkit-resizer {
-  color: $cherry;
-}
-
-.btn {
-  padding: 0.5em 0.9em;
-  margin : {
-    top: 0.5rem;
-  }
-  width: 8%;
-    font : {
-      weight: $bold;
-      size: 1.3rem;
-      family: $gopher;
-    }
-  color: $blush;
-  border-radius: 0px;
-  background-color: $cherry;
-}
-
-.gotcha {
-  opacity: 0;
-  position: absolute;
-}
-
-input::placeholder {
-  font : {
-    family: $gopher;
-    weight: $regular;
-    size: 1rem;
-  }
-  color: $cherry !important;
-}
-
-input[type="text"], textarea[type="text"]
-{
-  font : {
-    size: 1.5rem;
-    family: $gopher;
-  }
-  color: $cherry !important;
-  padding : {
-    left: 1rem;
-  }
-}
-
-#my-form-status {
-  display: none;
-}
-
-.err, .err-p {
-  visibility: hidden;
-  font-weight: $regular;
-}
-
-.success {
-  text-align: center;
-  display: none;
-  width: 50%;
-}
-
-.success-p {
-  font-size: 1em;
-}
-
 /* ****************  MAIN  **************** */
-main {
-  padding-top: 10%;
-}
-
 .intro {
   color: $cherry;
+  padding : {
+    top: 8%;
+    left: 10%;
+  }
   line-height: 1.2;
   font : {
     family: $gopher;
@@ -312,18 +365,24 @@ main {
   }
 }
 
+.compliance {
+  padding-left: 10%;
+}
+
 /* ****************  FOOTER  **************** */
 .contrast-img {
-  width: 60%;
+  width:100%;
   background-color: transparent;
   border-radius: 0px;
   -moz-outline-radius: 0px;
-  padding: 0;
-  margin: 0;
+  right: 1em;
 }
 
 .contrastbox {
-  padding-top: 8%;
+  padding : {
+    top:25%;
+    left: 10%;
+  }
 }
 
 button {
@@ -354,4 +413,5 @@ a:hover {
 
 .contrast-img:hover {
   filter: $black;
+  cursor: none;
 }

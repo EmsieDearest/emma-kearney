@@ -1,13 +1,15 @@
 // Cursor Animation
+let html = $('html');
+let input = $('input');
 
-var ElementCursor = {
+let ElementCursor = {
     cursorElement: "",
-    setCursor: function () {
-        $('html').css({
+    setCursor: function (cursorElement, hoverElement) {
+        html.css({
             'cursor': 'none'
-        }).onmousedown(function (e) {return false;});
-        this.cursorElement = $('#cursor');
-        this.hoverElement = $('.btn'), $('.form-input'), $('.logo'), $('.nav-link');
+        });
+        ElementCursor.cursorElement = cursorElement;
+        ElementCursor.hoverElement = hoverElement;
         ElementCursor.updateCursor();
     },
     removeCursor: function () {
@@ -17,143 +19,47 @@ var ElementCursor = {
         ElementCursor.cursorElement = '';
     },
     updateCursor: function () {
-        $(document).onmousemove(function (e) {
+        $(document).mousemove(function (e) {
             ElementCursor.cursorElement.css({
                 'position': 'fixed',
-                'top': e.pageY + 'px',
-                'left': e.pageX + 'px'
+                left: e.clientX,
+                top: e.clientY
             });
-
-            // Prevents sticky cursor on vertical scroll
-            const $ = document.querySelector.bind(document);
-            const $on = document.addEventListener.bind(document);
-            const followMouse = () => {
-                key = requestAnimationFrame(followMouse);
-
-                if (!x || !y) {
-                    x = xmouse;
-                    y = ymouse;
-                } else {
-                    dx = (xmouse - x) * 0.125;
-                    dy = (ymouse - y) * 0.125;
-                    if (Math.abs(dx) + Math.abs(dy) < 0.1) {
-                        x = xmouse;
-                        y = ymouse;
-                    } else {
-                        x += dx;
-                        y += dy;
-                    }
-                }
-                $("#cursor").style.left = x + 'px';
-                $("#cursor").style.top = $("html").scrollTop + y + 'px';
-            };
-
-            const xmouse, ymouse;
-            let x = void 0,
-                y = void 0,
-                dx = void 0,
-                dy = void 0,
-                tx = 0,
-                ty = 0,
-                key = -1;
-
-            $on('mousemove', function(e) {
-                xmouse = e.clientX || e.pageX;
-                ymouse = e.clientY || e.pageY;
-            });
-
             /*
-            var width = ElementCursor.hoverElement.outerWidth();
-            var left = ElementCursor.hoverElement.offset().left;
-            if (e.pageX > left + (width / 2)) {
+
+            let width = ElementCursor.hoverElement.outerWidth();
+            let left = ElementCursor.hoverElement.offset().left;
+            if (e.clientX > left + (width / 2)) {
                 ElementCursor.cursorElement.addClass('right');
             } else {
                 ElementCursor.cursorElement.removeClass('right');
             }
-            */
+
+             */
         });
-        ElementCursor.hoverElement.onmouseenter(function(e) {
+        ElementCursor.hoverElement.mouseenter(function(e) {
             ElementCursor.cursorElement.addClass('in');
         });
-        ElementCursor.hoverElement.onmouseleave(function(e) {
+        ElementCursor.hoverElement.mouseleave(function(e) {
             ElementCursor.cursorElement.removeClass('in');
         });
     }
 };
 
-ElementCursor.setCursor;
+ElementCursor.setCursor($('#cursor'), $('.btn, .form-input, .logo, .nav-link, .closebtn'));
+$(window).on('scroll', function(e) {});
 
+// Side Panel
 
+/* Set the width of the sidebar to 50% (show it) */
+function openNav() {
+    document.getElementById("mySidepanel").style.width = "50%";
+}
 
-// Contact form
-
-// window.addEventListener("DOMContentLoaded", function() {
-
-// get the form elements defined in your form HTML above
-const form = $("#my-form");
-const button = $("#my-form-button");
-const successMessage = $('.success');
-
-// Get the values of the input
-const formInput = $('.form-input');
-const err = $('.err');
-const errP = $('.err-p');
-const errName = $.trim($('#name').val());
-const errEmail = $.trim($('#email').val());
-const errMessage = $.trim($('#message').val());
-
-// Handle the form submission event
-// Check to see if the input data is valid
-// If invalid, the error message will reveal
-// If corrected, error message will disappear
-// Prevent form from submitting if errors are present
-
-// If the form fields are valid, let form submit and show success validation
-const success = () => {
-    if (err.validity.valid) {
-        err.hide();
-        form.reset();
-        button.hide();
-        successMessage.show();
-    };
-};
-const error = () => {
-    // if there are form fields that are not valid, we prevent the form from being sent by canceling the event
-    if (!err.validity.valid) {
-        // If it isn't, we display an appropriate error message
-        if (errName.validity.valueMissing) {
-            errName.show();
-        } else if (errEmail.validity.typeMismatch) {
-            errEmail.show();
-        } else if (errMessage.validity.valueMissing) {
-            errMessage.show();
-        } else {
-            errP.show();
-        }
-        event.preventDefault();
-    };
-};
-
-form.addEventListener("submit", function(ev) {
-    ev.preventDefault();
-    var data = new FormData(form);
-    ajax(form.method, form.action, data, success, error);
-});
-
-function ajax(method, url, data, success, error) {
-    var xhr = new XMLHttpRequest();
-    xhr.open(method, url);
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState !== XMLHttpRequest.DONE) return;
-        if (xhr.status === 200) {
-            success(xhr.response, xhr.responseType);
-        } else {
-            error(xhr.status, xhr.response, xhr.responseType);
-        }
-    };
-    xhr.send(data);
-};
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+    document.getElementById("mySidepanel").style.width = "0";
+}
 
 
 
@@ -210,14 +116,13 @@ for(let i of textareas) {
             content = content.replace(/\n/g, '<br>');
 
             // The <br ..> part is for old IE
-            hiddenDiv.innerHTML = content + '<br style="line-height: 3px;">';
+            hiddenDiv.innerHTML = content + '<br style="line-height: 2rem;">';
 
             // Briefly make the hidden div block but invisible
             // This is in order to read the height
             hiddenDiv.style.visibility = 'hidden';
             hiddenDiv.style.display = 'block';
-            hiddenDiv.style.minHeight = 400;
-            i.style.minHeight = hiddenDiv.offsetHeight + 'px';
+            i.style.minHeight = hiddenDiv.offsetHeight + '%';
 
             // Make the hidden div display:none again
             hiddenDiv.style.visibility = 'visible';

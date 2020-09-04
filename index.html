@@ -97,7 +97,7 @@
                                        required="required"
                                        tabindex="0"
                                        aria-describedby="errName">
-                            <p id="err1" class="err err1 errName">No name? I hereby dub thee Salamander Burgerpants.</p>
+                            <p id="err1" class="err err1 errName">No name?</p>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                                        id="email"
                                        tabindex="0"
                                        aria-describedby="errEmail">
-                            <p id="err2" class="err err2 errEmail">If you haven't got an email, you haven't got anything.</p>
+                            <p id="err2" class="err err2 errEmail">No email?</p>
                         </div>
                     </div>
                     <!-- Grid column -->
@@ -143,7 +143,7 @@
                                           required="required"
                                           id="message"
                                           tabindex="0">Hey Emma,</textarea>
-                            <p id="err3" class="err err3 errMessage" aria-label="Oops! Forget your message?">What's on your mind?</p>
+                            <p id="err3" class="err err3 errMessage" aria-label="Don't forget a message. What's on your mind?">What's on your mind?</p>
                         </div>
                     </div>
                 </div>
@@ -167,17 +167,20 @@
 
 <main id="main">
         <div class="top row px-3">
-            <div class="left col-sm-8 px-3">
+            <div class="left col-sm-10 px-3">
                 <h1 class="intro" id="intro">designer.<br>jr. front-end developer.<br>accessibility specialist.<br>socially
                     distanced high-fiver.</h1>
-                <p class="compliance">Making sites wicked cool and <abbr
-                        title="Web Content Accessibility Guidelines Moderate to Strictest Level">WCAG AA / AAA</abbr>
-                    compliant</p>
+                <p class="compliance">Making sites wicked cool and <abbr aria-label="Web Content Accessibility Guidelines Moderate to Strictest Level">WCAG AA / AAA</abbr> compliant</p>
             </div>
             <!---------- Contrast Button ------------>
-            <div class="col-4 contrastbox justify-content-end">
-                <a title="Change contrast" id="contrast-img" tabindex="0" onclick="changeColor()">
+            <div class="col-2 contrastbox justify-content-end">
+                <a title="Change contrast"
+                   id="contrast-img"
+                   tabindex="0">
                     <img class="contrast-img" src="img/contrast.svg" role="presentation">
+                    <img class="doTheWave" src="img/dothewave.gif" role="presentation">
+                    <img class="contrast-blush" src="img/contrast-blush.svg" role="presentation">
+                    <img class="contrast-black" src="img/contrast-black.svg" role="presentation">
                 </a>
             </div>
         </div>

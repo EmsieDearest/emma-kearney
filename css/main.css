@@ -108,7 +108,7 @@ p {
   color: #fa0636;
   font-family: "Gopher", sans-serif;
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 /* ****************  HEADER  **************** */
@@ -287,13 +287,13 @@ input, textarea, form {
 /* ****************  MAIN  **************** */
 .intro {
   color: #fa0636;
-  padding-top: 8%;
+  padding-top: 5%;
   padding-left: 10%;
   line-height: 1.2;
   font-family: "Gopher", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 3.5em;
+  font-size: 4.5em;
 }
 
 .compliance {
@@ -301,7 +301,7 @@ input, textarea, form {
 }
 
 /* ****************  FOOTER  **************** */
-.contrast-img {
+#contrast-img {
   width: 100%;
   background-color: transparent;
   border-radius: 0px;
@@ -310,8 +310,8 @@ input, textarea, form {
 }
 
 .contrastbox {
-  padding-top: 25%;
-  padding-left: 10%;
+  padding-top: 40%;
+  padding-left: 8%;
 }
 
 button {
@@ -326,27 +326,17 @@ a:hover {
   color: #fa0636;
 }
 
-#contrast-img {
+.contrast-img {
   border: #fff6f6;
   background-color: #fff6f6;
-  -ms-transform: rotate(0deg);
-  /* IE 9 */
-  -webkit-transform: rotate(0deg);
-  /* Chrome, Safari, Opera */
-  transform: rotate(0deg);
 }
 
-.rotated {
-  -ms-transform: rotate(180deg);
-  /* IE 9 */
-  -webkit-transform: rotate(180deg);
-  /* Chrome, Safari, Opera */
-  transform: rotate(180deg);
+.contrast-blush, .contrast-black, .doTheWave {
+  display: none;
 }
 
-.contrast-img:hover {
-  filter: grayscale(100%) contrast(2000%);
-  cursor: none;
+.doTheWave {
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

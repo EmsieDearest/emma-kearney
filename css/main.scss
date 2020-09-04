@@ -127,7 +127,7 @@ p {
   font : {
     family: 'Gopher', sans-serif;
     weight: $regular;
-    size: 1.2em;
+    size: 1.5em;
   }
 }
 
@@ -353,7 +353,7 @@ input, textarea, form {
 .intro {
   color: $cherry;
   padding : {
-    top: 8%;
+    top: 5%;
     left: 10%;
   }
   line-height: 1.2;
@@ -361,7 +361,7 @@ input, textarea, form {
     family: $gopher;
     weight: $regular;
     style: normal;
-    size: 3.5em;
+    size: 4.5em;
   }
 }
 
@@ -370,7 +370,7 @@ input, textarea, form {
 }
 
 /* ****************  FOOTER  **************** */
-.contrast-img {
+#contrast-img {
   width:100%;
   background-color: transparent;
   border-radius: 0px;
@@ -380,8 +380,8 @@ input, textarea, form {
 
 .contrastbox {
   padding : {
-    top:25%;
-    left: 10%;
+    top:40%;
+    left: 8%;
   }
 }
 
@@ -397,21 +397,15 @@ a:hover {
   color: $cherry;
 }
 
-#contrast-img {
+.contrast-img {
   border: $blush;
   background-color: $blush;
-  -ms-transform: rotate(0deg); /* IE 9 */
-  -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
-  transform: rotate(0deg);
 }
 
-.rotated {
-  -ms-transform: rotate(180deg); /* IE 9 */
-  -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-  transform: rotate(180deg);
+.contrast-blush, .contrast-black, .doTheWave {
+  display: none;
 }
 
-.contrast-img:hover {
-  filter: $black;
-  cursor: none;
+.doTheWave {
+  width: 100%;
 }

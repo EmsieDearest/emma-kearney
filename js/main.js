@@ -133,69 +133,187 @@ for(let i of textareas) {
 
 
 
+// Contrast Button
+let contrastButton = $('.contrast-img');
+let contrastButtonBlush = $('.contrast-blush');
+let contrastButtonBlack = $('.contrast-black');
+let doTheWave = $('.doTheWave');
+let cherry = '#fa0636';
+let blush = '#fff6f6';
+let blushFilter = 'contrast(0) sepia(100%) hue-rotate(663deg) brightness(1.7) saturate(0.35)';
 
 
+// Place GIF on Hover
+contrastButton.on('mouseover', function(){
+    contrastButton.css('display', 'none');
+    doTheWave.css('display', 'block');
+});
 
-// Contrast OnClick Switch Statement
-const changeColor = () => {
-    const contrastButton = document.getElementsByClassName('.contrast-img');
-    const cherry = '#fa0636';
-    const blush = '#fff6f6';
-    const blushFilter = 'contrast(0) sepia(100%) hue-rotate(663deg) brightness(1.7) saturate(0.35)';
-
-
-    // On click of the contrast button, the color scheme changes
-    contrastButton.onmouseup(function () {
-        const theme = ['black-on-blush', 'blush-on-black', 'blush-on-cherry', 'cherry-on-blush'];
-        let themePicker = theme[Math.floor(Math.random() * 3)];
-        if (themePicker === theme[0]) {
-            $("body").style.blackgroundColor = blush;
-            $(".logo").style.filter = 'grayscale(100%) contrast(2000%)';
-            contrastButton.style.filter = 'grayscale(100%) contrast(2000%)';
-            $('p').style.color = 'black';
-            $('::-webkit-resizer').style.color = 'black';
-            $('.nav-link').style.filter = 'grayscale(100%) contrast(2000%)';
-            $('input[type="text"], textarea[type="text"]').style.filter = 'grayscale(100%) contrast(2000%) !important';
-            $('label').style.filter = 'grayscale(100%) contrast(2000%)';
-            $('.btn').style.blackgroundColor = 'black';
-            $('#intro').style.color = 'black';
-        } else if (themePicker === theme[1]) {
-            $("body").style.blackgroundColor = 'black';
-            $(".logo").style.filter = blushFilter;
-            contrastButton.style.filter = blushFilter;
-            $('p').style.color = blushFilter;
-            $('::-webkit-resizer').style.color = blushFilter;
-            $('.nav-link').style.filter = blushFilter;
-            $('input[type="text"], textarea[type="text"]').style.filter = blushFilter
-            '!important';
-            $('label').style.filter = blushFilter;
-            $('.btn').style.blackgroundColor = blushFilter;
-            $('#intro').style.color = blushFilter;
-        } else if (themePicker === theme[2]) {
-            $("body").style.blackgroundColor = cherry;
-            $(".logo").style.filter = blushFilter;
-            contrastButton.style.filter = blushFilter;
-            $('p').style.color = blushFilter;
-            $('::-webkit-resizer').style.color = blushFilter;
-            $('.nav-link').style.filter = blushFilter;
-            $('input[type="text"], textarea[type="text"]').style.filter = blushFilter
-            '!important';
-            $('label').style.filter = blushFilter;
-            $('.btn').style.blackgroundColor = blushFilter;
-            $('#intro').style.color = blushFilter;
-        } else if (themePicker === theme[3]) {
-            contrastButton.className = "rotated";
-            $("body").style.blackgroundColor = blush;
-            $(".logo").style.filter = '0';
-            contrastButton.style.filter = '0';
-            $('p').style.color = cherry;
-            $('::-webkit-resizer').style.color = cherry;
-            $('.nav-link').style.filter = '0';
-            $('input[type="text"], textarea[type="text"]').style.filter = cherry
-            '!important';
-            $('label').style.filter = '0';
-            $('.btn').style.blackgroundColor = cherry;
-            $('#intro').style.color = cherry;
-        };
+// Define Theme Parameters
+const blackOnBlush = () => {
+    $("body").css("backgroundColor", blush);
+    $(".logo").css('filter', 'grayscale(100%) contrast(2000%)');
+    contrastButton.css('display', 'none');
+    contrastButtonBlush.css('display', 'none');
+    contrastButtonBlack.css('display', 'block');
+    $('p').css('color', 'black');
+    $('::-webkit-resizer').css('color', 'black');
+    $('.nav-link').css('color', 'black');
+    $('input[type="text"], textarea[type="text"]').css('filter', 'grayscale(100%) contrast(2000%) !important');
+    $('label').css('color', 'black');
+    $('.btn').css("backgroundColor", 'black');
+    $('.intro').css('color', 'black');
+    $('.sidepanel').css({
+        'backgroundColor': blush,
+        'borderRight': '0.13rem solid black',
     });
-};
+    $('.closebtn').css('color', 'black');
+    $('.form-input').css('border', '0.13rem solid black');
+    $('input').css('filter', 'grayscale(100%) contrast(2000%)');
+    $('textarea').css('filter', 'grayscale(100%) contrast(2000%)');
+    $('.btn:focus').css({
+        'backgroundColor': 'transparent',
+        'color': 'black',
+        'border': '0.13rem solid black'
+    });
+    $('.btn').on('mousedown', function(event){
+        event.target.css({
+            'backgroundColor': 'transparent',
+            'color': 'black',
+            'border': '0.13rem solid black'
+        })
+    })
+    $('.err').css('color', 'black');
+    $('.success-p').css('color', 'black');
+}
+
+const blushOnBlack = () => {
+    $("body").css("backgroundColor", 'black');
+    $(".logo").css('filter', blushFilter);
+    contrastButton.css('display', 'none');
+    contrastButtonBlush.css('display', 'block');
+    contrastButtonBlack.css('display', 'none');
+    $('p').css('color', blush);
+    $('::-webkit-resizer').css('color', blush);
+    $('.nav-link').css('color', blush);
+    $('input[type="text"], textarea[type="text"]').css('filter', blushFilter);
+    $('label').css('filter', blushFilter);
+    $('.btn').css({
+        "backgroundColor": 'black',
+        'color': blush,
+    });
+    $('.intro').css('color', blush);
+    $('#cursor:before, #cursor:after').css('filter', blushFilter);
+    $('.sidepanel').css({
+        'backgroundColor': 'black',
+        'borderRight': '0.13rem solid #fff6f6',
+    });
+    $('.closebtn').css('color', blush);
+    $('.form-input').css('border', '0.13rem solid #fff6f6');
+    $('input').css('filter', blushFilter);
+    $('textarea').css('filter', blushFilter);
+    $('.btn:focus').css({
+        'backgroundColor': 'black',
+        'color': blush,
+        'border': '0.13rem solid #fff6f6'
+    });
+    $('.err').css('color', blush);
+    $('.success-p').css('color', blush);
+
+
+}
+
+const blushOnCherry = () => {
+    $("body").css("backgroundColor", cherry);
+    $(".logo").css('filter', blushFilter);
+    contrastButton.css('display', 'none');
+    contrastButtonBlush.css('display', 'block');
+    $('p').css('color', blush);
+    $('::-webkit-resizer').css('color', blush);
+    $('.nav-link').css('color', blush);
+    $('input[type="text"], textarea[type="text"]').css('filter', blushFilter);
+    $('label').css('filter', blushFilter);
+    $('.btn').css("backgroundColor", blushFilter);
+    $('.intro').css('color', blush);
+    $('.sidepanel').css({
+        'backgroundColor': cherry,
+        'borderRight': '0.13rem solid #fff6f6',
+    });
+    $('.closebtn').css('color', blush);
+    $('.form-input').css('border', '0.13rem solid #fff6f6');
+    $('input').css('filter', blushFilter);
+    $('textarea').css('filter', blushFilter);
+    $('.btn:focus').css({
+        'backgroundColor': 'transparent',
+        'color': blush,
+        'border': '0.13rem solid #fff6f6'
+    });
+    $('.btn').on('mousedown', function(event){
+        event.target.css({
+            'backgroundColor': 'transparent',
+            'color': blush,
+            'border': '0.1rem solid #fff6f6'
+        })
+    })
+    $('.err').css('color', blush);
+    $('.success-p').css('color', blush);
+}
+
+const cherryOnBlush = () => {
+    $("body").css("backgroundColor", blush);
+    $(".logo").css('filter', blushFilter);
+    contrastButton.css('display', 'block');
+    contrastButtonBlush.css('display', 'none');
+    contrastButtonBlack.css('display', 'none');
+    $('p').css('color', cherry);
+    $('::-webkit-resizer').css('color', cherry);
+    $('.nav-link').css('color', blush);
+    $('input[type="text"], textarea[type="text"]').css('filter', blushFilter);
+    $('label').css('filter', blushFilter);
+    $('.btn').css("backgroundColor", blushFilter);
+    $('.intro').css('color', cherry);
+    $('.sidepanel').css({
+        'backgroundColor': blush,
+        'borderRight': '0.13rem solid #fa0636',
+    });
+    $('.closebtn').css('color', cherry);
+    $('.form-input').css('border', '0.13rem solid #fa0636');
+    $('input').css('filter', blushFilter);
+    $('textarea').css('filter', blushFilter);
+    $('.btn:focus').css({
+    'backgroundColor': 'transparent',
+    'color': cherry,
+    'border': '0.13rem solid #fa0636'
+    });
+    $('.btn').on('mousedown', function(event){
+        event.target.css({
+            'backgroundColor': 'transparent',
+            'color': cherry,
+            'border': '0.1rem solid #fa0636'
+        })
+    })
+    $('.err').css('color', cherry);
+    $('.success-p').css('color', cherry);
+}
+
+
+// Theme Picker
+$(document).ready(function(){
+    const theme = [1, 2, 3];
+    let i = 0;
+    $('#contrast-img').mousedown(function themePicker(){
+        i = (i++) % theme.length;
+        switch (theme[i]) {
+            case i = 1:
+                return blackOnBlush();
+                break;
+            case i = 2:
+                return blushOnBlack();
+                break;
+            case i = 3:
+                return blushOnCherry();
+                break;
+        }
+        return theme[i];
+    });
+});

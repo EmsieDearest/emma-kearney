@@ -229,7 +229,7 @@ form label {
   font-size: 1.7rem;
 }
 form .form-input {
-  background-color: #fff6f6;
+  background-color: transparent;
   padding: 1em;
   min-height: 2em;
   width: 100%;
@@ -238,7 +238,7 @@ form .form-input {
 }
 form input[type=text],
 form input[type=email], form textarea[type=text] {
-  background-color: #fff6f6 !important;
+  background-color: transparent !important;
   font-size: 1.5rem !important;
   font-family: "Gopher", sans-serif !important;
   color: #fa0636 !important;
@@ -258,9 +258,9 @@ form select:-webkit-autofill,
 form select:-webkit-autofill:hover,
 form select:-webkit-autofill:focus,
 form select:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0px 1000px #fff6f6 inset !important;
   border: 0.08em solid #fa0636;
   -webkit-text-fill-color: #fa0636;
+  -webkit-box-shadow: 0 0 0px 1000px #fff6f6 inset !important;
 }
 form input:focus, form textarea:focus {
   border: 0.17em solid #fa0636 !important;
@@ -388,6 +388,80 @@ a:hover {
 .doTheWave, .dothewave_blk-on-blsh, .dothewave_blsh-on-blk, .contrast-blush, .contrast-black, .contrast-img {
   width: 100%;
   outline: none;
+}
+
+/* *********************** For Phones *********************** */
+@media only screen and (max-width: 768px) {
+  [class*=col-] {
+    width: 100%;
+  }
+
+  #cursor {
+    display: none;
+  }
+
+  .nav-link {
+    font-size: 1em;
+  }
+
+  .logo {
+    width: 70%;
+    margin-left: 25%;
+    padding-top: 20%;
+  }
+
+  form label {
+    font-size: 1.2rem;
+  }
+  form .form-input {
+    padding: 1em;
+    min-height: 2em;
+  }
+  form input[type=text],
+form input[type=email], form textarea[type=text] {
+    font-size: 1.2rem !important;
+    padding-left: 1rem;
+  }
+  form .btn {
+    padding: 0.5em 0.9em;
+    margin-top: 0.5rem;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  form .success-p {
+    font-size: 1.5em;
+  }
+
+  .formbox {
+    margin-left: 4%;
+    margin-right: 4%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 40%;
+  }
+
+  .intro {
+    color: #fa0636;
+    padding-top: 20%;
+    padding-left: 0%;
+    margin-left: -5%;
+    line-height: 1.2;
+    font-family: "Gopher", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+  }
+
+  .compliance {
+    margin-left: -15%;
+    font-size: 1em;
+  }
+
+  .doTheWave, .dothewave_blk-on-blsh, .dothewave_blsh-on-blk, .contrast-blush, .contrast-black, .contrast-img {
+    width: 40%;
+    margin-top: -10%;
+    margin-left: 60%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

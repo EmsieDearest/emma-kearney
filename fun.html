@@ -17,7 +17,7 @@
     <link rel="stylesheet"
           href="https://p.typekit.net/p.css?s=1&k=qkl2weg&ht=tk&f=14717.14718.14719.14720.14721.14723.14724.14726.28173.43126.43127.43128.43129.43130.43131.43132.43133.43134.43135.43705.43706.43709.43710&a=5034860&app=typekit&e=css">
 
-    <title>EMMA KEARNEY / Fun</title>
+    <title>EMMA KEARNEY</title>
     <meta name="description"
           content="Designer and front-end developer empowering small businesses and startups. Web design, UI/UX, Branding, Print design, Accessibility">
     <meta name="theme-color" content="#fafafa">
@@ -56,14 +56,12 @@
                 </li>
             </ul>
         </nav>
-        <div class="col-5">
-            <a href="index.html" title="Home"><img src="img/wave.svg" alt="Emma Kearney" id="logo"
-                                                   class="logo align-self-center"></a>
-        </div>
+        <a href="index.html" class="col-md-5 col-sm-1"><img src="img/wave.svg" alt="Emma Kearney Home" id="logo"
+                                                            class="logo align-self-center" onfocus="logoFocus()"></a>
     </div>
     <!-- Hidden Form -->
     <div id="mySidepanel" class="sidepanel">
-        <div class="d-flex p-5 m-5 formbox">
+        <div class="d-flex p-md-5 m-md-5 formbox">
             <form name="my-form"
                   action="https://formspree.io/emma@emma-kearney.com"
                   method="POST"
@@ -142,7 +140,8 @@
                                       aria-required="true"
                                       required="required"
                                       id="message"
-                                      tabindex="0">Hey Emma,</textarea>
+                                      rows="5"
+                                      tabindex="0"></textarea>
                             <p id="err3" class="err err3 errMessage" aria-label="Don't forget a message. What's on your mind?">What's on your mind?</p>
                         </div>
                     </div>
@@ -159,7 +158,8 @@
                 <div class="success">
                     <p aria-label="Thank you!" class="success-p">Thank you! Your message was sent.</p>
                 </div>
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+                <a class="close-button" href="javascript:void(0)" onclick="closeNav()"></a>
             </form>
         </div>
     </div>
@@ -168,12 +168,11 @@
 <main id="main">
     <div class="top row px-3">
         <div class="left col-sm-10 px-3">
-            <img src="img/coming-soon.svg" class="comingsoon" alt="coming soon">
+            <h1 class="intro" id="intro">coming soon.</h1>
         </div>
         <!---------- Contrast Button ------------>
-        <div class="col-2 contrastbox justify-content-end">
-            <a title="Change contrast"
-               id="contrast-img"
+        <div class="col-md-2 col-sm-1 contrastbox justify-content-end">
+            <a id="contrast-img"
                tabindex="0">
                 <img class="contrast-img" src="img/contrast.svg" alt="" role="presentation">
             </a>

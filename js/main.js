@@ -19,7 +19,7 @@ let ElementCursor = {
         ElementCursor.cursorElement = '';
     },
     updateCursor: function () {
-        $(document).mousemove(function (e) {
+        $(document).on('mousemove', function (e) {
             ElementCursor.cursorElement.css({
                 'position': 'fixed',
                 left: e.clientX,
@@ -53,18 +53,18 @@ $(window).on('scroll', function(e) {});
 
 /* Set the width of the sidebar to 50% (show it) */
 function openNav() {
-    document.getElementById("mySidepanel").style.width = "50%";
+    let x = window.matchMedia("(max-width: 700px)");
+    if (x.matches) { // If media query matches
+        $('#mySidepanel').css('width', '110%');
+    } else {
+        document.getElementById("mySidepanel").style.width = "50%";
+    }
 }
 
 /* Set the width of the sidebar to 0 (hide it) */
 function closeNav() {
     document.getElementById("mySidepanel").style.width = "0";
 }
-
-
-
-
-
 
 
 
@@ -98,8 +98,17 @@ $(function() {
 });
 
 const logoFocus = () => {
-    $('.logo').css('display', 'none');
+    let src = $(this).attr("src");
+    let switchClass = $(this).attr('class');
+    $(this).attr("src", src.replace('img/wave.svg', "img/logo-focus.svg"));
 }
+
+contrastButton.on('focusin', function(){
+    let src = $(this).attr("src");
+    let switchClass = $(this).attr('class');
+    $(this).attr("src", src.replace("img/contrast.svg", "img/dothewave.gif"));
+    $(this).attr("class", switchClass.replace("contrast-img", "doTheWave"));
+})
 
 // Define Theme Parameters
 const blackOnBlush = () => {
@@ -112,7 +121,10 @@ const blackOnBlush = () => {
     $('::-webkit-resizer').css('color', 'black');
     $('.nav-link').css('color', 'black');
     $('input[type="text"], textarea[type="text"]').css('filter', 'grayscale(100%) contrast(2000%) !important');
-    $('label').css('color', 'black');
+    $('label').css({
+        'color': 'black',
+        'backgroundColor': 'transparent !important'
+    });
     btn.css("backgroundColor", 'black');
     $('.intro').css('color', 'black');
     $('.sidepanel').css({
@@ -120,9 +132,10 @@ const blackOnBlush = () => {
         'borderRight': '0.13rem solid black',
     });
     $('.close-button').css('filter', 'grayscale(100%) contrast(2000%)');
-    $('.form-input').css('border', '0.13rem solid black');
-    $('input').css('filter', 'grayscale(100%) contrast(2000%)');
-    $('textarea').css('filter', 'grayscale(100%) contrast(2000%)');
+    $('.form-input').css({
+        'border': '0.13rem solid black',
+        '-webkit-box-shadow': 'black'
+    });
     $('.btn:focus').css({
         'backgroundColor': 'transparent',
         'color': 'black',
@@ -154,6 +167,7 @@ const blackOnBlush = () => {
 }
 
 const blushOnBlack = () => {
+    $('#cursor').css('filter', blushFilter);
     $("body").css("backgroundColor", 'black');
     $('#skip').on('focus', function(){
         $('#skip').css('color', blush);
@@ -162,8 +176,11 @@ const blushOnBlack = () => {
     $('p').css('color', blush);
     $('::-webkit-resizer').css('color', blush);
     $('.nav-link').css('color', blush);
-    $('input[type="text"], textarea[type="text"]').css('filter', blushFilter);
-    $('label').css('filter', blushFilter);
+    $('input[type="text"], textarea[type="text"]').css('color', blush);
+    $('label').css({
+        'color': blush,
+        'backgroundColor': 'transparent !important'
+    });
     btn.css({
         "backgroundColor": blush,
         'color': 'black',
@@ -175,9 +192,10 @@ const blushOnBlack = () => {
         'borderRight': '0.13rem solid #fff6f6',
     });
     $('.close-button').css('filter', blushFilter);
-    $('.form-input').css('border', '0.13rem solid #fff6f6');
-    $('input').css('filter', blushFilter);
-    $('textarea').css('filter', blushFilter);
+    $('.form-input').css({
+        'border': '0.13rem solid #fff6f6',
+        '-webkit-box-shadow': '0 0 0px 1000px black inset !important'
+    });
     btn.on('focus', function(){
         $('.btn').css({
             'backgroundColor': 'black',
@@ -212,8 +230,11 @@ const blushOnCherry = () => {
     $('p').css('color', blush);
     $('::-webkit-resizer').css('color', blush);
     $('.nav-link').css('color', blush);
-    $('input[type="text"], textarea[type="text"]').css('filter', blushFilter);
-    $('label').css('filter', blushFilter);
+    $('input[type="text"], textarea[type="text"]').css('color', blush);
+    $('label').css({
+        'color': blush,
+        'backgroundColor': 'transparent !important'
+    });
     btn.css({
         "backgroundColor": blush,
         'color': cherry
@@ -225,8 +246,6 @@ const blushOnCherry = () => {
     });
     $('.close-button').css('filter', blushFilter);
     $('.form-input').css('border', '0.13rem solid #fff6f6');
-    $('input').css('filter', blushFilter);
-    $('textarea').css('filter', blushFilter);
     btn.on('focus', function() {
         btn.css({
             'backgroundColor': cherry,
@@ -260,6 +279,7 @@ const blushOnCherry = () => {
 }
 
 const cherryOnBlush = () => {
+    $('#cursor').css('filter', cherryFilter)
     $("body").css("backgroundColor", blush);
     $('#skip').on('focus', function(){
         $('#skip').css('color', cherry);
@@ -269,8 +289,10 @@ const cherryOnBlush = () => {
     $('::-webkit-resizer').css('color', cherry);
     $('.nav-link').css('color', cherry);
     $('input[type="text"], textarea[type="text"]').css('color', cherry);
-    $('label').css('filter', cherryFilter);
-    btn.css({
+    $('label').css({
+        'color': cherry,
+        'backgroundColor': 'transparent !important'
+    });    btn.css({
         "backgroundColor": cherry,
         'color': blush
     })
@@ -280,9 +302,9 @@ const cherryOnBlush = () => {
         'borderRight': '0.13rem solid #fa0636',
     });
     $('.close-button').css('filter', cherryFilter);
-    $('.form-input').css('border', '0.13rem solid #fa0636');
-    $('input').css('filter', cherryFilter);
-    $('textarea').css('filter', cherryFilter);
+    $('.form-input').css({
+        'border': '0.13rem solid #fa0636'
+    });
     btn.on('focus', function(){
         btn.css({
             'backgroundColor': 'transparent',

@@ -98,9 +98,8 @@ body {
 }
 
 /* Focus styles */
-a:focus, button:focus, input:focus, textarea:focus, [role=link]:focus,
-[rolebutton]:focus, [role=tab]:focus {
-  outline: 0.1rem solid #fa0636;
+[role=link]:focus, [rolebutton]:focus, [role=tab]:focus {
+  outline: 0.08em solid #fa0636;
 }
 
 /* Text Styles */
@@ -123,12 +122,13 @@ p {
 }
 #skip a:focus {
   position: static;
+  outline: none;
   width: auto;
   height: auto;
   color: #fa0636;
   font-family: "Gopher", sans-serif;
-  font-weight: 400;
-  font-size: 1.2em;
+  font-weight: bold;
+  font-size: 1.5em;
   padding: 0.4em;
 }
 
@@ -140,6 +140,11 @@ p {
   font-family: "Gopher", sans-serif;
   font-size: 1.5em;
   padding: 0.7em;
+}
+
+.nav-link:focus {
+  outline: none;
+  font-weight: bolder;
 }
 
 .nav-link:hover, .contactbtn:hover, .btn:hover, .logo:hover, .form-input:hover, label:hover, form:hover {
@@ -167,7 +172,7 @@ p {
   top: 0;
   left: -10px;
   background-color: #fff6f6;
-  border-right: 0.1rem solid #fa0636;
+  border-right: 0.08em solid #fa0636;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -178,7 +183,33 @@ p {
 }
 
 /* Position and style the close button (top right corner) */
-.sidepanel .closebtn {
+.close-button {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  box-sizing: border-box;
+  line-height: 50px;
+  display: inline-block;
+  padding-top: 5%;
+}
+.close-button:before, .close-button:after {
+  transform: rotate(-45deg);
+  content: "";
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 50px;
+  background-color: #fa0636;
+  transition: all 0.25s ease-out;
+}
+.close-button:after {
+  transform: rotate(-135deg);
+}
+.close-button:hover:before, .close-button:hover:after {
+  transform: rotate(0deg);
+}
+
+.close-button {
   position: absolute;
   top: 0.5em;
   right: 1em;
@@ -187,6 +218,7 @@ p {
   text-decoration: none;
   color: #fa0636;
   cursor: none;
+  outline: none;
 }
 
 form label {
@@ -194,7 +226,7 @@ form label {
   width: 100%;
   font-family: "Gopher", sans-serif;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 form .form-input {
   background-color: #fff6f6;
@@ -202,13 +234,13 @@ form .form-input {
   min-height: 2em;
   width: 100%;
   border-radius: 0px;
-  border: 0.1rem solid #fa0636;
+  border: 0.08em solid #fa0636;
 }
 form input[type=text],
 form input[type=email], form textarea[type=text] {
-  background-color: transparent !important;
-  font-size: 2rem;
-  font-family: "Gopher", sans-serif;
+  background-color: #fff6f6 !important;
+  font-size: 1.5rem !important;
+  font-family: "Gopher", sans-serif !important;
   color: #fa0636 !important;
   padding-left: 1.7rem;
 }
@@ -217,15 +249,34 @@ form input[type=email]:invalid:not(:focus):not(:placeholder-shown), form textare
   background-color: transparent !important;
   color: #fa0636 !important;
 }
+form input:-webkit-autofill, form input:-webkit-autofill:hover, form input:-webkit-autofill:focus, form input:-webkit-autofill:active,
+form textarea:-webkit-autofill,
+form textarea:-webkit-autofill:hover,
+form textarea:-webkit-autofill:focus,
+form textarea:-webkit-autofill:active,
+form select:-webkit-autofill,
+form select:-webkit-autofill:hover,
+form select:-webkit-autofill:focus,
+form select:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #fff6f6 inset !important;
+  border: 0.08em solid #fa0636;
+  -webkit-text-fill-color: #fa0636;
+}
 form input:focus, form textarea:focus {
-  border: 0.13em dashed #fa0636 !important;
+  border: 0.17em solid #fa0636 !important;
   outline-style: none !important;
   box-shadow: none !important;
+}
+form textarea::-webkit-scrollbar {
+  width: 0em;
+}
+form textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
 }
 form .btn:focus {
   outline-style: none !important;
   box-shadow: none !important;
-  border: 0.1rem solid #fa0636 !important;
+  border: 0.08em solid #fa0636 !important;
   background-color: #fff6f6;
   color: #fa0636;
   box-sizing: border-box;
@@ -300,6 +351,12 @@ input, textarea, form {
   padding-left: 10%;
 }
 
+.comingsoon {
+  padding-top: 10%;
+  margin-left: 30%;
+  width: 60%;
+}
+
 /* ****************  FOOTER  **************** */
 #contrast-img {
   width: 100%;
@@ -307,11 +364,13 @@ input, textarea, form {
   border-radius: 0px;
   -moz-outline-radius: 0px;
   right: 1em;
+  outline: none;
 }
 
 .contrastbox {
   padding-top: 40%;
   padding-left: 8%;
+  outline: none;
 }
 
 button {
@@ -326,13 +385,9 @@ a:hover {
   color: #fa0636;
 }
 
-.contrast-img {
-  border: #fff6f6;
-  background-color: #fff6f6;
-}
-
-.doTheWave, .dothewave_blk-on-blush {
+.doTheWave, .dothewave_blk-on-blsh, .dothewave_blsh-on-blk, .contrast-blush, .contrast-black, .contrast-img {
   width: 100%;
+  outline: none;
 }
 
 /*# sourceMappingURL=main.css.map */

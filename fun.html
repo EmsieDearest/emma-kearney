@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://p.typekit.net/p.css?s=1&k=qkl2weg&ht=tk&f=14717.14718.14719.14720.14721.14723.14724.14726.28173.43126.43127.43128.43129.43130.43131.43132.43133.43134.43135.43705.43706.43709.43710&a=5034860&app=typekit&e=css">
+    <link rel="stylesheet"
+          href="https://p.typekit.net/p.css?s=1&k=qkl2weg&ht=tk&f=14717.14718.14719.14720.14721.14723.14724.14726.28173.43126.43127.43128.43129.43130.43131.43132.43133.43134.43135.43705.43706.43709.43710&a=5034860&app=typekit&e=css">
 
     <title>EMMA KEARNEY / Fun</title>
-    <meta name="description" content="Designer and front-end developer empowering small businesses and startups. Web design, UI/UX, Branding, Print design, Accessibility">
+    <meta name="description"
+          content="Designer and front-end developer empowering small businesses and startups. Web design, UI/UX, Branding, Print design, Accessibility">
     <meta name="theme-color" content="#fafafa">
 </head>
 <body>
@@ -24,46 +27,53 @@
 <div id="cursor" class="run-animation"></div>
 
 <header>
-    <nav>
-        <div class="row justify-content-between">
-            <div class="navpanel">
-                <ul class="nav d-flex" id="nav">
+    <!-- Navigation -->
+    <div class="row justify-content-between">
+        <nav class="navpanel">
+            <ul class="nav d-flex" id="nav">
+                <!------ Skip Nav ------>
+                <li class="align-self-center">
                     <div id="skip" class="nav-item align-self-center" tabindex="0"><a href="#main">skip to main</a></div>
-                    <!------ Contact ------>
-                    <li class="nav-item align-self-center">
-                        <button class="nav-link contactbtn"
-                                id="nav-link"
-                                type="button"
-                                data-toggle="collapse"
-                                data-target="#collapse-collapsed"
-                                aria-expanded="false"
-                                aria-controls="collapse-collapsed">
-                            <span class="if-collapsed">contact</span>
-                            <span class="if-not-collapsed">close</span>
-                        </button>
-                    </li>
-                    <!------ About ------>
-                    <li class="nav-item">
-                        <a href="fun.html"
-                           class="nav-link funbtn"
-                           id="nav-link">
-                            fun
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-5">
-                <a href="index.html" title="Home"><img src="img/wave.svg" alt="Emma Kearney" id="logo" class="logo align-self-center"></a>
-            </div>
+                </li>
+                <!------ Contact ------>
+                <li class="nav-item align-self-center">
+                    <button class="nav-link contactbtn"
+                            id="nav-link"
+                            type="button"
+                            onclick="openNav()"
+                            aria-expanded="false"
+                            aria-controls="mySidepanel">
+                        contact
+                    </button>
+                </li>
+                <!------ Fun ------>
+                <li class="nav-item">
+                    <a href="fun.html"
+                       class="nav-link funbtn"
+                       id="nav-link">
+                        fun
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="col-5">
+            <a href="index.html" title="Home"><img src="img/wave.svg" alt="Emma Kearney" id="logo"
+                                                   class="logo align-self-center"></a>
         </div>
-        <!-- Hidden Form -->
-        <div class="collapse" id="collapse-collapsed">
-            <form action="https://formspree.io/emma@emma-kearney.com"
-                  method="post"
+    </div>
+    <!-- Hidden Form -->
+    <div id="mySidepanel" class="sidepanel">
+        <div class="d-flex p-5 m-5 formbox">
+            <form name="my-form"
+                  action="https://formspree.io/emma@emma-kearney.com"
+                  method="POST"
+                  class="needs-validation my-form"
                   id="my-form"
                   role="form"
                   aria-label="Contact me"
-                  aria-labelledby="contactform">
+                  aria-labelledby="contactform"
+                  aria-expanded="true"
+                  noValidate>
                 <!-- Gotcha -->
                 <input type="text"
                        name="_gotcha"
@@ -72,110 +82,211 @@
                 <!-- Grid row -->
                 <div class="row">
                     <!-- Grid column -->
-                    <div class="col-md-6">
+                    <div class="col-sm-12">
                         <!-- Name input -->
-                        <div class="md-form form-group">
-                            <label for="name" id="label">
+                        <div class="sm-form form-group">
+                            <label for="name">
                                 name
-                                <input class="form-input form-control"
-                                       type="text"
-                                       name="user_name"
-                                       aria-invalid="true"
-                                       id="name"
-                                       aria-describedby="errName">
-                                <!-- Error Validation -->
-                                <span class="err errName" id="errName">Oops! Forget your name?</span>
                             </label>
+                            <input class="form-input form-control name"
+                                   type="text"
+                                   name="user_name"
+                                   aria-invalid="false"
+                                   id="name"
+                                   aria-required="true"
+                                   required="required"
+                                   tabindex="0"
+                                   aria-describedby="errName">
+                            <p id="err1" class="err err1 errName">No name?</p>
                         </div>
                     </div>
                 </div>
                 <!-- Grid column -->
-
                 <!-- Grid row -->
                 <div class="row">
                     <!-- Grid column -->
-                    <div class="col-md-6">
+                    <div class="col-sm-12">
                         <!-- Email input -->
-                        <div class="md-form form-group">
-                            <label for="email" id="label">
+                        <div class="sm-form form-group">
+                            <label for="email">
                                 email
-                                <input class="form-input form-control email"
-                                       type="text"
-                                       name="_replyto"
-                                       aria-invalid="true"
-                                       id="email"
-                                       aria-describedby="errEmail">
-                                <!-- Error Validation -->
-                                <span class="err errEmail" id="errEmail">Oops! Forget your email?</span>
                             </label>
+                            <input class="form-input form-control email"
+                                   type="email"
+                                   name="_replyto"
+                                   aria-invalid="false"
+                                   aria-required="true"
+                                   required="required"
+                                   id="email"
+                                   tabindex="0"
+                                   aria-describedby="errEmail">
+                            <p id="err2" class="err err2 errEmail">No email?</p>
                         </div>
                     </div>
                     <!-- Grid column -->
                 </div>
                 <!-- Grid row -->
-
                 <!-- Grid row -->
                 <div class="row">
                     <!-- Grid column -->
-                    <div class="col-md-6">
+                    <div class="col-sm-12">
                         <!-- Message input -->
-                        <div class="md-form form-group">
-                            <label for="message" id="label">
+                        <div class="sm-form form-group">
+                            <label for="message">
                                 message
-                                <textarea class="form-input message-input form-control"
-                                          type="text"
-                                          rows="4"
-                                          name="user_message"
-                                          aria-invalid="true"
-                                          id="message"
-                                          aria-describedby="errMessage">
-                    </textarea>
-                                <!-- Error Validation -->
-                                <span class="err errMessage" id="errMessage">Oops! Forget your message?</span>
                             </label>
+                            <textarea class="form-input message-input form-control"
+                                      type="text"
+                                      name="user_message"
+                                      aria-invalid="false"
+                                      aria-required="true"
+                                      required="required"
+                                      id="message"
+                                      tabindex="0">Hey Emma,</textarea>
+                            <p id="err3" class="err err3 errMessage" aria-label="Don't forget a message. What's on your mind?">What's on your mind?</p>
                         </div>
                     </div>
                 </div>
                 <!-- Send Button -->
-                <button type="submit"
-                        class="btn btn-md align-item-end"
-                        name="send" id="my-form-button"
-                        value="send">send</button>
+                <button type="button"
+                        class="btn btn-sm align-item-end"
+                        onclick="return(submission())"
+                        name="send"
+                        id="my-form-button"
+                        value="send">send
+                </button>
                 <!-- Success Validation -->
                 <div class="success">
-                    <p aria-label="Thank you!" class="success-p">Thank you!</p>
+                    <p aria-label="Thank you!" class="success-p">Thank you! Your message was sent.</p>
                 </div>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             </form>
         </div>
-    </nav>
+    </div>
 </header>
 
 <main id="main">
-
-</main>
-
-<footer>
-    <!---------- Contrast Button ------------>
-    <div class="row justify-content-end">
-        <div class="col-2 contrastbox">
-            <a title="Change contrast" id="contrast-img" tabindex="0" onclick="changeColor()">
-                <img class="contrast-img" src="img/contrast.svg" role="presentation">
+    <div class="top row px-3">
+        <div class="left col-sm-10 px-3">
+            <img src="img/coming-soon.svg" class="comingsoon" alt="coming soon">
+        </div>
+        <!---------- Contrast Button ------------>
+        <div class="col-2 contrastbox justify-content-end">
+            <a title="Change contrast"
+               id="contrast-img"
+               tabindex="0">
+                <img class="contrast-img" src="img/contrast.svg" alt="" role="presentation">
             </a>
         </div>
     </div>
-</footer>
+</main>
 
 <!-- JavaScript Sources -->
 <!-- JQUERY -->
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-<script src="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- BOOTSTRAP -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!-- AJAX -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script src="js/main.js"></script>
+<script type="text/javascript">
+    // Form Validation
+    let err1 = document.getElementById('err1');
+    let err2 = document.getElementById('err2');
+    let err3 = document.getElementById('err3');
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let message = document.getElementById('message');
+    let form = document.getElementById('my-form');
+    let button = document.getElementsByClassName('btn')
+    const successMessage = document.getElementsByClassName('success-p');
+    let action = 'https://formspree.io/emma@emma-kearney.com';
+    let method = 'POST';
+    const formInputs = form.getElementsByTagName("input");
+    let data = new FormData(form);
+
+
+    // Handle Error Validation
+    function validate() {
+        let validation = true;
+        if (name.value.trim() === "") {
+            err1.style.display = "block";
+            name.setAttribute("aria-invalid", "true");
+            validation = false;
+        } else {
+            err1.style.display = "none";
+        }
+        if (email.value.trim() === "") {
+            err2.style.display = "block";
+            name.setAttribute("aria-invalid", "true");
+            validation = false;
+        } else {
+            err2.style.display = "none";
+        }
+        if (message.value.trim() === "") {
+            err3.style.display = "block";
+            name.setAttribute("aria-invalid", "true");
+            validation = false;
+        } else {
+            err3.style.display = "none";
+        }
+        return validation;
+    }
+
+    // Remove error message when typing inside input
+    name.addEventListener("keyup", event => {
+        if (event.isComposing || event.keyCode === 229) {
+            return;
+        }
+        err1.style.display = 'none';
+    });
+    email.addEventListener("keyup", event => {
+        if (event.isComposing || event.keyCode === 229) {
+            return;
+        }
+        err2.style.display = 'none';
+    });
+    message.addEventListener("keyup", event => {
+        if (event.isComposing || event.keyCode === 229) {
+            return;
+        }
+        err3.style.display = 'none';
+    });
+
+    // Display success message when form completes sending
+    const success = () => {
+        form.reset()
+        button.style = 'display: none';
+        successMessage.style = 'display: block';
+    };
+
+    // AJAX Submission Handler
+    const submission = () => {
+        if(validate()){
+            return true;
+        }
+        let formdata = $(this).serialize();
+        $.ajax({
+            method: form.method,
+            action: form.action,
+            data: formdata,
+            success:  function(data){
+                success()
+                return true;
+            }
+        });
+    }
+
+</script>
+
 </body>
 </html>

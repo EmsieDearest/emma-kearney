@@ -56,10 +56,8 @@
                 </li>
             </ul>
         </nav>
-        <div class="col-5">
-            <a href="index.html" title="Home"><img src="img/wave.svg" alt="Emma Kearney" id="logo"
-                                                   class="logo align-self-center"></a>
-        </div>
+        <a href="index.html" class="col-5"><img src="img/wave.svg" alt="Emma Kearney" id="logo"
+                                                   class="logo align-self-center" onfocus="logoFocus()"></a>
     </div>
     <!-- Hidden Form -->
     <div id="mySidepanel" class="sidepanel">
@@ -142,6 +140,7 @@
                                           aria-required="true"
                                           required="required"
                                           id="message"
+                                          rows="5"
                                           tabindex="0">Hey Emma,</textarea>
                             <p id="err3" class="err err3 errMessage" aria-label="Don't forget a message. What's on your mind?">What's on your mind?</p>
                         </div>
@@ -159,7 +158,8 @@
                 <div class="success">
                     <p aria-label="Thank you!" class="success-p">Thank you! Your message was sent.</p>
                 </div>
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+                <a class="close-button" href="javascript:void(0)" onclick="closeNav()"></a>
             </form>
         </div>
     </div>
@@ -174,8 +174,7 @@
             </div>
             <!---------- Contrast Button ------------>
             <div class="col-2 contrastbox justify-content-end">
-                <a title="Change contrast"
-                   id="contrast-img"
+                <a id="contrast-img"
                    tabindex="0">
                     <img class="contrast-img" src="img/contrast.svg" alt="" role="presentation">
                 </a>

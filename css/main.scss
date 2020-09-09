@@ -37,10 +37,10 @@ $bold: 700;
 $thin: 100;
 
 /* Template */
-$standard-border: 0.1rem solid $cherry;
+$standard-border: 0.08em solid $cherry;
 
 /* Black Overlay */
-$b-border: 0.1em solid $black;
+$b-border: 0.08em solid $black;
 $b-text: $black;
 $b-bg: $black;
 
@@ -115,8 +115,7 @@ body {
 
 
 /* Focus styles */
-a:focus, button:focus, input:focus, textarea:focus, [role=link]:focus,
-[rolebutton]:focus, [role=tab]:focus {
+[role=link]:focus, [rolebutton]:focus, [role=tab]:focus {
   outline: $standard-border;
 }
 
@@ -146,13 +145,14 @@ p {
   }
   a:focus {
     position:static;
+    outline: none;
     width:auto;
     height:auto;
     color: $cherry;
     font : {
       family: $gopher;
-      weight: $regular;
-      size: 1.2em;
+      weight: bold;
+      size: 1.5em;
     }
     padding: 0.4em;
   }
@@ -170,6 +170,11 @@ p {
     size: 1.5em;
   }
   padding: 0.7em;
+}
+
+.nav-link:focus {
+  outline: none;
+  font-weight: bolder;
 }
 
 .nav-link:hover, .contactbtn:hover, .btn:hover, .logo:hover, .form-input:hover, label:hover, form:hover {
@@ -204,7 +209,43 @@ p {
 }
 
 /* Position and style the close button (top right corner) */
-.sidepanel .closebtn {
+
+.close-button {
+  $size: 50px;
+  height: $size;
+  width: $size;
+  position: relative;
+  box-sizing: border-box;
+  line-height: $size;
+  display: inline-block;
+  padding-top: 5%;
+
+  &:before, &:after {
+    $width: 50px;
+    $height: 2px;
+    transform: rotate(-45deg);
+    content: '';
+    position: absolute;
+    display: block;
+    height: $height;
+    width: $width;
+    background-color: $cherry;
+    transition: all 0.25s ease-out;
+  }
+
+  &:after {
+    transform: rotate(-135deg);
+  }
+
+  &:hover {
+    &:before, &:after {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+
+.close-button {
   position: absolute;
   top: 0.5em;
   right: 1em;
@@ -213,6 +254,7 @@ p {
   text-decoration: none;
   color: $cherry;
   cursor: none;
+  outline: none;
 }
 
 form {
@@ -224,7 +266,7 @@ form {
     font: {
       family: $gopher;
       weight: $regular;
-      size: 2rem;
+      size: 1.7rem;
     }
   }
 
@@ -240,10 +282,10 @@ form {
 
   input[type="text"],
   input[type="email"], textarea[type="text"] {
-    background-color: transparent !important;
+    background-color: $blush !important;
     font: {
-      size: 2rem;
-      family: $gopher;
+      size: 1.5rem !important;
+      family: $gopher !important;
     }
     color: $cherry !important;
     padding: {
@@ -260,10 +302,30 @@ form {
     }
   }
 
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill
+  {
+    &, &:hover, &:focus, &:active
+    {
+      -webkit-box-shadow: 0 0 0px 1000px $blush inset !important;
+      border: $standard-border;
+      -webkit-text-fill-color: $cherry;
+    }
+  }
+
   input:focus, textarea:focus {
-    border: 0.13em dashed $cherry !important;
+    border: 0.17em solid $cherry !important;
     outline-style: none !important;
     box-shadow: none !important;
+  }
+
+  textarea::-webkit-scrollbar {
+    width: 0em;
+  }
+
+  textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
   }
 
   .btn:focus {
@@ -369,6 +431,14 @@ input, textarea, form {
   padding-left: 10%;
 }
 
+.comingsoon {
+  padding : {
+    top: 10%;
+  }
+  margin-left: 30%;
+  width: 60%;
+}
+
 /* ****************  FOOTER  **************** */
 #contrast-img {
   width:100%;
@@ -376,6 +446,7 @@ input, textarea, form {
   border-radius: 0px;
   -moz-outline-radius: 0px;
   right: 1em;
+  outline: none;
 }
 
 .contrastbox {
@@ -383,6 +454,7 @@ input, textarea, form {
     top:40%;
     left: 8%;
   }
+  outline: none;
 }
 
 button {
@@ -397,14 +469,7 @@ a:hover {
   color: $cherry;
 }
 
-.contrast-img {
-  border: $blush;
-  background-color: $blush;
-}
-
-.contrast-blush, .contrast-black {
-}
-
-.doTheWave, .dothewave_blk-on-blush {
+.doTheWave, .dothewave_blk-on-blsh, .dothewave_blsh-on-blk, .contrast-blush, .contrast-black, .contrast-img {
   width: 100%;
+  outline: none;
 }

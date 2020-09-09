@@ -331,11 +331,7 @@ a:hover {
   background-color: #fff6f6;
 }
 
-.contrast-blush, .contrast-black, .doTheWave {
-  display: none;
-}
-
-.doTheWave {
+.doTheWave, .dothewave_blk-on-blush {
   width: 100%;
 }
 

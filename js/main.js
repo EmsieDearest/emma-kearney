@@ -135,6 +135,7 @@ for(let i of textareas) {
 
 // Contrast Button
 let contrastButton = $('.contrast-img');
+let contrastButtonId = $('#contrast-img');
 let contrastButtonBlush = $('.contrast-blush');
 let contrastButtonBlack = $('.contrast-black');
 let doTheWave = $('.doTheWave');
@@ -142,20 +143,26 @@ let cherry = '#fa0636';
 let blush = '#fff6f6';
 let blushFilter = 'contrast(0) sepia(100%) hue-rotate(663deg) brightness(1.7) saturate(0.35)';
 
-
 // Place GIF on Hover
-contrastButton.on('mouseover', function(){
-    contrastButton.css('display', 'none');
-    doTheWave.css('display', 'block');
+$(function() {
+    contrastButton.on('mouseover',function(){
+        let src = $(this).attr("src");
+        let switchClass = $(this).attr('class');
+        $(this).attr("src", src.replace("img/contrast.svg", "img/dothewave.gif"));
+        $(this).attr("class", switchClass.replace("contrast-img", "doTheWave"));
+    });
+    contrastButton.on('mouseleave',function() {
+        let src = $(this).attr("src");
+        let switchClass = $(this).attr('class');
+        $(this).attr("src", src.replace('img/dothewave.gif', "img/contrast.svg"));
+        $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
+    });
 });
 
 // Define Theme Parameters
 const blackOnBlush = () => {
     $("body").css("backgroundColor", blush);
     $(".logo").css('filter', 'grayscale(100%) contrast(2000%)');
-    contrastButton.css('display', 'none');
-    contrastButtonBlush.css('display', 'none');
-    contrastButtonBlack.css('display', 'block');
     $('p').css('color', 'black');
     $('::-webkit-resizer').css('color', 'black');
     $('.nav-link').css('color', 'black');
@@ -185,14 +192,23 @@ const blackOnBlush = () => {
     })
     $('.err').css('color', 'black');
     $('.success-p').css('color', 'black');
+    $(function (){
+        contrastButton.on('mousedown', function(){
+            let src = $(this).attr("src");
+            let switchClass = $(this).attr('class');
+            $(this).attr("src", src.replace("img/dothewave.gif", "img/dothewave_blk-on-blsh.gif"));
+            $(this).attr("class", switchClass.replace("contrast-img", "doTheWave"));
+        });
+        contrastButton.on('mouseleave', function(){
+            let src = $(this).attr("src");
+            $(this).attr("src", src.replace("img/dothewave_blk-on-blsh.gif", "img/contrast-black.svg"));
+        })
+    })
 }
 
 const blushOnBlack = () => {
     $("body").css("backgroundColor", 'black');
     $(".logo").css('filter', blushFilter);
-    contrastButton.css('display', 'none');
-    contrastButtonBlush.css('display', 'block');
-    contrastButtonBlack.css('display', 'none');
     $('p').css('color', blush);
     $('::-webkit-resizer').css('color', blush);
     $('.nav-link').css('color', blush);
@@ -219,15 +235,11 @@ const blushOnBlack = () => {
     });
     $('.err').css('color', blush);
     $('.success-p').css('color', blush);
-
-
 }
 
 const blushOnCherry = () => {
     $("body").css("backgroundColor", cherry);
     $(".logo").css('filter', blushFilter);
-    contrastButton.css('display', 'none');
-    contrastButtonBlush.css('display', 'block');
     $('p').css('color', blush);
     $('::-webkit-resizer').css('color', blush);
     $('.nav-link').css('color', blush);
@@ -262,9 +274,6 @@ const blushOnCherry = () => {
 const cherryOnBlush = () => {
     $("body").css("backgroundColor", blush);
     $(".logo").css('filter', blushFilter);
-    contrastButton.css('display', 'block');
-    contrastButtonBlush.css('display', 'none');
-    contrastButtonBlack.css('display', 'none');
     $('p').css('color', cherry);
     $('::-webkit-resizer').css('color', cherry);
     $('.nav-link').css('color', blush);
@@ -297,11 +306,11 @@ const cherryOnBlush = () => {
 }
 
 
-// Theme Picker
-$(document).ready(function(){
-    const theme = [1, 2, 3];
+// Theme Picker Function
+$(function(){
+    const theme = [1, 2, 3, 4];
     let i = 0;
-    $('#contrast-img').mousedown(function themePicker(){
+    contrastButtonId.on('mousedown', function(){
         i = (i++) % theme.length;
         switch (theme[i]) {
             case i = 1:
@@ -312,6 +321,9 @@ $(document).ready(function(){
                 break;
             case i = 3:
                 return blushOnCherry();
+                break;
+            case i = 4:
+                return cherryOnBlush();
                 break;
         }
         return theme[i];

@@ -20,12 +20,6 @@ function ajax(method, action, data, success, error) {
     xhr.send(data);
 }
 
-const success = () => {
-    form.reset()
-    button.style.display = 'none';
-    successMessage.style.display = 'block';
-}
-
 button.onclick = function (){
     // alert("hello");
     ajax(

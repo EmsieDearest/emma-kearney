@@ -155,9 +155,7 @@
                         value="send">send
                 </button>
                 <!-- Success Validation -->
-                <div class="success">
-                    <p aria-label="Thank you!" class="success-p">Thank you! Your message was sent.</p>
-                </div>
+                <p class="success">Thank you! I will get back to you soon.</p>
                 <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
                 <a class="close-button" href="javascript:void(0)" onclick="closeNav()"></a>
             </form>
@@ -209,7 +207,7 @@
     let message = document.getElementById('message');
     let form = document.getElementById('my-form');
     let button = document.getElementsByClassName('btn')
-    const successMessage = document.getElementsByClassName('success-p');
+    const successMessage = document.getElementsByClassName('success');
     let action = 'https://formspree.io/emma@emma-kearney.com';
     let method = 'POST';
     const formInputs = form.getElementsByTagName("input");
@@ -217,7 +215,7 @@
 
 
     // Handle Error Validation
-    function validate() {
+    const validate = () => {
         let validation = true;
         if (name.value.trim() === "") {
             err1.style.display = "block";
@@ -263,25 +261,21 @@
         err3.style.display = 'none';
     });
 
-    // Display success message when form completes sending
-    const success = () => {
-        button.style = 'display: none';
-        successMessage.style = 'display: block';
-    };
-
     // AJAX Submission Handler
     const submission = () => {
         if(validate()){
             return true;
         }
-        let formdata = $(this).serialize();
+        let formdata = $('input, textarea').serialize();
         $.ajax({
             method: form.method,
             action: form.action,
-            data: formdata
-        });
-        $( document ).ajaxSuccess(function( method, action, data ) {
-            return success();
+            data: formdata,
+            success: function() {
+                form.reset();
+                button.css('display', 'none');
+                successMessage.css('display', 'block');
+            }
         });
     }
 

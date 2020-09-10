@@ -410,6 +410,10 @@ a:hover {
     padding-top: 20%;
   }
 
+  .close-button {
+    padding-top: 10%;
+  }
+
   form label {
     font-size: 1.2rem;
   }
@@ -437,7 +441,7 @@ form input[type=email], form textarea[type=text] {
     margin-right: 4%;
     padding-left: 10%;
     padding-right: 10%;
-    padding-top: 40%;
+    padding-top: 30%;
   }
 
   .intro {
@@ -463,5 +467,6 @@ form input[type=email], form textarea[type=text] {
     margin-left: 60%;
   }
 }
+/* ********************* For Tablets *********************** */
 
 /*# sourceMappingURL=main.css.map */

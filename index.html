@@ -170,13 +170,13 @@
             <div class="left col-sm-10 px-3">
                 <h1 class="intro" id="intro">designer.<br>jr. front-end developer.<br>accessibility specialist.<br>socially
                     distanced high-fiver.</h1>
-                <p class="compliance">Making sites wicked cool and <abbr aria-label="Web Content Accessibility Guidelines Moderate to Strictest Level">WCAG AA / AAA</abbr> compliant</p>
+                <p class="compliance">Designing wicked cool sites that meet <abbr aria-label="Web Content Accessibility Guidelines">WCAG</abbr> compliance</p>
             </div>
             <!---------- Contrast Button ------------>
-            <div class="col-md-2 col-sm-1 contrastbox justify-content-end">
+            <div class="col-lg-2 col-sm-1 contrastbox justify-content-end">
                 <a id="contrast-img"
                    tabindex="0">
-                    <img class="contrast-img" src="img/contrast.svg" alt="" role="presentation">
+                    <img class="contrast-img" src="img/contrast.svg" alt="Change color scheme" role="presentation">
                 </a>
             </div>
         </div>
@@ -265,7 +265,6 @@
 
     // Display success message when form completes sending
     const success = () => {
-        form.reset()
         button.style = 'display: none';
         successMessage.style = 'display: block';
     };
@@ -279,11 +278,10 @@
         $.ajax({
             method: form.method,
             action: form.action,
-            data: formdata,
-            success:  function(data){
-                success()
-                return true;
-            }
+            data: formdata
+        });
+        $( document ).ajaxSuccess(function( method, action, data ) {
+            return success();
         });
     }
 

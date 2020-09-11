@@ -325,7 +325,7 @@ form .gotcha {
 form .success-p {
   font-size: 1.5em;
   color: #fa0636;
-  display: none;
+  visibility: hidden;
 }
 
 input, textarea, form {
@@ -468,5 +468,69 @@ form input[type=email], form textarea[type=text] {
   }
 }
 /* ********************* For Tablets *********************** */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  #cursor {
+    display: none;
+  }
+
+  .nav-link {
+    font-size: 2em;
+  }
+
+  .logo {
+    width: 100%;
+    margin-left: 25%;
+    padding-top: 20%;
+  }
+
+  form label {
+    font-size: 1.2rem;
+  }
+  form .form-input {
+    padding: 1em;
+    min-height: 2em;
+  }
+  form input[type=text],
+form input[type=email], form textarea[type=text] {
+    font-size: 1.2rem !important;
+    padding-left: 1rem;
+  }
+  form .btn {
+    padding: 0.5em 0.9em;
+    margin-top: 0.5rem;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  form .success-p {
+    font-size: 1.5em;
+  }
+
+  .formbox {
+    margin-left: 4%;
+    margin-right: 4%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 30%;
+  }
+
+  .intro {
+    padding-top: 20%;
+    padding-left: 0%;
+    margin-left: -5%;
+    line-height: 1.2;
+    font-size: 4em;
+  }
+
+  .compliance {
+    margin-left: -15%;
+    font-size: 1em;
+  }
+
+  .doTheWave, .dothewave_blk-on-blsh, .dothewave_blsh-on-blk, .contrast-blush, .contrast-black, .contrast-img {
+    width: 40%;
+    margin-top: -10%;
+    margin-left: 60%;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

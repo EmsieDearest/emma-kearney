@@ -396,10 +396,10 @@ form {
   }
 
   // <p class="success">
-  .success {
+  .success-p {
     font-size: 1.5em;
     color: $cherry;
-    display: none;
+    visibility: hidden;
   }
 }
 
@@ -592,9 +592,6 @@ and (-webkit-min-device-pixel-ratio: 2) {
     margin-left: 25%;
     padding-top: 20%;
   }
-  .close-button {
-    padding-top: 10%;
-  }
 
   form {
 
@@ -672,5 +669,4 @@ and (-webkit-min-device-pixel-ratio: 2) {
     margin-top: -10%;
     margin-left: 60%;
   }
-}
 }

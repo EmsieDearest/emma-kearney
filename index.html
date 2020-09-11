@@ -147,9 +147,8 @@
                     </div>
                 </div>
                 <!-- Send Button -->
-                <button type="submit"
+                <button type="button"
                         class="btn btn-sm align-item-end"
-                        onclick="return(submission())"
                         name="send"
                         id="my-form-button"
                         value="send">send
@@ -263,7 +262,7 @@
     });
 
     // AJAX Submission Handler
-    const submission = () => {
+    button.on('submit', function(){
         if (validate() === true) {
             return true;
         }
@@ -279,7 +278,8 @@
         })
 
         ajax(method, action, data, success);
-    }
+    })
+
 
     function ajax(method, action, data, success) {
         let xhr = new XMLHttpRequest();

@@ -120,11 +120,9 @@ const blackOnBlush = () => {
     $('p').css('color', 'black');
     $('::-webkit-resizer').css('color', 'black');
     $('.nav-link').css('color', 'black');
-    $('input[type="text"], textarea[type="text"]').css('filter', 'grayscale(100%) contrast(2000%) !important');
-    $('label').css({
-        'color': 'black',
-        'backgroundColor': 'transparent !important'
-    });
+    $('input, textarea').css('filter', 'grayscale(100%) contrast(2000%)');
+    $('textarea').css('color', 'black');
+    $('label').css('color', 'black');
     btn.css("backgroundColor", 'black');
     $('.intro').css('color', 'black');
     $('.sidepanel').css({
@@ -164,6 +162,12 @@ const blackOnBlush = () => {
             $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
         })
     })
+    contrastButton.on('click', function(){
+        let $this = $(this);
+        let switchClass = $this.attr('class');
+        $(this).attr("src", "img/dothewave_blk-on-blsh.gif");
+        $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
+    })
 }
 
 const blushOnBlack = () => {
@@ -176,7 +180,12 @@ const blushOnBlack = () => {
     $('p').css('color', blush);
     $('::-webkit-resizer').css('color', blush);
     $('.nav-link').css('color', blush);
-    $('input[type="text"], textarea[type="text"]').css('color', blush);
+    $('input').css({
+        'color': blush,
+        'backgroundColor': 'black'
+    })
+    $('input, textarea').css('filter', blushFilter);
+    $('textarea').css('color', blush);
     $('label').css({
         'color': blush,
         'backgroundColor': 'transparent !important'
@@ -219,6 +228,12 @@ const blushOnBlack = () => {
             $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
         })
     })
+    contrastButton.on('click', function(){
+        let $this = $(this);
+        let switchClass = $this.attr('class');
+        $(this).attr("src", "img/dothewave_blsh-on-blk.gif");
+        $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
+    })
 }
 
 const blushOnCherry = () => {
@@ -231,6 +246,12 @@ const blushOnCherry = () => {
     $('::-webkit-resizer').css('color', blush);
     $('.nav-link').css('color', blush);
     $('input[type="text"], textarea[type="text"]').css('color', blush);
+    $('input, textarea').on('focus', function(){
+        this.css({
+            'boxShadow': blush,
+            'border': '0.13rem solid #fff6f6'
+        })
+    });
     $('label').css({
         'color': blush,
         'backgroundColor': 'transparent !important'
@@ -276,6 +297,12 @@ const blushOnCherry = () => {
             $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
         })
     })
+    contrastButton.on('click', function(){
+        let src = $(this).attr("src");
+        let switchClass = $(this).attr('class');
+        $(this).attr("src", src.replace("img/dothewave_blsh-on-blk.gif", "img/contrast-blush.svg"));
+        $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
+    })
 }
 
 const cherryOnBlush = () => {
@@ -289,6 +316,12 @@ const cherryOnBlush = () => {
     $('::-webkit-resizer').css('color', cherry);
     $('.nav-link').css('color', cherry);
     $('input[type="text"], textarea[type="text"]').css('color', cherry);
+    $('input, textarea').on('focus', function(){
+        this.css({
+            'boxShadow': cherry,
+            'border': '0.13rem solid #fa0636'
+        })
+    });
     $('label').css({
         'color': cherry,
         'backgroundColor': 'transparent !important'
@@ -334,6 +367,12 @@ const cherryOnBlush = () => {
             $(this).attr("src", src.replace("img/dothewave.gif", "img/contrast-img.svg"));
             $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
         })
+    })
+    contrastButton.on('click', function(){
+        let $this = $(this);
+        let switchClass = $this.attr('class');
+        $(this).attr("src", "img/dothewave.gif");
+        $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
     })
 }
 

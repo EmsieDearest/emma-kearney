@@ -249,14 +249,12 @@ form input[type=email]:invalid:not(:focus):not(:placeholder-shown), form textare
   background-color: transparent !important;
   color: #fa0636 !important;
 }
-form input:-webkit-autofill, form input:-webkit-autofill:hover, form input:-webkit-autofill:focus, form input:-webkit-autofill:active,
+form input:-webkit-autofill, form input:-webkit-autofill:hover, form input:-webkit-autofill:active,
 form textarea:-webkit-autofill,
 form textarea:-webkit-autofill:hover,
-form textarea:-webkit-autofill:focus,
 form textarea:-webkit-autofill:active,
 form select:-webkit-autofill,
 form select:-webkit-autofill:hover,
-form select:-webkit-autofill:focus,
 form select:-webkit-autofill:active {
   border: 0.08em solid #fa0636;
   -webkit-text-fill-color: #fa0636;

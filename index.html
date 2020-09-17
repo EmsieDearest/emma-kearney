@@ -13,12 +13,10 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
 
-    <!-- Fonts -->
-    <link rel="stylesheet"
-          href="https://p.typekit.net/p.css?s=1&k=qkl2weg&ht=tk&f=14717.14718.14719.14720.14721.14723.14724.14726.28173.43126.43127.43128.43129.43130.43131.43132.43133.43134.43135.43705.43706.43709.43710&a=5034860&app=typekit&e=css">
-
-
     <link rel="shortcut icon" type="image/x-icon" href="img/contrast.svg"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
     <title>EMMA KEARNEY</title>
     <meta name="description"
@@ -33,10 +31,10 @@
     <!-- Navigation -->
     <div class="row justify-content-between">
         <nav class="navpanel">
-            <ul class="nav d-flex" id="nav">
+            <ul class="nav d-flex" id="nav" aria-label="Main Menu">
                 <!------ Skip Nav ------>
                 <li class="align-self-center">
-                    <div id="skip" class="nav-item align-self-center" tabindex="0"><a href="#main">skip to main</a></div>
+                    <div id="skip" class="nav-item align-self-center" tabindex="0"><button href="#main">SKIP TO MAIN</button></div>
                 </li>
                 <!------ Contact ------>
                 <li class="nav-item align-self-center">
@@ -46,20 +44,20 @@
                             onclick="openNav()"
                             aria-expanded="false"
                             aria-controls="mySidepanel">
-                        contact
+                        CONTACT
                     </button>
                 </li>
-                <!------ Fun ------>
+                <!------ Fun
                 <li class="nav-item">
                     <a href="fun.html"
                        class="nav-link funbtn"
                        id="nav-link">
-                        fun
+                        FUN
                     </a>
-                </li>
+                </li> ------>
             </ul>
         </nav>
-        <a href="index.html" class="col-md-5 col-sm-1"><img src="img/wave.svg" alt="Emma Kearney Home" id="logo"
+        <a href="index.html" class="col-md-4 col-sm-1"><img src="img/wave.svg" alt="Emma Kearney Home" id="logo"
                                                    class="logo align-self-center" onfocus="logoFocus()"></a>
     </div>
     <!-- Hidden Form -->
@@ -87,7 +85,7 @@
                         <!-- Name input -->
                         <div class="sm-form form-group">
                             <label for="name">
-                                name
+                                NAME
                             </label>
                                 <input class="form-input form-control name"
                                        type="text"
@@ -110,7 +108,7 @@
                         <!-- Email input -->
                         <div class="sm-form form-group">
                             <label for="email">
-                                email
+                                EMAIL
                             </label>
                                 <input class="form-input form-control email"
                                        type="email"
@@ -134,7 +132,7 @@
                         <!-- Message input -->
                         <div class="sm-form form-group">
                             <label for="message">
-                                message
+                                MESSAGE
                             </label>
                                 <textarea class="form-input message-input form-control"
                                           type="text"
@@ -160,26 +158,25 @@
                 <!-- Success Validation -->
                 <div class="success">
                     <p aria-label="Thank you!" class="success-p">Thank you! Your message was sent.</p>
-                </div>                <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-                <a class="close-button" aria-label="Close form" href="javascript:void(0)" onclick="closeNav()"></a>
+                </div>
+                <button class="close-button" type="button" aria-label="Close form" href="javascript:void(0)" onclick="closeNav()"></button>
             </form>
         </div>
     </div>
 </header>
 
 <main id="main">
-        <div class="top row px-3">
-            <div class="left col-sm-10 px-3">
-                <h1 class="intro" id="intro">designer.<br>jr. front-end developer.<br>accessibility specialist.<br>socially
-                    distanced high-fiver.</h1>
-                <p class="compliance">Designing wicked cool sites that meet <abbr aria-label="Web Content Accessibility Guidelines">WCAG</abbr> compliance</p>
+        <div class="top row">
+            <div class="left col-sm-11">
+                <h1 class="intro" id="intro">designer <img src="img/magicwand.svg" class="magicwand" alt="" role="presentation"> front-end developer <img src="img/lightning.svg" class="lightning" alt="" role="presentation"> accessibility specialist <img src="img/flower.svg" class="flower" alt="" role="presentation"> socially
+                    distanced high-fiver <img src="img/hands.svg" class="hands" alt="" role="presentation"> wicked cool <abbr aria-label="Web Content Accessibility Guidelines">WCAG</abbr> compliance.</h1>
             </div>
             <!---------- Contrast Button ------------>
-            <div class="col-lg-2 col-sm-1 contrastbox justify-content-end">
-                <a id="contrast-img"
+            <div class="col-lg-1 col-sm-1 contrastbox">
+                <button id="contrast-img"
                    tabindex="0">
                     <img class="contrast-img" src="img/contrast.svg" alt="Change color scheme" role="presentation">
-                </a>
+                </button>
             </div>
         </div>
 </main>
@@ -297,7 +294,15 @@
         xhr.send(data);
     }
 
+// if lt IE 9
+  let e = ("abbr,article,aside,audio,bdi,canvas,datalist,details,dialog," +
+      "figcaption,figure,footer,header,keygen,mark,menu,meter,main,nav,output," +
+      "progress,rp,ruby,rt,section,source,summary,time,track,video,wbr").split(',');
+      for (let i = 0; i < e.length; i++) {
+          document.createElement(e[i]);
+      }
 </script>
+<![endif]-->
 
 </body>
 </html>

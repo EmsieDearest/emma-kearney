@@ -20,6 +20,13 @@
 /* Color Variables */
 /* Dimension Variables */
 /* Font Variables */
+@font-face {
+  font-family: "Gopher Display";
+  src: url("gopherdisplayregular-webfont.eot");
+  src: url("gopherdisplayregular-webfont.eot?#iefix") format("embedded-opentype"), url("gopherdisplayregular-webfont.woff2") format("woff2"), url("gopherdisplayregular-webfont.woff") format("woff"), url("gopherdisplayregular-webfont.ttf") format("truetype"), url("gopherdisplayregular-webfont.svg#gopher_displayregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 /* Template */
 /* Black Overlay */
 html {
@@ -92,7 +99,7 @@ html {
 
 /* ****************  BODY  **************** */
 body {
-  background-color: #fff6f6;
+  background-color: #f7dfe8;
   height: 100%;
   padding: 1em;
 }
@@ -102,33 +109,26 @@ body {
   outline: 0.08em solid #fa0636;
 }
 
-/* Text Styles */
-p {
-  color: #fa0636;
-  font-family: "Gopher", sans-serif;
-  font-weight: 400;
-  font-size: 1.5em;
-}
-
 /* ****************  HEADER  **************** */
 /* Top Nav (skip to main) */
-#skip a {
+#skip button {
   position: absolute;
   left: -10000px;
   top: auto;
   width: 1px;
   height: 1px;
   overflow: hidden;
+  background-color: transparent;
 }
-#skip a:focus {
+#skip button:focus {
   position: static;
+  background-color: transparent;
   outline: none;
   width: auto;
   height: auto;
   color: #fa0636;
-  font-family: "Gopher", sans-serif;
-  font-weight: bold;
-  font-size: 1.5em;
+  font-family: "Gopher Display", serif;
+  font-size: 2em;
   padding: 0.4em;
 }
 
@@ -137,9 +137,8 @@ p {
   background-color: transparent;
   color: #fa0636;
   text-align: center;
-  font-family: "Gopher", sans-serif;
-  font-size: 1.5em;
-  padding: 0.7em;
+  font-family: "Gopher Display", serif;
+  font-size: 2em;
 }
 
 .nav-link:focus {
@@ -156,10 +155,6 @@ p {
   margin-left: 0.3em;
 }
 
-.funbtn:hover {
-  filter: none;
-}
-
 /* ****************  CONTACT FORM  **************** */
 .sidepanel {
   height: 100%;
@@ -171,7 +166,8 @@ p {
   /* Stay on top */
   top: 0;
   left: -10px;
-  background-color: #fff6f6;
+  visibility: hidden;
+  background-color: #f7dfe8;
   border-right: 0.08em solid #fa0636;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -190,7 +186,8 @@ p {
   box-sizing: border-box;
   line-height: 50px;
   display: inline-block;
-  padding-top: 5%;
+  margin-top: 5%;
+  background-color: transparent;
 }
 .close-button:before, .close-button:after {
   transform: rotate(-45deg);
@@ -224,9 +221,8 @@ p {
 form label {
   color: #fa0636;
   width: 100%;
-  font-family: "Gopher", sans-serif;
-  font-weight: 400;
-  font-size: 1.7rem;
+  font-family: "Gopher Display", serif;
+  font-size: 2rem;
 }
 form .form-input {
   background-color: transparent;
@@ -240,7 +236,7 @@ form input[type=text],
 form input[type=email], form textarea[type=text] {
   background-color: transparent !important;
   font-size: 1.5rem !important;
-  font-family: "Gopher", sans-serif !important;
+  font-family: "Gopher Display", serif !important;
   color: #fa0636 !important;
   padding-left: 1.7rem;
 }
@@ -258,12 +254,17 @@ form select:-webkit-autofill:hover,
 form select:-webkit-autofill:active {
   border: 0.08em solid #fa0636;
   -webkit-text-fill-color: #fa0636;
-  -webkit-box-shadow: 0 0 0px 1000px #fff6f6 inset !important;
+  transition: background-color 5000s;
+  outline: none;
+}
+form input, form textarea {
+  outline: none;
+  box-shadow: none !important;
 }
 form input:focus, form textarea:focus {
   border: 0.17em solid #fa0636 !important;
+  transition: background-color 5000s;
   outline-style: none !important;
-  box-shadow: none !important;
 }
 form textarea::-webkit-scrollbar {
   width: 0em;
@@ -275,15 +276,14 @@ form .btn:focus {
   outline-style: none !important;
   box-shadow: none !important;
   border: 0.08em solid #fa0636 !important;
-  background-color: #fff6f6;
+  background-color: #f7dfe8;
   color: #fa0636;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
 form input::placeholder {
-  font-family: "Gopher", sans-serif;
-  font-weight: 400;
+  font-family: "Gopher Display", serif;
   font-size: 2rem;
   color: #fa0636 !important;
   background-color: transparent !important;
@@ -297,7 +297,6 @@ form .err {
   max-height: 0;
   transition: 0.28s;
   display: none;
-  font-weight: 400;
   font-style: italic;
   font-size: 1.2em;
 }
@@ -309,10 +308,9 @@ form .btn {
   display: block;
   margin-top: 0.5rem;
   width: 100%;
-  font-weight: 400;
   font-size: 2rem;
-  font-family: "Gopher", sans-serif;
-  color: #fff6f6;
+  font-family: "Gopher Display", serif;
+  color: #f7dfe8;
   border-radius: 0px;
   background-color: #fa0636;
 }
@@ -336,38 +334,46 @@ input, textarea, form {
 /* ****************  MAIN  **************** */
 .intro {
   color: #fa0636;
-  padding-top: 5%;
-  padding-left: 10%;
-  line-height: 1.2;
-  font-family: "Gopher", sans-serif;
-  font-weight: 400;
+  padding-top: 8%;
+  line-height: 1.5;
+  font-family: "Gopher Display", serif;
   font-style: normal;
   font-size: 4.5em;
 }
 
-.compliance {
-  padding-left: 10%;
+.magicwand {
+  width: 8%;
+  margin-top: -12%;
 }
 
-.comingsoon {
-  padding-top: 10%;
-  margin-left: 30%;
-  width: 60%;
+.lightning {
+  width: 6%;
+}
+
+.flower {
+  width: 7%;
+  margin-top: -1%;
+}
+
+.hands {
+  width: 10%;
 }
 
 /* ****************  FOOTER  **************** */
 #contrast-img {
-  width: 100%;
+  width: 10%;
   background-color: transparent;
   border-radius: 0px;
   -moz-outline-radius: 0px;
   right: 1em;
   outline: none;
+  cursor: none;
+  position: fixed;
+  padding-top: 42%;
+  padding-right: 2%;
 }
 
 .contrastbox {
-  padding-top: 40%;
-  padding-left: 8%;
   outline: none;
 }
 
@@ -448,9 +454,7 @@ form input[type=email], form textarea[type=text] {
     padding-left: 0%;
     margin-left: -5%;
     line-height: 1.2;
-    font-family: "Gopher", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    font-family: "Gopher Display", serif;
     font-size: 2em;
   }
 

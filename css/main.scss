@@ -448,22 +448,18 @@ input, textarea, form {
 
 /* ****************  FOOTER  **************** */
 #contrast-img {
-  width:10%;
+  width:7%;
   background-color: transparent;
   border-radius: 0px;
+  outline-color: $blush;
   -moz-outline-radius: 0px;
   right: 1em;
-  outline: none;
   cursor: none;
   position: fixed;
-  padding : {
-    top: 42%;
+  margin : {
+    top: 43%;
     right: 2%;
   }
-}
-
-.contrastbox {
-  outline: none;
 }
 
 button {
@@ -511,6 +507,7 @@ a:hover {
   }
 
   form {
+    padding-right: 4%;
 
     // <label> -
     label {
@@ -639,6 +636,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
   }
 
   form {
+    padding-right: 9%;
 
     // <label> -
     label {
@@ -661,6 +659,11 @@ and (-webkit-min-device-pixel-ratio: 2) {
       padding: {
         left: 1rem;
       }
+    }
+
+    .close-button {
+      padding-right: 15%;
+      margin-top: -3%;
     }
 
     // <button class="btn">

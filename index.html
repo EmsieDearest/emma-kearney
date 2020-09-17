@@ -70,7 +70,7 @@
                   id="my-form"
                   role="form"
                   aria-label="Contact me"
-                  aria-labelledby="contactform"
+                  aria-labelledby="mySidepanel"
                   aria-expanded="true"
                   noValidate>
                 <!-- Gotcha -->
@@ -94,9 +94,8 @@
                                        id="name"
                                        aria-required="true"
                                        required="required"
-                                       tabindex="0"
-                                       aria-describedby="errName">
-                            <p id="err1" class="err err1 errName">No name?</p>
+                                       tabindex="0">
+                            <p id="err1 errName" class="err err1 errName">No name?</p>
                         </div>
                     </div>
                 </div>
@@ -117,8 +116,7 @@
                                        aria-required="true"
                                        required="required"
                                        id="email"
-                                       tabindex="0"
-                                       aria-describedby="errEmail">
+                                       tabindex="0">
                             <p id="err2" class="err err2 errEmail">No email?</p>
                         </div>
                     </div>
@@ -168,14 +166,15 @@
 <main id="main">
         <div class="top row">
             <div class="left col-sm-11">
-                <h1 class="intro" id="intro">designer <img src="img/magicwand.svg" class="magicwand" alt="" role="presentation"> front-end developer <img src="img/lightning.svg" class="lightning" alt="" role="presentation"> accessibility specialist <img src="img/flower.svg" class="flower" alt="" role="presentation"> socially
-                    distanced high-fiver <img src="img/hands.svg" class="hands" alt="" role="presentation"> wicked cool <abbr aria-label="Web Content Accessibility Guidelines">WCAG</abbr> compliance.</h1>
+                <h1 class="intro" id="intro">designer <img src="img/magicwand-blue.svg" class="magicwand" alt="" role="presentation"> front-end developer <img src="img/lightning-blue.svg" class="lightning" alt="" role="presentation"> accessibility specialist <img src="img/flower-blue.svg" class="flower" alt="" role="presentation"> socially
+                    distanced high-fiver <img src="img/hands-blue.svg" class="hands" alt="" role="presentation"> wicked cool <abbr aria-label="Web Content Accessibility Guidelines">WCAG</abbr> compliance.</h1>
             </div>
             <!---------- Contrast Button ------------>
             <div class="col-sm-1 contrastbox">
                 <button id="contrast-img"
-                   tabindex="0">
-                    <img class="contrast-img" src="img/contrast.svg" alt="Change color scheme" role="presentation">
+                        aria-label="Change color scheme"
+                        tabindex="0">
+                    <img class="contrast-img" src="img/contrast.svg" alt="" role="presentation">
                 </button>
             </div>
         </div>

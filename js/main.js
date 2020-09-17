@@ -54,7 +54,6 @@ $(window).on('scroll', function(e) {});
 /* Set the width of the sidebar to 50% (show it) */
 function openNav() {
     let contactBtn = $('.contactbtn');
-    let toggleAriaExpanded = contactBtn.attr('class');
 
     // Toggle Visibility
     const toggleSidepanelVisibility = () => {
@@ -67,7 +66,7 @@ function openNav() {
     };
 
     // Decipher screen size
-    let x = window.matchMedia("(max-width: 700px)");
+    let x = window.matchMedia("(max-width: 768px)");
     if (x.matches) { // If media query matches
         $('#mySidepanel').css('width', '110%');
     } else {
@@ -77,7 +76,7 @@ function openNav() {
     toggleSidepanelVisibility();
 
     // Toggle ARIA-Expanded
-    contactBtn.attr("aria-expanded", toggleAriaExpanded.replace("false", "true"));
+    contactBtn.attr("aria-expanded", "true");
 
     form.focus();
 }
@@ -90,7 +89,6 @@ function closeNav() {
     let toggleAriaExpanded = contactBtn.attr('class');
     document.getElementById("mySidepanel").style.width = "0";
     contactBtn.attr("aria-expanded", toggleAriaExpanded.replace("true", "false"));
-
 }
 
 
@@ -117,11 +115,18 @@ let yellowFilter = 'invert(88%) sepia(14%) saturate(990%) hue-rotate(341deg) bri
 
 // Place GIF on Hover
 $(function() {
-    contrastButton.on('mouseover',function(){
-        let src = $(this).attr("src");
-        let switchClass = $(this).attr('class');
-        $(this).attr("src", src.replace("img/contrast.svg", "img/dothewave.gif"));
-        $(this).attr("class", switchClass.replace("contrast-img", "doTheWave"));
+    contrastButton.on('mouseover click tap keydown',function(e){
+        if (e.key === 13){
+            let src = $(this).attr("src");
+            let switchClass = $(this).attr('class');
+            $(this).attr("src", src.replace("img/contrast.svg", "img/dothewave.gif"));
+            $(this).attr("class", switchClass.replace("contrast-img", "doTheWave"));
+        } else {
+            let src = $(this).attr("src");
+            let switchClass = $(this).attr('class');
+            $(this).attr("src", src.replace("img/contrast.svg", "img/dothewave.gif"));
+            $(this).attr("class", switchClass.replace("contrast-img", "doTheWave"));
+        }
     });
     contrastButton.on('mouseleave',function() {
         let src = $(this).attr("src");
@@ -136,13 +141,6 @@ const logoFocus = () => {
     let switchClass = $(this).attr('class');
     $(this).attr("src", src.replace('img/wave.svg', "img/logo-focus.svg"));
 }
-
-contrastButton.on('focusin', function(){
-    let src = $(this).attr("src");
-    let switchClass = $(this).attr('class');
-    $(this).attr("src", "img/dothewave.gif");
-    $(this).attr("class", switchClass.replace("contrast-img", "doTheWave"));
-})
 
 // Define Theme Parameters
 const blackOnBlush = () => {
@@ -170,7 +168,10 @@ const blackOnBlush = () => {
     $('label').css('color', 'black');
     btn.css("backgroundColor", 'black');
     $('.intro').css('color', 'black');
-    $('.magicwand, .lightning, .flower, .hands').css('filter', blackFilter)
+    $('.lightning').attr("src", "img/lightning.svg");
+    $('.hands').attr("src", "img/hands.svg");
+    $('.flower').attr("src", "img/flower.svg");
+    $('.magicwand').attr("src", "img/magicwand.svg");
     $('.sidepanel').css({
         'backgroundColor': blush,
         'borderRight': '0.13rem solid black',
@@ -200,6 +201,7 @@ const blackOnBlush = () => {
             let switchClass = $this.attr('class');
             $(this).attr("src", "img/dothewave_blk-on-blsh.gif");
             $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
+            $('#contrast-img:focus').css('outline', blush);
         })
         contrastButton.on('mouseleave', function(){
             let src = $(this).attr("src");
@@ -211,7 +213,7 @@ const blackOnBlush = () => {
 }
 
 const blushOnBlack = () => {
-    $('#cursor').css('filter', cherryFilter);
+    $('#cursor').css('filter', blushFilter);
     $("body").css("backgroundColor", 'black');
     $('#skip').on('focus', function(){
         $('#skip').css('color', blush);
@@ -239,7 +241,10 @@ const blushOnBlack = () => {
         'color': 'black',
     });
     $('.intro').css('color', blush);
-    $('.magicwand, .lightning, .flower, .hands').css('filter', blushFilter)
+    $('.lightning').attr("src", "img/lightning-yellow.svg");
+    $('.hands').attr("src", "img/hands-yellow.svg");
+    $('.flower').attr("src", "img/flower-yellow.svg");
+    $('.magicwand').attr("src", "img/magicwand-yellow.svg");
     $('.sidepanel').css({
         'backgroundColor': 'black',
         'borderRight': '0.13rem solid #fff6f6',
@@ -264,6 +269,7 @@ const blushOnBlack = () => {
             let switchClass = $this.attr('class');
             $(this).attr("src", "img/dothewave_blsh-on-blk.gif");
             $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
+            $('#contrast-img:focus').css('outline', 'black');
         })
         contrastButton.on('mouseleave', function(){
             let src = $(this).attr("src");
@@ -304,7 +310,10 @@ const cherryOnYellow = () => {
         'color': yellow
     });
     $('.intro').css('color', cherry);
-    $('.magicwand, .lightning, .flower, .hands').css('filter', cherryFilter)
+    $('.lightning').attr("src", "img/lightning-blue.svg");
+    $('.hands').attr("src", "img/hands-blue.svg");
+    $('.flower').attr("src", "img/flower-blue.svg");
+    $('.magicwand').attr("src", "img/magicwand-blue.svg");
     $('.sidepanel').css({
         'backgroundColor': yellow,
         'borderRight': '0.13rem solid #fa0636',
@@ -333,6 +342,7 @@ const cherryOnYellow = () => {
             let switchClass = $this.attr('class');
             $(this).attr("src", "img/dothewave.gif");
             $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
+            $('#contrast-img:focus').css('outline', yellow);
         })
         contrastButton.on('mouseleave', function(){
             let src = $(this).attr("src");
@@ -372,7 +382,10 @@ const cherryOnBlush = () => {
         'color': blush
     })
     $('.intro').css('color', cherry);
-    $('.magicwand, .lightning, .flower, .hands').css('filter', cherryFilter)
+    $('.lightning').attr("src", "img/lightning-blue.svg");
+    $('.hands').attr("src", "img/hands-blue.svg");
+    $('.flower').attr("src", "img/flower-blue.svg");
+    $('.magicwand').attr("src", "img/magicwand-blue.svg");
     $('.sidepanel').css({
         'backgroundColor': blush,
         'borderRight': '0.13rem solid #fa0636',
@@ -403,6 +416,7 @@ const cherryOnBlush = () => {
             let switchClass = $this.attr('class');
             $(this).attr("src", "img/dothewave.gif");
             $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
+            $('#contrast-img:focus').css('outline', blush);
         })
         contrastButton.on('mouseleave', function(){
             let src = $(this).attr("src");
@@ -414,7 +428,7 @@ const cherryOnBlush = () => {
 }
 
 const blushOnForest = () => {
-    $('#cursor').css('filter', blackFilter)
+    $('#cursor').css('filter', blushFilter)
     $("body").css("backgroundColor", forest);
     $('#skip').on('focus', function(){
         $('#skip').css('color', blush);
@@ -442,10 +456,13 @@ const blushOnForest = () => {
         'color': forest
     })
     $('.intro').css('color', blush);
-    $('.magicwand, .lightning, .flower, .hands').css('filter', blushFilter)
+    $('.lightning').attr("src", "img/lightning-yellow.svg");
+    $('.hands').attr("src", "img/hands-yellow.svg");
+    $('.flower').attr("src", "img/flower-yellow.svg");
+    $('.magicwand').attr("src", "img/magicwand-yellow.svg");
     $('.sidepanel').css({
         'backgroundColor': forest,
-        'borderRight': '0.13rem solid #fff6f6',
+        'borderRight': '0.13rem solid #fff6f6'
     });
     $('.close-button').css('filter', blushFilter);
     $('.form-input').css({
@@ -473,6 +490,7 @@ const blushOnForest = () => {
             let switchClass = $this.attr('class');
             $(this).attr("src", "img/dothewave_blsh-on-blk.gif");
             $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
+            $('#contrast-img:focus').css('outline', forest);
         })
         contrastButton.on('mouseleave', function(){
             let src = $(this).attr("src");
@@ -512,7 +530,10 @@ const cherryOnLavendar = () => {
         'color': lavendar
     })
     $('.intro').css('color', cherry);
-    $('.magicwand, .lightning, .flower, .hands').css('filter', cherryFilter)
+    $('.lightning').attr("src", "img/lightning-blue.svg");
+    $('.hands').attr("src", "img/hands-blue.svg");
+    $('.flower').attr("src", "img/flower-blue.svg");
+    $('.magicwand').attr("src", "img/magicwand-blue.svg");
     $('.sidepanel').css({
         'backgroundColor': lavendar,
         'borderRight': '0.13rem solid #fa0636',
@@ -543,6 +564,7 @@ const cherryOnLavendar = () => {
             let switchClass = $this.attr('class');
             $(this).attr("src", "img/dothewave.gif");
             $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
+            $('#contrast-img:focus').css('outline', lavendar);
         })
         contrastButton.on('mouseleave', function(){
             let src = $(this).attr("src");
@@ -558,7 +580,7 @@ const cherryOnLavendar = () => {
 $(function(){
     const theme = [1, 2, 3, 4, 5, 6];
     let i = 0;
-    contrastButtonId.on('mousedown', function(){
+    contrastButtonId.on('mousedown keydown', function(){
         i = (i++) % theme.length;
         switch (theme[i]) {
             case i = 1:

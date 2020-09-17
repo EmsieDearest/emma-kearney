@@ -365,20 +365,16 @@ input, textarea, form {
 
 /* ****************  FOOTER  **************** */
 #contrast-img {
-  width: 10%;
+  width: 7%;
   background-color: transparent;
   border-radius: 0px;
+  outline-color: #f7dfe8;
   -moz-outline-radius: 0px;
   right: 1em;
-  outline: none;
   cursor: none;
   position: fixed;
-  padding-top: 42%;
-  padding-right: 2%;
-}
-
-.contrastbox {
-  outline: none;
+  margin-top: 43%;
+  margin-right: 2%;
 }
 
 button {
@@ -426,6 +422,9 @@ a:hover {
     padding-top: 10%;
   }
 
+  form {
+    padding-right: 4%;
+  }
   form label {
     font-size: 1.2rem;
   }
@@ -518,6 +517,9 @@ form input[type=email], form textarea[type=text] {
     padding-top: 10%;
   }
 
+  form {
+    padding-right: 9%;
+  }
   form label {
     font-size: 1.2rem;
   }
@@ -529,6 +531,10 @@ form input[type=email], form textarea[type=text] {
 form input[type=email], form textarea[type=text] {
     font-size: 1.2rem !important;
     padding-left: 1rem;
+  }
+  form .close-button {
+    padding-right: 15%;
+    margin-top: -3%;
   }
   form .btn {
     padding: 0.5em 0.9em;

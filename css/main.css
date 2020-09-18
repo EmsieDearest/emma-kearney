@@ -107,6 +107,7 @@ body {
 /* Focus styles */
 [role=link]:focus, [rolebutton]:focus, [role=tab]:focus {
   outline: 0.08em solid #fa0636;
+  padding: 0.5em;
 }
 
 /* ****************  HEADER  **************** */
@@ -128,8 +129,9 @@ body {
   height: auto;
   color: #fa0636;
   font-family: "Gopher Display", sans-serif;
-  font-size: 2em;
-  padding: 0.4em;
+  font-size: 1.7em;
+  font-weight: bolder;
+  text-decoration: underline;
 }
 
 /* ****************  NAV  **************** */
@@ -138,12 +140,12 @@ body {
   color: #fa0636;
   text-align: center;
   font-family: "Gopher Display", sans-serif;
-  font-size: 2em;
+  font-size: 1.8em;
 }
 
 .nav-link:focus {
   outline: none;
-  font-weight: bolder;
+  text-decoration: underline;
 }
 
 .nav-link:hover, .contactbtn:hover, .btn:hover, .logo:hover, .form-input:hover, label:hover, form:hover {
@@ -153,6 +155,10 @@ body {
 .contactbtn {
   border: transparent;
   margin-left: 0.3em;
+}
+
+.logo {
+  outline: none;
 }
 
 /* ****************  CONTACT FORM  **************** */
@@ -167,7 +173,7 @@ body {
   top: 0;
   left: -10px;
   visibility: hidden;
-  background-color: #f7dfe8;
+  background-color: #faecae;
   border-right: 0.08em solid #fa0636;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -225,8 +231,10 @@ form label {
   color: #fa0636;
   width: 100%;
   padding-top: 2%;
+  letter-spacing: 0.1em;
   font-family: "Gopher Display", sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: bolder;
 }
 form .form-input {
   background-color: transparent;
@@ -276,16 +284,6 @@ form textarea::-webkit-scrollbar {
 form textarea::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
-form .btn:focus {
-  outline-style: none !important;
-  box-shadow: none !important;
-  border: 0.08em solid #fa0636 !important;
-  background-color: #f7dfe8;
-  color: #fa0636;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
 form input::placeholder {
   font-family: "Gopher Display", sans-serif;
   font-size: 2rem;
@@ -308,15 +306,27 @@ form .err-p {
   visibility: hidden;
 }
 form .btn {
-  padding: 0.5em 0.9em;
+  padding: 1em 0.9em;
   display: block;
   margin-top: 0.5rem;
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-family: "Gopher Display", sans-serif;
-  color: #f7dfe8;
+  letter-spacing: 0.1em;
+  color: #faecae;
   border-radius: 0px;
+  border-color: black;
   background-color: #fa0636;
+}
+form .btn:focus, form .btn:hover {
+  outline-style: none !important;
+  box-shadow: none !important;
+  border: 0.08em solid #fa0636 !important;
+  background-color: #f7dfe8;
+  color: #fa0636;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 form .gotcha {
   opacity: 0;

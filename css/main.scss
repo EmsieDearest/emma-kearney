@@ -26,6 +26,10 @@
 $cherry: #fa0636;
 $blush: #f7dfe8;
 $black: grayscale(100%) contrast(2000%);
+$forest: #428557;
+$lavendar: #d7bfe1;
+$yellow: #faecae;
+$blue: #0068ff;
 
 /* Dimension Variables */
 $full: 100%;
@@ -127,6 +131,7 @@ body {
 /* Focus styles */
 [role=link]:focus, [rolebutton]:focus, [role=tab]:focus {
   outline: $standard-border;
+  padding: 0.5em;
 }
 
 
@@ -152,9 +157,10 @@ body {
     color: $cherry;
     font : {
       family: $gopher;
-      size: 2em;
+      size: 1.7em;
+      weight: bolder;
     }
-    padding: 0.4em;
+    text-decoration: underline;
   }
 }
 
@@ -167,13 +173,13 @@ body {
   text-align: center;
   font : {
     family: $gopher;
-    size: 2em;
+    size: 1.8em;
   }
 }
 
 .nav-link:focus {
   outline: none;
-  font-weight: bolder;
+  text-decoration: underline;
 }
 
 .nav-link:hover, .contactbtn:hover, .btn:hover, .logo:hover, .form-input:hover, label:hover, form:hover {
@@ -183,6 +189,10 @@ body {
 .contactbtn {
   border: transparent;
   margin-left: 0.3em;
+}
+
+.logo {
+  outline: none;
 }
 
 /* ****************  CONTACT FORM  **************** */
@@ -195,7 +205,7 @@ body {
   top: 0;
   left:-10px;
   visibility: hidden;
-  background-color: $blush;
+  background-color: $yellow;
   border-right: $standard-border;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -259,12 +269,14 @@ form {
 
   // <label> -
    label {
-    color: $cherry;
-    width: $full;
+     color: $cherry;
+     width: $full;
      padding-top: 2%;
+     letter-spacing: 0.1em;
     font: {
       family: $gopher;
-      size: 1rem;
+      size: 1.1rem;
+      weight: bolder;
     }
   }
 
@@ -333,17 +345,6 @@ form {
     border-radius: 10px;
   }
 
-  .btn:focus {
-    outline-style: none !important;
-    box-shadow: none !important;
-    border: $standard-border !important;
-    background-color: $blush;
-    color: $cherry;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-  }
-
   input::placeholder {
     font: {
       family: $gopher;
@@ -377,19 +378,32 @@ form {
 
   // <button class="btn">
    .btn {
-     padding: 0.5em 0.9em;
+     padding: 1em 0.9em;
      display: block;
      margin : {
       top: 0.5rem;
      }
      width: 100%;
      font : {
-      size: 2rem;
+      size: 1.3rem;
       family: $gopher;
      }
-     color: $blush;
+     letter-spacing: 0.1em;
+     color: $yellow;
      border-radius: 0px;
+     border-color: black;
      background-color: $cherry;
+  }
+
+  .btn:focus, .btn:hover {
+    outline-style: none !important;
+    box-shadow: none !important;
+    border: $standard-border !important;
+    background-color: $blush;
+    color: $cherry;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
   }
 
   // <input class="gotcha">

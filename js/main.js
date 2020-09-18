@@ -106,12 +106,12 @@ let blush = '#f7dfe8';
 let forest = '#428557';
 let lavendar = '#d7bfe1';
 let yellow = '#faecae';
+let blue = '#0068ff';
 let blushFilter = 'invert(100%) sepia(17%) saturate(2839%) hue-rotate(216deg) brightness(100%) contrast(93%)';
 let cherryFilter = 'invert(16%) sepia(93%) saturate(6576%) hue-rotate(343deg) brightness(97%) contrast(102%)';
 let blackFilter = 'grayscale(100%) contrast(2000%)';
 let forestFilter = 'invert(44%) sepia(55%) saturate(375%) hue-rotate(86deg) brightness(90%) contrast(87%)';
-let lavendarFilter = 'filter: invert(98%) sepia(72%) saturate(1547%) hue-rotate(186deg) brightness(90%) contrast(95%)';
-let yellowFilter = 'invert(88%) sepia(14%) saturate(990%) hue-rotate(341deg) brightness(110%) contrast(96%)';
+let blueFilter = 'invert(28%) sepia(58%) saturate(6554%) hue-rotate(211deg) brightness(104%) contrast(104%);;'
 
 // Place GIF on Hover
 $(function() {
@@ -136,15 +136,13 @@ $(function() {
     });
 });
 
-const logoFocus = () => {
-    let src = $(this).attr("src");
-    let switchClass = $(this).attr('class');
-    $(this).attr("src", src.replace('img/wave.svg', "img/logo-focus.svg"));
-}
+logo.on('keydown tap', function(){
+    $(this).attr("src", "img/logo-focus.svg");
+});
 
 // Define Theme Parameters
 const blackOnBlush = () => {
-    $("body").css("backgroundColor", blush);
+    $("body").css("background-color", blush);
     $("#cursor").css("filter", cherryFilter);
     $('#skip').on('focus', function(){
         $('#skip').css('color', 'black');
@@ -153,45 +151,41 @@ const blackOnBlush = () => {
     $('p').css('color', 'black');
     $('::-webkit-resizer').css('color', 'black');
     $('.nav-link').css('color', 'black');
-    $('input, textarea').css('filter', blackFilter);
     $('input:focus, textarea:focus, textarea:active, input:active').css({
-        'color': 'black !important',
         'transition': 'background-color 5000s',
-        'border': '0.17em solid black !important'
+        'border-weight': '0.17em',
     });
-    $('textarea, input').css({
-        'color': 'black !important',
-        'border': '0.13rem solid black !important',
-        'backgroundColor': blush
-    });
-    $('textarea').css('color', 'black');
-    $('label').css('color', 'black');
-    btn.css("backgroundColor", 'black');
+    $('label, textarea, input').css('filter', 'invert(100%) sepia(50%) hue-rotate(-260deg) brightness(120%) contrast(93%)');
     $('.intro').css('color', 'black');
     $('.lightning').attr("src", "img/lightning.svg");
     $('.hands').attr("src", "img/hands.svg");
     $('.flower').attr("src", "img/flower.svg");
     $('.magicwand').attr("src", "img/magicwand.svg");
     $('.sidepanel').css({
-        'backgroundColor': blush,
+        'background-color': blue,
         'borderRight': '0.13rem solid black',
     });
-    $('.close-button').css('filter', blackFilter);
-    $('.form-input').css({
-        'border': '0.13rem solid black',
-        '-webkit-box-shadow': 'black'
-    });
-    $('.btn:focus').css({
-        'backgroundColor': 'transparent',
-        'color': 'black',
-        'border': '0.13rem solid black'
-    });
-    btn.on('mousedown', function(event){
-        event.target.css({
-            'backgroundColor': 'transparent',
-            'color': 'black',
-            'border': '0.13rem solid black'
-        })
+    $('.close-button').css('filter', 'invert(100%) sepia(50%) hue-rotate(-260deg) brightness(120%) contrast(93%)');
+    // btn event styles
+    btn.css({
+        'background-color': 'black !important'
+    })
+    $(function(){
+        btn.on('hover focus', function() {
+            $(this).css({
+                //'filter': 'invert(100%) sepia(50%) hue-rotate(-260deg) brightness(120%) contrast(93%)',
+                'background-color': blushFilter,
+                'color': 'black',
+                'border-color': 'black'
+            });
+        });
+        btn.on('mousedown', function(event){
+            event.target.css({
+                'background-color': blue,
+                'color': 'black',
+                'border-color': 'black'
+            });
+        });
     })
     $('.err').css('color', 'black');
     $('.success-p').css('color', 'black');
@@ -212,73 +206,73 @@ const blackOnBlush = () => {
     })
 }
 
-const blushOnBlack = () => {
-    $('#cursor').css('filter', blushFilter);
-    $("body").css("backgroundColor", 'black');
-    $('#skip').on('focus', function(){
-        $('#skip').css('color', blush);
-    });
-    $(".logo").css('filter', blushFilter);
-    $('p').css('color', blush);
-    $('::-webkit-resizer').css('color', blush);
-    $('.nav-link').css('color', blush);
-    $('input, textarea').css('filter', blushFilter);
-    $('input:focus, textarea:focus, textarea:active, textarea:-internal-autofill-selected, input:active, input:-internal-autofill-selected').css({
-        'color': '#fff6f6 !important',
-        'transition': 'background-color 5000s',
-        'border': '0.17em solid #fff6f6 !important'
-    });
-    $('textarea, input').css({
-        'color': '#fff6f6 !important',
-        'border': '0.13rem solid #fff6f6 !important',
-        'backgroundColor': 'black'
-    });
-    $('label').css({
-        'color': blush,
-    });
-    btn.css({
-        "backgroundColor": blush,
-        'color': 'black',
-    });
-    $('.intro').css('color', blush);
-    $('.lightning').attr("src", "img/lightning-yellow.svg");
-    $('.hands').attr("src", "img/hands-yellow.svg");
-    $('.flower').attr("src", "img/flower-yellow.svg");
-    $('.magicwand').attr("src", "img/magicwand-yellow.svg");
-    $('.sidepanel').css({
-        'backgroundColor': 'black',
-        'borderRight': '0.13rem solid #fff6f6',
-    });
-    $('.close-button').css('filter', blushFilter);
-    $('.form-input').css({
-        'border': '0.13rem solid #fff6f6',
-        '-webkit-box-shadow': '0 0 0px 1000px black inset !important'
-    });
-    btn.on('focus', function(){
-        $('.btn').css({
-            'backgroundColor': 'black',
-            'color': blush,
-            'border': '0.13rem solid #fff6f6'
-        })
-    })
-    $('.err').css('color', blush);
-    $('.success-p').css('color', blush);
-    $(function (){
-        contrastButton.on('mouseover click tap', function(){
-            let $this = $(this);
-            let switchClass = $this.attr('class');
-            $(this).attr("src", "img/dothewave_blsh-on-blk.gif");
-            $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
-            $('#contrast-img:focus').css('outline', 'black');
-        })
-        contrastButton.on('mouseleave', function(){
-            let src = $(this).attr("src");
-            let switchClass = $(this).attr('class');
-            $(this).attr("src", "img/contrast-blush.svg");
-            $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
-        })
-    })
-}
+// const blushOnBlack = () => {
+//     $('#cursor').css('filter', blushFilter);
+//     $("body").css("backgroundColor", 'black');
+//     $('#skip').on('focus', function(){
+//         $('#skip').css('color', blush);
+//     });
+//     $(".logo").css('filter', blushFilter);
+//     $('p').css('color', blush);
+//     $('::-webkit-resizer').css('color', blush);
+//     $('.nav-link').css('color', blush);
+//     $('input, textarea').css('filter', blushFilter);
+//     $('input:focus, textarea:focus, textarea:active, textarea:-internal-autofill-selected, input:active, input:-internal-autofill-selected').css({
+//         'color': '#fff6f6 !important',
+//         'transition': 'background-color 5000s',
+//         'border': '0.17em solid #fff6f6 !important'
+//     });
+//     $('textarea, input').css({
+//         'color': '#fff6f6 !important',
+//         'border': '0.13rem solid #fff6f6 !important',
+//         'backgroundColor': 'black'
+//     });
+//     $('label').css({
+//         'color': blush,
+//     });
+//     btn.css({
+//         "backgroundColor": blush,
+//         'color': 'black',
+//     });
+//     $('.intro').css('color', blush);
+//     $('.lightning').attr("src", "img/lightning-yellow.svg");
+//     $('.hands').attr("src", "img/hands-yellow.svg");
+//     $('.flower').attr("src", "img/flower-yellow.svg");
+//     $('.magicwand').attr("src", "img/magicwand-yellow.svg");
+//     $('.sidepanel').css({
+//         'backgroundColor': 'black',
+//         'borderRight': '0.13rem solid #fff6f6',
+//     });
+//     $('.close-button').css('filter', blushFilter);
+//     $('.form-input').css({
+//         'border': '0.13rem solid #fff6f6',
+//         '-webkit-box-shadow': '0 0 0px 1000px black inset !important'
+//     });
+//     btn.on('focus', function(){
+//         $('.btn').css({
+//             'backgroundColor': 'black',
+//             'color': blush,
+//             'border': '0.13rem solid #fff6f6'
+//         })
+//     })
+//     $('.err').css('color', blush);
+//     $('.success-p').css('color', blush);
+//     $(function (){
+//         contrastButton.on('mouseover click tap', function(){
+//             let $this = $(this);
+//             let switchClass = $this.attr('class');
+//             $(this).attr("src", "img/dothewave_blsh-on-blk.gif");
+//             $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
+//             $('#contrast-img:focus').css('outline', 'black');
+//         })
+//         contrastButton.on('mouseleave', function(){
+//             let src = $(this).attr("src");
+//             let switchClass = $(this).attr('class');
+//             $(this).attr("src", "img/contrast-blush.svg");
+//             $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
+//         })
+//     })
+// }
 
 const cherryOnYellow = () => {
     $("body").css("backgroundColor", yellow);
@@ -290,50 +284,36 @@ const cherryOnYellow = () => {
     $('p').css('color', cherry);
     $('::-webkit-resizer').css('color', cherry);
     $('.nav-link').css('color', cherry);
-    $('input, textarea').css('filter', cherryFilter);
     $('input:focus, textarea:focus, textarea:active, textarea:-internal-autofill-selected, input:active, input:-internal-autofill-selected').css({
         'color': '#fa0636 !important',
         'transition': 'background-color 5000s',
         'border': '0.17em solid #fa0636 !important'
     });
-    $('textarea, input').css({
-        'color': '#fa0636 !important',
-        'border': '0.13rem solid #fa0636 !important',
-        'backgroundColor': yellow
+    $('label, input, textarea').css({
+        'color': blue,
+        'backgroundColor': 'transparent !important',
+        'filter': blackFilter
     });
-    $('label').css({
-        'color': cherry,
-        'backgroundColor': 'transparent !important'
-    });
-    btn.css({
-        "backgroundColor": cherry,
-        'color': yellow
-    });
+    // btn event styles
+    $(function(){
+        btn.on('mousedown', function(event){
+            event.target.css({
+                'background-color': blush,
+                'color': cherry,
+                'border-color': cherry
+            });
+        });
+    })
     $('.intro').css('color', cherry);
     $('.lightning').attr("src", "img/lightning-blue.svg");
     $('.hands').attr("src", "img/hands-blue.svg");
     $('.flower').attr("src", "img/flower-blue.svg");
     $('.magicwand').attr("src", "img/magicwand-blue.svg");
     $('.sidepanel').css({
-        'backgroundColor': yellow,
-        'borderRight': '0.13rem solid #fa0636',
+        'backgroundColor': blush,
+        'borderRight': '0.13rem solid #fa0636'
     });
     $('.close-button').css('filter', cherryFilter);
-    $('.form-input').css('border', '0.13rem solid #fa0636');
-    btn.on('focus', function() {
-        btn.css({
-            'backgroundColor': yellow,
-            'color': cherry,
-            'border': '0.14em solid #fa0636'
-        });
-    });
-    btn.on('mousedown', function(event){
-        event.target.css({
-            'backgroundColor': yellow,
-            'color': cherry,
-            'border': '0.08em solid #fa0636'
-        })
-    })
     $('.err').css('color', cherry);
     $('.success-p').css('color', cherry);
     $(function (){
@@ -363,7 +343,6 @@ const cherryOnBlush = () => {
     $('p').css('color', cherry);
     $('::-webkit-resizer').css('color', cherry);
     $('.nav-link').css('color', cherry);
-    $('input, textarea').css('filter', cherryFilter);
     $('input:focus, textarea:focus, textarea:active, textarea:-internal-autofill-selected, input:active, input:-internal-autofill-selected').css({
         'color': '#fa0636 !important',
         'transition': 'background-color 5000s',
@@ -374,10 +353,12 @@ const cherryOnBlush = () => {
         'border': '0.13rem solid #fa0636 !important',
         'backgroundColor': blush
     });
-    $('label').css({
+    $('label, input, textarea').css({
         'color': cherry,
-        'backgroundColor': 'transparent !important'
-    });    btn.css({
+        'backgroundColor': 'transparent !important',
+        'filter': cherryFilter
+    });
+    btn.css({
         "backgroundColor": cherry,
         'color': blush
     })
@@ -387,13 +368,10 @@ const cherryOnBlush = () => {
     $('.flower').attr("src", "img/flower-blue.svg");
     $('.magicwand').attr("src", "img/magicwand-blue.svg");
     $('.sidepanel').css({
-        'backgroundColor': blush,
+        'backgroundColor': yellow,
         'borderRight': '0.13rem solid #fa0636',
     });
     $('.close-button').css('filter', cherryFilter);
-    $('.form-input').css({
-        'border': '0.13rem solid #fa0636'
-    });
     btn.on('focus', function(){
         btn.css({
             'backgroundColor': 'transparent',
@@ -427,158 +405,159 @@ const cherryOnBlush = () => {
     })
 }
 
-const blushOnForest = () => {
-    $('#cursor').css('filter', blushFilter)
-    $("body").css("backgroundColor", forest);
-    $('#skip').on('focus', function(){
-        $('#skip').css('color', blush);
-    });
-    $(".logo").css('filter', blushFilter);
-    $('p').css('color', blush);
-    $('::-webkit-resizer').css('color', blush);
-    $('.nav-link').css('color', blush);
-    $('input, textarea').css('filter', blushFilter);
-    $('input:focus, textarea:focus, textarea:active, textarea:-internal-autofill-selected, input:active, input:-internal-autofill-selected').css({
-        'color': '#fff6f6 !important',
-        'transition': 'background-color 5000s',
-        'border': '0.17em solid #fff6f6 !important'
-    });
-    $('textarea, input').css({
-        'color': '#fff6f6 !important',
-        'border': '0.13rem solid #fff6f6 !important',
-        'backgroundColor': forest
-    });
-    $('label').css({
-        'color': blush,
-        'backgroundColor': 'transparent !important'
-    });    btn.css({
-        "backgroundColor": blush,
-        'color': forest
-    })
-    $('.intro').css('color', blush);
-    $('.lightning').attr("src", "img/lightning-yellow.svg");
-    $('.hands').attr("src", "img/hands-yellow.svg");
-    $('.flower').attr("src", "img/flower-yellow.svg");
-    $('.magicwand').attr("src", "img/magicwand-yellow.svg");
-    $('.sidepanel').css({
-        'backgroundColor': forest,
-        'borderRight': '0.13rem solid #fff6f6'
-    });
-    $('.close-button').css('filter', blushFilter);
-    $('.form-input').css({
-        'border': '0.13rem solid #fff6f6'
-    });
-    btn.on('focus', function(){
-        btn.css({
-            'backgroundColor': 'transparent',
-            'color': blush,
-            'border': '0.13rem solid #fff6f6'
-        })
-    });
-    btn.on('mousedown', function(event){
-        btn.css({
-            'backgroundColor': 'transparent',
-            'color': blush,
-            'border': '0.1rem solid #fff6f6'
-        })
-    })
-    $('.err').css('color', blush);
-    $('.success-p').css('color', blush);
-    $(function (){
-        contrastButton.on('mouseover click tap', function(){
-            let $this = $(this);
-            let switchClass = $this.attr('class');
-            $(this).attr("src", "img/dothewave_blsh-on-blk.gif");
-            $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
-            $('#contrast-img:focus').css('outline', forest);
-        })
-        contrastButton.on('mouseleave', function(){
-            let src = $(this).attr("src");
-            let switchClass = $(this).attr('class');
-            $(this).attr("src", "img/contrast-blush.svg");
-            $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
-        })
-    })
-}
+// const blushOnForest = () => {
+//     $('#cursor').css('filter', blushFilter)
+//     $("body").css("backgroundColor", forest);
+//     $('#skip').on('focus', function(){
+//         $('#skip').css('color', blush);
+//     });
+//     $(".logo").css('filter', blushFilter);
+//     $('p').css('color', blush);
+//     $('::-webkit-resizer').css('color', blush);
+//     $('.nav-link').css('color', blush);
+//     $('input, textarea').css('filter', blushFilter);
+//     $('input:focus, textarea:focus, textarea:active, textarea:-internal-autofill-selected, input:active, input:-internal-autofill-selected').css({
+//         'color': '#fff6f6 !important',
+//         'transition': 'background-color 5000s',
+//         'border': '0.17em solid #fff6f6 !important'
+//     });
+//     $('textarea, input').css({
+//         'color': '#fff6f6 !important',
+//         'border': '0.13rem solid #fff6f6 !important',
+//         'backgroundColor': forest
+//     });
+//     $('label').css({
+//         'color': blush,
+//         'backgroundColor': 'transparent !important'
+//     });    btn.css({
+//         "backgroundColor": blush,
+//         'color': forest
+//     })
+//     $('.intro').css('color', blush);
+//     $('.lightning').attr("src", "img/lightning-yellow.svg");
+//     $('.hands').attr("src", "img/hands-yellow.svg");
+//     $('.flower').attr("src", "img/flower-yellow.svg");
+//     $('.magicwand').attr("src", "img/magicwand-yellow.svg");
+//     $('.sidepanel').css({
+//         'backgroundColor': forest,
+//         'borderRight': '0.13rem solid #fff6f6'
+//     });
+//     $('.close-button').css('filter', blushFilter);
+//     $('.form-input').css({
+//         'border': '0.13rem solid #fff6f6'
+//     });
+//     btn.on('focus', function(){
+//         btn.css({
+//             'backgroundColor': 'transparent',
+//             'color': blush,
+//             'border': '0.13rem solid #fff6f6'
+//         })
+//     });
+//     btn.on('mousedown', function(event){
+//         btn.css({
+//             'backgroundColor': 'transparent',
+//             'color': blush,
+//             'border': '0.1rem solid #fff6f6'
+//         })
+//     })
+//     $('.err').css('color', blush);
+//     $('.success-p').css('color', blush);
+//     $(function (){
+//         contrastButton.on('mouseover click tap', function(){
+//             let $this = $(this);
+//             let switchClass = $this.attr('class');
+//             $(this).attr("src", "img/dothewave_blsh-on-blk.gif");
+//             $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
+//             $('#contrast-img:focus').css('outline', forest);
+//         })
+//         contrastButton.on('mouseleave', function(){
+//             let src = $(this).attr("src");
+//             let switchClass = $(this).attr('class');
+//             $(this).attr("src", "img/contrast-blush.svg");
+//             $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
+//         })
+//     })
+// }
 
-const cherryOnLavendar = () => {
-    $('#cursor').css('filter', blackFilter)
-    $("body").css("backgroundColor", lavendar);
-    $('#skip').on('focus', function(){
-        $('#skip').css('color', cherry);
-    });
-    $(".logo").css('filter', cherryFilter);
-    $('p').css('color', cherry);
-    $('::-webkit-resizer').css('color', cherry);
-    $('.nav-link').css('color', cherry);
-    $('input, textarea').css('filter', cherryFilter);
-    $('input:focus, textarea:focus, textarea:active, textarea:-internal-autofill-selected, input:active, input:-internal-autofill-selected').css({
-        'color': '#fa0636 !important',
-        'transition': 'background-color 5000s',
-        'border': '0.17em solid #fa0636 !important'
-    });
-    $('textarea, input').css({
-        'color': '#fa0636 !important',
-        'border': '0.13rem solid #fa0636 !important',
-        'backgroundColor': lavendar
-    });
-    $('label').css({
-        'color': cherry,
-        'backgroundColor': 'transparent !important'
-    });    btn.css({
-        "backgroundColor": cherry,
-        'color': lavendar
-    })
-    $('.intro').css('color', cherry);
-    $('.lightning').attr("src", "img/lightning-blue.svg");
-    $('.hands').attr("src", "img/hands-blue.svg");
-    $('.flower').attr("src", "img/flower-blue.svg");
-    $('.magicwand').attr("src", "img/magicwand-blue.svg");
-    $('.sidepanel').css({
-        'backgroundColor': lavendar,
-        'borderRight': '0.13rem solid #fa0636',
-    });
-    $('.close-button').css('filter', cherryFilter);
-    $('.form-input').css({
-        'border': '0.13rem solid #fa0636'
-    });
-    btn.on('focus', function(){
-        btn.css({
-            'backgroundColor': 'transparent',
-            'color': cherry,
-            'border': '0.13rem solid #fa0636'
-        })
-    });
-    btn.on('mousedown', function(event){
-        btn.css({
-            'backgroundColor': 'transparent',
-            'color': cherry,
-            'border': '0.1rem solid #fa0636'
-        })
-    })
-    $('.err').css('color', cherry);
-    $('.success-p').css('color', cherry);
-    $(function (){
-        contrastButton.on('mouseover click tap', function(){
-            let $this = $(this);
-            let switchClass = $this.attr('class');
-            $(this).attr("src", "img/dothewave.gif");
-            $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
-            $('#contrast-img:focus').css('outline', lavendar);
-        })
-        contrastButton.on('mouseleave', function(){
-            let src = $(this).attr("src");
-            let switchClass = $(this).attr('class');
-            $(this).attr("src", "img/contrast.svg");
-            $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
-        })
-    })
-}
+// const cherryOnLavendar = () => {
+//     $('#cursor').css('filter', blackFilter)
+//     $("body").css("background-color", lavendar);
+//     $('#skip').on('focus', function(){
+//         $('#skip').css('color', cherry);
+//     });
+//     $(".logo").css('filter', cherryFilter);
+//     $('p').css('color', cherry);
+//     $('::-webkit-resizer').css('color', cherry);
+//     $('.nav-link').css('color', cherry);
+//     $('input, textarea').css('filter', cherryFilter);
+//     $('input:focus, textarea:focus, textarea:active, textarea:-internal-autofill-selected, input:active, input:-internal-autofill-selected').css({
+//         'color': '#fa0636 !important',
+//         'transition': 'background-color 5000s',
+//         'border': '0.17em solid #fa0636 !important'
+//     });
+//     $('textarea, input').css({
+//         'color': '#fa0636 !important',
+//         'border': '0.13rem solid #fa0636 !important',
+//         'background-color': lavendar
+//     });
+//     $('label').css({
+//         'color': cherry,
+//         'background-color': 'transparent !important'
+//     });
+//     btn.css({
+//         "background-color": cherry,
+//         'color': blush
+//     })
+//     $('.intro').css('color', cherry);
+//     $('.lightning').attr("src", "img/lightning-blue.svg");
+//     $('.hands').attr("src", "img/hands-blue.svg");
+//     $('.flower').attr("src", "img/flower-blue.svg");
+//     $('.magicwand').attr("src", "img/magicwand-blue.svg");
+//     $('.sidepanel').css({
+//         'background-color': blush,
+//         'borderRight': '0.13rem solid #fa0636',
+//     });
+//     $('.close-button').css('filter', cherryFilter);
+//     $('.form-input').css({
+//         'border': '0.13rem solid #fa0636'
+//     });
+//     btn.on('focus', function(){
+//         btn.css({
+//             'background-color': 'transparent',
+//             'color': cherry,
+//             'border': '0.13rem solid #fa0636'
+//         })
+//     });
+//     btn.on('mousedown', function(event){
+//         btn.css({
+//             'background-color': 'transparent',
+//             'color': cherry,
+//             'border': '0.1rem solid #fa0636'
+//         })
+//     })
+//     $('.err').css('color', cherry);
+//     $('.success-p').css('color', cherry);
+//     $(function (){
+//         contrastButton.on('mouseover click tap', function(){
+//             let $this = $(this);
+//             let switchClass = $this.attr('class');
+//             $(this).attr("src", "img/dothewave.gif");
+//             $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
+//             $('#contrast-img:focus').css('outline', lavendar);
+//         })
+//         contrastButton.on('mouseleave', function(){
+//             let src = $(this).attr("src");
+//             let switchClass = $(this).attr('class');
+//             $(this).attr("src", "img/contrast.svg");
+//             $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
+//         })
+//     })
+// }
 
 
 // Theme Picker Function
 $(function(){
-    const theme = [1, 2, 3, 4, 5, 6];
+    const theme = [1, 2, 3];
     let i = 0;
     contrastButtonId.on('mousedown keydown', function(){
         i = (i++) % theme.length;
@@ -587,18 +566,9 @@ $(function(){
                 return blackOnBlush();
                 break;
             case i = 2:
-                return blushOnBlack();
-                break;
-            case i = 3:
                 return cherryOnYellow();
                 break;
-            case i = 4:
-                return blushOnForest();
-                break;
-            case i = 5:
-                return cherryOnLavendar();
-                break;
-            case i = 6:
+            case i = 3:
                 return cherryOnBlush()();
                 break;
         }

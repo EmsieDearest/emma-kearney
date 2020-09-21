@@ -46,24 +46,42 @@ let ElementCursor = {
     }
 };
 
-ElementCursor.setCursor($('#cursor'), $('.btn, .form-input, .logo, .nav-link, .close-button, .contrast-img, .doTheWave'));
+ElementCursor.setCursor($('#cursor'), $('.btn, .form-input, .logo, .nav-link, .close-button, .contrast-img, .doTheWave, #skip'));
 $(window).on('scroll', function(e) {});
 
-// Side Panel
+// Set Focus Styles
+$('.logo').on("keypress", () => $('.logo').attr('src', '/img/logo-focus.svg'));
+$('.logo').on("focusout", () => $('.logo').attr('src', '/img/wave.svg'));
 
+$(function() {
+    let logo = $('.logo');
+    logo.on('mouseover focus tap key',function(e){
+        let src = $(this).attr("src");
+        $(this).attr("src", src.replace("img/wave.svg", "img/logo-focus.svg"));
+    });
+    logo.on('mouseleave',function() {
+        let src = $(this).attr("src");
+        $(this).attr("src", src.replace("img/logo-focus.svg", "img/wave.svg"));
+    });
+});
+
+// Side Panel
 /* Set the width of the sidebar to 50% (show it) */
 function openNav() {
     let contactBtn = $('.contactbtn');
 
     // Toggle Visibility
-    const toggleSidepanelVisibility = () => {
-        let toggleSidepanel = $('#mySidepanel');
-        if(toggleSidepanel.css('visibility', 'hidden')) {
-            toggleSidepanel.css('visibility', 'visible');
-        } else {
-            toggleSidepanel.css('visibility', 'hidden');
-        }
-    };
+    let toggleSidepanel = $('#mySidepanel');
+    if(toggleSidepanel.css('visibility', 'hidden')) {
+        toggleSidepanel.css('visibility', 'visible');
+        toggleSidepanel.attr('aria-hidden', 'false'); // mark the form window as visible
+        contactBtn.attr("aria-expanded", "true")
+        form.querySelector("input").focus(); // Focus first input when dialog opens
+    } else {
+        toggleSidepanel.css('visibility', 'hidden');
+        contactBtn.attr("aria-expanded", "false")
+        toggleSidepanel.attr('aria-hidden', 'true'); // mark the form window as hidden
+    }
 
     // Decipher screen size
     let x = window.matchMedia("(max-width: 768px)");
@@ -72,21 +90,16 @@ function openNav() {
     } else {
         document.getElementById("mySidepanel").style.width = "50%";
     }
-
-    toggleSidepanelVisibility();
-
-    // Toggle ARIA-Expanded
-    contactBtn.attr("aria-expanded", "true");
-
-    form.focus();
 }
-
-
 
 /* Set the width of the sidebar to 0 (hide it) */
 function closeNav() {
     let contactBtn = $('.contactbtn');
-    let toggleAriaExpanded = contactBtn.attr('class');
+    let toggleSidepanel = $('#mySidepanel');
+
+    toggleSidepanel.css('visibility', 'hidden');
+    contactBtn.attr("aria-expanded", "false")
+    toggleSidepanel.attr('aria-hidden', 'true'); // mark the form window as hidden
     document.getElementById("mySidepanel").style.width = "0";
     contactBtn.attr("aria-expanded", toggleAriaExpanded.replace("true", "false"));
 }
@@ -134,10 +147,6 @@ $(function() {
         $(this).attr("src", src.replace('img/dothewave.gif', "img/contrast.svg"));
         $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
     });
-});
-
-logo.on('keydown tap', function(){
-    $(this).attr("src", "img/logo-focus.svg");
 });
 
 // Define Theme Parameters
@@ -358,10 +367,6 @@ const cherryOnBlush = () => {
         'backgroundColor': 'transparent !important',
         'filter': cherryFilter
     });
-    btn.css({
-        "backgroundColor": cherry,
-        'color': blush
-    })
     $('.intro').css('color', cherry);
     $('.lightning').attr("src", "img/lightning-blue.svg");
     $('.hands').attr("src", "img/hands-blue.svg");

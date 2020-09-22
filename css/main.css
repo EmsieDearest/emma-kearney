@@ -384,7 +384,7 @@ input, textarea, form {
   -moz-outline-radius: 0px;
   right: 1em;
   cursor: none;
-  margin-top: 45%;
+  margin-top: 40%;
   margin-right: 2%;
 }
 
@@ -409,6 +409,10 @@ a:hover {
 @media only screen and (max-width: 768px) {
   [class*=col-] {
     width: 100%;
+  }
+
+  #cursor {
+    display: none;
   }
 
   .nav-link {
@@ -507,6 +511,10 @@ form input[type=email], form textarea[type=text] {
 }
 /* ********************* For Tablets *********************** */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  #cursor {
+    display: none;
+  }
+
   .nav-link {
     font-size: 2em;
     padding-top: 1em;

@@ -469,7 +469,7 @@ input, textarea, form {
   right: 1em;
   cursor: none;
   margin : {
-    top: 45%;
+    top: 40%;
     right: 2%;
   }
 }
@@ -496,6 +496,9 @@ a:hover {
 @media only screen and (max-width: 768px) {
   [class*="col-"] {
     width: 100%;
+  }
+  #cursor {
+    display: none;
   }
   .nav-link {
     font-size: 1.1em;
@@ -628,6 +631,9 @@ a:hover {
 and (min-device-width: 768px)
 and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 2) {
+  #cursor {
+    display: none;
+  }
 
   .nav-link {
     font-size: 2em;

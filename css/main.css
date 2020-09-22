@@ -22,8 +22,8 @@
 /* Font Variables */
 @font-face {
   font-family: "Gopher Display";
-  src: url("gopherdisplayregular-webfont.eot");
-  src: url("gopherdisplayregular-webfont.eot?#iefix") format("embedded-opentype"), url("gopherdisplayregular-webfont.woff2") format("woff2"), url("gopherdisplayregular-webfont.woff") format("woff"), url("gopherdisplayregular-webfont.ttf") format("truetype"), url("gopherdisplayregular-webfont.svg#gopher_displayregular") format("svg");
+  src: url("/fonts/gopherdisplayregular-webfont.eot");
+  src: url("/fonts/gopherdisplayregular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/gopherdisplayregular-webfont.woff2") format("woff2"), url("/fonts/gopherdisplayregular-webfont.woff") format("woff"), url("/fonts/gopherdisplayregular-webfont.ttf") format("truetype"), url("/fonts/gopherdisplayregular-webfont.svg#gopher_displayregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }

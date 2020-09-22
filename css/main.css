@@ -378,13 +378,13 @@ input, textarea, form {
 #contrast-img {
   width: 7%;
   background-color: transparent;
+  position: fixed;
   border-radius: 0px;
   outline: black;
   -moz-outline-radius: 0px;
   right: 1em;
   cursor: none;
-  position: fixed;
-  margin-top: 43%;
+  margin-top: 45%;
   margin-right: 2%;
 }
 
@@ -411,21 +411,17 @@ a:hover {
     width: 100%;
   }
 
-  #cursor {
-    display: none;
-  }
-
   .nav-link {
     font-size: 1.1em;
-    padding-top: 3em;
+    padding-top: 1.6em;
   }
 
   .logo {
-    width: 100%;
+    width: 90%;
     position: fixed;
     padding-top: 30em;
     padding-left: 7em;
-    margin-left: 23em;
+    margin-left: 28em;
     transform: rotate(90deg);
   }
 
@@ -466,35 +462,40 @@ form input[type=email], form textarea[type=text] {
     padding-top: 30%;
   }
 
+  .left {
+    width: 85%;
+  }
+
   .intro {
     color: #fa0636;
-    padding-top: 1em;
+    padding-top: 0.5em;
     line-height: 1.5;
     font-family: "Gopher Display", sans-serif;
-    font-size: 3em;
+    font-size: 2.5em;
   }
 
   .magicwand {
-    width: 12%;
+    width: 10%;
   }
 
   .lightning {
-    width: 13%;
+    width: 11%;
   }
 
   .flower {
-    width: 16%;
+    width: 13%;
     margin-top: -1%;
   }
 
   .hands {
-    width: 20%;
+    width: 17%;
   }
 
   .doTheWave, .dothewave_blk-on-blsh, .dothewave_blsh-on-blk, .contrast-blush, .contrast-black, .contrast-img {
-    width: 40%;
-    margin-top: -10%;
-    margin-left: 60%;
+    width: 15%;
+    position: fixed;
+    margin-top: -20%;
+    margin-left: 10%;
   }
 
   #contrast-img {
@@ -506,10 +507,6 @@ form input[type=email], form textarea[type=text] {
 }
 /* ********************* For Tablets *********************** */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-  #cursor {
-    display: none;
-  }
-
   .nav-link {
     font-size: 2em;
     padding-top: 1em;

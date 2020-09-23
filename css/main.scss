@@ -500,26 +500,33 @@ a:hover {
   #cursor {
     display: none;
   }
+  nav {
+    padding-left: 40%;
+  }
   .nav-link {
     font-size: 1.1em;
-    padding-top: 1.6em;
+    padding-top: 0.5em;
   }
   .logo {
-    width: 90%;
+    width: 50%;
     position: fixed;
-    padding : {
-      top: 30em;
-      left: 7em;
-    }
-    margin-left: 28em;
-    transform: rotate(90deg);
+    margin-left: -67%;
+    padding-top: 15%;
   }
   .close-button {
-    padding-top: 10%;
+    position: absolute;
+    top: 0.5em;
+    right: 2em;
+    font-size: 3em;
+    margin-left: -3em;
+    text-decoration: none;
+    color: $cherry;
+    cursor: none;
   }
 
   form {
-    padding-right: 4%;
+    padding-right: 8%;
+    margin-top: -20%;
 
     // <label> -
     label {
@@ -581,22 +588,24 @@ a:hover {
   .intro {
     color: $cherry;
     padding : {
-      top: 0.5em;
+      top: 5em;
+      left: 10%;
     }
-    line-height: 1.5;
+    line-height: 1.8;
     font : {
       family: $gopher;
-      size: 1em;
+      size: 2.2em;
     }
     text-align: center;
   }
 
   .magicwand {
     width: 5%;
+    margin-top: -6%;
   }
 
   .lightning {
-    width: 6%;
+    width: 4%;
   }
 
   .flower {
@@ -612,17 +621,15 @@ a:hover {
     width: 15%;
     position: fixed;
     margin : {
-      top: -20%;
-      left: 10%;
+      top: 60%;
+      left: -48%;
     }
   }
 
   #contrast-img {
-    width: 70%;
     padding: {
-      bottom: 2em;
+      top: 3em;
     }
-    margin-right: 20%;
   }
 }
 

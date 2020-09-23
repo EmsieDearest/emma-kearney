@@ -35,18 +35,6 @@ $blue: #0068ff;
 $full: 100%;
 
 /* Font Variables */
-@font-face {
-  font-family: 'Gopher Display';
-  src: url('/fonts/gopherdisplayregular-webfont.eot');
-  src: url('/fonts/gopherdisplayregular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/gopherdisplayregular-webfont.woff2') format('woff2'),
-  url('/fonts/gopherdisplayregular-webfont.woff') format('woff'),
-  url('/fonts/gopherdisplayregular-webfont.ttf') format('truetype'),
-  url('/fonts/gopherdisplayregular-webfont.svg#gopher_displayregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 $gopher: 'Gopher Display', sans-serif;
 
 /* Template */
@@ -59,10 +47,10 @@ $b-bg: $black;
 
 html {
   color: $cherry;
-  font-size: 1em;
   line-height: 1.4;
   height: $full;
   padding: 2%;
+  font-size: 1em;
 }
 
 /* ****************  CURSOR STYLES  **************** */
@@ -440,37 +428,39 @@ input, textarea, form {
 }
 
 .magicwand {
-  width: 8%;
-  margin-top: -12%;
+  width: 4%;
+  margin-top: -6%;
 }
 
 .lightning {
-  width: 6%;
+  width: 3%;
 }
 
 .flower {
-  width: 7%;
+  width: 4%;
   margin-top: -1%;
 }
 
 .hands {
-  width: 10%;
+  width: 8%;
 }
 
 
 /* ****************  FOOTER  **************** */
-#contrast-img {
-  width:7%;
+.contrast-img {
+  width:100%;
   background-color: transparent;
-  position: fixed;
+  z-index: 50;
   border-radius: 0px;
   outline: black;
+  position: fixed;
   -moz-outline-radius: 0px;
-  right: 1em;
   cursor: none;
-  margin : {
-    top: 40%;
-    right: 2%;
+  right: 2em;
+  bottom: 2em;
+  padding : {
+    left: 92%;
+    top: 2em;
   }
 }
 
@@ -486,17 +476,148 @@ a:hover {
   color: $cherry;
 }
 
-.doTheWave, .dothewave_blk-on-blsh, .dothewave_blsh-on-blk, .contrast-blush, .contrast-black, .contrast-img {
-  width: 100%;
-  outline: none !important;
-}
-
 
 /* *********************** For Phones *********************** */
 @media only screen and (max-width: 768px) {
   [class*="col-"] {
     width: 100%;
   }
+  #cursor {
+    display: none;
+  }
+  nav {
+    padding-left: 40%;
+  }
+  .nav-link {
+    font-size: 1.1em;
+    padding-top: 0.5em;
+  }
+  .logo {
+    width: 60%;
+    position: fixed;
+    margin-left: -72%;
+    padding-top: 15%;
+  }
+  .close-button {
+    position: absolute;
+    top: 0.5em;
+    right: 2em;
+    font-size: 3em;
+    margin-left: -3em;
+    text-decoration: none;
+    color: $cherry;
+    cursor: none;
+  }
+
+  form {
+    padding-right: 8%;
+    margin-top: -20%;
+
+    // <label> -
+    label {
+      font: {
+        size: 1.2rem;
+      }
+    }
+
+    // <input> -
+    .form-input {
+      padding: 1em;
+      min-height: 2em;
+    }
+
+    input[type="text"],
+    input[type="email"], textarea[type="text"] {
+      font: {
+        size: 1.2rem !important;
+      }
+      padding: {
+        left: 1rem;
+      }
+    }
+
+    // <button class="btn">
+    .btn {
+      padding: 0.5em 0.9em;
+      margin : {
+        top: 0.5rem;
+      }
+      width: 100%;
+      font : {
+        size: 1.5rem;
+      }
+    }
+
+    // <p class="success-p">
+    .success-p {
+      font-size: 1.5em;
+    }
+  }
+
+  .formbox {
+    margin : {
+      left: 4%;
+      right: 4%;
+    }
+    padding : {
+      left: 10%;
+      right: 10%;
+      top: 30%;
+    }
+  }
+
+  .left {
+    width: 85%;
+  }
+
+  .intro {
+    color: $cherry;
+    padding : {
+      top:6em;
+      left: 10%;
+    }
+    line-height: 1.8;
+    font : {
+      family: $gopher;
+      size: 2.2em;
+    }
+    text-align: center;
+  }
+
+  .magicwand {
+    width: 8%;
+    margin-top: -6%;
+  }
+
+  .lightning {
+    width: 6%;
+  }
+
+  .flower {
+    width: 7%;
+    margin-top: -1%;
+  }
+
+  .hands {
+    width: 13%;
+  }
+
+  .contrast-img {
+    width:20%;
+    right: 15em;
+    bottom: 2em;
+    padding : {
+      left:0em;
+      top: 2em;
+    }
+  }
+}
+
+/* ********************* For Tablets *********************** */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2) {
   #cursor {
     display: none;
   }
@@ -588,13 +709,13 @@ a:hover {
   .intro {
     color: $cherry;
     padding : {
-      top: 5em;
+      top: 10em;
       left: 10%;
     }
     line-height: 1.8;
     font : {
       family: $gopher;
-      size: 2.2em;
+      size: 4em;
     }
     text-align: center;
   }
@@ -619,150 +740,17 @@ a:hover {
 
   .doTheWave, .dothewave_blk-on-blsh, .dothewave_blsh-on-blk, .contrast-blush, .contrast-black, .contrast-img {
     width: 15%;
-    position: fixed;
     margin : {
-      top: 60%;
-      left: -48%;
+      top: -60%;
     }
   }
 
   #contrast-img {
     padding: {
-      top: 3em;
+      top: -10em;
     }
-  }
-}
-
-/* ********************* For Tablets *********************** */
-@media only screen
-and (min-device-width: 768px)
-and (max-device-width: 1024px)
-and (-webkit-min-device-pixel-ratio: 2) {
-  #cursor {
-    display: none;
-  }
-
-  .nav-link {
-    font-size: 2em;
-    padding-top: 1em;
-  }
-
-  .logo {
-    width: 100%;
-    position: relative;
-    padding : {
-      top: 2em;
-      left: 0em;
+    margin: {
+      top: -10em;
     }
-    margin-left: 0em;
-    transform: rotate(0deg);
-  }
-
-  .close-button {
-    padding-top: 10%;
-  }
-
-  form {
-    padding-right: 9%;
-
-    // <label> -
-    label {
-      font: {
-        size: 1.2rem;
-      }
-    }
-
-    // <input> -
-    .form-input {
-      padding: 1em;
-      min-height: 2em;
-    }
-
-    input[type="text"],
-    input[type="email"], textarea[type="text"] {
-      font: {
-        size: 1.2rem !important;
-      }
-      padding: {
-        left: 1rem;
-      }
-    }
-
-    .close-button {
-      padding-right: 15%;
-      margin-top: -3%;
-    }
-
-    // <button class="btn">
-    .btn {
-      padding: 0.5em 0.9em;
-      margin : {
-        top: 0.5rem;
-      }
-      width: 100%;
-      font : {
-        size: 1.5rem;
-      }
-    }
-
-    // <p class="success-p">
-    .success-p {
-      font-size: 1.5em;
-    }
-  }
-
-  .formbox {
-    margin : {
-      left: 4%;
-      right: 4%;
-    }
-    padding : {
-      left: 10%;
-      right: 10%;
-      top: 30%;
-    }
-  }
-
-  .intro {
-    color: $cherry;
-    padding : {
-      top: 1em;
-      left: 1%;
-    }
-    line-height: 1.5;
-    font : {
-      family: $gopher;
-      size: 4em;
-    }
-  }
-
-  .magicwand {
-    width: 9%;
-  }
-
-  .lightning {
-    width: 8%;
-  }
-
-  .flower {
-    width: 10%;
-    margin-top: -1%;
-  }
-
-  .hands {
-    width: 15%;
-  }
-
-  .doTheWave, .dothewave_blk-on-blsh, .dothewave_blsh-on-blk, .contrast-blush, .contrast-black, .contrast-img {
-    width: 100%;
-    margin: 0;
-    padding-top: 50em;
-    position: relative;
-  }
-
-  .contrastbox {
-    margin-left: 0;
-    padding: 0;
-    width: 0;
   }
 }

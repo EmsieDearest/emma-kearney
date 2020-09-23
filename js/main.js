@@ -105,7 +105,6 @@ function closeNav() {
 }
 
 
-
 // Contrast Button
 let contrastButton = $('.contrast-img');
 let contrastButtonId = $('#contrast-img');
@@ -132,20 +131,17 @@ $(function() {
         if (e.key === 13){
             let src = $(this).attr("src");
             let switchClass = $(this).attr('class');
-            $(this).attr("src", src.replace("img/contrast.svg", "img/dothewave.gif"));
-            $(this).attr("class", switchClass.replace("contrast-img", "doTheWave"));
+            $(this).attr("src", "img/dothewave.gif");
         } else {
             let src = $(this).attr("src");
             let switchClass = $(this).attr('class');
-            $(this).attr("src", src.replace("img/contrast.svg", "img/dothewave.gif"));
-            $(this).attr("class", switchClass.replace("contrast-img", "doTheWave"));
+            $(this).attr("src", "img/dothewave.gif");
         }
     });
     contrastButton.on('mouseleave',function() {
         let src = $(this).attr("src");
         let switchClass = $(this).attr('class');
-        $(this).attr("src", src.replace('img/dothewave.gif', "img/contrast.svg"));
-        $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
+        $(this).attr("src", "img/contrast.svg");
     });
 });
 
@@ -200,17 +196,10 @@ const blackOnBlush = () => {
     $('.success-p').css('color', 'black');
     $(function (){
         contrastButton.on('mouseover click tap', function(){
-            let $this = $(this);
-            let switchClass = $this.attr('class');
-            $(this).attr("src", "img/dothewave_blk-on-blsh.gif");
-            $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
-            $('#contrast-img:focus').css('outline', blush);
+            $(this).attr("src", "img/dothewave_blk-on-blsh.gif");$('#contrast-img:focus').css('outline', blush);
         })
         contrastButton.on('mouseleave', function(){
-            let src = $(this).attr("src");
-            let switchClass = $(this).attr('class');
             $(this).attr("src", "img/contrast-black.svg");
-            $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
         })
     })
 }
@@ -328,16 +317,11 @@ const cherryOnYellow = () => {
     $(function (){
         contrastButton.on('mouseover click tap', function(){
             let $this = $(this);
-            let switchClass = $this.attr('class');
             $(this).attr("src", "img/dothewave.gif");
-            $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
             $('#contrast-img:focus').css('outline', yellow);
         })
         contrastButton.on('mouseleave', function(){
-            let src = $(this).attr("src");
-            let switchClass = $(this).attr('class');
             $(this).attr("src", "img/contrast.svg");
-            $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
         })
     })
 }
@@ -396,16 +380,12 @@ const cherryOnBlush = () => {
     $(function (){
         contrastButton.on('mouseover click tap', function(){
             let $this = $(this);
-            let switchClass = $this.attr('class');
             $(this).attr("src", "img/dothewave.gif");
-            $this.attr("class", switchClass.replace("contrast-img", "doTheWave"));
             $('#contrast-img:focus').css('outline', blush);
         })
         contrastButton.on('mouseleave', function(){
             let src = $(this).attr("src");
-            let switchClass = $(this).attr('class');
             $(this).attr("src", "img/contrast.svg");
-            $(this).attr("class", switchClass.replace("doTheWave", "contrast-img"));
         })
     })
 }

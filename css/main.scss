@@ -450,7 +450,6 @@ input, textarea, form {
 .contrast-img {
   width:100%;
   background-color: transparent;
-  z-index: 50;
   border-radius: 0px;
   outline: black;
   position: fixed;
@@ -485,18 +484,17 @@ a:hover {
   #cursor {
     display: none;
   }
-  nav {
-    padding-left: 40%;
-  }
   .nav-link {
     font-size: 1.1em;
     padding-top: 0.5em;
   }
   .logo {
-    width: 60%;
+    width: 70%;
     position: fixed;
-    margin-left: -72%;
-    padding-top: 15%;
+    margin: auto;
+    left: 15%;
+    right: 15%;
+    top: 23%;
   }
   .close-button {
     position: absolute;
@@ -567,16 +565,19 @@ a:hover {
   }
 
   .left {
-    width: 85%;
+    margin: auto;
+    padding : {
+      left: 10%;
+      right: 10%;
+    }
   }
 
   .intro {
     color: $cherry;
     padding : {
-      top:6em;
-      left: 10%;
+      top: 65%;
     }
-    line-height: 1.8;
+    line-height: 1.5;
     font : {
       family: $gopher;
       size: 2.2em;
@@ -601,16 +602,6 @@ a:hover {
   .hands {
     width: 13%;
   }
-
-  .contrast-img {
-    width:20%;
-    right: 15em;
-    bottom: 2em;
-    padding : {
-      left:0em;
-      top: 2em;
-    }
-  }
 }
 
 /* ********************* For Tablets *********************** */
@@ -618,21 +609,23 @@ a:hover {
 and (min-device-width: 768px)
 and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 2) {
+  [class*="col-"] {
+    width: 100%;
+  }
   #cursor {
     display: none;
-  }
-  nav {
-    padding-left: 40%;
   }
   .nav-link {
     font-size: 1.1em;
     padding-top: 0.5em;
   }
   .logo {
-    width: 50%;
+    width: 70%;
     position: fixed;
-    margin-left: -67%;
-    padding-top: 15%;
+    margin: auto;
+    left: 15%;
+    right: 15%;
+    top: 23%;
   }
   .close-button {
     position: absolute;
@@ -703,30 +696,33 @@ and (-webkit-min-device-pixel-ratio: 2) {
   }
 
   .left {
-    width: 85%;
+    margin: auto;
+    padding : {
+      left: 10%;
+      right: 10%;
+    }
   }
 
   .intro {
     color: $cherry;
     padding : {
-      top: 10em;
-      left: 10%;
+      top: 65%;
     }
-    line-height: 1.8;
+    line-height: 1.5;
     font : {
       family: $gopher;
-      size: 4em;
+      size: 3em;
     }
     text-align: center;
   }
 
   .magicwand {
-    width: 5%;
+    width: 8%;
     margin-top: -6%;
   }
 
   .lightning {
-    width: 4%;
+    width: 6%;
   }
 
   .flower {
@@ -735,22 +731,6 @@ and (-webkit-min-device-pixel-ratio: 2) {
   }
 
   .hands {
-    width: 9%;
-  }
-
-  .doTheWave, .dothewave_blk-on-blsh, .dothewave_blsh-on-blk, .contrast-blush, .contrast-black, .contrast-img {
-    width: 15%;
-    margin : {
-      top: -60%;
-    }
-  }
-
-  #contrast-img {
-    padding: {
-      top: -10em;
-    }
-    margin: {
-      top: -10em;
-    }
+    width: 13%;
   }
 }

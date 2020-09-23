@@ -276,7 +276,7 @@ const cherryOnYellow = () => {
     $("body").css("backgroundColor", yellow);
     $("#cursor").css("filter", blackFilter);
     $('#skip').on('focus', function(){
-        $('#skip').css('color', cherry);
+        $(this).css('color', cherry);
     });
     $(".logo").css('filter', cherryFilter);
     $('p').css('color', cherry);

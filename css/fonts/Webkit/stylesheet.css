@@ -1,6 +1,5 @@
 @font-face {
     font-family: 'Gopher Display Regular';
-    src: url('/css/fonts/gopherdisplayregular-webfont.eot');
     src: url('/css/fonts/gopherdisplayregular-webfont.eot?#iefix') format('embedded-opentype'),
          url('/css/fonts/gopherdisplayregular-webfont.woff2') format('woff2'),
          url('/css/fonts/gopherdisplayregular-webfont.woff') format('woff'),

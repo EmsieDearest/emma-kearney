@@ -1,3 +1,24 @@
+// Font Display
+try {
+    let e = document.createElement("style");
+    e.textContent = "@font-face { font-display: swap; }";
+    document.documentElement.appendChild(e);
+    let isFontDisplaySupported = e.sheet.cssRules[0].cssText.indexOf("font-display") !== -1;
+    if (isFontDisplaySupported === false && "fonts" in document) {
+        document.fonts.load("1em Open Sans Regular");
+        document.fonts.ready.then(function(fontFaceSet) {
+            document.documentElement.className += " fonts-loaded";
+        });
+    }
+    else {
+        // Maybe figure out your own strategy, but this might be sensible:
+        document.documentElement.className += " fonts-loaded";
+    }
+    e.remove();
+} catch (e) {
+    // Do something with an error if you want
+}
+
 // Cursor Animation
 let html = $('html');
 let input = $('input');

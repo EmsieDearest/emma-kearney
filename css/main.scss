@@ -35,7 +35,17 @@ $blue: #0068ff;
 $full: 100%;
 
 /* Font Variables */
-$gopher: 'Gopher Display', sans-serif;
+$gopher: 'Gopher Display';
+
+p, h1, button, label, input[type="text"],
+input[type="email"], textarea[type="text"], input::placeholder {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.fonts-loaded p, .fonts-loaded h1, .fonts-loaded button, .fonts-loaded label, .fonts-loaded input[type="text"],
+.fonts-loaded input[type="email"], .fonts-loaded textarea[type="text"], .fonts-loaded input::placeholder {
+  font-family: $gopher;
+}
 
 /* Template */
 $standard-border: 0.08em solid $cherry;
@@ -110,6 +120,11 @@ html {
 
 body {
   background-color: $blush;
+  // background-image: url('../img/background.jpg');
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-position: right;
+  // background-size: 75% 100%;
   height: $full;
   padding: 1em;
 }

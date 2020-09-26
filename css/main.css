@@ -27,7 +27,7 @@ input[type=email], textarea[type=text], input::placeholder {
 
 .fonts-loaded p, .fonts-loaded h1, .fonts-loaded button, .fonts-loaded label, .fonts-loaded input[type=text],
 .fonts-loaded input[type=email], .fonts-loaded textarea[type=text], .fonts-loaded input::placeholder {
-  font-family: "Gopher Display";
+  font-family: Gopher Display Regular, gopher, sans-serif;
 }
 
 /* Template */
@@ -134,7 +134,7 @@ body {
   width: auto;
   height: auto;
   color: #fa0636;
-  font-family: "Gopher Display";
+  font-family: Gopher Display Regular, gopher, sans-serif;
   font-size: 1.7em;
   text-decoration: underline;
 }
@@ -144,7 +144,7 @@ body {
   background-color: transparent;
   color: #fa0636;
   text-align: center;
-  font-family: "Gopher Display";
+  font-family: Gopher Display Regular, gopher, sans-serif;
   font-size: 1.8em;
 }
 
@@ -232,7 +232,7 @@ form label {
   width: 100%;
   padding-top: 2%;
   letter-spacing: 0.1em;
-  font-family: "Gopher Display";
+  font-family: Gopher Display Regular, gopher, sans-serif;
   font-size: 1.1rem;
   font-weight: bolder;
 }
@@ -248,7 +248,7 @@ form input[type=text],
 form input[type=email], form textarea[type=text] {
   background-color: transparent !important;
   font-size: 1.5rem !important;
-  font-family: "Gopher Display" !important;
+  font-family: Gopher Display Regular, gopher, sans-serif !important;
   color: #fa0636 !important;
   padding-left: 1.7rem;
 }
@@ -285,7 +285,7 @@ form textarea::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 form input::placeholder {
-  font-family: "Gopher Display";
+  font-family: Gopher Display Regular, gopher, sans-serif;
   font-size: 2rem;
   color: #fa0636 !important;
   background-color: transparent !important;
@@ -311,7 +311,7 @@ form .btn {
   margin-top: 0.5rem;
   width: 100%;
   font-size: 1.3rem;
-  font-family: "Gopher Display";
+  font-family: Gopher Display Regular, gopher, sans-serif;
   letter-spacing: 0.1em;
   color: #faecae;
   border-radius: 0px;
@@ -354,7 +354,7 @@ input, textarea, form {
   color: #fa0636;
   padding-top: 8%;
   line-height: 1.5;
-  font-family: "Gopher Display";
+  font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
   font-size: 4.5em;
 }
@@ -483,7 +483,7 @@ form input[type=email], form textarea[type=text] {
     color: #fa0636;
     padding-top: 65%;
     line-height: 1.5;
-    font-family: "Gopher Display";
+    font-family: Gopher Display Regular, gopher, sans-serif;
     font-size: 2.2em;
     text-align: center;
   }
@@ -585,7 +585,7 @@ form input[type=email], form textarea[type=text] {
     color: #fa0636;
     padding-top: 65%;
     line-height: 1.5;
-    font-family: "Gopher Display";
+    font-family: Gopher Display Regular, gopher, sans-serif;
     font-size: 3em;
     text-align: center;
   }

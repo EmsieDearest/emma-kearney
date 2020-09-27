@@ -177,6 +177,7 @@ const blackOnBlush = () => {
     $('p').css('color', 'black');
     $('::-webkit-resizer').css('color', 'black');
     $('.nav-link').css('color', 'black');
+    $('.nav-link:after, #skip:after').css('filter', blackFilter);
     $('input:focus, textarea:focus, textarea:active, input:active').css({
         'transition': 'background-color 5000s',
         'border-weight': '0.17em',

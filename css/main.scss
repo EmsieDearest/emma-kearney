@@ -464,24 +464,6 @@ input, textarea, form {
   }
 }
 
-.magicwand {
-  width: 4%;
-  margin-top: -6%;
-}
-
-.lightning {
-  width: 3%;
-}
-
-.flower {
-  width: 4%;
-  margin-top: -1%;
-}
-
-.hands {
-  width: 8%;
-}
-
 .contrast-img {
   width:100%;
   background-color: transparent;
@@ -514,9 +496,16 @@ a:hover {
 .plantapp {
   padding : {
     top: 65%;
-    bottom: 65%;
+    bottom: 8%;
+    left: 5%;
   }
-  left: 5%;
+}
+
+.fitnessapp {
+  padding : {
+    bottom: 65%;
+    left: 35%;
+  }
 }
 
 

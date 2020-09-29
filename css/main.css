@@ -382,24 +382,6 @@ input, textarea, form {
   font-size: 4.5em;
 }
 
-.magicwand {
-  width: 4%;
-  margin-top: -6%;
-}
-
-.lightning {
-  width: 3%;
-}
-
-.flower {
-  width: 4%;
-  margin-top: -1%;
-}
-
-.hands {
-  width: 8%;
-}
-
 .contrast-img {
   width: 100%;
   background-color: transparent;
@@ -429,8 +411,13 @@ a:hover {
 
 .plantapp {
   padding-top: 65%;
+  padding-bottom: 8%;
+  padding-left: 5%;
+}
+
+.fitnessapp {
   padding-bottom: 65%;
-  left: 5%;
+  padding-left: 35%;
 }
 
 /* *********************** For Phones *********************** */

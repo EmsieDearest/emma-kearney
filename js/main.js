@@ -166,6 +166,18 @@ $(function() {
     });
 });
 
+// Iris on hover
+$(function() {
+    $('.iris').on('mouseover',function(e){
+        $('.darling').attr("src", "img/iris.gif");
+    });
+});
+
+$('.iris').on('tap click',function(e){
+    $('.darling').attr("src", "img/IrisSite.png");
+});
+
+
 // Define Theme Parameters
 const blackOnBlush = () => {
     $("body").css("background-color", blush);

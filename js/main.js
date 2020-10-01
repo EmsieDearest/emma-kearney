@@ -146,23 +146,47 @@ let blackFilter = 'grayscale(100%) contrast(2000%)';
 let forestFilter = 'invert(44%) sepia(55%) saturate(375%) hue-rotate(86deg) brightness(90%) contrast(87%)';
 let blueFilter = 'invert(28%) sepia(58%) saturate(6554%) hue-rotate(211deg) brightness(104%) contrast(104%);;'
 
-// Place GIF on Hover
+// Change Contact and Skip Underline on Focus
+// $(function() {
+//     $('.nav-item').on('mouseover click tap keydown focusin',function(e){
+//         if (e.key === 13){
+//             $('#skip, .nav-link').after.css("border-bottom", "solid 0.15em #fa0636");
+//         } else {
+//             $('#skip, .nav-link').after.css("border-bottom", "solid 0.15em #fa0636");
+//         }
+//     });
+//     $('.nav-item').on('mouseleave focusout',function() {
+//         $('#skip:after, .nav-link:after').css("border-bottom", "solid 0.15em black");
+//     });
+// });
+
+
+// Place Logo on Hover
 $(function() {
-    contrastButton.on('mouseover click tap keydown',function(e){
+    $('.logo-div').on('mouseover click tap keydown focusin',function(e){
         if (e.key === 13){
-            let src = $(this).attr("src");
-            let switchClass = $(this).attr('class');
-            $(this).attr("src", "img/dothewave.gif");
+            $('.logo').attr("src", "img/logo-focus.svg");
         } else {
-            let src = $(this).attr("src");
-            let switchClass = $(this).attr('class');
-            $(this).attr("src", "img/dothewave.gif");
+            $('.logo').attr("src", "img/logo-focus.svg");
         }
     });
-    contrastButton.on('mouseleave',function() {
-        let src = $(this).attr("src");
-        let switchClass = $(this).attr('class');
-        $(this).attr("src", "img/contrast.svg");
+    $('.logo-div').on('mouseleave focusout',function() {
+        $('.logo').attr("src", "img/wave.svg");
+    });
+});
+
+
+// Place GIF on Hover
+$(function() {
+    $('.contrast-div').on('mouseover click tap keydown focusin',function(e){
+        if (e.key === 13){
+            contrastButton.attr("src", "img/dothewave.gif");
+        } else {
+            contrastButton.attr("src", "img/dothewave.gif");
+        }
+    });
+    $('.contrast-div').on('mouseleave focusout',function() {
+        contrastButton.attr("src", "img/contrast-black.svg");
     });
 });
 
@@ -207,7 +231,7 @@ const blackOnBlush = () => {
         'background-color': 'black !important'
     })
     $(function(){
-        btn.on('hover focus', function() {
+        btn.on('hover focusin', function() {
             $(this).css({
                 //'filter': 'invert(100%) sepia(50%) hue-rotate(-260deg) brightness(120%) contrast(93%)',
                 'background-color': blushFilter,
@@ -215,7 +239,7 @@ const blackOnBlush = () => {
                 'border-color': 'black'
             });
         });
-        btn.on('mousedown', function(event){
+        btn.on('mousedown focusout', function(event){
             event.target.css({
                 'background-color': blue,
                 'color': 'black',
@@ -226,11 +250,15 @@ const blackOnBlush = () => {
     $('.err').css('color', 'black');
     $('.success-p').css('color', 'black');
     $(function (){
-        contrastButton.on('mouseover click tap', function(){
-            $(this).attr("src", "img/dothewave_blk-on-blsh.gif");$('#contrast-img:focus').css('outline', blush);
+        $('.contrast-div').on('mouseover click tap focusin', function(){
+            if (e.key === 13){
+                contrastButton.attr("src", "img/dothewave_blk-on-blsh.gif");
+            } else {
+                contrastButton.attr("src", "img/dothewave_blk-on-blsh.gif");
+            }
         })
-        contrastButton.on('mouseleave', function(){
-            $(this).attr("src", "img/contrast-black.svg");
+        $('.contrast-div').on('mouseleave focusout', function(){
+            contrastButton.attr("src", "img/contrast.svg");
         })
     })
 }
@@ -342,13 +370,19 @@ const cherryOnYellow = () => {
     $('.err').css('color', cherry);
     $('.success-p').css('color', cherry);
     $(function (){
-        contrastButton.on('mouseover click tap', function(){
-            let $this = $(this);
-            $(this).attr("src", "img/dothewave.gif");
-            $('#contrast-img:focus').css('outline', yellow);
+        $('.contrast-div').on('mouseover click tap focusin', function(){
+            if (e.key === 13 || 9){
+                contrastButton.attr("src", "img/dothewave.gif");
+            } else {
+                contrastButton.attr("src", "img/dothewave.gif");
+            }
         })
-        contrastButton.on('mouseleave', function(){
-            $(this).attr("src", "img/contrast.svg");
+        $('.contrast-div').on('mouseleave focusout', function(){
+            if (e.key === 13 || 9){
+                contrastButton.attr("src", "img/contrast.svg");
+            } else {
+                contrastButton.attr("src", "img/contrast.svg");
+            }
         })
     })
 }
@@ -401,14 +435,14 @@ const cherryOnBlush = () => {
     $('.err').css('color', cherry);
     $('.success-p').css('color', cherry);
     $(function (){
-        contrastButton.on('mouseover click tap', function(){
-            let $this = $(this);
-            $(this).attr("src", "img/dothewave.gif");
-            $('#contrast-img:focus').css('outline', blush);
-        })
-        contrastButton.on('mouseleave', function(){
-            let src = $(this).attr("src");
-            $(this).attr("src", "img/contrast.svg");
+        $('.contrast-div').on('mouseover click tap focusin', function(){
+            if (e.key === 13 || 9){
+                contrastButton.attr("src", "img/dothewave.gif");
+            } else {
+                contrastButton.attr("src", "img/dothewave.gif");
+            }        })
+        $('.contrast-div').on('mouseleave focusout', function(){
+            contrastButton.attr("src", "img/contrast-black.svg");
         })
     })
 }

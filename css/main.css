@@ -136,15 +136,16 @@ body {
   height: auto;
   color: #fa0636;
   font-family: Gopher Display Regular, gopher, sans-serif;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 /* ****************  NAV  **************** */
 .nav-link {
   background-color: transparent;
+  border: transparent;
   color: #fa0636;
   text-align: center;
-  position: fixed;
+  position: static;
   z-index: 5;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-size: 2em;
@@ -167,7 +168,7 @@ body {
   transform-origin: 95% 50%;
 }
 
-.nav-link:hover:after, #skip:hover:after {
+.nav-link:hover:after, .nav-link:focus:after, #skip:hover:after, #skip:focus:after {
   transform: scaleX(1);
   transform-origin: 0 50%;
 }

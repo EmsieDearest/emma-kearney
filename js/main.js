@@ -186,7 +186,7 @@ $(function() {
         }
     });
     $('.contrast-div').on('mouseleave focusout',function() {
-        contrastButton.attr("src", "img/contrast-black.svg");
+        contrastButton.attr("src", "img/contrast.svg");
     });
 });
 
@@ -258,7 +258,7 @@ const blackOnBlush = () => {
             }
         })
         $('.contrast-div').on('mouseleave focusout', function(){
-            contrastButton.attr("src", "img/contrast.svg");
+            contrastButton.attr("src", "img/contrast-black.svg");
         })
     })
 }
@@ -442,7 +442,7 @@ const cherryOnBlush = () => {
                 contrastButton.attr("src", "img/dothewave.gif");
             }        })
         $('.contrast-div').on('mouseleave focusout', function(){
-            contrastButton.attr("src", "img/contrast-black.svg");
+            contrastButton.attr("src", "img/contrast.svg");
         })
     })
 }

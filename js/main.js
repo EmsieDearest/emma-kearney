@@ -195,11 +195,8 @@ const blackOnBlush = () => {
         'border-weight': '0.17em',
     });
     $('label, textarea, input').css('filter', 'invert(100%) sepia(50%) hue-rotate(-260deg) brightness(120%) contrast(93%)');
-    $('.intro').css('color', 'black');
+    $('.intro, h2').css('color', 'black');
     $('.lightning').attr("src", "img/lightning.svg");
-    $('.hands').attr("src", "img/hands.svg");
-    $('.flower').attr("src", "img/flower.svg");
-    $('.magicwand').attr("src", "img/magicwand.svg");
     $('.sidepanel').css({
         'background-color': blue,
         'borderRight': '0.13rem solid black',
@@ -336,11 +333,7 @@ const cherryOnYellow = () => {
             });
         });
     })
-    $('.intro').css('color', cherry);
-    $('.lightning').attr("src", "img/lightning-blue.svg");
-    $('.hands').attr("src", "img/hands-blue.svg");
-    $('.flower').attr("src", "img/flower-blue.svg");
-    $('.magicwand').attr("src", "img/magicwand-blue.svg");
+    $('.intro, h2').css('color', cherry);
     $('.sidepanel').css({
         'backgroundColor': blush,
         'borderRight': '0.13rem solid #fa0636'
@@ -385,11 +378,7 @@ const cherryOnBlush = () => {
         'backgroundColor': 'transparent !important',
         'filter': cherryFilter
     });
-    $('.intro').css('color', cherry);
-    $('.lightning').attr("src", "img/lightning-blue.svg");
-    $('.hands').attr("src", "img/hands-blue.svg");
-    $('.flower').attr("src", "img/flower-blue.svg");
-    $('.magicwand').attr("src", "img/magicwand-blue.svg");
+    $('.intro, h2').css('color', cherry);
     $('.sidepanel').css({
         'backgroundColor': yellow,
         'borderRight': '0.13rem solid #fa0636',

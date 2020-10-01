@@ -147,7 +147,7 @@ body {
   position: fixed;
   z-index: 5;
   font-family: Gopher Display Regular, gopher, sans-serif;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .nav-link:focus {
@@ -363,7 +363,7 @@ input, textarea, form {
 .logo {
   position: fixed;
   z-index: 5;
-  right: 3%;
+  right: 4%;
   width: 30%;
 }
 
@@ -372,14 +372,31 @@ input, textarea, form {
 }
 
 /* ****************  MAIN  **************** */
+.left {
+  width: 70%;
+}
+
 .intro {
   color: #fa0636;
   position: fixed;
-  padding-top: 9%;
-  line-height: 1.5;
+  bottom: 9.8%;
+  padding-left: 1%;
+  line-height: 1.2;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
-  font-size: 4.5em;
+  font-size: 3.5em;
+}
+
+h2 {
+  position: fixed;
+  color: #fa0636;
+  bottom: 5%;
+  padding-left: 1%;
+  line-height: 1.2;
+  font-family: moret, serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 3.8em;
 }
 
 .contrast-img {
@@ -391,9 +408,9 @@ input, textarea, form {
   z-index: 5;
   -moz-outline-radius: 0px;
   cursor: none;
-  right: 2em;
-  bottom: 2em;
-  padding-left: 92%;
+  right: 4%;
+  bottom: 7%;
+  padding-left: 88%;
   padding-top: 2em;
 }
 
@@ -413,15 +430,18 @@ a:hover {
   padding-top: 65%;
   padding-bottom: 8%;
   padding-right: 15%;
+  z-index: 3;
 }
 
 .darling {
   padding-bottom: 8%;
+  z-index: 3;
 }
 
 .fitnessapp {
   padding-bottom: 65%;
   padding-left: 35%;
+  z-index: 3;
 }
 
 /* *********************** For Phones *********************** */

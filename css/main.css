@@ -145,7 +145,7 @@ body {
   border: transparent;
   color: #fa0636;
   text-align: center;
-  position: static;
+  position: fixed;
   z-index: 5;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-size: 2em;

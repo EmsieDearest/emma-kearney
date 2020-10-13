@@ -160,6 +160,7 @@ let blueFilter = 'invert(28%) sepia(58%) saturate(6554%) hue-rotate(211deg) brig
 //     });
 // });
 
+
 // Prevent Widows
 $('.intro').each(function(){
     let string = $.trim($(this).html());
@@ -197,16 +198,16 @@ $(function() {
     });
 });
 
-// Iris on hover
-$(function() {
-    $('.iris').on('mouseover',function(e){
-        $('.darling').attr("src", "img/iris.gif");
-    });
-});
-
-$('.iris').on('tap click',function(e){
-    $('.darling').attr("src", "img/IrisSite.png");
-});
+// // Iris on hover
+// $(function() {
+//     $('.iris').on('mouseover',function(e){
+//         $('.darling').attr("src", "img/iris.gif");
+//     });
+// });
+//
+// $('.iris').on('tap click',function(e){
+//     $('.darling').attr("src", "img/IrisSite.png");
+// });
 
 
 // Define Theme Parameters

@@ -380,12 +380,12 @@ input, textarea, form {
 .intro {
   color: #fa0636;
   position: fixed;
-  bottom: 9.8%;
+  bottom: 9%;
   padding-left: 1%;
   line-height: 1.2;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
-  font-size: 3.5em;
+  font-size: 3em;
 }
 
 h2 {
@@ -397,7 +397,7 @@ h2 {
   font-family: moret, serif;
   font-weight: 200;
   font-style: italic;
-  font-size: 3.8em;
+  font-size: 3em;
 }
 
 .contrast-img {
@@ -428,6 +428,8 @@ a:hover {
 }
 
 .plantapp {
+  width: 100%;
+  height: 100%;
   padding-top: 65%;
   padding-bottom: 8%;
   padding-right: 15%;
@@ -435,11 +437,15 @@ a:hover {
 }
 
 .darling {
+  width: 100%;
+  height: 100%;
   padding-bottom: 8%;
   z-index: 3;
 }
 
 .fitnessapp {
+  width: 100%;
+  height: 100%;
   padding-bottom: 65%;
   padding-left: 35%;
   z-index: 3;
@@ -456,17 +462,13 @@ a:hover {
   }
 
   .nav-link {
-    font-size: 1.1em;
+    font-size: 0.8em;
     padding-top: 0.5em;
+    padding-left: 3%;
   }
 
   .logo {
-    width: 70%;
-    position: fixed;
-    margin: auto;
-    left: 15%;
-    right: 15%;
-    top: 23%;
+    width: 40%;
   }
 
   .close-button {
@@ -522,29 +524,41 @@ form input[type=email], form textarea[type=text] {
 
   .intro {
     color: #fa0636;
-    padding-top: 65%;
-    line-height: 1.5;
+    bottom: 35%;
+    line-height: 1.3;
+    left: 3%;
     font-family: Gopher Display Regular, gopher, sans-serif;
-    font-size: 2.2em;
-    text-align: center;
+    font-size: 1.6em;
   }
 
-  .magicwand {
-    width: 8%;
-    margin-top: -6%;
+  h2 {
+    font-size: 1.5em;
+    left: 3%;
+    bottom: 32%;
   }
 
-  .lightning {
-    width: 6%;
+  .contrast-img {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 0px;
+    outline: black;
+    position: fixed;
+    z-index: 5;
+    -moz-outline-radius: 0px;
+    cursor: none;
+    right: 4%;
+    bottom: 3%;
+    padding-left: 90%;
+    padding-top: 2em;
   }
 
-  .flower {
-    width: 7%;
-    margin-top: -1%;
+  .plantapp {
+    padding-top: 70em;
   }
 
-  .hands {
-    width: 13%;
+  .concept {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 /* ********************* For Tablets *********************** */
@@ -558,17 +572,12 @@ form input[type=email], form textarea[type=text] {
   }
 
   .nav-link {
-    font-size: 1.1em;
+    font-size: 1.8em;
     padding-top: 0.5em;
   }
 
   .logo {
-    width: 70%;
-    position: fixed;
-    margin: auto;
-    left: 15%;
-    right: 15%;
-    top: 23%;
+    width: 40%;
   }
 
   .close-button {
@@ -624,29 +633,36 @@ form input[type=email], form textarea[type=text] {
 
   .intro {
     color: #fa0636;
-    padding-top: 65%;
-    line-height: 1.5;
+    left: 0.6em;
+    bottom: 27.5%;
+    line-height: 1.3;
     font-family: Gopher Display Regular, gopher, sans-serif;
-    font-size: 3em;
-    text-align: center;
+    font-size: 2.5em;
   }
 
-  .magicwand {
-    width: 8%;
-    margin-top: -6%;
+  h2 {
+    font-size: 2.8em;
+    left: 0.6em;
+    bottom: 25%;
   }
 
-  .lightning {
-    width: 6%;
+  .contrast-img {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 0px;
+    outline: black;
+    position: fixed;
+    z-index: 5;
+    -moz-outline-radius: 0px;
+    cursor: none;
+    right: 4%;
+    bottom: 3%;
+    padding-left: 90%;
+    padding-top: 2em;
   }
 
-  .flower {
-    width: 7%;
-    margin-top: -1%;
-  }
-
-  .hands {
-    width: 13%;
+  .plantapp {
+    padding-top: 80em;
   }
 }
 

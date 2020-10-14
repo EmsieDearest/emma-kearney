@@ -128,6 +128,8 @@ body {
   // background-size: 75% 100%;
   height: $full;
   // padding: 0.2em;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 /* Focus styles */

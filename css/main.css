@@ -105,6 +105,8 @@ html {
 body {
   background-color: #f7dfe8;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 /* Focus styles */

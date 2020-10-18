@@ -107,6 +107,8 @@ body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+  background-color: #f7dfe8;
+  position: relative;
 }
 
 /* Focus styles */
@@ -375,7 +377,7 @@ input, textarea, form {
 
 /* ****************  MAIN  **************** */
 .left {
-  width: 50%;
+  width: 70%;
 }
 
 .intro {
@@ -389,17 +391,6 @@ input, textarea, form {
   font-size: 2.5em;
 }
 
-.italic {
-  position: fixed;
-  color: #fa0636;
-  padding-left: 1%;
-  bottom: 1.1em;
-  font-family: moret, serif;
-  font-size: 1.1em;
-  font-weight: 200;
-  font-style: italic;
-}
-
 .me {
   width: 100%;
   left: 12em;
@@ -407,15 +398,16 @@ input, textarea, form {
   margin-bottom: 0;
   padding-bottom: 0;
   position: fixed;
+  overflow: hidden;
 }
 
 .contrast-img {
   width: 100%;
   background-color: transparent;
   border-radius: 0px;
+  z-index: 10;
   outline: black;
   position: fixed;
-  z-index: 5;
   -moz-outline-radius: 0px;
   cursor: none;
   right: 2%;
@@ -548,10 +540,10 @@ a:hover {
   }
 
   .logo {
-    width: 50%;
-    top: 21%;
+    width: 40%;
+    top: 12%;
     transform: rotate(90deg);
-    right: -18%;
+    right: -10%;
   }
 
   .close-button {
@@ -600,7 +592,7 @@ form input[type=email], form textarea[type=text] {
   }
 
   .left {
-    width: 70%;
+    width: 80%;
     padding-left: 9%;
   }
 
@@ -618,7 +610,8 @@ form input[type=email], form textarea[type=text] {
     margin: 0;
     padding: 0;
     left: 0;
-    bottom: -15%;
+    bottom: 0;
+    overflow: hidden;
     width: 100%;
   }
 
@@ -730,6 +723,7 @@ form input[type=email], form textarea[type=text] {
     padding: 0;
     left: 0;
     bottom: 0;
+    overflow: hidden;
   }
 
   .contrast-img {

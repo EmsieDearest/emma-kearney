@@ -25,6 +25,7 @@
 /* Color Variables */
 $cherry: #fa0636;
 $blush: #f7dfe8;
+$peach: #FFE7DD;
 $black: grayscale(100%) contrast(2000%);
 $forest: #428557;
 $lavendar: #d7bfe1;
@@ -120,7 +121,7 @@ html {
 /* ****************  BODY  **************** */
 
 body {
-  background-color: $blush;
+  background-color: $peach;
   // background-image: url('../img/background.jpg');
   // background-repeat: no-repeat;
   // background-attachment: fixed;
@@ -129,9 +130,7 @@ body {
   height: $full;
   // padding: 0.2em;
   overflow-x: hidden;
-  overflow-y: scroll;
-  background-color: $blush;
-  position: relative;
+  scroll-snap-type: y mandatory;
 }
 
 /* Focus styles */
@@ -455,48 +454,102 @@ input, textarea, form {
 }
 
 /* ****************  MAIN  **************** */
+.start {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  position: relative;
+}
+
 .left {
-  width: 70%;
+  width: 90%;
+  margin : {
+    left: 11em;
+    top: 2.5em;
+  }
 }
 
 .intro {
   color: $cherry;
-  position: fixed;
-  left: 5em;
-  top: 4.5em;
-  line-height: 1.2;
+  line-height: 1;
   font : {
     family: $gopher;
     style: normal;
-    size: 2.5em;
+    size: 5em;
   }
 }
 
 .me {
   width: 100%;
-  left: 12em;
-  bottom: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  position: fixed;
-  overflow: hidden;
+  padding-left: 12em;
+  top: 2em;
+}
+
+.concepts {
+  padding: {
+    top: 15em;
+    bottom: 10em;
+  }
+}
+
+.greenhouseimg {
+  display: none;
+  position: absolute;
+  width: 16%;
+  padding-left: 4em;
+  margin-left: 9em;
+  opacity: 30%;
+  cursor: none;
+}
+
+.darlingimg {
+  display: none;
+  position: absolute;
+  width: 20%;
+  padding-left: 4em;
+  margin-left: 60em;
+  margin-top: 20em;
+  opacity: 30%;
+  cursor: none;
+}
+
+.greenhouse:focus, .darlingmag:focus, .bodyweight:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.greenhouse:hover, .greenhouse:focus,
+.darlingmag:hover, .darlingmag:focus,
+.bodyweight:hover, .bodyweight:focus {
+  -webkit-text-fill-color: $peach; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $cherry;
+  text-decoration: none;
+  cursor: none;
+}
+
+h2 {
+  color: $cherry;
+  padding-left: 4em;
+  top: 3.5em;
+  line-height: 2;
+  font : {
+    family: $gopher;
+    style: normal;
+    size: 5em;
+  }
 }
 
 .contrast-img {
-  width:100%;
+  width:10%;
   background-color: transparent;
   border-radius: 0px;
   z-index: 10;
-  outline: black;
   position: fixed;
   -moz-outline-radius: 0px;
   cursor: none;
   right: 2%;
   bottom: 3%;
-  padding : {
-    left: 88%;
-    top: 2em;
-  }
 }
 
 button {
@@ -511,99 +564,68 @@ a:hover {
   color: $cherry;
 }
 
-.plantapp {
-  width: 100%;
-  height: 100%;
+/************ Greenhouse App Case Study ************/
+.casestudy {
+  padding-left: 12em;
+}
+
+.star {
+  transform: rotate(-10deg);
+}
+
+.title {
+  color: $cherry;
+  padding-top: 0.5em;
+  margin-left: 0.3em;
+  line-height: 2;
+  font : {
+    family: $gopher;
+    style: normal;
+    size: 3em;
+  }
+}
+
+p {
+  color: $cherry;
+  line-height: 1.3;
+  padding-bottom: 1em;
+  font : {
+    family: $gopher;
+    style: normal;
+    size: 1.6em;
+  }
+}
+
+figcaption {
+  color: $cherry;
   padding : {
-    top: 65%;
-    bottom: 8%;
+    bottom: 2em;
+    left: 1em;
+    top: 1em;
   }
-  z-index: 3;
+  font : {
+    family: $gopher;
+    style: normal;
+    size: 1em;
+  }
 }
 
-.darling {
-  width: 100%;
-  height: 100%;
+.arrow {
   padding : {
-    bottom: 8%;
+    top: 4em;
+    bottom: 10em;
   }
-  z-index: 3;
+  margin-left: 19em;
+  cursor: none;
 }
 
-.fitnessapp {
-  width: 100%;
-  height: 100%;
-  padding : {
-    bottom: 65%;
-  }
-  z-index: 3;
+.arrow2 {
+  transform: rotate(180deg);
+  cursor: none;
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 30; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-}
-
-/* Modal Content (Image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation - Zoom in the Modal */
-.modal-content, #caption {
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
+.workdiv {
+  display: none;
 }
 
 
@@ -612,17 +634,32 @@ a:hover {
   [class*="col-"] {
     width: 100%;
   }
+
+  html {
+    padding: 0;
+    margin: 0;
+    // border: 1px solid black;
+  }
+
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+
   #cursor {
     display: none;
   }
   .nav-link {
+    // border: 1px solid black;
     font-size: 1em;
+    margin-top: 0;
   }
   .logo {
+    // border: 1px solid black;
     width: 40%;
     top: 12%;
     transform: rotate(90deg);
-    right: -10%;
+    right: -8%;
   }
   .close-button {
     position: absolute;
@@ -692,18 +729,31 @@ a:hover {
     }
   }
 
+  .start {
+    // border: 1px solid black;
+    height: auto;
+    width: auto;
+    padding-top: 20%;
+  }
+
   .left {
-    width: 80%;
+    // border: 1px solid black;
     padding : {
-      left: 9%;
+      left: 0;
+      right: 0;
     }
+    margin: {
+      left: 1%;
+      right: 0;
+    }
+    width: 80%;
   }
 
   .intro {
+    // border: 1px solid black;
     color: $cherry;
     top: 25%;
-    left: -6%;
-    padding-right: 1em;
+    padding-left: 0;
     line-height: 1.3;
     font : {
       family: $gopher;
@@ -712,42 +762,125 @@ a:hover {
   }
 
   .me {
-    margin: 0;
+    // border: 1px solid black;
+    margin-bottom: 15.75em;
     padding: 0;
+    top: 0;
     left: 0;
     bottom: 0;
     overflow: hidden;
-    width: 100%;
+    width: 80vw;
+  }
+
+  .greenhouseimg, .darlingimg {
+    display: none;
   }
 
   .contrast-img {
-    width:100%;
+    // border: 1px solid black;
+    width: 15%;
     background-color: transparent;
     border-radius: 0px;
     outline: black;
     position: fixed;
     z-index: 5;
     -moz-outline-radius: 0px;
+    padding: 0;
     cursor: none;
-    right: 4%;
-    bottom: 3%;
-    padding : {
-      left: 85%;
-      top: 2em;
-    }
+    left: 19.5em;
+    // bottom: 6%;
   }
 
-  .plantapp {
-    padding-top: 70em;
-  }
-
-  .concept {
+  .concepts {
     padding : {
       left: 0;
       right: 0;
     }
+    display: none;
+  }
+
+  h2 {
+    display: none;
+  }
+
+  .work {
+    display: block;
+    color: $cherry;
+    margin-left: 1%;
+    line-height: 1.3;
+    font : {
+      family: $gopher;
+      size: 1.3em;
+    }
+  }
+
+
+  /* ****** Concept Pages ********/
+  .casestudy {
+    margin-left: -12em;
+    padding-right: 3em;
+  }
+
+  .star {
+    transform: rotate(-10deg);
+    padding-right: 14em;
+  }
+
+  .title {
+    color: $cherry;
+    padding-top: 0.5em;
+    margin-left: 0.4em;
+    line-height: 1;
+    font : {
+      family: $gopher;
+      style: normal;
+      size: 2em;
+    }
+  }
+
+  p {
+    color: $cherry;
+    line-height: 1.3;
+    padding-bottom: 1.3em;
+    font : {
+      family: $gopher;
+      style: normal;
+      size: 1em;
+    }
+  }
+
+  figcaption {
+    color: $cherry;
+    padding : {
+      bottom: 2em;
+      left: 1em;
+      top: 1em;
+    }
+    font : {
+      family: $gopher;
+      style: normal;
+      size: 1em;
+    }
+  }
+
+  .arrow {
+    padding : {
+      top: 4em;
+      bottom: 10em;
+    }
+    margin-left: 19em;
+    cursor: none;
+  }
+
+  .arrow2 {
+    transform: rotate(180deg);
+    cursor: none;
   }
 }
+
+
+
+
 
 /* ********************* For Tablets *********************** */
 @media only screen
@@ -837,49 +970,66 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
   .left {
     margin: auto;
-    padding : {
-      left: 10%;
-      right: 10%;
-    }
+    width: 90%;
+    padding-top: 5em;
   }
 
   .intro {
     color: $cherry;
-    left: -1.3em;
-    bottom: 27.5%;
-    line-height: 1.3;
+    line-height: 1.1;
     font : {
       family: $gopher;
-      size: 2em;
+      style: normal;
+      size: 3.5em;
     }
   }
 
   .me {
-    margin: 0;
+    width: 100%;
     padding: 0;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
+    margin-left: 12em;
+    top: 2em;
+  }
+
+  .greenhouseimg, .darlingimg {
+    display: none;
   }
 
   .contrast-img {
-    width:100%;
+    // border: 1px solid black;
+    width: 15%;
     background-color: transparent;
     border-radius: 0px;
     outline: black;
     position: fixed;
     z-index: 5;
     -moz-outline-radius: 0px;
+    padding: 0;
     cursor: none;
-    right: 4%;
-    bottom: 3%;
-    padding : {
-      left: 90%;
-      top: 2em;
-    }
+    left: 19.5em;
+    // bottom: 6%;
   }
 
-  .plantapp {
-    padding-top: 80em;
+  .concepts {
+    padding : {
+      left: 0;
+      right: 0;
+    }
+    display: none;
+  }
+
+  h2 {
+    display: none;
+  }
+
+  .work {
+    display: block;
+    color: $cherry;
+    margin-left: 1%;
+    line-height: 1.3;
+    font : {
+      family: $gopher;
+      size: 1.3em;
+    }
   }
 }

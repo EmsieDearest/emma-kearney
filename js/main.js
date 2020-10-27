@@ -67,7 +67,7 @@ let ElementCursor = {
     }
 };
 
-ElementCursor.setCursor($('#cursor'), $('.btn, .form-input, .logo, .nav-link, .close-button, .contrast-img, .doTheWave, #skip'));
+ElementCursor.setCursor($('#cursor'), $('.btn, .form-input, .logo, .nav-link, .close-button, .contrast-img, .doTheWave, #skip, .greenhouse, .darlingmag, .bodyweight, .arrow'));
 $(window).on('scroll', function(e) {});
 
 // Set Focus Styles
@@ -180,6 +180,32 @@ $(function() {
     });
     $('.logo-div').on('mouseleave focusout',function() {
         $('.logo').attr("src", "img/wave.svg");
+    });
+});
+
+// Place concept image on hover
+$(function() {
+    $('.greenhouse').on('mouseover focusin',function(e){
+        if (e.key === 13){
+            $('.greenhouseimg').css("display", "block");
+        } else {
+            $('.greenhouseimg').css("display", "block");
+        }
+    });
+    $('.greenhouse').on('mouseleave focusout',function() {
+        $('.greenhouseimg').css("display", "none");
+    });
+});
+$(function() {
+    $('.darlingmag').on('mouseover focusin',function(e){
+        if (e.key === 13){
+            $('.darlingimg').css("display", "block");
+        } else {
+            $('.darlingimg').css("display", "block");
+        }
+    });
+    $('.darlingmag').on('mouseleave focusout',function() {
+        $('.darlingimg').css("display", "none");
     });
 });
 
@@ -619,7 +645,7 @@ $(function(){
                 return cherryOnYellow();
                 break;
             case i = 3:
-                return cherryOnBlush()();
+                return cherryOnBlush();
                 break;
         }
         return theme[i];

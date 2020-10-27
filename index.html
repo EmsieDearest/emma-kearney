@@ -177,42 +177,47 @@
 </header>
 
 <main id="main">
-    <div class="row">
-        <h1 class="intro left col-md-10" id="intro">Designer, front end developer and accessibility specialist</h1> <!-- <span class="italic">Form and function interwoven.</span> -->
-    </div>
-    <div class="row">
-        <img src="img/me.jpg" class="me col-sm-12 col-lg-5" alt="Fanciful me" role="presentation">
-    </div>
-    <!---------- Contrast Button ------------>
-    <div class="row contrast-div">
-        <button id="contrast-img"
-                class="contrastbox col-sm-12"
-                aria-label="Change color scheme"
-                tabindex="0">
-            <img class="contrast-img" src="img/contrast.svg" alt="" role="presentation">
-        </button>
-    </div>
+    <section aria-label="about me" class="start">
+        <div class="row left">
+            <h1 class="intro col-md-10" id="intro">Product, UI/UX Designer, Front End Developer and Accessibility Specialist</h1> <!-- <span class="italic">Form and function interwoven.</span> -->
+        </div>
+        <div class="row">
+            <img src="img/me.jpg" class="me col-sm-1 col-lg-5" alt="Fanciful me" role="presentation">
+        </div>
+    </section>
     <!----------- Concepts ------------------>
-    <div class="row">
-        <img src="img/plantappconcept.png" alt="Plant App Concept" class="plantapp concept col-sm-12">
-    </div>
-    <div class="row iris">
-        <img src="img/IrisSite.png" alt="Darling Exploration" class="darling concept col-sm-12">
-    </div>
-    <div class="row">
-        <img src="img/FitnessApp.png" alt="Fitness App Concept" class="fitnessapp concept col-sm-12">
-    </div>
-    <div id="myModal" class="modal">
-        <!-- The Close Button -->
-        <span class="close">&times;</span>
-
-        <!-- Modal Content (The Image) -->
-        <img class="modal-content" id="img01">
-
-        <!-- Modal Caption (Image Text) -->
-        <div id="caption"></div>
-    </div>
+    <img class="greenhouseimg" src="img/greenhouse.png">
+    <img class="darlingimg" src="img/iris-workofart.jpg">
+    <section aria-label="case studies" class="concepts">
+        <a class="greenhouse" href="greenhouse.html">
+            <h2 class="greenhouse">Greenhouse App</h2>
+        </a>
+        <a class="darlingmag" href="darlingreimagined.html"><h2 class="darlingmag">Darling Reimagined</h2></a>
+        <a class="bodyweight" href="bodyweight.html"><h2 class="bodyweight">BodyWeight App</h2></a>
+        <!-- <div class="row">
+            <img src="img/plantappconcept.png" alt="Plant App Concept" class="plantapp concept col-sm-12">
+        </div>
+        <div class="row iris">
+            <img src="img/IrisSite.png" alt="Darling Exploration" class="darling concept col-sm-12">
+        </div>
+        <div class="row">
+            <img src="img/FitnessApp.png" alt="Fitness App Concept" class="fitnessapp concept col-sm-12">
+        </div>
+        -->
+    </section>
 </main>
+<!---------- Contrast Button ------------>
+<footer>
+    <a class="row work" href="greenhouse.html">
+        WORK
+    </a>
+    <button id="contrast-img"
+            class="contrastbox"
+            aria-label="Change color scheme"
+            tabindex="0">
+        <img class="contrast-img col-sm-1" src="img/contrast.svg" alt="" role="presentation">
+    </button>
+</footer>
 
 <!-- JavaScript Sources -->
 <!-- JQUERY -->

@@ -1,0 +1,361 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/qkl2weg.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/contrast.svg"/>
+
+    <title>EMMA KEARNEY / BodyWeight App</title>
+    <meta name="description"
+          content="Designer and front-end developer empowering small businesses and startups. Web design, UI/UX, Branding, Print design, Accessibility">
+    <meta name="theme-color" content="#fafafa">
+
+    <style>
+        @font-face {
+            font-family: 'Gopher Display Regular';
+            src: url('/css/fonts/gopherdisplayregular-webfont.eot?#iefix') format('embedded-opentype'),
+            url('/css/fonts/gopherdisplayregular-webfont.woff2') format('woff2'),
+            url('/css/fonts/gopherdisplayregular-webfont.woff') format('woff'),
+            url('/css/fonts/gopherdisplayregular-webfont.ttf') format('truetype'),
+            url('/css/fonts/gopherdisplayregular-webfont.svg#gopher_displayregular') format('svg');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+</head>
+<body>
+<div class="background">
+    <div class="front" role="presentation"></div>
+    <div class="back" role="presentation"></div>
+</div>
+
+<div id="cursor" class="run-animation"></div>
+
+<header>
+    <!-- Navigation -->
+    <div class="row justify-content-between">
+        <nav class="navpanel">
+            <ul class="nav d-flex" id="nav" aria-label="Main Menu">
+                <!------ Skip Nav ------>
+                <li class="nav-item align-self-center">
+                    <a href="index.html#main"><button id="skip" class="nav-item align-self-center">SKIP TO MAIN</button></a>
+                </li>
+                <!------ Contact ------>
+                <li class="nav-item align-self-center">
+                    <button class="nav-link contactbtn"
+                            id="nav-link mySidepanel"
+                            type="button"
+                            onclick="openNav()"
+                            aria-expanded="false"
+                            aria-controls="mySidepanel">
+                        CONTACT
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <!-- Hidden Form -->
+        <div id="mySidepanel" class="sidepanel">
+            <div class="d-flex p-md-5 m-md-5 formbox">
+                <form name="my-form"
+                      action="https://formspree.io/emma@emma-kearney.com"
+                      method="POST"
+                      class="needs-validation my-form"
+                      id="my-form"
+                      role="form"
+                      aria-label="Contact me"
+                      aria-labelledby="mySidepanel"
+                      aria-expanded="true"
+                      noValidate>
+                    <!-- Gotcha -->
+                    <input type="text"
+                           name="_gotcha"
+                           class="gotcha"
+                           style="display:none">
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-sm-12">
+                            <!-- Name input -->
+                            <div class="sm-form form-group">
+                                <label for="name">
+                                    NAME
+                                </label>
+                                <input class="form-input form-control name"
+                                       type="text"
+                                       name="user_name"
+                                       aria-invalid="false"
+                                       id="name"
+                                       aria-required="true"
+                                       required="required"
+                                       tabindex="0">
+                                <p id="err1 errName" class="err err1 errName">No name?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-sm-12">
+                            <!-- Email input -->
+                            <div class="sm-form form-group">
+                                <label for="email">
+                                    EMAIL
+                                </label>
+                                <input class="form-input form-control email"
+                                       type="email"
+                                       name="_replyto"
+                                       aria-invalid="false"
+                                       aria-required="true"
+                                       required="required"
+                                       id="email"
+                                       tabindex="0">
+                                <p id="err2" class="err err2 errEmail">No email?</p>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-sm-12">
+                            <!-- Message input -->
+                            <div class="sm-form form-group">
+                                <label for="message">
+                                    DROP ME A LINE
+                                </label>
+                                <textarea class="form-input message-input form-control"
+                                          type="text"
+                                          name="user_message"
+                                          aria-invalid="false"
+                                          aria-required="true"
+                                          required="required"
+                                          id="message"
+                                          rows="5"
+                                          tabindex="0">Hey Emma,</textarea>
+                                <p id="err3" class="err err3 errMessage" aria-label="Don't forget a message. What's on your mind?">What's on your mind?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Send Button -->
+                    <button type="submit"
+                            class="btn btn-sm align-item-end"
+                            onclick="return(submission())"
+                            name="send"
+                            id="my-form-button"
+                            value="send">SEND
+                    </button>
+                    <!-- Success Validation -->
+                    <div class="success">
+                        <p aria-label="Thank you!" class="success-p">Thank you! Your message was sent.</p>
+                    </div>
+                    <button class="close-button" type="button" aria-label="Close form" href="javascript:void(0)" onclick="closeNav()"></button>
+                </form>
+            </div>
+        </div>
+        <div class="logo-div">
+            <a href="index.html" class="col-md-4 col-sm-1 logo-link">
+                <img src="img/wave.svg" alt="Emma Kearney Home" id="logo" class="logo">
+            </a>
+        </div>
+    </div>
+</header>
+
+<main id="main">
+    <section class="casestudy">
+        <img class="col-sm-2 star" src="img/casestudy.svg" alt="case study">
+        <h1 class="title">BodyWeight App</h1>
+        <div class="col-sm-7 paragraph">
+            <p>I was among the many who had to forgo their gym membership when COVID-19 erupted.
+                My friends know me as a bit of a gym rat, having trained through CrossFit and was
+                on a rowing team. Working out from home was a transition to say the least, not being
+                able to weight train the same way or fit a rowing machine inside my tiny apartment.
+                It turned into an opportunity to explore other workouts that I didn't normally have
+                the time to do. I got really into following workout videos of boxing, pilates, barre
+                and yoga where you primarily use your body weight for strength training. I even started
+                learning ballet! It was wonderful to see how you could get such a great workout without
+                needing much equipment.
+                <br><br>
+                This app was designed for people who workout from home. Who don't have any equipment, or
+                just want to level up with what they have around the house. I miss the trainers that I saw
+                on a weekly basis. They were my friends. I wanted it to have the appeal
+                of a trendy workout studio, with instructors who bring their authentic quirky selves to the class
+                like when you know Fire Flow Yoga with Freya G. is going to be a blast.
+                After class you can post a selfie of how sweaty you got and share it with Freya on Instagram, maybe even
+                joke about how you cut up a pair of old sweatpants and used the elastic waistband for resistance.
+            </p>
+        </div>
+        <figure>
+            <img class="col-sm-7" src="img/FitnessApp.png" alt="">
+            <!-- <figcaption>Some preliminary wireframing sketches.</figcaption> -->
+        </figure>
+        <div class="row arrow">
+            <div class="col-sm-1 arrow2 align-self-center">
+                <a href="darlingreimagined.html" aria-label="previous case study"><img src="img/arrow.svg"></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="greenhouse.html" aria-label="next case study"><img src="img/arrow.svg"></a>
+            </div>
+        </div>
+    </section>
+    <!---------- Contrast Button ------------>
+    <div class="row contrast-div">
+        <button id="contrast-img"
+                class="contrastbox col-sm-12"
+                aria-label="Change color scheme"
+                tabindex="0">
+            <img class="contrast-img" src="img/contrast.svg" alt="" role="presentation">
+        </button>
+    </div>
+    <div id="myModal" class="modal">
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
+</main>
+
+<!-- JavaScript Sources -->
+<!-- JQUERY -->
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- BOOTSTRAP -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script src="js/main.js"></script>
+<script type="text/javascript">
+    // Form Validation
+    let err1 = document.getElementById('err1');
+    let err2 = document.getElementById('err2');
+    let err3 = document.getElementById('err3');
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let message = document.getElementById('message');
+    let form = document.getElementById('my-form');
+    let button = document.getElementsByClassName('btn')
+    const successMessage = document.getElementsByClassName('success-p');
+    let action = 'https://formspree.io/emma@emma-kearney.com';
+    let method = 'POST';
+    const formInputs = form.getElementsByTagName("input");
+    let data = new FormData(form);
+
+
+    // Handle Error Validation
+    const validate = () => {
+        let validation = true;
+        if (name.value.trim() === "") {
+            err1.style.display = "block";
+            name.setAttribute("aria-invalid", "true");
+            validation = false;
+        } else {
+            err1.style.display = "none";
+        }
+        if (email.value.trim() === "") {
+            err2.style.display = "block";
+            name.setAttribute("aria-invalid", "true");
+            validation = false;
+        } else {
+            err2.style.display = "none";
+        }
+        if (message.value.trim() === "") {
+            err3.style.display = "block";
+            name.setAttribute("aria-invalid", "true");
+            validation = false;
+        } else {
+            err3.style.display = "none";
+        }
+        return validation;
+    }
+
+    // Remove error message when typing inside input
+    name.addEventListener("keyup", event => {
+        if (event.isComposing || event.keyCode === 229) {
+            return;
+        }
+        err1.style.display = 'none';
+    });
+    email.addEventListener("keyup", event => {
+        if (event.isComposing || event.keyCode === 229) {
+            return;
+        }
+        err2.style.display = 'none';
+    });
+    message.addEventListener("keyup", event => {
+        if (event.isComposing || event.keyCode === 229) {
+            return;
+        }
+        err3.style.display = 'none';
+    });
+
+    // AJAX Submission Handler
+    const submission = () => {
+        if (validate() === true) {
+            return true;
+        }
+        $.ajax({
+            method: form.method,
+            action: form.action,
+            data: new FormData(form),
+            success: function(){
+                form.reset();
+                button.css('display', 'none');
+                successMessage.css('visibility', 'visible');
+            }
+        })
+
+        ajax(method, action, data, success);
+    }
+
+    function ajax(method, action, data, success) {
+        let xhr = new XMLHttpRequest();
+        xhr.open(method, action);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState !== XMLHttpRequest.DONE) return;
+            if (xhr.status === 200) {
+                success(xhr.response, xhr.responseType);
+            }
+        };
+        xhr.send(data);
+    }
+
+    // if lt IE 9
+    let e = ("abbr,article,aside,audio,bdi,canvas,datalist,details,dialog," +
+        "figcaption,figure,footer,header,keygen,mark,menu,meter,main,nav,output," +
+        "progress,rp,ruby,rt,section,source,summary,time,track,video,wbr").split(',');
+    for (let i = 0; i < e.length; i++) {
+        document.createElement(e[i]);
+    }
+</script>
+<![endif]-->
+
+</body>
+</html>

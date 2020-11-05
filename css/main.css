@@ -382,8 +382,8 @@ input, textarea, form {
 }
 
 .left {
-  width: 90%;
-  margin-left: 11em;
+  width: 70%;
+  margin-left: 10em;
   margin-top: 2.5em;
 }
 
@@ -392,7 +392,7 @@ input, textarea, form {
   line-height: 1;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
-  font-size: 5em;
+  font-size: 4em;
 }
 
 .me {
@@ -414,6 +414,7 @@ input, textarea, form {
   margin-left: 9em;
   opacity: 30%;
   cursor: none;
+  z-index: -1;
 }
 
 .darlingimg {
@@ -422,9 +423,22 @@ input, textarea, form {
   width: 20%;
   padding-left: 4em;
   margin-left: 60em;
+  margin-top: 30em;
+  opacity: 30%;
+  cursor: none;
+  z-index: -1;
+}
+
+.bodyweightimg {
+  display: none;
+  position: absolute;
+  width: 20%;
+  padding-left: 4em;
+  margin-left: 20em;
   margin-top: 20em;
   opacity: 30%;
   cursor: none;
+  z-index: -1;
 }
 
 .greenhouse:focus, .darlingmag:focus, .bodyweight:focus {
@@ -463,6 +477,7 @@ h2 {
   cursor: none;
   right: 2%;
   bottom: 3%;
+  display: none;
 }
 
 button {
@@ -475,6 +490,15 @@ button {
 
 a:hover {
   color: #fa0636;
+}
+
+.work {
+  text-decoration: none;
+  color: #fa0636;
+  line-height: 1;
+  font-family: Gopher Display Regular, gopher, sans-serif;
+  font-style: normal;
+  font-size: 4em;
 }
 
 /************ Greenhouse App Case Study ************/
@@ -656,6 +680,7 @@ form input[type=email], form textarea[type=text] {
     padding: 0;
     cursor: none;
     left: 19.5em;
+    display: none;
   }
 
   .concepts {
@@ -745,7 +770,11 @@ form input[type=email], form textarea[type=text] {
   }
 
   .logo {
+    border: 1px solid black;
     width: 40%;
+    left: 0;
+    padding: 0;
+    margin-left: 20em;
   }
 
   .close-button {
@@ -794,9 +823,9 @@ form input[type=email], form textarea[type=text] {
   }
 
   .left {
-    margin: auto;
     width: 90%;
-    padding-top: 5em;
+    padding-top: 10em;
+    margin-left: 0;
   }
 
   .intro {
@@ -808,10 +837,9 @@ form input[type=email], form textarea[type=text] {
   }
 
   .me {
-    width: 100%;
     padding: 0;
-    margin-left: 12em;
-    top: 2em;
+    margin: 0;
+    left: 2em;
   }
 
   .greenhouseimg, .darlingimg {
@@ -827,8 +855,10 @@ form input[type=email], form textarea[type=text] {
     z-index: 5;
     -moz-outline-radius: 0px;
     padding: 0;
+    margin: 0;
     cursor: none;
-    left: 19.5em;
+    left: 56em;
+    display: none;
   }
 
   .concepts {
@@ -847,7 +877,86 @@ form input[type=email], form textarea[type=text] {
     margin-left: 1%;
     line-height: 1.3;
     font-family: Gopher Display Regular, gopher, sans-serif;
+    font-size: 2em;
+  }
+
+  /* ****** Concept Pages ********/
+  .casestudy {
+    border: 1px solid black;
+    margin-left: 9em;
+    width: 60%;
+    padding-top: 15em;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    left: 0;
+    margin-top: 15em;
+    margin-bottom: 0;
+  }
+
+  .star {
+    transform: rotate(-10deg);
+    padding-top: 0;
+    padding-left: 0;
+    left: 0;
+    margin-top: -25em;
+    margin-left: 0;
+  }
+
+  .title {
+    color: #fa0636;
+    padding-left: 0;
+    left: 0;
+    padding-top: -1em;
+    line-height: 1;
+    font-family: Gopher Display Regular, gopher, sans-serif;
+    font-style: normal;
+    font-size: 4em;
+  }
+
+  p {
+    border: 1px solid black;
+    margin-right: -9.5em;
+    color: #fa0636;
+    line-height: 1.3;
+    padding-bottom: 1.3em;
+    font-family: Gopher Display Regular, gopher, sans-serif;
+    font-style: normal;
+    font-size: 1.7em;
+  }
+
+  .conceptfig {
+    border: 1px solid black;
+    width: 1000px;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  figure {
+    border: 1px solid black;
+    width: 100%;
+  }
+
+  figcaption {
+    color: #fa0636;
+    padding-bottom: 2em;
+    padding-left: 1em;
+    padding-top: 1em;
+    font-family: Gopher Display Regular, gopher, sans-serif;
+    font-style: normal;
     font-size: 1.3em;
+  }
+
+  .arrow {
+    padding-top: 4em;
+    padding-bottom: 10em;
+    margin-left: 19em;
+    cursor: none;
+  }
+
+  .arrow2 {
+    transform: rotate(180deg);
+    cursor: none;
   }
 }
 

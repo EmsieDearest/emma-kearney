@@ -462,9 +462,9 @@ input, textarea, form {
 }
 
 .left {
-  width: 90%;
+  width: 70%;
   margin : {
-    left: 11em;
+    left: 10em;
     top: 2.5em;
   }
 }
@@ -475,7 +475,7 @@ input, textarea, form {
   font : {
     family: $gopher;
     style: normal;
-    size: 5em;
+    size: 4em;
   }
 }
 
@@ -500,6 +500,7 @@ input, textarea, form {
   margin-left: 9em;
   opacity: 30%;
   cursor: none;
+  z-index: -1;
 }
 
 .darlingimg {
@@ -508,9 +509,22 @@ input, textarea, form {
   width: 20%;
   padding-left: 4em;
   margin-left: 60em;
+  margin-top: 30em;
+  opacity: 30%;
+  cursor: none;
+  z-index: -1;
+}
+
+.bodyweightimg {
+  display: none;
+  position: absolute;
+  width: 20%;
+  padding-left: 4em;
+  margin-left: 20em;
   margin-top: 20em;
   opacity: 30%;
   cursor: none;
+  z-index: -1;
 }
 
 .greenhouse:focus, .darlingmag:focus, .bodyweight:focus {
@@ -550,6 +564,7 @@ h2 {
   cursor: none;
   right: 2%;
   bottom: 3%;
+  display: none;
 }
 
 button {
@@ -562,6 +577,17 @@ button {
 
 a:hover {
   color: $cherry;
+}
+
+.work {
+  text-decoration: none;
+  color: $cherry;
+  line-height: 1;
+  font : {
+    family: $gopher;
+    style: normal;
+    size: 4em;
+  }
 }
 
 /************ Greenhouse App Case Study ************/
@@ -788,6 +814,7 @@ figcaption {
     padding: 0;
     cursor: none;
     left: 19.5em;
+    display: none;
     // bottom: 6%;
   }
 
@@ -890,6 +917,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
   [class*="col-"] {
     width: 100%;
   }
+
   #cursor {
     display: none;
   }
@@ -898,7 +926,11 @@ and (-webkit-min-device-pixel-ratio: 2) {
     top: 0.5em;
   }
   .logo {
+    border: 1px solid black;
     width: 40%;
+    left: 0;
+    padding: 0;
+    margin-left: 20em;
   }
   .close-button {
     position: absolute;
@@ -969,9 +1001,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
   }
 
   .left {
-    margin: auto;
     width: 90%;
-    padding-top: 5em;
+    padding-top: 10em;
+    margin-left: 0;
   }
 
   .intro {
@@ -985,10 +1017,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
   }
 
   .me {
-    width: 100%;
     padding: 0;
-    margin-left: 12em;
-    top: 2em;
+    margin: 0;
+    left: 2em;
   }
 
   .greenhouseimg, .darlingimg {
@@ -1005,8 +1036,10 @@ and (-webkit-min-device-pixel-ratio: 2) {
     z-index: 5;
     -moz-outline-radius: 0px;
     padding: 0;
+    margin: 0;
     cursor: none;
-    left: 19.5em;
+    left: 56em;
+    display: none;
     // bottom: 6%;
   }
 
@@ -1029,7 +1062,109 @@ and (-webkit-min-device-pixel-ratio: 2) {
     line-height: 1.3;
     font : {
       family: $gopher;
+      size: 2em;
+    }
+  }
+
+  /* ****** Concept Pages ********/
+  .casestudy {
+    border: 1px solid black;
+    margin-left: 9em;
+    // padding-right: 3em;
+    width: 60%;
+    padding : {
+      top: 15em;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    left: 0;
+    margin : {
+      top: 15em;
+      bottom: 0;
+    }
+  }
+
+  .star {
+    transform: rotate(-10deg);
+    padding : {
+      top: 0;
+      left: 0;
+    }
+    left: 0;
+    margin : {
+      top: -25em;
+      left: 0;
+    }
+  }
+
+  .title {
+    color: $cherry;
+    padding-left: 0;
+    left: 0;
+    padding-top: -1em;
+    line-height: 1;
+    font : {
+      family: $gopher;
+      style: normal;
+      size: 4em;
+    }
+  }
+
+  p {
+    border: 1px solid black;
+    margin-right: -9.5em;
+    color: $cherry;
+    line-height: 1.3;
+    padding-bottom: 1.3em;
+    font : {
+      family: $gopher;
+      style: normal;
+      size: 1.7em;
+    }
+  }
+
+  .conceptfig {
+    border: 1px solid black;
+    width: 1000px;
+    margin : {
+      left: 0;
+    }
+    padding: 0;
+  }
+
+  figure {
+    border: 1px solid black;
+    width: 100%;
+  }
+
+  figcaption {
+    // border: 1px solid black;
+    // margin-right: 42%;
+    color: $cherry;
+    padding : {
+      bottom: 2em;
+      left: 1em;
+      top: 1em;
+    }
+    font : {
+      family: $gopher;
+      style: normal;
       size: 1.3em;
     }
+  }
+
+  .arrow {
+    padding : {
+      top: 4em;
+      bottom: 10em;
+    }
+    margin-left: 19em;
+    cursor: none;
+  }
+
+  .arrow2 {
+    transform: rotate(180deg);
+    cursor: none;
   }
 }

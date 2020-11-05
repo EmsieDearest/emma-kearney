@@ -208,6 +208,18 @@ $(function() {
         $('.darlingimg').css("display", "none");
     });
 });
+$(function() {
+    $('.bodyweight').on('mouseover focusin',function(e){
+        if (e.key === 13){
+            $('.bodyweightimg').css("display", "block");
+        } else {
+            $('.bodyweightimg').css("display", "block");
+        }
+    });
+    $('.bodyweight').on('mouseleave focusout',function() {
+        $('.bodyweightimg').css("display", "none");
+    });
+});
 
 
 // Place GIF on Hover

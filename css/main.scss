@@ -591,18 +591,17 @@ a:hover {
 }
 
 /************ Greenhouse App Case Study ************/
-.casestudy {
-  padding-left: 12em;
-}
-
 .star {
   transform: rotate(-10deg);
+  padding : {
+    left: 1em;
+    top: 3em;
+  }
 }
 
 .title {
+  padding-left: 6.8em;
   color: $cherry;
-  padding-top: 0.5em;
-  margin-left: 0.3em;
   line-height: 2;
   font : {
     family: $gopher;
@@ -610,9 +609,23 @@ a:hover {
     size: 3em;
   }
 }
+ h3 {
+   color: $cherry;
+   padding-left: 0.6em;
+   line-height: 1.5;
+   padding : {
+     bottom: 2em;
+   }
+   font : {
+     family: $gopher;
+     style: normal;
+     size: 1.5em;
+   }
+ }
 
 p {
   color: $cherry;
+  padding-left: 12em;
   line-height: 1.3;
   padding-bottom: 1em;
   font : {
@@ -641,7 +654,7 @@ figcaption {
     top: 4em;
     bottom: 10em;
   }
-  margin-left: 19em;
+  margin-left: 23em;
   cursor: none;
 }
 

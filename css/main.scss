@@ -654,6 +654,27 @@ figcaption {
   display: none;
 }
 
+/************ Blog ************/
+ol {
+  margin-left: 1em;
+}
+
+li {
+  color: $cherry;
+  line-height: 1.3em;
+  font : {
+    family: $gopher;
+    style: normal;
+    size: 2em;
+  }
+}
+
+hr {
+  border-top: 0.2em dashed $cherry;
+  width: 105%;
+  margin-left: -2em;
+}
+
 
 /* *********************** For Phones *********************** */
 @media only screen and (max-width: 768px) {

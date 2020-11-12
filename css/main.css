@@ -555,6 +555,25 @@ figcaption {
   display: none;
 }
 
+/************ Blog ************/
+ol {
+  margin-left: 1em;
+}
+
+li {
+  color: #fa0636;
+  line-height: 1.3em;
+  font-family: Gopher Display Regular, gopher, sans-serif;
+  font-style: normal;
+  font-size: 2em;
+}
+
+hr {
+  border-top: 0.2em dashed #fa0636;
+  width: 105%;
+  margin-left: -2em;
+}
+
 /* *********************** For Phones *********************** */
 @media only screen and (max-width: 768px) {
   [class*=col-] {

@@ -180,7 +180,7 @@ body {
   z-index: 5;
   font : {
     family: $gopher;
-    size: 2em;
+    size: 4em;
   }
 }
 
@@ -669,12 +669,13 @@ figcaption {
 
 /************ Blog ************/
 ol {
-  margin-left: 1em;
+  padding-top: 3em;
 }
 
-li {
+.li-blog {
   color: $cherry;
   line-height: 1.3em;
+  padding-left: 8.3em;
   font : {
     family: $gopher;
     style: normal;
@@ -686,6 +687,10 @@ hr {
   border-top: 0.2em dashed $cherry;
   width: 105%;
   margin-left: -2em;
+}
+
+.youtube {
+  margin-left: 19em;
 }
 
 

@@ -149,7 +149,7 @@ body {
   position: static;
   z-index: 5;
   font-family: Gopher Display Regular, gopher, sans-serif;
-  font-size: 2em;
+  font-size: 4em;
 }
 
 .nav-link:focus {
@@ -565,12 +565,13 @@ figcaption {
 
 /************ Blog ************/
 ol {
-  margin-left: 1em;
+  padding-top: 3em;
 }
 
-li {
+.li-blog {
   color: #fa0636;
   line-height: 1.3em;
+  padding-left: 8.3em;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
   font-size: 2em;
@@ -580,6 +581,10 @@ hr {
   border-top: 0.2em dashed #fa0636;
   width: 105%;
   margin-left: -2em;
+}
+
+.youtube {
+  margin-left: 19em;
 }
 
 /* *********************** For Phones *********************** */

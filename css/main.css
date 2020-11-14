@@ -228,6 +228,7 @@ body {
 
 .me {
   width: 100%;
+  height: auto;
   padding-left: 12em;
   top: 2em;
 }

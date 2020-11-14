@@ -547,6 +547,10 @@ p {
   font-size: 1.6em;
 }
 
+.blog-link {
+  display: none;
+}
+
 figcaption {
   color: #fa0636;
   padding-bottom: 2em;

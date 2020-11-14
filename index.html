@@ -45,7 +45,7 @@
 
 <div id="cursor" class="run-animation"></div>
 
-<header>
+<header class="section">
     <!-- Navigation -->
     <div class="row justify-content-between">
         <nav class="navpanel">
@@ -54,120 +54,14 @@
                 <li class="nav-item align-self-center">
                     <a href="index.html#main"><button id="skip" class="nav-item align-self-center">SKIP TO MAIN</button></a>
                 </li>
-                <!------ Contact ------>
+                <!------ Work ------>
                 <li class="nav-item align-self-center">
-                    <button class="nav-link contactbtn"
-                            id="nav-link mySidepanel"
-                            type="button"
-                            onclick="openNav()"
-                            aria-expanded="false"
-                            aria-controls="mySidepanel">
-                        CONTACT
-                    </button>
+                    <a class="work" href="greenhouse.html">
+                        WORK
+                    </a>
                 </li>
             </ul>
         </nav>
-        <!-- Hidden Form -->
-        <div id="mySidepanel" class="sidepanel">
-            <div class="d-flex p-md-5 m-md-5 formbox">
-                <form name="my-form"
-                      action="https://formspree.io/emma@emma-kearney.com"
-                      method="POST"
-                      class="needs-validation my-form"
-                      id="my-form"
-                      role="form"
-                      aria-label="Contact me"
-                      aria-labelledby="mySidepanel"
-                      aria-expanded="true"
-                      noValidate>
-                    <!-- Gotcha -->
-                    <input type="text"
-                           name="_gotcha"
-                           class="gotcha"
-                           style="display:none">
-                    <!-- Grid row -->
-                    <div class="row">
-                        <!-- Grid column -->
-                        <div class="col-sm-12">
-                            <!-- Name input -->
-                            <div class="sm-form form-group">
-                                <label for="name">
-                                    NAME
-                                </label>
-                                    <input class="form-input form-control name"
-                                           type="text"
-                                           name="user_name"
-                                           aria-invalid="false"
-                                           id="name"
-                                           aria-required="true"
-                                           required="required"
-                                           tabindex="0">
-                                <p id="err1 errName" class="err err1 errName">No name?</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Grid column -->
-                    <!-- Grid row -->
-                    <div class="row">
-                        <!-- Grid column -->
-                        <div class="col-sm-12">
-                            <!-- Email input -->
-                            <div class="sm-form form-group">
-                                <label for="email">
-                                    EMAIL
-                                </label>
-                                    <input class="form-input form-control email"
-                                           type="email"
-                                           name="_replyto"
-                                           aria-invalid="false"
-                                           aria-required="true"
-                                           required="required"
-                                           id="email"
-                                           tabindex="0">
-                                <p id="err2" class="err err2 errEmail">No email?</p>
-                            </div>
-                        </div>
-                        <!-- Grid column -->
-                    </div>
-                    <!-- Grid row -->
-                    <!-- Grid row -->
-                    <div class="row">
-                        <!-- Grid column -->
-                        <div class="col-sm-12">
-                            <!-- Message input -->
-                            <div class="sm-form form-group">
-                                <label for="message">
-                                    DROP ME A LINE
-                                </label>
-                                    <textarea class="form-input message-input form-control"
-                                              type="text"
-                                              name="user_message"
-                                              aria-invalid="false"
-                                              aria-required="true"
-                                              required="required"
-                                              id="message"
-                                              rows="5"
-                                              tabindex="0">Hey Emma,</textarea>
-                                <p id="err3" class="err err3 errMessage" aria-label="Don't forget a message. What's on your mind?">What's on your mind?</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Send Button -->
-                    <button type="submit"
-                            class="btn btn-sm align-item-end"
-                            onclick="return(submission())"
-                            name="send"
-                            id="my-form-button"
-                            value="send">SEND
-                    </button>
-                    <!-- Success Validation -->
-                    <div class="success">
-                        <p aria-label="Thank you!" class="success-p">Thank you! Your message was sent.</p>
-                    </div>
-                    <button class="close-button" type="button" aria-label="Close form" href="javascript:void(0)" onclick="closeNav()"></button>
-                </form>
-            </div>
-        </div>
         <div class="logo-div">
             <a href="index.html" class="col-md-4 col-sm-1 logo-link">
                 <img src="img/wave.svg" alt="Emma Kearney Home" id="logo" class="logo">
@@ -177,7 +71,7 @@
 </header>
 
 <main id="main">
-    <section aria-label="about me" class="start">
+    <section aria-label="about me" class="start section">
         <div class="row left">
             <h1 class="intro col-md-10" id="intro">UX/UI Designer, <br>Front End Developer and Accessibility Specialist</h1> <!-- <span class="italic">Form and function interwoven.</span> -->
         </div>
@@ -193,8 +87,8 @@
         <a class="greenhouse" href="greenhouse.html">
             <h2 class="greenhouse">Greenhouse App</h2>
         </a>
-        <a class="bodyweight" href="bodyweight.html"><h2 class="bodyweight">Bodyweight</h2></a>
-        <a class="darlingmag" href="darlingreimagined.html"><h2 class="darlingmag">The Art of Accessibility</h2></a>
+        <a class="col bodyweight" href="bodyweight.html"><h2 class="bodyweight">Bodyweight</h2></a>
+        <a class="col darlingmag" href="darlingreimagined.html"><h2 class="darlingmag">The Art of Accessibility</h2></a>
         <!-- <div class="row">
             <img src="img/plantappconcept.png" alt="Plant App Concept" class="plantapp concept col-sm-12">
         </div>
@@ -208,13 +102,123 @@
     </section>
 </main>
 <!---------- Contrast Button ------------>
-<footer>
-    <a class="row work" href="greenhouse.html">
-        WORK
-    </a>
-    <a class="row work" href="blog.html">
+<footer class="section">
+    <a class="work blog-link" href="blog.html" style="display: none">
         BLOG
     </a>
+    <button class="nav-link contactbtn"
+            id="nav-link mySidepanel"
+            type="button"
+            onclick="openNav()"
+            aria-expanded="false"
+            aria-controls="mySidepanel">
+        CONTACT
+    </button>
+
+
+    <!-- Hidden Form -->
+    <div id="mySidepanel" class="sidepanel">
+        <div class="d-flex p-md-5 m-md-5 formbox">
+            <form name="my-form"
+                  action="https://formspree.io/emma@emma-kearney.com"
+                  method="POST"
+                  class="needs-validation my-form"
+                  id="my-form"
+                  role="form"
+                  aria-label="Contact me"
+                  aria-labelledby="mySidepanel"
+                  aria-expanded="true"
+                  noValidate>
+                <!-- Gotcha -->
+                <input type="text"
+                       name="_gotcha"
+                       class="gotcha"
+                       style="display:none">
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-sm-12">
+                        <!-- Name input -->
+                        <div class="sm-form form-group">
+                            <label for="name">
+                                NAME
+                            </label>
+                            <input class="form-input form-control name"
+                                   type="text"
+                                   name="user_name"
+                                   aria-invalid="false"
+                                   id="name"
+                                   aria-required="true"
+                                   required="required"
+                                   tabindex="0">
+                            <p id="err1 errName" class="err err1 errName">No name?</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-sm-12">
+                        <!-- Email input -->
+                        <div class="sm-form form-group">
+                            <label for="email">
+                                EMAIL
+                            </label>
+                            <input class="form-input form-control email"
+                                   type="email"
+                                   name="_replyto"
+                                   aria-invalid="false"
+                                   aria-required="true"
+                                   required="required"
+                                   id="email"
+                                   tabindex="0">
+                            <p id="err2" class="err err2 errEmail">No email?</p>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-sm-12">
+                        <!-- Message input -->
+                        <div class="sm-form form-group">
+                            <label for="message">
+                                DROP ME A LINE
+                            </label>
+                            <textarea class="form-input message-input form-control"
+                                      type="text"
+                                      name="user_message"
+                                      aria-invalid="false"
+                                      aria-required="true"
+                                      required="required"
+                                      id="message"
+                                      rows="5"
+                                      tabindex="0">Hey Emma,</textarea>
+                            <p id="err3" class="err err3 errMessage" aria-label="Don't forget a message. What's on your mind?">What's on your mind?</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Send Button -->
+                <button type="submit"
+                        class="btn btn-sm align-item-end"
+                        onclick="return(submission())"
+                        name="send"
+                        id="my-form-button"
+                        value="send">SEND
+                </button>
+                <!-- Success Validation -->
+                <div class="success">
+                    <p aria-label="Thank you!" class="success-p">Thank you! Your message was sent.</p>
+                </div>
+                <button class="close-button" type="button" aria-label="Close form" href="javascript:void(0)" onclick="closeNav()"></button>
+            </form>
+        </div>
+    </div>
+
+
     <button id="contrast-img"
             class="contrastbox"
             aria-label="Change color scheme"
@@ -240,6 +244,7 @@
         crossorigin="anonymous"></script>
 
 <script src="js/main.js"></script>
+<script src="js/scroll.js"></script>
 <script type="text/javascript">
     // Form Validation
     let err1 = document.getElementById('err1');

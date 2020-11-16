@@ -146,20 +146,6 @@ let blackFilter = 'grayscale(100%) contrast(2000%)';
 let forestFilter = 'invert(44%) sepia(55%) saturate(375%) hue-rotate(86deg) brightness(90%) contrast(87%)';
 let blueFilter = 'invert(28%) sepia(58%) saturate(6554%) hue-rotate(211deg) brightness(104%) contrast(104%);;'
 
-// Change Contact and Skip Underline on Focus
-// $(function() {
-//     $('.nav-item').on('mouseover click tap keydown focusin',function(e){
-//         if (e.key === 13){
-//             $('#skip, .nav-link').after.css("border-bottom", "solid 0.15em #fa0636");
-//         } else {
-//             $('#skip, .nav-link').after.css("border-bottom", "solid 0.15em #fa0636");
-//         }
-//     });
-//     $('.nav-item').on('mouseleave focusout',function() {
-//         $('#skip:after, .nav-link:after').css("border-bottom", "solid 0.15em black");
-//     });
-// });
-
 
 // Prevent Widows
 $('.intro').each(function(){
@@ -236,17 +222,6 @@ $(function() {
     });
 });
 
-// // Iris on hover
-// $(function() {
-//     $('.iris').on('mouseover',function(e){
-//         $('.darling').attr("src", "img/iris.gif");
-//     });
-// });
-//
-// $('.iris').on('tap click',function(e){
-//     $('.darling').attr("src", "img/IrisSite.png");
-// });
-
 
 // Define Theme Parameters
 const blackOnBlush = () => {
@@ -259,7 +234,6 @@ const blackOnBlush = () => {
     $('p').css('color', 'black');
     $('::-webkit-resizer').css('color', 'black');
     $('.nav-link').css('color', 'black');
-    $('.nav-link:after, #skip:after').css('filter', blackFilter);
     $('input:focus, textarea:focus, textarea:active, input:active').css({
         'transition': 'background-color 5000s',
         'border-weight': '0.17em',

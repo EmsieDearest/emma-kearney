@@ -214,28 +214,33 @@ body {
 
 .left {
   width: 70%;
-  margin-left: 10em;
   margin-top: 2.5em;
 }
 
 .intro {
   color: #fa0636;
   line-height: 1;
+  padding-top: 2em;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
-  font-size: 4em;
+  font-size: 6em;
+}
+
+.me-box {
+  width: 20%;
+  height: auto;
+  margin-left: 11em;
 }
 
 .me {
-  width: 100%;
+  width: 90%;
   height: auto;
-  padding-left: 12em;
   top: 2em;
 }
 
 .concepts {
-  padding-top: 8em;
-  padding-bottom: 4em;
+  padding-top: 9em;
+  padding-bottom: 8em;
 }
 
 .greenhouseimg {
@@ -293,7 +298,7 @@ h2 {
   color: #fa0636;
   padding-left: 4em;
   top: 3.5em;
-  line-height: 2;
+  line-height: 1.4;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
   font-size: 5em;

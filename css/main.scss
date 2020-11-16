@@ -24,8 +24,10 @@
 
 /* Color Variables */
 $cherry: #fa0636;
-$blush: #f7dfe8;
 $peach: #FFE7DD;
+// $cherry: white;
+$blush: #f7dfe8;
+// $peach: blue;
 $black: grayscale(100%) contrast(2000%);
 $forest: #428557;
 $lavendar: #d7bfe1;
@@ -248,7 +250,7 @@ body {
 .left {
   width: 70%;
   margin : {
-    left: 10em;
+    // left: 10em;
     top: 2.5em;
   }
 }
@@ -256,24 +258,32 @@ body {
 .intro {
   color: $cherry;
   line-height: 1;
+  padding-top: 2em;
   font : {
     family: $gopher;
     style: normal;
-    size: 4em;
+    size: 6em;
   }
 }
 
-.me {
-  width: 100%;
+.me-box {
+  //border: 1px solid black;
+  width: 20%;
   height: auto;
-  padding-left: 12em;
+  margin-left: 11em;
+
+}
+
+.me {
+  width: 90%;
+  height: auto;
   top: 2em;
 }
 
 .concepts {
   padding: {
-    top: 8em;
-    bottom: 4em;
+    top: 9em;
+    bottom: 8em;
   }
 }
 
@@ -331,7 +341,7 @@ h2 {
   color: $cherry;
   padding-left: 4em;
   top: 3.5em;
-  line-height: 2;
+  line-height: 1.4;
   font : {
     family: $gopher;
     style: normal;

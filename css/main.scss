@@ -237,12 +237,16 @@ body {
   }
 }
 
-.nav-link:focus, .nav-link:hover {
+.nav-link:focus, .contact-work:focus,
+.nav-link:hover, .contact-work:hover {
   outline: none;
-  border-bottom: 4px solid blue;
+  -webkit-text-stroke: 1px blue;
+  color: $peach;
 }
 
-.nav-link:hover, .work:hover, .contactbtn:hover, .btn:hover, .logo:hover, .form-input:hover, label:hover, form:hover {
+.nav-link:hover, .work:hover, .contactbtn:hover,
+.btn:hover, .logo:hover, .form-input:hover, label:hover,
+form:hover {
   cursor: none;
 }
 

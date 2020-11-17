@@ -197,6 +197,25 @@ body {
   }
 }
 
+.nav-link2 {
+  background-color: transparent;
+  position: relative;
+  margin-bottom: 0.3em;
+  padding : {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top:0;
+  }
+  left: 0;
+  bottom: 0;
+  color: $cherry;
+  font : {
+    family: $gopher;
+    size: 2em;
+  }
+}
+
 .contact-work {
   background-color: transparent;
   position: absolute;

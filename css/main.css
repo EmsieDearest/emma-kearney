@@ -161,6 +161,21 @@ body {
   font-size: 2em;
 }
 
+.nav-link2 {
+  background-color: transparent;
+  position: relative;
+  margin-bottom: 0.3em;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  left: 0;
+  bottom: 0;
+  color: blue;
+  font-family: Gopher Display Regular, gopher, sans-serif;
+  font-size: 2em;
+}
+
 .contact-work {
   background-color: transparent;
   position: absolute;

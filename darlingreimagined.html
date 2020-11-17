@@ -11,6 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
 
     <!-- Fonts -->
@@ -208,26 +209,21 @@
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1">PROBLEM</h3>
                 <p class="col">
-                    That being said, the development lacked basic accessibility criteria. The navigation had major issues,
-                    buttons lacked discernible text, ID values were indistinguishable, form elements lacked proper
-                    labeling, links had the same name and were indistinguishable. When tabbing through the page, improper
-                    syntax was being utilized. Any vague span and div tags needed ARIA labels, there needed to be a skip nav,
-                    the landmarks on the page needed to be evident. Alt tags were missing on photos. The tabbing order needed to be more intuitive.
-                    Some sections of the page were inaccessible through keyboard use. I could go on. The test I ran found
-                    over 300 issues preventing an intuitive screen reader experience. It's like the web equivalent of not
-                    making the front door of a building wheelchair accessible. This was a major problem. Basically anyone
-                    with blindness, paralysis and other kinds of disabilities could not use this site.
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-8 paragraph">
-            <div class="row">
-                <h3 class="col-lg-4 col-sm-1">SOLUTION</h3>
-                <p class="col">
-                    The development needed an overhaul. For the purpose of not violating any copyright laws, I
-                    redesigned an article to conceptually show how this would look if it met WCAG AA compliance.
-                    Video coming soon. Sorry for the inconvenience.
-                    <!-- Scroll to the video to see a robust focus on interactive elements through keyboard navigation.-->
+                    That being said, the development lacked basic accessibility criteria.
+                    It's obvious that it wasn't even conceived as part of the design and
+                    development process. This is unfortunately the norm. People with certain
+                    disabilities depend on assistive technology (or AT) to use the web. Such
+                    technologies as screen readers which relay text and interactive objects
+                    into speech. Braille machines do the same but automate into braille.
+                    AT run into all sorts of problems when the website or app isn't
+                    designed and developed with keyboard navigation the same way as with a mouse or
+                    touchscreen. Think of keyboard navigation as a ramp for a wheelchair.
+                    Only this ramp prevents access for people with visual, mobile and cognitive
+                    disabilities from using your product.
+                    <br><br>
+                    I am a certified web accessibility specialist and advocate for people with
+                    disabilities. Here is what I would do to fix a hypothetical article by Darling.
+                    These changes would meet universal compliance (or WCAG AA).
                 </p>
             </div>
         </div>
@@ -235,6 +231,52 @@
             <img class="col-sm-8 stage" src="img/IrisSite.jpg" alt="">
             <!-- <figcaption>Some preliminary wireframing sketches.</figcaption> -->
         </figure>
+        <div class="col-sm-8 paragraph">
+            <div class="row">
+                <h3 class="col-lg-4 col-sm-1">SOLUTION</h3>
+                <p class="col">
+                    The color scheme and typography itself is quite accessible in that there is a
+                    large enough contrast ratio between the foreground and background text. Way to
+                    go Darling!
+                    <br><br>
+                    Let's refer to the keyboard navigation as using the tab key. When tabbing through a page,
+                    the user needs to see which element they are currently focused on. This is helpful for
+                    people who are visually impaired or colorblind. You see this sometimes when clicking
+                    on a button and you see an outline. While it is standard practice to put an outline around
+                    an object on focus, it does put a damper on the integrity of the design. Instead, I treat
+                    focus like we would normally treat a hovered or clicked element. Something that visually
+                    highlights the item from the rest of the page is the goal.
+                    <br><br>
+                    Next, the navigation needs to have the option to skip to the main
+                    section. Sighted users can scan quickly to parts of the page they are most interested.
+                    Now imagine you are blind and forced to go through every single element on the page, including
+                    the nav categories and subcategories, the social media links, sidebars, etc. before
+                    you get to the main section. What if you accidentally hit the wrong key and had
+                    to start over from the page url. Talk about losing your patience! This "skip to main" button
+                    only becomes visible when the tab key has focused on the button. Use the tab key and try it
+                    on my site. Try it on <a href="https://www.nytimes.com/" target="_blank">The New York Times</a>.
+                    Try it on your favorite site. Do they have one? If so, isn't this fun!?
+                    <br><br>
+                    Another problem often faced is when the user gets stuck on a sidebar or popup that won't close.
+                    Sighted users can click a close button to leave. When focus hasn't been programmed into these
+                    areas, either the user can't enter into them or the user can't exit out, causing the user to have
+                    to refresh the page and their lose their spot. This is why it's so important to include keyboard
+                    event handlers along with click or tap events. It's another layer of code but it's totally worth it.
+                    <br><br>
+                    Using specific syntax tags are superior to vague divs and spans. AT uses these tags for translation.
+                    For example, it is considered poor practice to cloak a button inside of a div and then program it to
+                    function like a button. Designers often do this to have greater design control. AT will not recognize
+                    the button. Do this:
+                </p>
+            </div>
+            <div class="row">
+                <pre class="language-markup col">
+                    <code class="language-markup">
+                        <button class="">This is a button</button>
+                    </code>
+                </pre>
+            </div>
+        </div>
         <iframe class="col-sm-8" height="515" src="https://www.youtube.com/embed/sT3hG8Y2e3U" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen style="display: none"></iframe>
@@ -288,6 +330,7 @@
         crossorigin="anonymous"></script>
 
 <script src="js/main.js"></script>
+<script src="js/prism.js"></script>
 <script type="text/javascript">
     // Form Validation
     let err1 = document.getElementById('err1');

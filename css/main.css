@@ -609,6 +609,11 @@ p {
   font-size: 1.6em;
 }
 
+.markdown {
+  width: 100%;
+  height: auto;
+}
+
 .blog-link {
   display: none;
 }

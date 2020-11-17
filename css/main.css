@@ -609,9 +609,9 @@ p {
   font-size: 1.6em;
 }
 
-.markdown {
+.markup {
+  margin-left: 35%;
   width: 100%;
-  height: auto;
 }
 
 .blog-link {

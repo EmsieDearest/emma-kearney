@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/prism.css">
+    <link href="https://myCDN.com/prism@v1.x/themes/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
 
     <!-- Fonts -->
@@ -269,10 +270,12 @@
                     the button. Do this:
                 </p>
             </div>
-            <div class="row">
-                <pre class="language-markup col">
-                    <code class="language-markup">
-                        <button class="">This is a button</button>
+            <div class="row markup">
+                <pre class="col-8">
+                    <code class="language-html">
+                        <script type="prism-html-markup">
+                            <button>Submit</button>
+                        </script>
                     </code>
                 </pre>
             </div>
@@ -331,6 +334,18 @@
 
 <script src="js/main.js"></script>
 <script src="js/prism.js"></script>
+<script src="https://myCDN.com/prism@v1.x/components/prism-core.min.js"></script>
+<script src="https://myCDN.com/prism@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+<script type="text/javascript">
+    // Optional
+    Prism.plugins.NormalizeWhitespace.setDefaults({
+        'remove-trailing': true,
+        'remove-indent': true,
+        'left-trim': true,
+        'right-trim': true,
+    });
+</script>
 <script type="text/javascript">
     // Form Validation
     let err1 = document.getElementById('err1');

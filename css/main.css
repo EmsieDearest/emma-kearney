@@ -170,7 +170,6 @@ body {
   padding-right: 0;
   padding-bottom: 0;
   padding-top: 0;
-  bottom: 0.5em;
   color: blue;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-size: 2em;
@@ -238,6 +237,7 @@ form:hover {
 
 .blog-link2 {
   background-color: transparent;
+  padding-bottom: 0.5em;
   position: relative;
   color: blue;
   font-family: Gopher Display Regular, gopher, sans-serif;
@@ -371,7 +371,7 @@ h2 {
 
 .about-blurb {
   padding-left: 0;
-  padding-bottom: 2.3em;
+  padding-bottom: 2em;
   line-height: 1;
   font-size: 4em;
   text-align: justify;

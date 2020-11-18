@@ -148,7 +148,7 @@ let blueFilter = 'invert(28%) sepia(58%) saturate(6554%) hue-rotate(211deg) brig
 
 
 // Prevent Widows
-$('.intro').each(function(){
+$('.about-blurb, .paragraph').each(function(){
     let string = $.trim($(this).html());
     string = string.replace(/ ([^ ]*) ([^ ]*)$/,'&nbsp;$1&nbsp;$2');
     $(this).html(string);

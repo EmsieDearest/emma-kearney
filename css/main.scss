@@ -276,7 +276,6 @@ form:hover {
   position: absolute;
   outline: none;
   cursor: none;
-  bottom: 0.5em;
   right: 0.5em;
   color: $cherry;
   line-height: 1;
@@ -290,7 +289,6 @@ form:hover {
 .blog-link2 {
   background-color: transparent;
   position: relative;
-  bottom: 0.5em;
   color: $cherry;
   font : {
     family: $gopher;
@@ -439,6 +437,7 @@ h2 {
 
 .about-blurb {
   padding-left: 0;
+  padding-bottom: 2.3em;
   line-height: 1;
   font-size: 4em;
   text-align: justify;

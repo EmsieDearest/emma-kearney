@@ -795,8 +795,9 @@ form input[type=email], form textarea[type=text] {
 
   .about-blurb {
     padding-left: 0;
+    padding-bottom: 1.5em;
     line-height: 1;
-    font-size: 1.8em;
+    font-size: 1.5em;
     text-align: left;
     margin-left: 0.3em;
   }
@@ -935,11 +936,11 @@ form input[type=email], form textarea[type=text] {
   .nav-link2 {
     background-color: transparent;
     position: relative;
-    padding-left: 0.5em;
+    padding-left: 0.3em;
     padding-right: 0;
     padding-bottom: 0;
     padding-top: 0;
-    bottom: 0.5em;
+    bottom: 0.3em;
     color: blue;
     font-family: Gopher Display Regular, gopher, sans-serif;
     font-size: 1.3em;
@@ -949,7 +950,7 @@ form input[type=email], form textarea[type=text] {
     background-color: transparent;
     position: relative;
     cursor: none;
-    bottom: 0.5em;
+    bottom: 0.3em;
     right: 0.5em;
     color: blue;
     font-family: Gopher Display Regular, gopher, sans-serif;

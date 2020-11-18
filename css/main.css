@@ -136,6 +136,8 @@ body {
 #skip:focus {
   position: static;
   background-color: transparent;
+  padding-top: 0.5em;
+  padding-left: 0.1em;
   outline: none;
   width: auto;
   height: auto;

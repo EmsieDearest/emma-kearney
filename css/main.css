@@ -227,6 +227,7 @@ form:hover {
 .blog-link {
   position: absolute;
   outline: none;
+  cursor: none;
   bottom: 0.5em;
   right: 0.5em;
   color: blue;
@@ -947,6 +948,7 @@ form input[type=email], form textarea[type=text] {
   .blog-link2 {
     background-color: transparent;
     position: relative;
+    cursor: none;
     bottom: 0.5em;
     right: 0.5em;
     color: blue;

@@ -67,7 +67,7 @@ let ElementCursor = {
     }
 };
 
-ElementCursor.setCursor($('#cursor'), $('.btn, a, .work, .form-input, .logo, .nav-link, .close-button, .contrast-img, .doTheWave, #skip, .greenhouse, .darlingmag, .bodyweight, .arrow'));
+ElementCursor.setCursor($('#cursor'), $('.btn, a, .work, .blog-link, .blog-link2, .form-input, .logo, .nav-link, .nav-link2, .close-button, .contrast-img, .doTheWave, #skip, .greenhouse, .darlingmag, .bodyweight, .arrow'));
 $(window).on('scroll', function(e) {});
 
 // Set Focus Styles

@@ -71,12 +71,12 @@ ElementCursor.setCursor($('#cursor'), $('.btn, a, .work, .form-input, .logo, .na
 $(window).on('scroll', function(e) {});
 
 // Set Focus Styles
-$('.logo').on("keypress", () => $('.logo').attr('src', '/img/logo-focus.svg'));
-$('.logo').on("focusout", () => $('.logo').attr('src', '/img/wave.svg'));
+//$('.logo').on("keypress", () => $('.logo').attr('src', '/img/logo-focus.svg'));
+//$('.logo').on("focusout", () => $('.logo').attr('src', '/img/wave.svg'));
 
 $(function() {
     let logo = $('.logo');
-    logo.on('mouseover focus tap key',function(e){
+    logo.on('mouseover',function(e){
         let src = $(this).attr("src");
         $(this).attr("src", src.replace("img/wave.svg", "img/logo-focus.svg"));
     });

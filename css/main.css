@@ -134,14 +134,14 @@ body {
 }
 
 #skip:focus {
+  color: #FFE7DD;
+  background-color: blue;
+  padding: 0.3em;
   position: static;
-  background-color: transparent;
-  padding-top: 0.5em;
-  padding-left: 0.1em;
-  outline: none;
+  margin-top: 0.6em;
+  margin-left: 0.1em;
   width: auto;
   height: auto;
-  color: blue;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-size: 2em;
 }
@@ -166,13 +166,11 @@ body {
 .nav-link2 {
   background-color: transparent;
   position: relative;
-  margin-bottom: 0.3em;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0;
   padding-top: 0;
-  left: 0;
-  bottom: 0;
+  bottom: 0.5em;
   color: blue;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-size: 2em;
@@ -195,11 +193,17 @@ body {
   font-size: 2em;
 }
 
-.nav-link:focus, .contact-work:focus,
-.nav-link:hover, .contact-work:hover {
+.nav-link:hover, .nav-link2:hover, .contact-work:hover {
   outline: none;
   -webkit-text-stroke: 1px blue;
   color: #FFE7DD;
+}
+
+.nav-link:focus, .nav-link2:focus, .contact-work:focus,
+.work:focus, .blog-link:focus, .blog-link2:focus {
+  color: #FFE7DD;
+  background-color: blue;
+  padding: 0.3em;
 }
 
 .nav-link:hover, .work:hover, .contactbtn:hover,
@@ -209,13 +213,10 @@ form:hover {
 }
 
 .work {
-  background-color: transparent;
-  margin-left: 0.3em;
-  border: transparent;
-  text-align: center;
+  left: 0.5em;
   position: absolute;
+  outline: none;
   top: 0.5em;
-  text-decoration: none;
   color: blue;
   line-height: 1;
   font-family: Gopher Display Regular, gopher, sans-serif;
@@ -223,15 +224,24 @@ form:hover {
   font-size: 2em;
 }
 
-.about {
+.blog-link {
   position: absolute;
+  outline: none;
   bottom: 0.5em;
   right: 0.5em;
-  text-decoration: none;
   color: blue;
   line-height: 1;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
+  font-size: 2em;
+}
+
+.blog-link2 {
+  background-color: transparent;
+  position: relative;
+  bottom: 0.5em;
+  color: blue;
+  font-family: Gopher Display Regular, gopher, sans-serif;
   font-size: 2em;
 }
 
@@ -618,10 +628,6 @@ p {
   padding-top: -2em;
 }
 
-.blog-link {
-  display: none;
-}
-
 figcaption {
   color: blue;
   padding-bottom: 2em;
@@ -868,6 +874,10 @@ form input[type=email], form textarea[type=text] {
     font-family: Gopher Display Regular, gopher, sans-serif;
     font-style: normal;
     font-size: 0.8em;
+  }
+
+  .nytimes:visited {
+    color: blue;
   }
 
   .userflow {

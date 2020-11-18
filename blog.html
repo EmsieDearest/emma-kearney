@@ -52,7 +52,7 @@
             <ul class="nav d-flex" id="nav" aria-label="Main Menu">
                 <!------ Skip Nav ------>
                 <li class="nav-item align-self-center">
-                    <a href="blog.html#main"><button id="skip" class="nav-item align-self-center">SKIP TO MAIN</button></a>
+                    <a href="index.html#main"><button id="skip" class="nav-item align-self-center">SKIP TO MAIN</button></a>
                 </li>
                 <!------ Work ------>
                 <li class="nav-item align-self-center">
@@ -133,14 +133,29 @@
 </main>
 <!---------- Contrast Button ------------>
 <footer class="section">
-    <button class="nav-link2 contactbtn"
-            id="nav-link2 mySidepanel"
-            type="button"
-            onclick="openNav()"
-            aria-expanded="false"
-            aria-controls="mySidepanel">
-        CONTACT
-    </button>
+    <div class="row d-flex">
+        <nav class="col-12">
+            <ul class="nav" id="nav" aria-label="Foot Menu">
+                <!------ Skip Nav ------>
+                <li class="align-self-center">
+                    <button class="nav-link2 contactbtn"
+                            id="nav-link2 mySidepanel"
+                            type="button"
+                            onclick="openNav()"
+                            aria-expanded="false"
+                            aria-controls="mySidepanel">
+                        CONTACT
+                    </button>
+                </li>
+                <!------ Work ------>
+                <li class="align-self-center ml-auto">
+                    <a class="blog-link2" href="blog.html">
+                        BLOG
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <!-- Hidden Form -->
     <div id="mySidepanel" class="sidepanel">
         <div class="d-flex p-md-5 m-md-5 formbox">
@@ -242,14 +257,16 @@
             </form>
         </div>
     </div>
+
+    <!--
     <button id="contrast-img"
             class="contrastbox"
             aria-label="Change color scheme"
             tabindex="0">
         <img class="contrast-img col-sm-1" src="img/contrast.svg" alt="" role="presentation">
     </button>
+    -->
 </footer>
-
 <!-- JavaScript Sources -->
 <!-- JQUERY -->
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>

@@ -162,14 +162,16 @@ body {
 }
 
 #skip:focus {
+  color: $peach;
+  background-color: blue;
+  padding: 0.3em;
   position:static;
-  background-color: transparent;
-  padding-top: 0.5em;
-  padding-left: 0.1em;
-  outline: none;
+  margin : {
+    top: 0.6em;
+    left: 0.1em;
+  }
   width:auto;
   height:auto;
-  color: $cherry;
   font : {
     family: $gopher;
     size: 2em;
@@ -202,15 +204,13 @@ body {
 .nav-link2 {
   background-color: transparent;
   position: relative;
-  margin-bottom: 0.3em;
   padding : {
     left: 0;
     right: 0;
     bottom: 0;
     top:0;
   }
-  left: 0;
-  bottom: 0;
+  bottom: 0.5em;
   color: $cherry;
   font : {
     family: $gopher;
@@ -239,11 +239,17 @@ body {
   }
 }
 
-.nav-link:focus, .contact-work:focus,
-.nav-link:hover, .contact-work:hover {
+.nav-link:hover,, .nav-link2:hover, .contact-work:hover {
   outline: none;
   -webkit-text-stroke: 1px blue;
   color: $peach;
+}
+
+.nav-link:focus, .nav-link2:focus, .contact-work:focus,
+.work:focus, .blog-link:focus, .blog-link2:focus {
+  color: $peach;
+  background-color: blue;
+  padding: 0.3em;
 }
 
 .nav-link:hover, .work:hover, .contactbtn:hover,
@@ -253,13 +259,10 @@ form:hover {
 }
 
 .work {
-  background-color: transparent;
-  margin-left: 0.3em;
-  border: transparent;
-  text-align: center;
+  left: 0.5em;
   position: absolute;
+  outline: none;
   top: 0.5em;
-  text-decoration: none;
   color: $cherry;
   line-height: 1;
   font : {
@@ -269,16 +272,27 @@ form:hover {
   }
 }
 
-.about {
+.blog-link {
   position: absolute;
+  outline: none;
   bottom: 0.5em;
   right: 0.5em;
-  text-decoration: none;
   color: $cherry;
   line-height: 1;
   font : {
     family: $gopher;
     style: normal;
+    size: 2em;
+  }
+}
+
+.blog-link2 {
+  background-color: transparent;
+  position: relative;
+  bottom: 0.5em;
+  color: $cherry;
+  font : {
+    family: $gopher;
     size: 2em;
   }
 }
@@ -737,10 +751,6 @@ p {
   padding-top: -2em;
 }
 
-.blog-link {
-  display: none;
-}
-
 figcaption {
   color: $cherry;
   padding : {
@@ -1045,6 +1055,10 @@ hr {
       style: normal;
       size: 0.8em;
     }
+  }
+
+  .nytimes:visited {
+    color: blue;
   }
 
   .userflow {

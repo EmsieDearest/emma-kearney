@@ -675,10 +675,6 @@ hr {
   margin-left: -2em;
 }
 
-.youtube {
-  margin-left: 19em;
-}
-
 /* *********************** For Phones *********************** */
 @media only screen and (max-width: 768px) {
   [class*=col-] {
@@ -919,7 +915,6 @@ form input[type=email], form textarea[type=text] {
 
   iframe {
     height: 165px;
-    margin-bottom: 10%;
   }
 
   .arrow {
@@ -958,23 +953,26 @@ form input[type=email], form textarea[type=text] {
     font-family: Gopher Display Regular, gopher, sans-serif;
     font-size: 1.3em;
   }
-}
-/* ********** Blog ********* */
-.casestudy-blog {
-  margin-left: 0;
-  padding-right: 0;
-  width: 90%;
-}
 
-.blog-paragraph, .li-blog {
-  margin-left: 0;
-  padding-left: 0;
-}
+  /* ********** Blog ********* */
+  .blog-main {
+    width: 80%;
+  }
 
-.li-blog {
-  font-size: 1.4em;
-}
+  .casestudy-blog {
+    margin-left: 0;
+    padding-right: 0;
+  }
 
+  .blog-paragraph, .li-blog {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .li-blog {
+    font-size: 1.3em;
+  }
+}
 /* ********************* For Tablets *********************** */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   [class*=col-] {

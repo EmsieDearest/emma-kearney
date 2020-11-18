@@ -806,10 +806,6 @@ hr {
   margin-left: -2em;
 }
 
-.youtube {
-  margin-left: 19em;
-}
-
 
 /* *********************** For Phones *********************** */
 @media only screen and (max-width: 768px) {
@@ -1108,7 +1104,6 @@ hr {
 
   iframe {
     height: 165px;
-    margin-bottom: 10%;
   }
 
   .arrow {
@@ -1156,22 +1151,25 @@ hr {
       size: 1.3em;
     }
   }
-}
 
-/* ********** Blog ********* */
-.casestudy-blog {
-  margin-left: 0;
-  padding-right: 0;
-  width: 90%;
-}
+  /* ********** Blog ********* */
+  .blog-main {
+    width: 80%;
+  }
 
-.blog-paragraph, .li-blog {
-  margin-left: 0;
-  padding-left: 0;
-}
+  .casestudy-blog {
+    margin-left: 0;
+    padding-right: 0;
+  }
 
-.li-blog {
-  font-size: 1.4em;
+  .blog-paragraph, .li-blog {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .li-blog {
+    font-size: 1.3em;
+  }
 }
 
 

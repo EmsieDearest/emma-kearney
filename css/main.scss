@@ -275,6 +275,7 @@ form:hover {
   position: absolute;
   outline: none;
   cursor: none;
+  bottom: 0;
   right: 0.5em;
   color: $cherry;
   line-height: 1;
@@ -437,7 +438,7 @@ h2 {
 
 .about-blurb {
   padding-left: 0;
-  margin-bottom: 2em;
+  margin-bottom: 2.4em;
   line-height: 1;
   font-size: 4em;
   text-align: justify;

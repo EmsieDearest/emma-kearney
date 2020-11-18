@@ -609,9 +609,11 @@ p {
   font-size: 1.6em;
 }
 
-.markup {
-  margin-left: 35%;
+.textcolumn {
+  margin-left: 32.5%;
   width: 100%;
+  margin-top: -2em;
+  padding-top: -2em;
 }
 
 .blog-link {

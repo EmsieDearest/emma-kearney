@@ -220,11 +220,13 @@
                     designed and developed with keyboard navigation the same way as with a mouse or
                     touchscreen. Think of keyboard navigation as a ramp for a wheelchair.
                     Only this ramp prevents access for people with visual, mobile and cognitive
-                    disabilities from using your product.
+                    disabilities from using a product.
                     <br><br>
                     I am a certified web accessibility specialist and advocate for people with
-                    disabilities. Here is what I would do to fix a hypothetical article by Darling.
-                    These changes would meet universal compliance (or WCAG AA).
+                    disabilities. After running a test on Darling's website, I discovered over
+                    300 failures with their accessibility. Here is what I would do to
+                    fix a hypothetical article by Darling. These changes would meet universal
+                    compliance (or WCAG AA).
                 </p>
             </div>
         </div>
@@ -236,17 +238,12 @@
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1">SOLUTION</h3>
                 <p class="col">
-                    The color scheme and typography itself is quite accessible in that there is a
-                    large enough contrast ratio between the foreground and background text. Way to
-                    go Darling!
-                    <br><br>
                     Let's refer to the keyboard navigation as using the tab key. When tabbing through a page,
                     the user needs to see which element they are currently focused on. This is helpful for
                     people who are visually impaired or colorblind. You see this sometimes when clicking
                     on a button and you see an outline. While it is standard practice to put an outline around
-                    an object on focus, it does put a damper on the integrity of the design. Instead, I treat
-                    focus like we would normally treat a hovered or clicked element. Something that visually
-                    highlights the item from the rest of the page is the goal.
+                    an object on focus, it does put a damper on the integrity of the design. Instead, there are
+                    tricks where the focus outline appears only on keyboard events.
                     <br><br>
                     Next, the navigation needs to have the option to skip to the main
                     section. Sighted users can scan quickly to parts of the page they are most interested.
@@ -267,22 +264,59 @@
                     Using specific syntax tags are superior to vague divs and spans. AT uses these tags for translation.
                     For example, it is considered poor practice to cloak a button inside of a div and then program it to
                     function like a button. Designers often do this to have greater design control. AT will not recognize
-                    the button. Do this:
+                    the button. <br><br>Do this:
                 </p>
             </div>
-            <div class="row markup">
+            <div class="row textcolumn">
                 <pre class="col-8">
                     <code class="language-html">
                         <script type="prism-html-markup">
-                            <button>Submit</button>
+                        <form>
+                             <label>Email</label>
+                             <input></input>
+                             <button>Subscribe</button>
+                        </form>
                         </script>
                     </code>
                 </pre>
             </div>
+            <br><br><br>
+            <div class="row textcolumn">
+                <p class="col-8">
+                    Not this:
+                </p>
+            </div>
+            <div class="row textcolumn">
+                <pre class="col-8">
+                    <code class="language-html">
+                        <script type="prism-html-markup">
+                        <div>
+                             <div>Email</div>
+                             <span></span>
+                             <div>Subscribe</div>
+                        </div>
+                        </script>
+                    </code>
+                </pre>
+            </div>
+            <br><br>
+            <div class="row">
+                <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
+                <p class="col">
+                   Imagine you are blind and using a screen reader to read this article.
+                    First the headline is read. Then the photograph. But this photograph wasn't
+                    programmed for you. You are now forced to listen to it reading the url of
+                    the image, or even worse, spelling it. I can program alt tags to describe the
+                    image for the reader or I can program it to ignore the image altogether, provided
+                    that the image is purely decorative.
+                    <br><br>
+                    See how the tabbing structure would look in this video below.
+                </p>
+            </div>
         </div>
         <iframe class="col-sm-8" height="515" src="https://www.youtube.com/embed/sT3hG8Y2e3U" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen style="display: none"></iframe>
+                allowfullscreen></iframe>
         <div class="row arrow">
             <div class="col-lg-1 col arrow2 align-self-center">
                 <a href="bodyweight.html" aria-label="previous case study"><img src="img/arrow.svg"></a>

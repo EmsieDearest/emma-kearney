@@ -919,6 +919,7 @@ form input[type=email], form textarea[type=text] {
 
   iframe {
     height: 165px;
+    margin-bottom: 10%;
   }
 
   .arrow {
@@ -958,6 +959,22 @@ form input[type=email], form textarea[type=text] {
     font-size: 1.3em;
   }
 }
+/* ********** Blog ********* */
+.casestudy-blog {
+  margin-left: 0;
+  padding-right: 0;
+  width: 90%;
+}
+
+.blog-paragraph, .li-blog {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.li-blog {
+  font-size: 1.4em;
+}
+
 /* ********************* For Tablets *********************** */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   [class*=col-] {

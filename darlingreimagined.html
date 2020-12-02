@@ -136,8 +136,80 @@
                     people who are visually impaired or colorblind. You see this sometimes when clicking
                     on a button and you see an outline. While it is standard practice to put an outline around
                     an object on focus, it does put a damper on the integrity of the design. Instead, there are
-                    tricks where the focus outline appears only on keyboard events.
-                    <br><br>
+                    tricks where the focus outline appears only on keyboard events. One of the most important
+                    implementations is making sure all interactive objects have a tab index of 0. Using proper
+                    syntax (we'll get to this later) has some inherited functionality for tabbing and there is
+                    no need to add a tabindex to syntax tags. However, lots of use of anonymous tags such as
+                    divs and spans, you will need to add the proper tab index code.
+                </p>
+            </div>
+            <div class="row textcolumn">
+                <pre class="col-sm-1 col-lg-8">
+                    <code class="language-html">
+                        <script type="prism-html-markup">
+                        <div tabindex="0">
+                             <p>I am a button</p>
+                        </div>
+                        <div tabindex="0">
+                             <p>I am another button</p>
+                        </div>
+                        <div tabindex="0">
+                             <p>Art thou button</p>
+                        </div>
+                        </script>
+                    </code>
+                </pre>
+            </div>
+            <br><br><br>
+            <div class="row textcolumn">
+                <p class="col-8">
+                    Do not, under any circumstances, do this:
+                </p>
+            </div>
+            <div class="row textcolumn">
+                <pre class="col-sm-1 col-lg-8">
+                    <code class="language-html">
+                        <script type="prism-html-markup">
+                        <div tabindex="1">
+                             <p>I am a button</p>
+                        </div>
+                        <div tabindex="2">
+                             <p>I am another button</p>
+                        </div>
+                        <div tabindex="3">
+                             <p>Art thou button</p>
+                        </div>
+                        </script>
+                    </code>
+                </pre>
+            </div>
+            <br><br><br>
+            <div class="row textcolumn">
+                <p class="col-8">
+                    However, this is okay for flipping between navigational tabs:
+                </p>
+            </div>
+            <div class="row textcolumn">
+                <pre class="col-sm-1 col-lg-8">
+                    <code class="language-html">
+                        <script type="prism-html-markup">
+                        <div tabindex="0">
+                             <p>Step 1</p>
+                        </div>
+                        <div tabindex="-1">
+                             <p>Step 2</p>
+                        </div>
+                        <div tabindex="-2">
+                             <p>Step 3</p>
+                        </div>
+                        </script>
+                    </code>
+                </pre>
+            </div>
+            <br><br><br>
+            <div class="row">
+                <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
+                <p class="col paragraph">
                     Next, the navigation needs to have the option to skip to the main
                     section. Sighted users can scan quickly to parts of the page they are most interested.
                     Now imagine you are blind and forced to go through every single element on the page, including
@@ -147,13 +219,94 @@
                     only becomes visible when the tab key has focused on the button. Use the tab key and try it
                     on my site. Try it on <a class="nytimes" href="https://www.nytimes.com/" target="_blank">The New York Times</a>.
                     Try it on your favorite site. Do they have one? If so, isn't this fun!?
-                    <br><br>
+                </p>
+            </div>
+            <div class="row textcolumn">
+                <pre class="col-sm-1 col-lg-8">
+                    <code class="language-html">
+                        <script type="prism-html-markup">
+                        <li class="nav-item">
+                           <a href="index.html#main">
+                               <button id="skip" class="nav-item">Skip to main</button>
+                           </a>
+                        </li>
+                        </script>
+                    </code>
+                </pre>
+            </div>
+            <br><br>
+            <div class="row textcolumn">
+                <pre class="col-sm-1 col-lg-8">
+                    <code class="language-css">
+                        <script type="prism-css">
+                        #skip {
+                          position:absolute;
+                          left:-10000px;
+                          top:auto;
+                          width:1px;
+                          height:1px;
+                          overflow:hidden;
+                          background-color: transparent;
+                          cursor: none;
+                        }
+
+                        #skip:focus {
+                          color: black;
+                          border: 1px solid black;
+                          padding: 0.3em;
+                          position:static;
+                          margin : {
+                            top: 0.6em;
+                            left: 0.1em;
+                          }
+                          font : {
+                            family: san serif;
+                            size: 1em;
+                          }
+                        }
+                        </script>
+                    </code>
+                </pre>
+            </div>
+            <br><br><br>
+            <div class="row">
+                <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
+                <p class="col paragraph">
                     Another problem often faced is when the user gets stuck on a sidebar or popup that won't close.
                     Sighted users can click a close button to leave. When focus hasn't been programmed into these
                     areas, either the user can't enter into them or the user can't exit out, causing the user to have
                     to refresh the page and their lose their spot. This is why it's so important to include keyboard
                     event handlers along with click or tap events. It's another layer of code but it's totally worth it.
-                    <br><br>
+                </p>
+            </div>
+            <div class="row textcolumn">
+                <pre class="col-sm-1 col-lg-8">
+                    <code class="language-js">
+                        <script type="prism-js">
+                        /* Close Sidepanel on click and key */
+
+                        $(function() {
+                            let button = $('.closebtn');
+                            let toggleSidepanel = $('#mySidepanel');
+
+                            button.on('click key',function(e){
+                                if (e.key === 13){
+                                    // This has been depreciated but I include it just in case
+                                    toggleSidepanel.style.width = "0";
+                                } else {
+                                    // For all other cases
+                                    toggleSidepanel.style.width = "0";
+                                }
+                            });
+                        });
+                        </script>
+                    </code>
+                </pre>
+            </div>
+            <br><br><br>
+            <div class="row">
+                <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
+                <p class="col paragraph">
                     Using specific syntax tags are superior to vague divs and spans. AT uses these tags for translation.
                     For example, it is considered poor practice to cloak a button inside of a div and then program it to
                     function like a button. Designers often do this to have greater design control. Webflow code generators

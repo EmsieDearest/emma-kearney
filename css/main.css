@@ -199,6 +199,7 @@ body {
 
 .nav-link:focus, .nav-link2:focus, .contact-work:focus,
 .work:focus, .blog-link:focus, .blog-link2:focus {
+  outline: none;
   color: #FFE7DD;
   background-color: blue;
   padding: 0.3em;
@@ -206,7 +207,7 @@ body {
 
 .nav-link:hover, .work:hover, .contactbtn:hover,
 .btn:hover, .logo:hover, .form-input:hover, label:hover,
-form:hover {
+form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
   cursor: none;
 }
 
@@ -653,6 +654,10 @@ iframe {
 .arrow2 {
   transform: rotate(180deg);
   cursor: none;
+}
+
+.arrow-focus-left, .arrow-focus-right {
+  outline: none;
 }
 
 /************ Blog ************/

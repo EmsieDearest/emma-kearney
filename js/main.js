@@ -169,6 +169,34 @@ $(function() {
     });
 });
 
+// Change left arrow from blue to peach on focus and hover
+$(function() {
+    $('.arrow-focus-left').on('focusin',function(e){
+        if (e.key === 13){
+            $('.peach-arrow-left').attr("src", "img/peach-arrow.svg");
+        } else {
+            $('.peach-arrow-left').attr("src", "img/peach-arrow.svg");
+        }
+    });
+    $('.arrow-focus-left').on('focusout',function() {
+        $('.peach-arrow-left').attr("src", "img/arrow.svg");
+    });
+});
+
+// Change right arrow from blue to peach on focus and hover
+$(function() {
+    $('.arrow-focus-right').on('focusin',function(e){
+        if (e.key === 13){
+            $('.peach-arrow-right').attr("src", "img/peach-arrow.svg");
+        } else {
+            $('.peach-arrow-right').attr("src", "img/peach-arrow.svg");
+        }
+    });
+    $('.arrow-focus-right').on('focusout',function() {
+        $('.peach-arrow-right').attr("src", "img/arrow.svg");
+    });
+});
+
 // Place concept image on hover
 $(function() {
     $('.greenhouse').on('mouseover focusin',function(e){

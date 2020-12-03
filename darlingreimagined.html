@@ -283,20 +283,11 @@
                 <pre class="col-sm-1 col-lg-8">
                     <code class="language-js">
                         <script type="prism-js">
-                        /* Close Sidepanel on click and key */
+                        /* Close side panel on click and key */
 
                         $(function() {
-                            let button = $('.closebtn');
-                            let toggleSidepanel = $('#mySidepanel');
-
-                            button.on('click key',function(e){
-                                if (e.key === 13){
-                                    // This has been depreciated but I include it just in case
-                                    toggleSidepanel.style.width = "0";
-                                } else {
-                                    // For all other cases
-                                    toggleSidepanel.style.width = "0";
-                                }
+                            $('.closeBtn').on('click key',function(){
+                                $('#mySidePanel').css('width', '0');
                             });
                         });
                         </script>

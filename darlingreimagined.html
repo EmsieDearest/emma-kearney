@@ -131,6 +131,12 @@
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1">SOLUTION</h3>
                 <p class="col paragraph">
+                    For meeting compliance, I refer to WCAG 2.1 and WC3 success criteria. When tackling a
+                    large website filled with infinite pages, I prefer the method of scoping out potential
+                    violations, providing recommendations, setting the priorities of each task and then
+                    remediating in that order. I audit a sample size based on elements that are used most
+                    frequently throughout the site.
+                    <br><br>
                     Let's refer to the keyboard navigation as using the tab key. When tabbing through a page,
                     the user needs to see which element they are currently focused on. This is helpful for
                     people who are visually impaired or colorblind. You see this sometimes when clicking
@@ -272,11 +278,14 @@
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
                 <p class="col paragraph">
-                    Another problem often faced is when the user gets stuck on a sidebar or popup that won't close.
-                    Sighted users can click a close button to leave. When focus hasn't been programmed into these
-                    areas, either the user can't enter into them or the user can't exit out, causing the user to have
-                    to refresh the page and their lose their spot. This is why it's so important to include keyboard
-                    event handlers along with click or tap events. It's another layer of code but it's totally worth it.
+                    Another problem often faced is when the user gets stuck on a sidebar or popup they can't
+                    get out of. Sighted users can click a button to close or scroll out of sight. This is more
+                    formally called a Focus Trap. The user has to refresh the page for the sidebar or popup to disappear,
+                    causing them to lose their spot on the page or, worse, the page is completely inoperable.
+                    This is why it's so important to include keyboard event handlers along with click or tap events.
+                    I see this problem all the time with hCaptchas and third-party cookie banners to as for permission
+                    to use cookies on a particular website. These banners are oftentimes not focusable. California
+                    has begun enforcing violations with fines up to $7500.
                 </p>
             </div>
             <div class="row textcolumn">

@@ -131,83 +131,53 @@
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1">SOLUTION</h3>
                 <p class="col paragraph">
-                    For meeting compliance, I refer to WCAG 2.1 and WC3 success criteria. When tackling a
-                    large website filled with infinite pages, I prefer the method of scoping out potential
-                    violations, providing recommendations, setting the priorities of each task and then
-                    remediating in that order. I audit a sample size based on elements that are used most
-                    frequently throughout the site.
+                    For meeting compliance, I refer to WCAG 2.1 and WC3 success criteria. When tackling a large website
+                    filled with infinite pages, I audit a sample size based on elements that are used most frequently
+                    throughout the site. Then I scope out potential violations, provide recommendations, figure out which
+                    parts will take the longest, set their priorities and then remediate in that order.
                     <br><br>
-                    Let's refer to the keyboard navigation as using the tab key. When tabbing through a page,
-                    the user needs to see which element they are currently focused on. This is helpful for
-                    people who are visually impaired or colorblind. You see this sometimes when clicking
-                    on a button and you see an outline. While it is standard practice to put an outline around
-                    an object on focus, it does put a damper on the integrity of the design. Instead, there are
-                    tricks where the focus outline appears only on keyboard events. One of the most important
-                    implementations is making sure all interactive objects have a tab index of 0. Using proper
-                    syntax (we'll get to this later) has some inherited functionality for tabbing and there is
-                    no need to add a tabindex to syntax tags. However, lots of use of anonymous tags such as
-                    divs and spans, you will need to add the proper tab index code.
+                    When navigating throughout a website, we use a mouse or touchscreen. People with certain
+                    disabilities use assistive technology (AT) that depends on the use of the keyboard. The keyboard
+                    will focus on an element and then translate said element into speech or into braille. You see the
+                    focus indicator sometimes when clicking on a button and you see an outline. All browsers have
+                    built-in accessibility features such as focusable elements having an outline around them when they
+                    are in focus. However, it does put a damper on the integrity of the design. Changing this is doable by
+                    turning off the outline in CSS. I strongly discourage anyone from doing this unless they know
+                    how to replace it with something equally as distinguishable. Turning off the outline with no
+                    replacement is like removing the wheelchair access from an entrance of a building. The main thing is
+                    to make sure that all interactive elements are focusable.
                 </p>
             </div>
             <div class="row textcolumn">
                 <pre class="col-sm-1 col-lg-8">
                     <code class="language-html">
                         <script type="prism-html-markup">
-                        <div tabindex="0">
-                             <p>I am a button</p>
+                        // Place tab index set to 0 on non-syntax tags
+                        <div class="subscribe" tabindex="0" role="button">
+                             <p>Subscribe</p>
                         </div>
-                        <div tabindex="0">
-                             <p>I am another button</p>
-                        </div>
-                        <div tabindex="0">
-                             <p>Art thou button</p>
-                        </div>
+
+                        // This syntax tag inherits tab functionality
+                        <button class="subscribe">
+                             <p>Subscribe</p>
+                        </button>
                         </script>
                     </code>
                 </pre>
             </div>
-            <br><br><br>
-            <div class="row textcolumn">
-                <p class="col-8">
-                    Do not, under any circumstances, do this:
-                </p>
-            </div>
+            <br><br>
             <div class="row textcolumn">
                 <pre class="col-sm-1 col-lg-8">
-                    <code class="language-html">
-                        <script type="prism-html-markup">
-                        <div tabindex="1">
-                             <p>I am a button</p>
-                        </div>
-                        <div tabindex="2">
-                             <p>I am another button</p>
-                        </div>
-                        <div tabindex="3">
-                             <p>Art thou button</p>
-                        </div>
-                        </script>
-                    </code>
-                </pre>
-            </div>
-            <br><br><br>
-            <div class="row textcolumn">
-                <p class="col-8">
-                    However, this is okay for flipping between navigational tabs:
-                </p>
-            </div>
-            <div class="row textcolumn">
-                <pre class="col-sm-1 col-lg-8">
-                    <code class="language-html">
-                        <script type="prism-html-markup">
-                        <div tabindex="0">
-                             <p>Step 1</p>
-                        </div>
-                        <div tabindex="-1">
-                             <p>Step 2</p>
-                        </div>
-                        <div tabindex="-2">
-                             <p>Step 3</p>
-                        </div>
+                    <code class="language-css">
+                        <script type="prism-css">
+                        .subscribe:focus {
+                            outline: none;
+                            background-color: black;
+                        }
+
+                        p:focus {
+                            color: white;
+                        }
                         </script>
                     </code>
                 </pre>
@@ -278,14 +248,8 @@
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
                 <p class="col paragraph">
-                    Another problem often faced is when the user gets stuck on a sidebar or popup they can't
-                    get out of. Sighted users can click a button to close or scroll out of sight. This is more
-                    formally called a Focus Trap. The user has to refresh the page for the sidebar or popup to disappear,
-                    causing them to lose their spot on the page or, worse, the page is completely inoperable.
-                    This is why it's so important to include keyboard event handlers along with click or tap events.
-                    I see this problem all the time with hCaptchas and third-party cookie banners to as for permission
-                    to use cookies on a particular website. These banners are oftentimes not focusable. California
-                    has begun enforcing violations with fines up to $7500.
+                    I found a focus trap on the sidebar on Darling's main page. You can open the sidebar but you cannot
+                    enter into it or close it. This particular feature makes the rest of the site inoperable.
                 </p>
             </div>
             <div class="row textcolumn">
@@ -296,7 +260,7 @@
 
                         $(function() {
                             $('.closeBtn').on('click key',function(){
-                                $('#mySidePanel').css('width', '0');
+                                $('#sidePanel').css('left', '-10000px');
                             });
                         });
                         </script>
@@ -307,55 +271,12 @@
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
                 <p class="col paragraph">
-                    Using specific syntax tags are superior to vague divs and spans. AT uses these tags for translation.
-                    For example, it is considered poor practice to cloak a button inside of a div and then program it to
-                    function like a button. Designers often do this to have greater design control. Webflow code generators
-                    are notorious for this. AT will not recognize
-                    the button. <br><br>Do this:
-                </p>
-            </div>
-            <div class="row textcolumn">
-                <pre class="col-sm-1 col-lg-8">
-                    <code class="language-html">
-                        <script type="prism-html-markup">
-                        <form>
-                             <label>Email</label>
-                             <input></input>
-                             <button>Subscribe</button>
-                        </form>
-                        </script>
-                    </code>
-                </pre>
-            </div>
-            <br><br><br>
-            <div class="row textcolumn">
-                <p class="col-8">
-                    Not this:
-                </p>
-            </div>
-            <div class="row textcolumn">
-                <pre class="col-sm-1 col-lg-8">
-                    <code class="language-html">
-                        <script type="prism-html-markup">
-                        <div>
-                             <div>Email</div>
-                             <span></span>
-                             <div>Subscribe</div>
-                        </div>
-                        </script>
-                    </code>
-                </pre>
-            </div>
-            <br><br>
-            <div class="row">
-                <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-                <p class="col paragraph">
                    Imagine you are blind and using a screen reader to read this article.
                     First the headline is read. Then the photograph. But this photograph wasn't
                     programmed for you. You are now forced to listen to it reading the url of
-                    the image, or even worse, spelling it. I can program alt tags to describe the
-                    image for the reader or I can program it to ignore the image altogether, provided
-                    that the image is purely decorative.
+                    the image, or even worse, spelling it. I found every instance with photographs
+                    without alt tags on Darling's website. The alt tag describes what the image is for
+                    the AT.
                 </p>
             </div>
             <div class="row textcolumn">
@@ -363,26 +284,21 @@
                     <code class="language-html">
                         <script type="prism-html-markup">
                         <img src="img/logo.svg" class="logo" alt="Darling logo">
+                        <img src="img/hero.jpg" class="hero" alt="Iris Apfel wearing a fabulous bright orange fur coat and chunky turquoise costume jewelry">
+                        <img src="img/iris-1.jpg" class="image-1" alt="Iris Apfel wearing bright red tights with matching red shoes in a red room surrounded by large dog figurines">
+                        <img src="img/iris-2.jpg" class="image-2" alt="Iris Apfel wearing a floral pantsuit with matching shoes sitting on a floral couch in a floral room next to candy canes">
+                        <img src="img/iris-3.jpg" class="image-3" alt="Iris Apfel's office is bird themed with a sign that says "I'm not bossy. I am the boss.">
+                        <img src="img/hannahlucy.jpg" class="author" alt="" role=presentation>
+                        <img src="img/instagram-icon.svg" class="instagram-icon" alt="Hannah Lucy's Instagram opens in new tab">
+                        <img src="img/img-01.jpg" class="article-1" alt="" role=presentation>
+                        <img src="img/img-02.jpg" class="article-2" alt="" role=presentation>
+                        <img src="img/img-03.jpg" class="article-3" alt="" role=presentation>
+                        <img src="img/logo-stacked.svg" class="logo" alt="Darling, you are a work of art logo">
                         </script>
                     </code>
                 </pre>
             </div>
             <br><br><br>
-            <div class="row textcolumn">
-                <p class="col-8">
-                    Or to ignore:
-                </p>
-            </div>
-            <div class="row textcolumn">
-                <pre class="col-sm-1 col-lg-8">
-                    <code class="language-html">
-                        <script type="prism-html-markup">
-                        <img src="img/logo.svg" class="logo" alt="" role="presentation">
-                        </script>
-                    </code>
-                </pre>
-            </div>
-            <br><br>
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
                 <p class="col paragraph">

@@ -74,7 +74,7 @@
 
 <main id="main">
     <section class="casestudy">
-        <div class="col-sm-8">
+        <div class="col-sm-8" role="article">
             <div class="row">
                 <h1 class="col title">The Art of Accessibility</h1>
             </div>
@@ -148,16 +148,16 @@
                     to make sure that all interactive elements are focusable.
                 </p>
             </div>
-            <div class="row textcolumn">
-                <pre class="col-sm-1 col-lg-8">
+            <div class="row textcolumn" role="figure">
+                <pre class="col-sm-1 col-lg-8" aria-label="markup example for setting the tab index">
                     <code class="language-html">
                         <script type="prism-html-markup">
-                        // Place tab index set to 0 on non-syntax tags
+                        // Place tab index set to 0 on non-semantics tags
                         <div class="subscribe" tabindex="0" role="button">
                              <p>Subscribe</p>
                         </div>
 
-                        // This syntax tag inherits tab functionality
+                        // This semantics tag inherits tab functionality
                         <button class="subscribe">
                              <p>Subscribe</p>
                         </button>
@@ -166,8 +166,8 @@
                 </pre>
             </div>
             <br><br>
-            <div class="row textcolumn">
-                <pre class="col-sm-1 col-lg-8">
+            <div class="row textcolumn" role="figure">
+                <pre class="col-sm-1 col-lg-8" aria-label="cascade stylesheet example for focusable items">
                     <code class="language-css">
                         <script type="prism-css">
                         .subscribe:focus {
@@ -197,8 +197,8 @@
                     Try it on your favorite site. Do they have one? If so, isn't this fun!?
                 </p>
             </div>
-            <div class="row textcolumn">
-                <pre class="col-sm-1 col-lg-8">
+            <div class="row textcolumn" role="figure">
+                <pre class="col-sm-1 col-lg-8" aria-label="markup example for skip to main">
                     <code class="language-html">
                         <script type="prism-html-markup">
                         <li class="nav-item">
@@ -211,8 +211,8 @@
                 </pre>
             </div>
             <br><br>
-            <div class="row textcolumn">
-                <pre class="col-sm-1 col-lg-8">
+            <div class="row textcolumn" role="figure">
+                <pre class="col-sm-1 col-lg-8" aria-label="cascade stylesheet example for skip to main">
                     <code class="language-css">
                         <script type="prism-css">
                         #skip {
@@ -252,8 +252,8 @@
                     enter into it or close it. This particular feature makes the rest of the site inoperable.
                 </p>
             </div>
-            <div class="row textcolumn">
-                <pre class="col-sm-1 col-lg-8">
+            <div class="row textcolumn" role="figure">
+                <pre class="col-sm-1 col-lg-8" aria-label="Javascript example for handling keyboard events">
                     <code class="language-js">
                         <script type="prism-js">
                         /* Close side panel on click and key */
@@ -279,8 +279,8 @@
                     the AT.
                 </p>
             </div>
-            <div class="row textcolumn">
-                <pre class="col-sm-1 col-lg-8">
+            <div class="row textcolumn" role="figure">
+                <pre class="col-sm-1 col-lg-8" aria-label="Markup example for handling alternative image descriptions">
                     <code class="language-html">
                         <script type="prism-html-markup">
                         <img src="img/logo.svg" class="logo" alt="Darling logo">
@@ -309,15 +309,15 @@
                 </p>
             </div>
         </div>
-        <iframe class="col-sm-8" src="https://www.youtube.com/embed/sT3hG8Y2e3U" frameborder="0"
+        <iframe class="col-sm-8" aria-label="youtube video" src="https://www.youtube.com/embed/sT3hG8Y2e3U" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
-        <div class="row arrow">
-            <div class="col-lg-1 col arrow2 align-self-center">
-                <a href="bodyweight.html" aria-label="previous case study" class="arrow-focus-left"><img src="img/arrow.svg" class="peach-arrow-left"></a>
+        <div class="row arrow" role="group">
+            <div class="col-lg-1 col arrow2 align-self-center" aria-label="left arrow">
+                <a href="bodyweight.html" aria-label="previous case study" class="arrow-focus-left"><img src="img/arrow.svg" class="peach-arrow-left" alt=""></a>
             </div>
-            <div class="col-lg-1 col">
-                <a href="greenhouse.html" aria-label="next case study" class="arrow-focus-right"><img src="img/arrow.svg" class="peach-arrow-right"></a>
+            <div class="col-lg-1 col" aria-label="right arrow">
+                <a href="greenhouse.html" aria-label="next case study" class="arrow-focus-right"><img src="img/arrow.svg" class="peach-arrow-right" alt=""></a>
             </div>
         </div>
     </section>
@@ -335,7 +335,7 @@
 <footer class="section">
     <div class="row d-flex">
         <nav class="col-12">
-            <ul class="nav" id="nav" aria-label="Foot Menu">
+            <ul class="nav" id="nav">
                 <!------ Skip Nav ------>
                 <li class="align-self-center">
                     <button class="nav-link2 contactbtn"
@@ -357,7 +357,7 @@
         </nav>
     </div>
     <!-- Hidden Form -->
-    <div id="mySidepanel" class="sidepanel">
+    <div id="mySidepanel" class="sidepanel" aria-label="Contact Form">
         <div class="d-flex p-md-5 m-md-5 formbox">
             <form name="my-form"
                   action="https://formspree.io/emma@emma-kearney.com"

@@ -71,7 +71,7 @@
 </header>
 
 <main id="main">
-    <section class="casestudy">
+    <article class="casestudy">
         <h1 class="col title">Episode 2</h1>
         <div class="col-sm-1 col-lg-8">
             <p class="col blog-paragraph">
@@ -103,8 +103,8 @@
             </figure>
         </div>
         <br><br>
-    </section>
-    <section class="casestudy">
+    </article>
+    <article class="casestudy">
         <h1 class="col title">Episode 1</h1>
         <div class="col-sm-1 col-lg-8">
             <p class="col blog-paragraph">Hi. I'm Emma. Wow introductions are hard. I've just been sitting here
@@ -132,7 +132,7 @@
                 of paper. You won't know what you're making or if you're doing it right until the end.
                 That's part of the fun!
             </p>
-            <ol>
+            <ol aria-label="instructions">
                 <li class="li-blog">Cut or tear down to a square size.</li>
                 <hr>
                 <li class="li-blog">Fold one corner to the opposite corner.</li>
@@ -158,19 +158,19 @@
                 Here's a fun playlist I made to kickstart this cool dance party. Enjoy!
             </p>
             <br>
-            <iframe src="https://www.youtube.com/embed/videoseries?list=PLajWrjdZkJxOC8N0UdxOnszXdUkCXpUnX"
+            <iframe aria-label="youtube dance party playlist" src="https://www.youtube.com/embed/videoseries?list=PLajWrjdZkJxOC8N0UdxOnszXdUkCXpUnX"
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     class="youtube col-sm-12" allowfullscreen>
             </iframe>
         </div>
         <br><br>
-    </section>
+    </article>
 </main>
 <!---------- Contrast Button ------------>
 <footer class="section">
     <div class="row d-flex">
         <nav class="col-12">
-            <ul class="nav" id="nav" aria-label="Foot Menu">
+            <ul class="nav" id="nav">
                 <!------ Skip Nav ------>
                 <li class="align-self-center">
                     <button class="nav-link2 contactbtn"
@@ -192,7 +192,7 @@
         </nav>
     </div>
     <!-- Hidden Form -->
-    <div id="mySidepanel" class="sidepanel">
+    <div id="mySidepanel" class="sidepanel" aria-label="Contact form">
         <div class="d-flex p-md-5 m-md-5 formbox">
             <form name="my-form"
                   action="https://formspree.io/emma@emma-kearney.com"

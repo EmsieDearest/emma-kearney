@@ -816,9 +816,24 @@ hr {
     height: 100vh;
   }
 
-  main {
+  main, .phone-main {
     border: 4px solid blue;
-    margin-top: 3em;
+    margin-top: 2em;
+    margin-bottom: 0.3em;
+    overflow-x: hidden !important;
+    width: 100%;
+  }
+
+  .about-blurb {
+    padding : {
+      left: 1.2em;
+      right: 1em;
+      top: 2em;
+      bottom: 5.5em;
+    }
+    line-height: 1.2;
+    font-size: 1.6em;
+    text-align: left;
   }
 
   #cursor {
@@ -951,27 +966,6 @@ hr {
       right: 0;
     }
     width: 80%;
-  }
-
-  .phone-main {
-    border: 4px solid blue;
-    margin-top: 3em;
-    margin-bottom: 0.3em;
-    padding : {
-      left: 1em;
-      right: 1em;
-      top: 2em;
-    }
-    overflow-x: hidden !important;
-    width: 100%;
-  }
-
-  .about-blurb {
-    padding-bottom: 5em;
-    line-height: 1.2;
-    font-size: 1.6em;
-    text-align: left;
-    padding-left: 0.3em;
   }
 
   .greenhouseimg, .darlingimg {

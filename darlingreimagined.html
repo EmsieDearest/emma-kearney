@@ -49,32 +49,30 @@
 
 <header>
     <!-- Navigation -->
-    <div class="row justify-content-between">
-        <nav class="navpanel">
-            <ul class="nav d-flex" id="nav" aria-label="Main Menu">
-                <!------ Skip Nav ------>
-                <li class="nav-item align-self-center">
-                    <a href="index.html#main"><button id="skip" class="nav-item align-self-center">SKIP TO MAIN</button></a>
-                </li>
-                <!------ Work ------>
-                <li class="nav-item align-self-center">
-                    <a class="work" href="greenhouse.html">
-                        WORK
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="logo-div">
-            <a href="index.html" class="col-md-4 col-sm-1 logo-link">
-                <img src="img/wave.svg" alt="Emma Kearney Home" id="logo" class="logo">
-            </a>
-        </div>
+    <nav class="navpanel">
+        <ul class="nav d-flex" id="nav" aria-label="Main Menu">
+            <!------ Skip Nav ------>
+            <li class="nav-item align-self-center">
+                <a href="index.html#main"><button id="skip" class="nav-item align-self-center">SKIP TO MAIN</button></a>
+            </li>
+            <!------ Work ------>
+            <li class="nav-item align-self-center">
+                <a class="work" href="greenhouse.html">
+                    WORK
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="logo-div">
+        <a href="index.html" class="col-md-4 logo-link">
+            <img src="img/wave.svg" alt="Emma Kearney Home" id="logo" class="logo">
+        </a>
     </div>
 </header>
 
 <main id="main">
-    <section class="casestudy">
-        <div class="col-sm-8" role="article">
+    <article class="casestudy">
+        <div class="col-sm-8" aria-label="Case Study">
             <div class="row">
                 <h1 class="col title">The Art of Accessibility</h1>
             </div>
@@ -84,8 +82,8 @@
         </div>
         <div class="col-sm-8 paragraph">
             <div class="row">
-                <h3 class="col-lg-4 col-sm-1">SCOPE</h3>
-                <p class="col paragraph">
+                <h3 class="col-lg-4 col-sm-1" id="scope">SCOPE</h3>
+                <p class="col paragraph" aria-labelledby="scope">
                 I've been a loyal reader of Darling Magazine since discovering its
                 first issue while in the checkout line at Whole Foods. Their philosophy was written
                 so eloquently on the back cover. It reminded me of the values my
@@ -100,8 +98,8 @@
         </div>
         <div class="col-sm-8 paragraph">
             <div class="row">
-                <h3 class="col-lg-4 col-sm-1">PROBLEM</h3>
-                <p class="col paragraph">
+                <h3 class="col-lg-4 col-sm-1" id="problem">PROBLEM</h3>
+                <p class="col paragraph" aria-labelledby="problem">
                     That being said, the development lacked basic accessibility criteria.
                     It's obvious that it wasn't even conceived as part of the design and
                     development process. This is unfortunately the norm. People with certain
@@ -129,8 +127,8 @@
         <br><br>
         <div class="col-sm-8 paragraph">
             <div class="row">
-                <h3 class="col-lg-4 col-sm-1">SOLUTION</h3>
-                <p class="col paragraph">
+                <h3 class="col-lg-4 col-sm-1" id="solution">SOLUTION</h3>
+                <p class="col paragraph" aria-labelledby="solution">
                     For meeting compliance, I refer to WCAG 2.1 and WC3 success criteria. When tackling a large website
                     filled with infinite pages, I audit a sample size based on elements that are used most frequently
                     throughout the site. Then I scope out potential violations, provide recommendations, figure out which
@@ -148,7 +146,7 @@
                     to make sure that all interactive elements are focusable.
                 </p>
             </div>
-            <div class="row textcolumn" role="figure">
+            <div class="row textcolumn" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="markup example for setting the tab index">
                     <code class="language-html">
                         <script type="prism-html-markup">
@@ -166,7 +164,7 @@
                 </pre>
             </div>
             <br><br>
-            <div class="row textcolumn" role="figure">
+            <div class="row textcolumn" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="cascade stylesheet example for focusable items">
                     <code class="language-css">
                         <script type="prism-css">
@@ -185,7 +183,7 @@
             <br><br><br>
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-                <p class="col paragraph">
+                <p class="col paragraph" aria-labelledby="solution">
                     Next, the navigation needs to have the option to skip to the main
                     section. Sighted users can scan quickly to parts of the page they are most interested.
                     Now imagine you are blind and forced to go through every single element on the page, including
@@ -197,7 +195,7 @@
                     Try it on your favorite site. Do they have one? If so, isn't this fun!?
                 </p>
             </div>
-            <div class="row textcolumn" role="figure">
+            <div class="row textcolumn" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="markup example for skip to main">
                     <code class="language-html">
                         <script type="prism-html-markup">
@@ -211,7 +209,7 @@
                 </pre>
             </div>
             <br><br>
-            <div class="row textcolumn" role="figure">
+            <div class="row textcolumn" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="cascade stylesheet example for skip to main">
                     <code class="language-css">
                         <script type="prism-css">
@@ -247,12 +245,12 @@
             <br><br><br>
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-                <p class="col paragraph">
+                <p class="col paragraph" aria-labelledby="solution">
                     I found a focus trap on the sidebar on Darling's main page. You can open the sidebar but you cannot
                     enter into it or close it. This particular feature makes the rest of the site inoperable.
                 </p>
             </div>
-            <div class="row textcolumn" role="figure">
+            <div class="row textcolumn" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="Javascript example for handling keyboard events">
                     <code class="language-js">
                         <script type="prism-js">
@@ -270,7 +268,7 @@
             <br><br><br>
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-                <p class="col paragraph">
+                <p class="col paragraph" aria-labelledby="solution">
                    Imagine you are blind and using a screen reader to read this article.
                     First the headline is read. Then the photograph. But this photograph wasn't
                     programmed for you. You are now forced to listen to it reading the url of
@@ -279,7 +277,7 @@
                     the AT.
                 </p>
             </div>
-            <div class="row textcolumn" role="figure">
+            <div class="row textcolumn" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="Markup example for handling alternative image descriptions">
                     <code class="language-html">
                         <script type="prism-html-markup">
@@ -301,7 +299,7 @@
             <br><br><br>
             <div class="row">
                 <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-                <p class="col paragraph">
+                <p class="col paragraph" aria-labelledby="solution">
                     Luckily the color contrast ratio between the foreground and background of the text
                     was perfect just the way it was. As long as text can be enlarged 400%, the font size
                     is fine. This is important for someone who is hard of seeing. See how the tabbing
@@ -320,7 +318,7 @@
                 <a href="greenhouse.html" aria-label="next case study" class="arrow-focus-right"><img src="img/arrow.svg" class="peach-arrow-right" alt=""></a>
             </div>
         </div>
-    </section>
+    </article>
     <!---------- Contrast Button ----------
     <div class="row contrast-div">
         <button id="contrast-img"
@@ -333,29 +331,27 @@
     -->
 </main>
 <footer class="section">
-    <div class="row d-flex">
-        <nav class="col-12">
-            <ul class="nav" id="nav">
-                <!------ Skip Nav ------>
-                <li class="align-self-center">
-                    <button class="nav-link2 contactbtn"
-                            id="nav-link2 mySidepanel"
-                            type="button"
-                            onclick="openNav()"
-                            aria-expanded="false"
-                            aria-controls="mySidepanel">
-                        CONTACT
-                    </button>
-                </li>
-                <!------ Work ------>
-                <li class="align-self-center ml-auto">
-                    <a class="blog-link2" href="blog.html">
-                        BLOG
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <nav class="col-12">
+        <ul class="nav" id="nav">
+            <!------ Skip Nav ------>
+            <li class="align-self-center">
+                <button class="nav-link2 contactbtn"
+                        id="nav-link2 mySidepanel"
+                        type="button"
+                        onclick="openNav()"
+                        aria-expanded="false"
+                        aria-controls="mySidepanel">
+                    CONTACT
+                </button>
+            </li>
+            <!------ Work ------>
+            <li class="align-self-center ml-auto">
+                <a class="blog-link2" href="blog.html">
+                    BLOG
+                </a>
+            </li>
+        </ul>
+    </nav>
     <!-- Hidden Form -->
     <div id="mySidepanel" class="sidepanel" aria-label="Contact Form">
         <div class="d-flex p-md-5 m-md-5 formbox">

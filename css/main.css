@@ -105,7 +105,7 @@ html {
 body {
   background-color: #FFE7DD;
   height: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   scroll-snap-type: y mandatory;
 }
 
@@ -178,9 +178,8 @@ body {
   background-color: transparent;
   position: absolute;
   z-index: 5;
-  margin-left: 0.5em;
   margin-bottom: 0.3em;
-  padding-left: 0;
+  padding-left: 0.5em;
   padding-right: 0;
   padding-bottom: 0;
   padding-top: 0;
@@ -289,18 +288,6 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
   font-size: 6em;
-}
-
-.me-box {
-  width: 20%;
-  height: auto;
-  margin-left: 11em;
-}
-
-.me {
-  width: 90%;
-  height: auto;
-  top: 2em;
 }
 
 .concepts {
@@ -692,8 +679,14 @@ hr {
   }
 
   body {
+    overflow-x: hidden !important;
     width: 100vw;
     height: 100vh;
+  }
+
+  main {
+    border: 4px solid blue;
+    margin-top: 3em;
   }
 
   #cursor {
@@ -718,7 +711,7 @@ hr {
     position: absolute;
     outline: none;
     bottom: 0.5em;
-    right: 0.3em;
+    right: 0.5em;
     color: blue;
     line-height: 1;
     font-family: Gopher Display Regular, gopher, sans-serif;
@@ -727,10 +720,9 @@ hr {
   }
 
   .logo {
-    width: 60%;
-    top: 17%;
-    transform: rotate(90deg);
-    right: -20%;
+    width: 50%;
+    right: 3%;
+    top: 1%;
   }
 
   .close-button {
@@ -793,23 +785,31 @@ form input[type=email], form textarea[type=text] {
   }
 
   .phone-main {
-    width: 80%;
+    border: 4px solid blue;
+    margin-top: 3em;
+    margin-bottom: 0.3em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 2em;
+    overflow-x: hidden !important;
+    width: 100%;
   }
 
   .about-blurb {
-    padding-left: 0;
-    padding-bottom: 1.5em;
-    line-height: 1;
-    font-size: 1.5em;
+    padding-bottom: 5em;
+    line-height: 1.2;
+    font-size: 1.6em;
     text-align: left;
-    margin-left: 0.3em;
+    padding-left: 0.3em;
   }
 
   .greenhouseimg, .darlingimg {
     display: none;
   }
 
+  /*
   .contrast-img {
+    // border: 1px solid black;
     width: 15%;
     background-color: transparent;
     border-radius: 0px;
@@ -821,8 +821,9 @@ form input[type=email], form textarea[type=text] {
     cursor: none;
     left: 19.5em;
     display: none;
+    // bottom: 6%;
   }
-
+   */
   .concepts {
     padding-left: 0;
     padding-right: 0;
@@ -833,7 +834,7 @@ form input[type=email], form textarea[type=text] {
     left: 0.5em;
     position: absolute;
     outline: none;
-    top: 0.5em;
+    top: 0.7em;
     color: blue;
     line-height: 1;
     font-family: Gopher Display Regular, gopher, sans-serif;
@@ -843,8 +844,11 @@ form input[type=email], form textarea[type=text] {
 
   /* ****** Concept Pages ********/
   .casestudy {
-    margin-left: 0em;
-    padding-right: 3em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
   }
 
   .star {
@@ -855,7 +859,7 @@ form input[type=email], form textarea[type=text] {
 
   .title {
     color: blue;
-    padding-top: 2em;
+    padding-top: 1em;
     padding-bottom: 0em;
     margin-left: 0em;
     line-height: 1;
@@ -872,7 +876,7 @@ form input[type=email], form textarea[type=text] {
     font-family: Gopher Display Regular, gopher, sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
   p {
@@ -881,7 +885,7 @@ form input[type=email], form textarea[type=text] {
     padding-bottom: 0;
     font-family: Gopher Display Regular, gopher, sans-serif;
     font-style: normal;
-    font-size: 1em;
+    font-size: 1.1em;
   }
 
   .nytimes:visited {
@@ -931,6 +935,10 @@ form input[type=email], form textarea[type=text] {
     cursor: none;
   }
 
+  .row {
+    width: 100%;
+  }
+
   .arrow2 {
     transform: rotate(180deg);
     cursor: none;
@@ -938,11 +946,10 @@ form input[type=email], form textarea[type=text] {
 
   .nav-link2 {
     background-color: transparent;
-    position: relative;
-    padding-left: 0.3em;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-top: 0;
+    position: absolute;
+    left: 0.7em;
+    right: 0;
+    top: 0.3em;
     bottom: 0.3em;
     color: blue;
     font-family: Gopher Display Regular, gopher, sans-serif;
@@ -951,10 +958,11 @@ form input[type=email], form textarea[type=text] {
 
   .blog-link2 {
     background-color: transparent;
-    position: relative;
+    position: absolute;
     cursor: none;
     bottom: 0.3em;
-    right: 0.5em;
+    right: 0.6em;
+    top: 0.3em;
     color: blue;
     font-family: Gopher Display Regular, gopher, sans-serif;
     font-size: 1.3em;
@@ -994,7 +1002,6 @@ form input[type=email], form textarea[type=text] {
     width: 40%;
     left: 0;
     padding: 0;
-    margin-left: 20em;
   }
 
   .close-button {
@@ -1094,7 +1101,7 @@ form input[type=email], form textarea[type=text] {
   .work {
     display: block;
     color: blue;
-    margin-left: 1%;
+    padding-left: 1%;
     line-height: 1.3;
     font-family: Gopher Display Regular, gopher, sans-serif;
     font-size: 2em;

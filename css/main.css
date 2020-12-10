@@ -708,7 +708,7 @@ hr {
     border-top: 4px solid blue;
     width: 100%;
     padding-top: 0.3em;
-    padding-bottom: 2.6em;
+    padding-bottom: 1em;
   }
 
   .about-blurb {
@@ -963,11 +963,9 @@ form input[type=email], form textarea[type=text] {
 
   .nav-link2 {
     background-color: transparent;
-    position: absolute;
-    left: 0.7em;
+    position: relative;
     right: 0;
     top: 0.3em;
-    bottom: 0.3em;
     color: blue;
     font-family: Gopher Display Regular, gopher, sans-serif;
     font-size: 1.3em;

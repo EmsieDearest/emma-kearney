@@ -314,9 +314,9 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
 .logo {
   position: fixed;
   z-index: 5;
-  right: 1em;
+  right: 3em;
   width: 20%;
-  top: 1em;
+  top: 2em;
 }
 
 .logo, .logo:focus, .logo-link {
@@ -423,8 +423,10 @@ h2 {
 }
 
 .about-blurb {
-  padding-left: 0;
-  margin-bottom: 2.4em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  margin-bottom: 2em;
+  margin-top: -0.5em;
   line-height: 1;
   font-size: 4em;
   text-align: justify;

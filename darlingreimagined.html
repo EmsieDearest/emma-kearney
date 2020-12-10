@@ -73,17 +73,14 @@
 <main id="main">
     <article class="casestudy">
         <div class="col-sm-8" aria-label="Case Study">
-            <div class="row">
-                <h1 class="col title">The Art of Accessibility</h1>
-            </div>
+            <h1 class="col title">The Art of Accessibility</h1>
         </div>
         <div class="row d-flex justify-content-end">
             <img class="col-3 star" src="img/casestudy.svg" alt="case study">
         </div>
         <div class="col-sm-8 paragraph">
-            <div class="row">
-                <h3 class="col-lg-4 col-sm-1" id="scope">SCOPE</h3>
-                <p class="col paragraph" aria-labelledby="scope">
+            <h3 class="col-lg-4 col-sm-1" id="scope">SCOPE</h3>
+            <p class="col paragraph" aria-labelledby="scope">
                 I've been a loyal reader of Darling Magazine since discovering its
                 first issue while in the checkout line at Whole Foods. Their philosophy was written
                 so eloquently on the back cover. It reminded me of the values my
@@ -93,13 +90,11 @@
                 I have mad respect for the magazine and the thoughtfully designed spreads.
                 I think their UI is fantastic and wouldn't change a thing.
                 <br><br>
-                </p>
-            </div>
+            </p>
         </div>
         <div class="col-sm-8 paragraph">
-            <div class="row">
-                <h3 class="col-lg-4 col-sm-1" id="problem">PROBLEM</h3>
-                <p class="col paragraph" aria-labelledby="problem">
+            <h3 class="col-lg-4 col-sm-1" id="problem">PROBLEM</h3>
+            <p class="col paragraph" aria-labelledby="problem">
                     That being said, the development lacked basic accessibility criteria.
                     It's obvious that it wasn't even conceived as part of the design and
                     development process. This is unfortunately the norm. People with certain
@@ -117,8 +112,7 @@
                     300 failures with their accessibility. Here is what I would do to
                     fix a hypothetical article by Darling. These changes would meet universal
                     compliance (or WCAG AA).
-                </p>
-            </div>
+            </p>
         </div>
         <figure>
             <img class="col-sm-8 stage" src="img/IrisSite.jpg" alt="">
@@ -126,9 +120,8 @@
         </figure>
         <br><br>
         <div class="col-sm-8 paragraph">
-            <div class="row">
-                <h3 class="col-lg-4 col-sm-1" id="solution">SOLUTION</h3>
-                <p class="col paragraph" aria-labelledby="solution">
+            <h3 class="col-lg-4 col-sm-1" id="solution">SOLUTION</h3>
+            <p class="col paragraph" aria-labelledby="solution">
                     For meeting compliance, I refer to WCAG 2.1 and WC3 success criteria. When tackling a large website
                     filled with infinite pages, I audit a sample size based on elements that are used most frequently
                     throughout the site. Then I scope out potential violations, provide recommendations, figure out which
@@ -144,21 +137,21 @@
                     how to replace it with something equally as distinguishable. Turning off the outline with no
                     replacement is like removing the wheelchair access from an entrance of a building. The main thing is
                     to make sure that all interactive elements are focusable.
-                </p>
-            </div>
+            </p>
+
             <div class="row textcolumn" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="markup example for setting the tab index">
                     <code class="language-html">
                         <script type="prism-html-markup">
-                        // Place tab index set to 0 on non-semantics tags
-                        <div class="subscribe" tabindex="0" role="button">
-                             <p>Subscribe</p>
-                        </div>
+                            // Place tab index set to 0 on non-semantics tags
+                            <div class="subscribe" tabindex="0" role="button">
+                                 <p>Subscribe</p>
+                            </div>
 
-                        // This semantics tag inherits tab functionality
-                        <button class="subscribe">
-                             <p>Subscribe</p>
-                        </button>
+                            // This semantics tag inherits tab functionality
+                            <button class="subscribe">
+                                 <p>Subscribe</p>
+                            </button>
                         </script>
                     </code>
                 </pre>
@@ -168,22 +161,21 @@
                 <pre class="col-sm-1 col-lg-8" aria-label="cascade stylesheet example for focusable items">
                     <code class="language-css">
                         <script type="prism-css">
-                        .subscribe:focus {
-                            outline: none;
-                            background-color: black;
-                        }
+                            .subscribe:focus {
+                                outline: none;
+                                background-color: black;
+                            }
 
-                        p:focus {
-                            color: white;
-                        }
+                            p:focus {
+                                color: white;
+                            }
                         </script>
                     </code>
                 </pre>
             </div>
-            <br><br><br>
-            <div class="row">
-                <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-                <p class="col paragraph" aria-labelledby="solution">
+            <br><br>
+            <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
+            <p class="col paragraph" aria-labelledby="solution">
                     Next, the navigation needs to have the option to skip to the main
                     section. Sighted users can scan quickly to parts of the page they are most interested.
                     Now imagine you are blind and forced to go through every single element on the page, including
@@ -193,8 +185,7 @@
                     only becomes visible when the tab key has focused on the button. Use the tab key and try it
                     on my site. Try it on <a class="nytimes" href="https://www.nytimes.com/" target="_blank">The New York Times</a>.
                     Try it on your favorite site. Do they have one? If so, isn't this fun!?
-                </p>
-            </div>
+            </p>
             <div class="row textcolumn" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="markup example for skip to main">
                     <code class="language-html">
@@ -242,14 +233,12 @@
                     </code>
                 </pre>
             </div>
-            <br><br><br>
-            <div class="row">
-                <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-                <p class="col paragraph" aria-labelledby="solution">
+            <br><br>
+            <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
+            <p class="col paragraph" aria-labelledby="solution">
                     I found a focus trap on the sidebar on Darling's main page. You can open the sidebar but you cannot
                     enter into it or close it. This particular feature makes the rest of the site inoperable.
-                </p>
-            </div>
+            </p>
             <div class="row textcolumn" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="Javascript example for handling keyboard events">
                     <code class="language-js">
@@ -265,18 +254,16 @@
                     </code>
                 </pre>
             </div>
-            <br><br><br>
-            <div class="row">
-                <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-                <p class="col paragraph" aria-labelledby="solution">
+            <br><br>
+            <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
+            <p class="col paragraph" aria-labelledby="solution">
                    Imagine you are blind and using a screen reader to read this article.
                     First the headline is read. Then the photograph. But this photograph wasn't
                     programmed for you. You are now forced to listen to it reading the url of
                     the image, or even worse, spelling it. I found every instance with photographs
                     without alt tags on Darling's website. The alt tag describes what the image is for
                     the AT.
-                </p>
-            </div>
+            </p>
             <div class="row textcolumn" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="Markup example for handling alternative image descriptions">
                     <code class="language-html">
@@ -296,16 +283,14 @@
                     </code>
                 </pre>
             </div>
-            <br><br><br>
-            <div class="row">
-                <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-                <p class="col paragraph" aria-labelledby="solution">
+            <br><br>
+            <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
+            <p class="col paragraph" aria-labelledby="solution">
                     Luckily the color contrast ratio between the foreground and background of the text
                     was perfect just the way it was. As long as text can be enlarged 400%, the font size
                     is fine. This is important for someone who is hard of seeing. See how the tabbing
                     structure would look in this video below.
-                </p>
-            </div>
+            </p>
         </div>
         <iframe class="col-sm-8" aria-label="youtube video" src="https://www.youtube.com/embed/sT3hG8Y2e3U" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

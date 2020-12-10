@@ -44,12 +44,12 @@
     <div class="back" role="presentation"></div>
 </div>
 
-<div id="cursor" class="run-animation"></div>
+<div id="cursor" class="run-animation" role="presentation"></div>
 
 <header class="section">
     <!-- Navigation -->
     <nav class="navpanel">
-        <ul class="nav d-flex" id="nav" aria-label="Main Menu">
+        <ul class="nav d-flex" id="nav">
             <!------ Skip Nav ------>
             <li class="nav-item align-self-center">
                 <a href="index.html#main"><button id="skip" class="nav-item align-self-center">SKIP TO MAIN</button></a>
@@ -63,8 +63,8 @@
         </ul>
     </nav>
     <div class="logo-div">
-        <a href="index.html" class="col-md-4 col-sm-1 logo-link">
-            <img src="img/wave.svg" alt="Emma Kearney Home" id="logo" class="logo">
+        <a href="index.html" class="col-md-4 col-sm-1 logo-link" aria-label="home">
+            <img src="img/wave.svg" alt="Emma Kearney logo" id="logo" class="logo">
         </a>
     </div>
 </header>
@@ -106,7 +106,6 @@
             <img src="img/FitnessApp.png" alt="Fitness App Concept" class="fitnessapp concept col-sm-12">
         </div>
         -->
-    </section>
 </main>
 <!---------- Contrast Button ------------>
 <footer class="section" role="contentinfo">
@@ -118,6 +117,7 @@
                         id="nav-link2 mySidepanel"
                         type="button"
                         onclick="openNav()"
+                        onkeyup="openNav()"
                         aria-expanded="false"
                         aria-controls="mySidepanel">
                     CONTACT
@@ -220,6 +220,7 @@
                 <button type="submit"
                         class="btn btn-sm align-item-end"
                         onclick="return(submission())"
+                        onkeyup="return(submission())"
                         name="send"
                         id="my-form-button"
                         value="send">SEND
@@ -228,7 +229,12 @@
                 <div class="success">
                     <p aria-label="Thank you!" class="success-p">Thank you! Your message was sent.</p>
                 </div>
-                <button class="close-button" type="button" aria-label="Close form" href="javascript:void(0)" onclick="closeNav()"></button>
+                <button class="close-button"
+                        type="button"
+                        aria-label="close form"
+                        href="javascript:void(0)"
+                        onclick="closeNav()"
+                        onkeyup="closeNav()"></button>
             </form>
         </div>
     </div>

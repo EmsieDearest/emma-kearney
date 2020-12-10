@@ -161,6 +161,7 @@
                         id="nav-link2 mySidepanel"
                         type="button"
                         onclick="openNav()"
+                        onkeyup="openNav()"
                         aria-expanded="false"
                         aria-controls="mySidepanel">
                     CONTACT
@@ -263,6 +264,7 @@
                 <button type="submit"
                         class="btn btn-sm align-item-end"
                         onclick="return(submission())"
+                        onkeyup="return(submission())"
                         name="send"
                         id="my-form-button"
                         value="send">SEND
@@ -271,7 +273,12 @@
                 <div class="success">
                     <p aria-label="Thank you!" class="success-p">Thank you! Your message was sent.</p>
                 </div>
-                <button class="close-button" type="button" aria-label="Close form" href="javascript:void(0)" onclick="closeNav()"></button>
+                <button class="close-button"
+                        type="button"
+                        aria-label="close form"
+                        href="javascript:void(0)"
+                        onclick="closeNav()"
+                        onkeyup="closeNav()"></button>
             </form>
         </div>
     </div>

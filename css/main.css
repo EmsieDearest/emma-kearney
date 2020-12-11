@@ -585,6 +585,7 @@ input, textarea, form {
 }
 
 .title {
+  margin-top: -0.2em;
   color: blue;
   line-height: 1;
   font-family: Gopher Display Regular, gopher, sans-serif;
@@ -596,16 +597,29 @@ h3 {
   color: blue;
   padding-left: 0.6em;
   line-height: 1.5;
-  padding-bottom: 2em;
+  padding-bottom: 1em;
   font-family: Gopher Display Regular, gopher, sans-serif;
-  font-style: normal;
-  font-size: 1.5em;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0.3em;
+}
+
+.roles-first {
+  margin-top: 7em;
+}
+
+.roles {
+  padding-bottom: 0.7em;
 }
 
 p {
   color: blue;
   padding-left: 12em;
-  line-height: 1.3;
+  line-height: 1.5;
   padding-bottom: 1em;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
@@ -865,7 +879,7 @@ form input[type=email], form textarea[type=text] {
 
   /* ****** Concept Pages ********/
   .casestudy {
-    margin-top: -1.3em;
+    margin-top: -5em;
   }
 
   .star {
@@ -876,7 +890,7 @@ form input[type=email], form textarea[type=text] {
 
   .title {
     color: blue;
-    padding-top: 4em;
+    padding-top: -1em;
     padding-bottom: 1em;
     margin-left: 0em;
     line-height: 1;
@@ -893,7 +907,7 @@ form input[type=email], form textarea[type=text] {
     font-family: Gopher Display Regular, gopher, sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
   p {
@@ -903,6 +917,14 @@ form input[type=email], form textarea[type=text] {
     font-family: Gopher Display Regular, gopher, sans-serif;
     font-style: normal;
     font-size: 1.1em;
+  }
+
+  .roles-first {
+    padding-top: 8em;
+  }
+
+  .roles {
+    padding-bottom: 0.4em;
   }
 
   .nytimes:visited {

@@ -77,8 +77,6 @@
                 <ul>
                     <li aria-labelledby="roles" class="roles roles-first">FRONT END DEVELOPMENT</li>
                     <li aria-labelledby="roles" class="roles">ACCESSIBILITY COMPLIANCE</li>
-                    <li aria-labelledby="roles" class="roles">UX DESIGN</li>
-                    <li aria-labelledby="roles" class="roles">UI DESIGN</li>
                 </ul>
             </h3>
             <h1 class="col title">The Art of Accessibility</h1>
@@ -87,7 +85,6 @@
             <img class="col-3 star" src="img/casestudy.svg" alt="case study">
         </div>
         <div class="col-sm-8 paragraph">
-            <h3 class="col-lg-4 col-sm-1" id="scope">SCOPE</h3>
             <p class="col paragraph" aria-labelledby="scope">
                 I've been a loyal reader of Darling Magazine since discovering its
                 first issue while in the checkout line at Whole Foods. Their philosophy was written
@@ -102,7 +99,7 @@
         </div>
         <div class="col-sm-8 paragraph">
             <h3 class="col-lg-4 col-sm-1" id="problem">PROBLEM</h3>
-            <p class="col paragraph" aria-labelledby="problem">
+            <p class="col paragraph textcolumn" aria-labelledby="problem">
                     That being said, the development lacked basic accessibility criteria.
                     It's obvious that it wasn't even conceived as part of the design and
                     development process. This is unfortunately the norm. People with certain
@@ -129,7 +126,7 @@
         <br><br>
         <div class="col-sm-8 paragraph">
             <h3 class="col-lg-4 col-sm-1" id="solution">SOLUTION</h3>
-            <p class="col paragraph" aria-labelledby="solution">
+            <p class="col paragraph textcolumn" aria-labelledby="solution">
                     For meeting compliance, I refer to WCAG 2.1 and WC3 success criteria. When tackling a large website
                     filled with infinite pages, I audit a sample size based on elements that are used most frequently
                     throughout the site. Then I scope out potential violations, provide recommendations, figure out which
@@ -147,7 +144,7 @@
                     to make sure that all interactive elements are focusable.
             </p>
 
-            <div class="row textcolumn" role="figure" aria-labelledby="solution">
+            <div class="row code" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="markup example for setting the tab index">
                     <code class="language-html">
                         <script type="prism-html-markup">
@@ -165,7 +162,7 @@
                 </pre>
             </div>
             <br><br>
-            <div class="row textcolumn" role="figure" aria-labelledby="solution">
+            <div class="row code" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="cascade stylesheet example for focusable items">
                     <code class="language-css">
                         <script type="prism-css">
@@ -182,8 +179,7 @@
                 </pre>
             </div>
             <br><br>
-            <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-            <p class="col paragraph" aria-labelledby="solution">
+            <p class="col paragraph textcolumn" aria-labelledby="solution">
                     Next, the navigation needs to have the option to skip to the main
                     section. Sighted users can scan quickly to parts of the page they are most interested.
                     Now imagine you are blind and forced to go through every single element on the page, including
@@ -194,7 +190,7 @@
                     on my site. Try it on <a class="nytimes" href="https://www.nytimes.com/" target="_blank">The New York Times</a>.
                     Try it on your favorite site. Do they have one? If so, isn't this fun!?
             </p>
-            <div class="row textcolumn" role="figure" aria-labelledby="solution">
+            <div class="row code" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="markup example for skip to main">
                     <code class="language-html">
                         <script type="prism-html-markup">
@@ -208,7 +204,7 @@
                 </pre>
             </div>
             <br><br>
-            <div class="row textcolumn" role="figure" aria-labelledby="solution">
+            <div class="row code" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="cascade stylesheet example for skip to main">
                     <code class="language-css">
                         <script type="prism-css">
@@ -242,12 +238,11 @@
                 </pre>
             </div>
             <br><br>
-            <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-            <p class="col paragraph" aria-labelledby="solution">
+            <p class="col paragraph textcolumn" aria-labelledby="solution">
                     I found a focus trap on the sidebar on Darling's main page. You can open the sidebar but you cannot
                     enter into it or close it. This particular feature makes the rest of the site inoperable.
             </p>
-            <div class="row textcolumn" role="figure" aria-labelledby="solution">
+            <div class="row code" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="Javascript example for handling keyboard events">
                     <code class="language-js">
                         <script type="prism-js">
@@ -263,8 +258,7 @@
                 </pre>
             </div>
             <br><br>
-            <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-            <p class="col paragraph" aria-labelledby="solution">
+            <p class="col paragraph textcolumn" aria-labelledby="solution">
                    Imagine you are blind and using a screen reader to read this article.
                     First the headline is read. Then the photograph. But this photograph wasn't
                     programmed for you. You are now forced to listen to it reading the url of
@@ -272,7 +266,7 @@
                     without alt tags on Darling's website. The alt tag describes what the image is for
                     the AT.
             </p>
-            <div class="row textcolumn" role="figure" aria-labelledby="solution">
+            <div class="row code" role="figure" aria-labelledby="solution">
                 <pre class="col-sm-1 col-lg-8" aria-label="Markup example for handling alternative image descriptions">
                     <code class="language-html">
                         <script type="prism-html-markup">
@@ -292,8 +286,7 @@
                 </pre>
             </div>
             <br><br>
-            <h3 class="col-lg-4 col-sm-1" role="presentation"></h3>
-            <p class="col paragraph" aria-labelledby="solution">
+            <p class="col paragraph textcolumn" aria-labelledby="solution">
                     Luckily the color contrast ratio between the foreground and background of the text
                     was perfect just the way it was. As long as text can be enlarged 400%, the font size
                     is fine. This is important for someone who is hard of seeing. See how the tabbing

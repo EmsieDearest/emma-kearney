@@ -708,6 +708,11 @@ input, textarea, form {
     size: 7em;
   }
 }
+
+.blog-title-top {
+  margin-top: 1em;
+}
+
  h3 {
    color: $cherry;
    padding-left: 0.6em;
@@ -747,11 +752,32 @@ p {
   }
 }
 
+figure {
+  padding : {
+    top: 6em;
+    bottom: 10em;
+  }
+}
+
+.nopaddingbottom {
+  margin-bottom: -12em;
+}
+
 .textcolumn {
   margin-left: 32.5%;
-  width: 100%;
+  width: 70%;
   margin-top: -2em;
   padding-top: -2em;
+}
+
+.code {
+  margin-left: 32.5%;
+  width: 105%;
+  margin-top: 1em;
+}
+
+pre {
+  border: 2px solid blue;
 }
 
 figcaption {
@@ -1077,7 +1103,7 @@ hr {
   .title {
     color: $cherry;
     padding-top: -1em;
-    padding-bottom: 1em;
+    //padding-bottom: 1em;
     margin-left: 0em;
     line-height: 1;
     font : {
@@ -1085,6 +1111,11 @@ hr {
       style: normal;
       size: 3em;
     }
+  }
+
+  .blog-title-top {
+    margin-top: 1.9em;
+    padding-top: 2em;
   }
 
   h3 {
@@ -1128,6 +1159,15 @@ hr {
   .userflow {
     padding : {
       top: 4em;
+    }
+  }
+
+  figure {
+    margin : {
+      top: -10em;
+      left: -1em;
+      right: -1em;
+      bottom: -4em;
     }
   }
 

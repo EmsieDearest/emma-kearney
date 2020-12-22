@@ -630,6 +630,15 @@ p {
   font-size: 1.6em;
 }
 
+ol {
+  color: blue;
+  line-height: 1.5;
+  margin-top: -2em;
+  font-family: Gopher Display Regular, gopher, sans-serif;
+  font-style: normal;
+  font-size: 1.6em;
+}
+
 figure {
   padding-top: 6em;
   padding-bottom: 10em;

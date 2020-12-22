@@ -752,6 +752,18 @@ p {
   }
 }
 
+ol {
+  color: $cherry;
+  // padding-left: 12em;
+  line-height: 1.5;
+  margin-top: -2em;
+  font : {
+    family: $gopher;
+    style: normal;
+    size: 1.6em;
+  }
+}
+
 figure {
   padding : {
     top: 6em;

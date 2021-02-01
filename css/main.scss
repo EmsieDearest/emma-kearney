@@ -42,7 +42,7 @@ $gopher: Gopher Display Regular, gopher, sans-serif;
 
 p, h1, button, label, input[type="text"],
 input[type="email"], textarea[type="text"], input::placeholder {
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: $gopher, "Arial", sans-serif;
 }
 
 .fonts-loaded p, .fonts-loaded h1, .fonts-loaded button, .fonts-loaded label, .fonts-loaded input[type="text"],
@@ -166,21 +166,30 @@ body {
   background-color: blue;
   padding: 0.3em;
   position:static;
-  margin : {
-    top: 0.6em;
-    left: 0.1em;
-  }
   width:auto;
   height:auto;
   font : {
     family: $gopher;
-    size: 2em;
+    size: 1.5em;
   }
 }
 
 
 /* ****************  NAV  **************** */
 
+.logo {
+  z-index: 5;
+  width: 90%;
+  padding-bottom: 4em;
+  padding-left: 1em;
+}
+
+.logo, .logo:focus, .logo-link {
+  outline: none !important;
+}
+
+
+/*
 .nav-link {
   background-color: transparent;
   position: absolute;
@@ -193,23 +202,6 @@ body {
   }
   left: 0;
   bottom: 0;
-  color: $cherry;
-  font : {
-    family: $gopher;
-    size: 2em;
-  }
-}
-
-.nav-link2 {
-  background-color: transparent;
-  position: relative;
-  padding : {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top:0;
-  }
-  // bottom: 0.5em;
   color: $cherry;
   font : {
     family: $gopher;
@@ -236,6 +228,18 @@ body {
     size: 2em;
   }
 }
+ */
+
+.nav-fade {
+  position: fixed;
+  background: rgb(255,231,221);
+  background: linear-gradient(180deg, rgba(255,231,221,1) 59%, rgba(255,231,221,0) 100%);
+  //outline: 1px solid black;
+  width: 100%;
+  left: 0;
+  height: 25%;
+  z-index: 10;
+}
 
 .nav-link:hover,, .nav-link2:hover, .contact-work:hover {
   outline: none;
@@ -257,43 +261,17 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
   cursor: none;
 }
 
-.work {
-  position: relative;
-  left: 0.5em;
-  outline: none;
-  top: 0.5em;
+.nav-link {
+  // position: relative;
+  z-index: 5;
+  margin-bottom: 2em;
+  // outline: 1px solid black;
   color: $cherry;
   line-height: 1;
   font : {
     family: $gopher;
     style: normal;
-    size: 2em;
-  }
-}
-
-.blog-link {
-  position: absolute;
-  outline: none;
-  cursor: none;
-  bottom: 0;
-  right: 0.5em;
-  color: $cherry;
-  line-height: 1;
-  font : {
-    family: $gopher;
-    style: normal;
-    size: 2em;
-  }
-}
-
-.blog-link2 {
-  background-color: transparent;
-  padding-bottom: 0.5em;
-  position: relative;
-  color: $cherry;
-  font : {
-    family: $gopher;
-    size: 2em;
+    size: 1.5em;
   }
 }
 
@@ -309,18 +287,6 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
     style: normal;
     size: 2em;
   }
-}
-
-.logo {
-  position: fixed;
-  z-index: 5;
-  right: 3em;
-  width: 20%;
-  top: 2em;
-}
-
-.logo, .logo:focus, .logo-link {
-  outline: none !important;
 }
 
 /* ****************  MAIN  **************** */
@@ -407,6 +373,10 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
   cursor: none;
 }
 
+h1 {
+  color: $cherry;
+}
+
 h2 {
   color: $cherry;
   padding : {
@@ -422,14 +392,114 @@ h2 {
   }
 }
 
-.about-blurb {
+.holdup {
+  padding: 0;
+  margin-top: 1.5em;
+  -webkit-text-stroke: 2px blue;
+  color: $peach;
+}
+
+.about-blurb-1 {
   padding-left: 0.2em;
   padding-right: 0.2em;
   margin-bottom: 1em;
-  margin-top: -1em;
+  margin-top: 5%;
+  line-height: 1;
+  font-size: 6em;
+}
+
+.about-blurb-2 {
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  margin-bottom: 1em;
+  margin-top: 12%;
   line-height: 1;
   font-size: 4em;
-  text-align: justify;
+}
+
+.about-note-div {
+  padding: {
+    top: 5%;
+    bottom: 5%;
+  }
+  border: {
+    top: 4px solid blue;
+    bottom: 4px solid blue;
+  }
+}
+
+.about-note {
+  margin: {
+    top: 3%;
+  }
+}
+
+h2 {
+  color: $cherry;
+  padding : {
+    left: 4em;
+    top: 2em;
+  }
+  top: 3.5em;
+  line-height: 1.4;
+  font : {
+    family: $gopher;
+    style: normal;
+    size: 5em;
+  }
+}
+
+footer {
+  padding-top: 2em;
+}
+
+.footer-work-div {
+  padding: 0;
+  margin: {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 2em;
+  }
+  //outline: 1px solid black;
+}
+
+.footer-work {
+  padding: 0.4em;
+  text-align: center;
+  // outline: 1px solid black;
+}
+
+.footer-work-div:focus {
+  border: 4px blue !important;
+}
+
+a {
+  color: blue;
+}
+
+.home-footer {
+  width: auto;
+  height: auto;
+}
+
+.home-footer-arrow:hover {
+  animation-name: arrow-animation;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  position: relative;
+}
+
+@keyframes arrow-animation {
+  0%   {left:0}
+  25%  {left:10px}
+  50%   {left:-5px}
+  75%  {left:10px}
+  100%   {left:0}
+}
+
+.home-footer-arrow {
+  transition: all 3s ease-in-out;
 }
 
 .contrast-img {
@@ -698,6 +768,10 @@ input, textarea, form {
   position: fixed;
 }
 
+.labels {
+  padding-top: 3em;
+}
+
 .title {
   margin-top: -0.2em;
   color: $cherry;
@@ -709,8 +783,8 @@ input, textarea, form {
   }
 }
 
-.blog-title-top {
-  margin-top: 1em;
+.blog-title {
+  padding-top: 2em;
 }
 
  h3 {
@@ -840,7 +914,7 @@ ol {
   font : {
     family: $gopher;
     style: normal;
-    size: 2em;
+    size: 1.5em;
   }
 }
 
@@ -858,16 +932,26 @@ hr {
   }
 
   html {
+    width: 100%;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
     // border: 1px solid black;
   }
 
   body {
-    border: 4px solid blue;
-    border-top: none;
-    margin: 0.5em;
+    // border: 4px solid blue;
+    overflow-x: hidden;
+    margin: 5%;
+    padding: {
+      top: 10%;
+      left: 5%;
+      right: 5%;
+      bottom: 5%;
+    }
+    width: 90%;
     height: auto;
+    align-content: center;
   }
 
   header {
@@ -880,43 +964,67 @@ hr {
       left: none;
       right: none;
     }
-    width: 93.6%;
+    // width: 93.6%;
     padding : {
       top: 0.3em;
       bottom: 2.1em;
     }
   }
 
-  main, .phone-main {
-    width: 100%;
-  }
-
-  footer {
-    border-top: 4px solid blue;
-    width: 100%;
-    padding : {
-      top: 0.3em;
-      bottom: 1em;
-    }
-  }
-
-  .about-blurb {
-    margin-top: 0.5em;
+  .about-blurb-1 {
+    margin-top: 0;
     padding : {
       left: 1em;
       right: 1em;
       top: 7em;
-      bottom: 3em;
+      bottom: 0;
     }
     line-height: 1.3;
     font-size: 1.4em;
-    text-align:center;
+    text-align:left;
+  }
+
+  .about-blurb-2 {
+    margin-top: 0em;
+    padding : {
+      left: 1em;
+      right: 1em;
+      top: 0;
+      bottom: 0;
+    }
+    line-height: 1.3;
+    font-size: 1.4em;
+    text-align:left;
+  }
+
+  .about-note-div {
+    margin: 0;
+    padding: 0;
+  }
+
+  .holdup {
+    font-size: 2em;
+    -webkit-text-stroke: 1px blue;
+    padding: {
+      left: 0.2em;
+    }
+  }
+
+  .about-note {
+    font-size: 1em;
+    line-height: 1.5;
+    padding: {
+      left: 0.4em;
+      right: 0.4em;
+      bottom: 1em;
+    }
   }
 
   #cursor {
     display: none;
   }
 
+  /*
   .work {
     position: fixed;
     margin : {
@@ -937,49 +1045,93 @@ hr {
   .work:focus {
     font-size: 1.3em;
     margin : {
-      top: 1em;
+      top: 4em;
       left: 0.7em;
     }
   }
 
+   */
+
+
   .nav-link {
-    background-color: transparent;
-    position: absolute;
-    padding : {
-      left: 0;
-      right: 0;
+    // border: 1px solid black;
+    padding: {
+      left: 0.5em;
+      right: 0.5em;
+    }
+    margin: {
+      top: 0;
+      left: 0.3em;
+      right: 0.3em;
+      bottom: 0.4em;
+    }
+    color: $cherry;
+    font : {
+      family: $gopher;
+      size: 1em;
+    }
+  }
+
+  .logo-div {
+    padding: {
+      top: 0;
+      left: 3em;
+      right: 3em;
       bottom: 0;
-      top:0;
     }
-    left: 0;
-    bottom: 0;
-    color: $cherry;
-    font : {
-      family: $gopher;
-      size: 1.3em;
+    margin: {
+      top: 0;
+      left: 1em;
+      right: 1em;
+      bottom: 0;
     }
+    // background-color: $peach;
+    // outline: 1px solid black;
   }
-
-  .blog-link {
-    position: absolute;
-    outline: none;
-    bottom: 0.5em;
-    right: 0.5em;
-    color: $cherry;
-    line-height: 1;
-    font : {
-      family: $gopher;
-      style: normal;
-      size: 1.3em;
-    }
-  }
-
 
   .logo {
-    // border: 1px solid black;
-    width: 50%;
-    right: 7%;
-    top: 3.5%;
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .navbar-nav-div {
+    // outline: 1px solid black;
+    // border-top: 5px solid blue;
+    // border-bottom: 5px solid blue;
+    width: 100%;
+    margin: {
+      left: 0.5em;
+      right: 0.5em;
+      top: -7em;
+      bottom: 0;
+    }
+    padding: {
+      left: 0.5em;
+      right: 0.5em;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  .navbar-nav {
+    // outline: 1px solid black;
+    margin: {
+      left: 3em;
+      right: 3em;
+      top: 1em;
+      bottom: 0;
+    }
+    padding: 0;
+  }
+
+  .nav-fade {
+    height: 30%;
+  }
+
+  footer, .footer-work-div, .home-footer-arrow {
+    display: none;
+    margin: 0;
+    padding: 0;
   }
 
   .close-button {
@@ -1102,6 +1254,10 @@ hr {
 
 
   /* ****** Concept Pages ********/
+  .labels {
+    padding-top: 5em;
+  }
+
   .casestudy {
     margin-top: -5em;
   }
@@ -1114,14 +1270,26 @@ hr {
 
   .title {
     color: $cherry;
-    padding-top: -1em;
+    padding: {
+      top: -1em;
+      left: 0;
+      right: 0;
+    }
     //padding-bottom: 1em;
-    margin-left: 0em;
+    margin-left: 0;
     line-height: 1;
     font : {
       family: $gopher;
       style: normal;
       size: 3em;
+    }
+  }
+
+  .paragraph, .paragraph-2 {
+    padding: {
+      top: 0;
+      left: 0.5em;
+      right: 0.5em;
     }
   }
 
@@ -1132,7 +1300,7 @@ hr {
 
   h3 {
     color: $cherry;
-    margin-left: 0em;
+    margin-left: 0;
     line-height: 1.5;
     padding : {
       bottom: 0.5em;
@@ -1176,7 +1344,7 @@ hr {
 
   figure {
     margin : {
-      top: -10em;
+      top: -4em;
       left: -1em;
       right: -1em;
       bottom: -4em;
@@ -1221,8 +1389,8 @@ hr {
     padding : {
       top: 1em;
       bottom: 2em;
-      left: 35%;
-      right: 35%;
+      left: 20%;
+      right: 20%;
     }
     margin-left: 0;
     cursor: none;
@@ -1274,13 +1442,27 @@ hr {
     padding-right: 0;
   }
 
+  .blog-title {
+    padding-top: 5em;
+  }
+
   .blog-paragraph, .li-blog {
     margin-left: 0;
     padding-left: 0;
   }
 
+  hr {
+    border-top: 2px dashed blue;
+    width: 120%;
+  }
+
   .li-blog {
-    font-size: 1.3em;
+    font-size: 1em;
+  }
+
+  .youtube {
+    padding: 0;
+    margin: 0;
   }
 }
 

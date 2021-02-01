@@ -47,25 +47,40 @@
 
 <header>
     <!-- Navigation -->
-    <nav class="navpanel">
-        <ul class="nav d-flex" id="nav">
-            <!------ Skip Nav ------>
-            <li class="nav-item align-self-center">
-                <a href="index.html#main"><button id="skip" class="nav-item align-self-center">SKIP TO MAIN</button></a>
-            </li>
-            <!------ Work ------>
-            <li class="nav-item align-self-center">
-                <a class="work" href="greenhouse.html" aria-label="explore case studies">
-                    WORK
-                </a>
-            </li>
-        </ul>
+    <nav class="navbar justify-content-between sticky-top nav-fade">
+        <div class="logo-div">
+            <a href="index.html" class="col-md-4" aria-label="home" ><span class="sr-only">(current)</span>
+                <img src="img/wave.svg" alt="Emma Kearney logo" id="logo" class="logo">
+            </a>
+        </div>
+        <div class="nav navbar-nav-div">
+            <ul class="nav navbar-nav flex-row">
+                <!------ Skip Nav ------>
+                <li class="nav-item align-self-center active">
+                    <a href="index.html#main"><button id="skip" class="nav-link align-self-center">SKIP TO MAIN</button></a>
+                </li>
+                <!------ Work ------>
+                <li class="nav-item align-self-center mx-sm-2 ">
+                    <a class="nav-link work" href="greenhouse.html">
+                        WORK
+                    </a>
+                </li>
+                <!------ Blog ------>
+                <li class="nav-item align-self-center mx-sm-2 ">
+                    <a class="nav-link" href="blog.html">
+                        BLOG
+                    </a>
+                </li>
+                <!------ Contact ------>
+                <li class="nav-item align-self-center mx-sm-2">
+                    <a class="nav-link" href="mailto: emma@emma-kearney.com">
+                        CONTACT
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <div class="logo-div">
-        <a href="index.html" class="col-md-4 col-sm-1 logo-link" aria-label="home">
-            <img src="img/wave.svg" alt="Emma Kearney logo" id="logo" class="logo">
-        </a>
-    </div>
+
 </header>
 
 <main id="main">
@@ -105,7 +120,7 @@
     </article>
     -->
     <article class="casestudy">
-        <h1 class="col title" aria-label="title">Episode 1</h1>
+        <h1 class="col title blog-title" aria-label="title">Episode 1</h1>
         <div class="col-sm-1 col-lg-8">
             <p class="col blog-paragraph">Hi. I'm Emma. Wow introductions are hard. I've just been sitting here
                 at my desk looking around the room hoping something will spark a conversation
@@ -161,153 +176,13 @@
             <br>
             <iframe aria-label="youtube dance party playlist" src="https://www.youtube.com/embed/videoseries?list=PLajWrjdZkJxOC8N0UdxOnszXdUkCXpUnX"
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    class="youtube col-sm-12" allowfullscreen>
+                    class="youtube col-lg-12" allowfullscreen>
             </iframe>
         </div>
         <br><br>
     </article>
 </main>
-<!---------- Contrast Button ------------>
-<footer class="section">
-    <nav class="col-12">
-        <ul class="nav" id="nav">
-            <!------ Skip Nav ------>
-            <li class="align-self-center">
-                <button class="nav-link2 contactbtn"
-                        id="nav-link2 mySidepanel"
-                        type="button"
-                        onclick="openNav()"
-                        onkeyup="openNav()"
-                        aria-expanded="false"
-                        aria-controls="mySidepanel">
-                    CONTACT
-                </button>
-            </li>
-            <!------ Work ------>
-            <li class="align-self-center ml-auto">
-                <a class="blog-link2" href="blog.html">
-                    BLOG
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <!-- Hidden Form -->
-    <div id="mySidepanel" class="sidepanel" aria-label="Contact form">
-        <div class="d-flex p-md-5 m-md-5 formbox">
-            <form name="my-form"
-                  action="https://formspree.io/emma@emma-kearney.com"
-                  method="POST"
-                  class="needs-validation my-form"
-                  id="my-form"
-                  role="form"
-                  aria-label="Contact me"
-                  aria-labelledby="mySidepanel"
-                  aria-expanded="true"
-                  noValidate>
-                <!-- Gotcha -->
-                <input type="text"
-                       name="_gotcha"
-                       class="gotcha"
-                       style="display:none">
-                <!-- Grid row -->
-                <div class="row">
-                    <!-- Grid column -->
-                    <div class="col-sm-12">
-                        <!-- Name input -->
-                        <div class="sm-form form-group">
-                            <label for="name">
-                                NAME
-                            </label>
-                            <input class="form-input form-control name"
-                                   type="text"
-                                   name="user_name"
-                                   aria-invalid="false"
-                                   id="name"
-                                   aria-required="true"
-                                   required="required"
-                                   tabindex="0">
-                            <p id="err1 errName" class="err err1 errName">No name?</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Grid column -->
-                <!-- Grid row -->
-                <div class="row">
-                    <!-- Grid column -->
-                    <div class="col-sm-12">
-                        <!-- Email input -->
-                        <div class="sm-form form-group">
-                            <label for="email">
-                                EMAIL
-                            </label>
-                            <input class="form-input form-control email"
-                                   type="email"
-                                   name="_replyto"
-                                   aria-invalid="false"
-                                   aria-required="true"
-                                   required="required"
-                                   id="email"
-                                   tabindex="0">
-                            <p id="err2" class="err err2 errEmail">No email?</p>
-                        </div>
-                    </div>
-                    <!-- Grid column -->
-                </div>
-                <!-- Grid row -->
-                <!-- Grid row -->
-                <div class="row">
-                    <!-- Grid column -->
-                    <div class="col-sm-12">
-                        <!-- Message input -->
-                        <div class="sm-form form-group">
-                            <label for="message">
-                                DROP ME A LINE
-                            </label>
-                            <textarea class="form-input message-input form-control"
-                                      type="text"
-                                      name="user_message"
-                                      aria-invalid="false"
-                                      aria-required="true"
-                                      required="required"
-                                      id="message"
-                                      rows="5"
-                                      tabindex="0">Hey Emma,</textarea>
-                            <p id="err3" class="err err3 errMessage" aria-label="Don't forget a message. What's on your mind?">What's on your mind?</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Send Button -->
-                <button type="submit"
-                        class="btn btn-sm align-item-end"
-                        onclick="return(submission())"
-                        onkeyup="return(submission())"
-                        name="send"
-                        id="my-form-button"
-                        value="send">SEND
-                </button>
-                <!-- Success Validation -->
-                <div class="success">
-                    <p aria-label="Thank you!" class="success-p">Thank you! Your message was sent.</p>
-                </div>
-                <button class="close-button"
-                        type="button"
-                        aria-label="close form"
-                        href="javascript:void(0)"
-                        onclick="closeNav()"
-                        onkeyup="closeNav()"></button>
-            </form>
-        </div>
-    </div>
 
-    <!--
-    <button id="contrast-img"
-            class="contrastbox"
-            aria-label="Change color scheme"
-            tabindex="0">
-        <img class="contrast-img col-sm-1" src="img/contrast.svg" alt="" role="presentation">
-    </button>
-    -->
-</footer>
 <!-- JavaScript Sources -->
 <!-- JQUERY -->
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>

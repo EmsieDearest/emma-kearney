@@ -22,7 +22,7 @@
 /* Font Variables */
 p, h1, button, label, input[type=text],
 input[type=email], textarea[type=text], input::placeholder {
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: Gopher Display Regular, gopher, sans-serif, "Arial", sans-serif;
 }
 
 .fonts-loaded p, .fonts-loaded h1, .fonts-loaded button, .fonts-loaded label, .fonts-loaded input[type=text],
@@ -138,40 +138,42 @@ body {
   background-color: blue;
   padding: 0.3em;
   position: static;
-  margin-top: 0.6em;
-  margin-left: 0.1em;
   width: auto;
   height: auto;
   font-family: Gopher Display Regular, gopher, sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 /* ****************  NAV  **************** */
+.logo {
+  z-index: 5;
+  width: 90%;
+  padding-bottom: 4em;
+  padding-left: 1em;
+}
+
+.logo, .logo:focus, .logo-link {
+  outline: none !important;
+}
+
+/*
 .nav-link {
   background-color: transparent;
   position: absolute;
   margin-bottom: 0.3em;
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-top: 0;
+  padding : {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top:0;
+  }
   left: 0;
   bottom: 0;
-  color: blue;
-  font-family: Gopher Display Regular, gopher, sans-serif;
-  font-size: 2em;
-}
-
-.nav-link2 {
-  background-color: transparent;
-  position: relative;
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-top: 0;
-  color: blue;
-  font-family: Gopher Display Regular, gopher, sans-serif;
-  font-size: 2em;
+  color: $cherry;
+  font : {
+    family: $gopher;
+    size: 2em;
+  }
 }
 
 .contact-work {
@@ -179,15 +181,29 @@ body {
   position: absolute;
   z-index: 5;
   margin-bottom: 0.3em;
-  padding-left: 0.5em;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-top: 0;
+  padding : {
+    left: 0.5em;
+    right: 0;
+    bottom: 0;
+    top:0;
+  }
   left: 0;
   top: 0.4em;
-  color: blue;
-  font-family: Gopher Display Regular, gopher, sans-serif;
-  font-size: 2em;
+  color: $cherry;
+  font : {
+    family: $gopher;
+    size: 2em;
+  }
+}
+ */
+.nav-fade {
+  position: fixed;
+  background: #ffe7dd;
+  background: linear-gradient(180deg, #ffe7dd 59%, rgba(255, 231, 221, 0) 100%);
+  width: 100%;
+  left: 0;
+  height: 25%;
+  z-index: 10;
 }
 
 .nav-link:hover, .nav-link2:hover, .contact-work:hover {
@@ -210,38 +226,14 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
   cursor: none;
 }
 
-.work {
-  position: relative;
-  left: 0.5em;
-  outline: none;
-  top: 0.5em;
+.nav-link {
+  z-index: 5;
+  margin-bottom: 2em;
   color: blue;
   line-height: 1;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
-  font-size: 2em;
-}
-
-.blog-link {
-  position: absolute;
-  outline: none;
-  cursor: none;
-  bottom: 0;
-  right: 0.5em;
-  color: blue;
-  line-height: 1;
-  font-family: Gopher Display Regular, gopher, sans-serif;
-  font-style: normal;
-  font-size: 2em;
-}
-
-.blog-link2 {
-  background-color: transparent;
-  padding-bottom: 0.5em;
-  position: relative;
-  color: blue;
-  font-family: Gopher Display Regular, gopher, sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .home {
@@ -254,18 +246,6 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
   font-size: 2em;
-}
-
-.logo {
-  position: fixed;
-  z-index: 5;
-  right: 3em;
-  width: 20%;
-  top: 2em;
-}
-
-.logo, .logo:focus, .logo-link {
-  outline: none !important;
 }
 
 /* ****************  MAIN  **************** */
@@ -346,6 +326,10 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
   cursor: none;
 }
 
+h1 {
+  color: blue;
+}
+
 h2 {
   color: blue;
   padding-left: 4em;
@@ -357,14 +341,109 @@ h2 {
   font-size: 5em;
 }
 
-.about-blurb {
+.holdup {
+  padding: 0;
+  margin-top: 1.5em;
+  -webkit-text-stroke: 2px blue;
+  color: #FFE7DD;
+}
+
+.about-blurb-1 {
   padding-left: 0.2em;
   padding-right: 0.2em;
   margin-bottom: 1em;
-  margin-top: -1em;
+  margin-top: 5%;
+  line-height: 1;
+  font-size: 6em;
+}
+
+.about-blurb-2 {
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  margin-bottom: 1em;
+  margin-top: 12%;
   line-height: 1;
   font-size: 4em;
-  text-align: justify;
+}
+
+.about-note-div {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-top: 4px solid blue;
+  border-bottom: 4px solid blue;
+}
+
+.about-note {
+  margin-top: 3%;
+}
+
+h2 {
+  color: blue;
+  padding-left: 4em;
+  padding-top: 2em;
+  top: 3.5em;
+  line-height: 1.4;
+  font-family: Gopher Display Regular, gopher, sans-serif;
+  font-style: normal;
+  font-size: 5em;
+}
+
+footer {
+  padding-top: 2em;
+}
+
+.footer-work-div {
+  padding: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 2em;
+}
+
+.footer-work {
+  padding: 0.4em;
+  text-align: center;
+}
+
+.footer-work-div:focus {
+  border: 4px blue !important;
+}
+
+a {
+  color: blue;
+}
+
+.home-footer {
+  width: auto;
+  height: auto;
+}
+
+.home-footer-arrow:hover {
+  animation-name: arrow-animation;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  position: relative;
+}
+
+@keyframes arrow-animation {
+  0% {
+    left: 0;
+  }
+  25% {
+    left: 10px;
+  }
+  50% {
+    left: -5px;
+  }
+  75% {
+    left: 10px;
+  }
+  100% {
+    left: 0;
+  }
+}
+.home-footer-arrow {
+  transition: all 3s ease-in-out;
 }
 
 .contrast-img {
@@ -584,6 +663,10 @@ input, textarea, form {
   position: fixed;
 }
 
+.labels {
+  padding-top: 3em;
+}
+
 .title {
   margin-top: -0.2em;
   color: blue;
@@ -593,8 +676,8 @@ input, textarea, form {
   font-size: 7em;
 }
 
-.blog-title-top {
-  margin-top: 1em;
+.blog-title {
+  padding-top: 2em;
 }
 
 h3 {
@@ -706,7 +789,7 @@ ol {
   padding-left: 8.3em;
   font-family: Gopher Display Regular, gopher, sans-serif;
   font-style: normal;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 hr {
@@ -722,15 +805,22 @@ hr {
   }
 
   html {
+    width: 100%;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
   }
 
   body {
-    border: 4px solid blue;
-    border-top: none;
-    margin: 0.5em;
+    overflow-x: hidden;
+    margin: 5%;
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    width: 90%;
     height: auto;
+    align-content: center;
   }
 
   header {
@@ -741,86 +831,138 @@ hr {
     border-bottom: 4px solid blue;
     border-left: none;
     border-right: none;
-    width: 93.6%;
     padding-top: 0.3em;
     padding-bottom: 2.1em;
   }
 
-  main, .phone-main {
-    width: 100%;
-  }
-
-  footer {
-    border-top: 4px solid blue;
-    width: 100%;
-    padding-top: 0.3em;
-    padding-bottom: 1em;
-  }
-
-  .about-blurb {
-    margin-top: 0.5em;
+  .about-blurb-1 {
+    margin-top: 0;
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 7em;
-    padding-bottom: 3em;
+    padding-bottom: 0;
     line-height: 1.3;
     font-size: 1.4em;
-    text-align: center;
+    text-align: left;
+  }
+
+  .about-blurb-2 {
+    margin-top: 0em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1.3;
+    font-size: 1.4em;
+    text-align: left;
+  }
+
+  .about-note-div {
+    margin: 0;
+    padding: 0;
+  }
+
+  .holdup {
+    font-size: 2em;
+    -webkit-text-stroke: 1px blue;
+    padding-left: 0.2em;
+  }
+
+  .about-note {
+    font-size: 1em;
+    line-height: 1.5;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    padding-bottom: 1em;
   }
 
   #cursor {
     display: none;
   }
 
+  /*
   .work {
     position: fixed;
-    margin-top: 1em;
-    margin-left: 0.7em;
+    margin : {
+      top: 1em;
+      left: 0.7em;
+    }
     outline: none;
     top: 0.7em;
-    color: blue;
+    color: $cherry;
     line-height: 1;
-    font-family: Gopher Display Regular, gopher, sans-serif;
-    font-style: normal;
-    font-size: 1.3em;
+    font : {
+      family: $gopher;
+      style: normal;
+      size: 1.3em;
+    }
   }
 
   .work:focus {
     font-size: 1.3em;
-    margin-top: 1em;
-    margin-left: 0.7em;
+    margin : {
+      top: 4em;
+      left: 0.7em;
+    }
   }
 
+   */
   .nav-link {
-    background-color: transparent;
-    position: absolute;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-top: 0;
-    left: 0;
-    bottom: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin-top: 0;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    margin-bottom: 0.4em;
     color: blue;
     font-family: Gopher Display Regular, gopher, sans-serif;
-    font-size: 1.3em;
+    font-size: 1em;
   }
 
-  .blog-link {
-    position: absolute;
-    outline: none;
-    bottom: 0.5em;
-    right: 0.5em;
-    color: blue;
-    line-height: 1;
-    font-family: Gopher Display Regular, gopher, sans-serif;
-    font-style: normal;
-    font-size: 1.3em;
+  .logo-div {
+    padding-top: 0;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 0;
   }
 
   .logo {
-    width: 50%;
-    right: 7%;
-    top: 3.5%;
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .navbar-nav-div {
+    width: 100%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: -7em;
+    margin-bottom: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-nav {
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-top: 1em;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .nav-fade {
+    height: 30%;
+  }
+
+  footer, .footer-work-div, .home-footer-arrow {
+    display: none;
+    margin: 0;
+    padding: 0;
   }
 
   .close-button {
@@ -910,6 +1052,10 @@ form input[type=email], form textarea[type=text] {
   }
 
   /* ****** Concept Pages ********/
+  .labels {
+    padding-top: 5em;
+  }
+
   .casestudy {
     margin-top: -5em;
   }
@@ -923,11 +1069,19 @@ form input[type=email], form textarea[type=text] {
   .title {
     color: blue;
     padding-top: -1em;
-    margin-left: 0em;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
     line-height: 1;
     font-family: Gopher Display Regular, gopher, sans-serif;
     font-style: normal;
     font-size: 3em;
+  }
+
+  .paragraph, .paragraph-2 {
+    padding-top: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
 
   .blog-title-top {
@@ -937,7 +1091,7 @@ form input[type=email], form textarea[type=text] {
 
   h3 {
     color: blue;
-    margin-left: 0em;
+    margin-left: 0;
     line-height: 1.5;
     padding-bottom: 0.5em;
     font-family: Gopher Display Regular, gopher, sans-serif;
@@ -972,7 +1126,7 @@ form input[type=email], form textarea[type=text] {
   }
 
   figure {
-    margin-top: -10em;
+    margin-top: -4em;
     margin-left: -1em;
     margin-right: -1em;
     margin-bottom: -4em;
@@ -1011,8 +1165,8 @@ form input[type=email], form textarea[type=text] {
   .arrow {
     padding-top: 1em;
     padding-bottom: 2em;
-    padding-left: 35%;
-    padding-right: 35%;
+    padding-left: 20%;
+    padding-right: 20%;
     margin-left: 0;
     cursor: none;
   }
@@ -1058,13 +1212,27 @@ form input[type=email], form textarea[type=text] {
     padding-right: 0;
   }
 
+  .blog-title {
+    padding-top: 5em;
+  }
+
   .blog-paragraph, .li-blog {
     margin-left: 0;
     padding-left: 0;
   }
 
+  hr {
+    border-top: 2px dashed blue;
+    width: 120%;
+  }
+
   .li-blog {
-    font-size: 1.3em;
+    font-size: 1em;
+  }
+
+  .youtube {
+    padding: 0;
+    margin: 0;
   }
 }
 /* ********************* For Tablets *********************** */

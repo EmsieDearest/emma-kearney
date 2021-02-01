@@ -75,7 +75,7 @@ $(window).on('scroll', function(e) {});
 //$('.logo').on("focusout", () => $('.logo').attr('src', '/img/wave.svg'));
 
 $(function() {
-    let logo = $('.logo');
+    let logo = $('.logo, .logo-home');
     logo.on('mouseover',function(e){
         let src = $(this).attr("src");
         $(this).attr("src", src.replace("img/wave.svg", "img/logo-focus.svg"));

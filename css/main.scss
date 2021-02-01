@@ -181,7 +181,7 @@ body {
   z-index: 5;
   width: 90%;
   padding-bottom: 4em;
-  padding-left: 1em;
+  padding-left: 0;
   outline: none !important;
 }
 
@@ -1053,7 +1053,6 @@ hr {
 
    */
 
-
   .nav-link {
     // border: 1px solid black;
     padding: {
@@ -1067,6 +1066,7 @@ hr {
       bottom: 0.4em;
     }
     color: $cherry;
+    text-align: center;
     font : {
       family: $gopher;
       size: 1em;
@@ -1074,9 +1074,35 @@ hr {
   }
 
   .logo-div {
+    padding: 0;
+    margin: 0;
+    // background-color: $peach;
+    // outline: 1px solid black;
+  }
+
+  .logo-home {
+    //outline: 1px solid black;
+    width: 90%;
     padding: {
       top: 0;
       left: 3em;
+      right: 2em;
+      bottom: 0;
+    }
+    margin: {
+      top: 0;
+      left: 1em;
+      right: 1em;
+      bottom: 0;
+    }
+  }
+
+  .logo {
+    //outline: 1px solid black;
+    width: 90%;
+    padding: {
+      top: 0;
+      left: 2em;
       right: 3em;
       bottom: 0;
     }
@@ -1086,13 +1112,6 @@ hr {
       right: 1em;
       bottom: 0;
     }
-    // background-color: $peach;
-    // outline: 1px solid black;
-  }
-
-  .logo {
-    width: 100%;
-    padding-bottom: 0;
   }
 
   .navbar-nav-div {
@@ -1101,7 +1120,7 @@ hr {
     // border-bottom: 5px solid blue;
     width: 100%;
     margin: {
-      left: 0.5em;
+      left: 1em;
       right: 0.5em;
       top: -7em;
       bottom: 0;
@@ -1476,254 +1495,5 @@ hr {
 and (min-device-width: 768px)
 and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 2) {
-  [class*="col-"] {
-    width: 100%;
-  }
 
-  #cursor {
-    display: none;
-  }
-
-  .logo {
-    border: 1px solid black;
-    width: 40%;
-    left: 0;
-    padding: 0;
-  }
-  .close-button {
-    position: absolute;
-    top: 0.5em;
-    right: 2em;
-    font-size: 3em;
-    margin-left: -3em;
-    text-decoration: none;
-    color: $cherry;
-    cursor: none;
-  }
-
-  form {
-    padding-right: 8%;
-    margin-top: -20%;
-
-    // <label> -
-    label {
-      font: {
-        size: 1.2rem;
-      }
-    }
-
-    // <input> -
-    .form-input {
-      padding: 1em;
-      min-height: 2em;
-    }
-
-    input[type="text"],
-    input[type="email"], textarea[type="text"] {
-      font: {
-        size: 1.2rem !important;
-      }
-      padding: {
-        left: 1rem;
-      }
-    }
-
-    // <button class="btn">
-    .btn {
-      padding: 0.5em 0.9em;
-      margin : {
-        top: 0.5rem;
-      }
-      width: 100%;
-      font : {
-        size: 1.5rem;
-      }
-    }
-
-    // <p class="success-p">
-    .success-p {
-      font-size: 1.5em;
-    }
-  }
-
-  .formbox {
-    margin : {
-      left: 4%;
-      right: 4%;
-    }
-    padding : {
-      left: 10%;
-      right: 10%;
-      top: 30%;
-    }
-  }
-
-  .left {
-    width: 90%;
-    padding-top: 10em;
-    margin-left: 0;
-  }
-
-  .intro {
-    color: $cherry;
-    line-height: 1.1;
-    font : {
-      family: $gopher;
-      style: normal;
-      size: 3.5em;
-    }
-  }
-
-  .me {
-    padding: 0;
-    margin: 0;
-    left: 2em;
-  }
-
-  .greenhouseimg, .darlingimg {
-    display: none;
-  }
-
-  .contrast-img {
-    // border: 1px solid black;
-    width: 15%;
-    background-color: transparent;
-    border-radius: 0px;
-    outline: black;
-    position: fixed;
-    z-index: 5;
-    -moz-outline-radius: 0px;
-    padding: 0;
-    margin: 0;
-    cursor: none;
-    left: 56em;
-    display: none;
-    // bottom: 6%;
-  }
-
-  .concepts {
-    padding : {
-      left: 0;
-      right: 0;
-    }
-    display: none;
-  }
-
-  h2 {
-    display: none;
-  }
-
-  .work {
-    position: relative;
-    display: block;
-    color: $cherry;
-    padding-left: 1%;
-    line-height: 1.3;
-    font : {
-      family: $gopher;
-      size: 2em;
-    }
-  }
-
-  /* ****** Concept Pages ********/
-  .casestudy {
-    border: 1px solid black;
-    margin-left: 9em;
-    // padding-right: 3em;
-    width: 60%;
-    padding : {
-      top: 15em;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-    left: 0;
-    margin : {
-      top: 15em;
-      bottom: 0;
-    }
-  }
-
-  .star {
-    transform: rotate(-10deg);
-    padding : {
-      top: 0;
-      left: 0;
-    }
-    left: 0;
-    margin : {
-      top: -25em;
-      left: 0;
-    }
-  }
-
-  .title {
-    color: $cherry;
-    padding-left: 0;
-    left: 0;
-    padding-top: -1em;
-    line-height: 1;
-    font : {
-      family: $gopher;
-      style: normal;
-      size: 4em;
-    }
-  }
-
-  p {
-    border: 1px solid black;
-    margin-right: -9.5em;
-    color: $cherry;
-    line-height: 1.3;
-    padding-bottom: 1.3em;
-    font : {
-      family: $gopher;
-      style: normal;
-      size: 1.7em;
-    }
-  }
-
-  .conceptfig {
-    border: 1px solid black;
-    width: 1000px;
-    margin : {
-      left: 0;
-    }
-    padding: 0;
-  }
-
-  figure {
-    border: 1px solid black;
-    width: 100%;
-  }
-
-  figcaption {
-    // border: 1px solid black;
-    // margin-right: 42%;
-    color: $cherry;
-    padding : {
-      bottom: 2em;
-      left: 1em;
-      top: 1em;
-    }
-    font : {
-      family: $gopher;
-      style: normal;
-      size: 1.3em;
-    }
-  }
-
-  .arrow {
-    padding : {
-      top: 4em;
-      bottom: 10em;
-    }
-    margin-left: 19em;
-    cursor: none;
-  }
-
-  .arrow2 {
-    transform: rotate(180deg);
-    cursor: none;
-  }
 }

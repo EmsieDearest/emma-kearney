@@ -659,7 +659,7 @@ input, textarea, form {
   transform: rotate(10deg);
   width: 40%;
   padding-right: 5em;
-  margin-top: -6em;
+  margin-top: -12em;
   position: fixed;
 }
 

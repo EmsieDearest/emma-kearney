@@ -80,7 +80,7 @@ $(function() {
         let src = $(this).attr("src");
         $(this).attr("src", src.replace("img/wave.svg", "img/logo-focus.svg"));
     });
-    logo.on('mouseleave',function() {
+    logo.on('focus hover',function() {
         let src = $(this).attr("src");
         $(this).attr("src", src.replace("img/logo-focus.svg", "img/wave.svg"));
     });

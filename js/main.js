@@ -67,7 +67,7 @@ let ElementCursor = {
     }
 };
 
-ElementCursor.setCursor($('#cursor'), $('.btn, a, .work, .blog-link, .blog-link2, .form-input, .logo, .nav-link, .nav-link2, .close-button, .contrast-img, .doTheWave, #skip, .greenhouse, .darlingmag, .bodyweight, .arrow'));
+ElementCursor.setCursor($('#cursor'), $('.btn, a, .work, .blog-link, .blog-link2, .form-input, .logo, .nav-link, .nav-link2, .close-button, .contrast-img, .doTheWave, #skip, .greenhouse, .johnkearney, .bodyweight, .arrow'));
 $(window).on('scroll', function(e) {});
 
 // Set Focus Styles
@@ -76,13 +76,13 @@ $(window).on('scroll', function(e) {});
 
 $(function() {
     let logo = $('.logo, .logo-home');
-    logo.on('mouseover',function(e){
+    logo.on('focus hover mouseover',function(e){
         let src = $(this).attr("src");
-        $(this).attr("src", src.replace("img/wave.svg", "img/logo-focus.svg"));
+        $(this).attr("src", src.replace("img/logo-focus.svg", "img/logo-focus.svg"));
     });
-    logo.on('focus hover',function() {
+    logo.on('mouseleave',function() {
         let src = $(this).attr("src");
-        $(this).attr("src", src.replace("img/logo-focus.svg", "img/wave.svg"));
+        $(this).attr("src", src.replace("img/wave.svg", "img/wave.svg"));
     });
 });
 
@@ -211,15 +211,15 @@ $(function() {
     });
 });
 $(function() {
-    $('.darlingmag').on('mouseover focusin',function(e){
+    $('.johnkearney').on('mouseover focusin',function(e){
         if (e.key === 13){
-            $('.darlingimg').css("display", "block");
+            $('.johnkearneyimg').css("display", "block");
         } else {
-            $('.darlingimg').css("display", "block");
+            $('.johnkearneyimg').css("display", "block");
         }
     });
-    $('.darlingmag').on('mouseleave focusout',function() {
-        $('.darlingimg').css("display", "none");
+    $('.johnkearney').on('mouseleave focusout',function() {
+        $('.johnkearneyimg').css("display", "none");
     });
 });
 $(function() {

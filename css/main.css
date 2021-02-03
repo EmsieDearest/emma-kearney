@@ -272,29 +272,42 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
 }
 
 .concepts {
-  padding-top: 9em;
-  padding-bottom: 8em;
+  padding-top: 12em;
+  padding-bottom: 1em;
+}
+
+.greenhouse, .bodyweight, .johnkearney {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 2em;
+  line-height: 1;
 }
 
 .greenhouseimg {
   display: none;
   position: absolute;
   width: 16%;
-  padding-left: 4em;
-  margin-left: 9em;
-  opacity: 30%;
+  padding-left: 2em;
+  margin-left: 50%;
+  margin-top: -20%;
+  opacity: 40%;
   cursor: none;
   z-index: -1;
 }
 
-.darlingimg {
+.johnkearneyimg {
   display: none;
   position: absolute;
-  width: 20%;
-  padding-left: 4em;
-  margin-left: 60em;
-  margin-top: 30em;
-  opacity: 30%;
+  width: 35%;
+  padding-left: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin-left: 50%;
+  margin-top: 20%;
+  margin-right: 0;
+  margin-bottom: 0;
+  opacity: 50%;
   cursor: none;
   z-index: -1;
 }
@@ -303,21 +316,26 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
   display: none;
   position: absolute;
   width: 20%;
-  padding-left: 4em;
-  margin-left: 20em;
-  margin-top: 20em;
-  opacity: 30%;
+  padding-left: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin-left: 50%;
+  margin-top: 20%;
+  margin-right: 0;
+  margin-bottom: 0;
+  opacity: 40%;
   cursor: none;
   z-index: -1;
 }
 
-.greenhouse:focus, .darlingmag:focus, .bodyweight:focus {
+.greenhouse:focus, .johnkearney:focus, .bodyweight:focus {
   outline: none;
   text-decoration: none;
 }
 
 .greenhouse:hover, .greenhouse:focus,
-.darlingmag:hover, .darlingmag:focus,
+.johnkearney:hover, .johnkearney:focus,
 .bodyweight:hover, .bodyweight:focus {
   -webkit-text-fill-color: #FFE7DD;
   /* Will override color (regardless of order) */

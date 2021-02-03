@@ -176,7 +176,6 @@ body {
 
 
 /* ****************  NAV  **************** */
-
 .logo-home {
   z-index: 5;
   width: 90%;
@@ -318,31 +317,54 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
 }
 
 .concepts {
+  //outline: 1px solid black;
   padding: {
-    top: 9em;
-    bottom: 8em;
+    top: 12em;
+    bottom: 1em;
   }
+}
+
+.greenhouse, .bodyweight, .johnkearney {
+  //outline: 1px solid black;
+  padding: {
+    top: 0.2em;
+    bottom: 0.2em;
+    left: 2em
+  }
+  line-height: 1;
 }
 
 .greenhouseimg {
   display: none;
   position: absolute;
   width: 16%;
-  padding-left: 4em;
-  margin-left: 9em;
-  opacity: 30%;
+  padding-left: 2em;
+  margin: {
+    left: 50%;
+    top: -20%;
+  }
+  opacity: 40%;
   cursor: none;
   z-index: -1;
 }
 
-.darlingimg {
+.johnkearneyimg {
   display: none;
   position: absolute;
-  width: 20%;
-  padding-left: 4em;
-  margin-left: 60em;
-  margin-top: 30em;
-  opacity: 30%;
+  width: 35%;
+  padding: {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  margin: {
+    left: 50%;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+  }
+  opacity: 50%;
   cursor: none;
   z-index: -1;
 }
@@ -351,21 +373,30 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
   display: none;
   position: absolute;
   width: 20%;
-  padding-left: 4em;
-  margin-left: 20em;
-  margin-top: 20em;
-  opacity: 30%;
+  padding: {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  margin: {
+    left: 50%;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+  }
+  opacity: 40%;
   cursor: none;
   z-index: -1;
 }
 
-.greenhouse:focus, .darlingmag:focus, .bodyweight:focus {
+.greenhouse:focus, .johnkearney:focus, .bodyweight:focus {
   outline: none;
   text-decoration: none;
 }
 
 .greenhouse:hover, .greenhouse:focus,
-.darlingmag:hover, .darlingmag:focus,
+.johnkearney:hover, .johnkearney:focus,
 .bodyweight:hover, .bodyweight:focus {
   -webkit-text-fill-color: $peach; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 2px;

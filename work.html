@@ -8,17 +8,19 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/qkl2weg.css">
 
-    <link rel="shortcut icon" type="image/x-icon" href="../img/x-icon.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="img/x-icon.png"/>
 
-    <title>EMMA KEARNEY / WORK / Greenhouse</title>
+    <title>EMMA KEARNEY / WORK</title>
     <meta name="description"
           content="Multidisciplinary designer, front end developer and accessibility specialist solving business and user objectives.">
     <meta name="theme-color" content="#fafafa">
@@ -43,99 +45,66 @@
     <div class="back" role="presentation"></div>
 </div>
 
-<div id="cursor" class="run-animation"></div>
+<div id="cursor" class="run-animation" role="presentation"></div>
 
-<header>
-    <!-- Navigation -->
-    <nav class="navbar justify-content-between sticky-top nav-fade">
-        <div class="logo-div">
-            <a href="../index.html" class="col-md-4" aria-label="home" >
-                <img src="../img/wave.svg" alt="Emma Kearney logo" id="logo" class="logo logo-home">
-            </a>
-        </div>
-        <div class="nav navbar-nav-div">
-            <ul class="navbar-nav flex-row">
-                <!------ Skip Nav ------>
-                <li class="nav-item align-self-center">
-                    <a href="greenhouse.html#main"><button id="skip" class="nav-link align-self-center">SKIP TO MAIN</button></a>
-                </li>
-                <!------ Work ------>
-                <li class="nav-item align-self-center mx-sm-2 active">
-                    <span class="sr-only">(current)</span>
-                    <a class="nav-link work" href="../work.html">
-                        WORK
-                    </a>
-                </li>
-                <!------ Blog ------>
-                <li class="nav-item align-self-center mx-sm-2 ">
-                    <a class="nav-link" href="../blog.html">
-                        BLOG
-                    </a>
-                </li>
-                <!------ Contact ------>
-                <li class="nav-item align-self-center mx-sm-2">
-                    <a class="nav-link" href="../contact.html">
-                        CONTACT
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<header class="section">
+    <div>
+        <!-- Navigation -->
+        <nav class="navbar justify-content-between sticky-top nav-fade">
+            <div class="logo-div">
+                <a href="index.html" class="col-md-4" aria-label="home" >
+                    <img src="img/wave.svg" alt="Emma Kearney logo" id="logo" class="logo-home logo">
+                </a>
+            </div>
+            <div class="nav navbar-nav-div">
+                <ul class="navbar-nav flex-row">
+                    <!------ Skip Nav ------>
+                    <li class="nav-item align-self-center active">
+                        <a href="index.html#main"><button id="skip" class="nav-link align-self-center">SKIP TO MAIN</button></a>
+                    </li>
+                    <!------ Work ------>
+                    <li class="nav-item align-self-center mx-sm-2 active">
+                        <a class="nav-link" href="work.html"><span class="sr-only">(current)</span>
+                            WORK
+                        </a>
+                    </li>
+                    <!------ Blog ------>
+                    <li class="nav-item align-self-center mx-sm-2 ">
+                        <a class="nav-link" href="blog.html">
+                            BLOG
+                        </a>
+                    </li>
+                    <!------ Contact ------>
+                    <li class="nav-item align-self-center mx-sm-2">
+                        <a class="nav-link" href="contact.html">
+                            CONTACT
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 </header>
-
-<main id="main">
-    <section class="casestudy">
-        <div class="col-sm-8" role="article">
-            <h1 class="col title">Greenhouse</h1>
-        </div>
-        <div class="row d-flex justify-content-end">
-            <img class="col-3 star" src="../img/casestudy.svg" alt="case study">
-        </div>
-        <div class="col-sm-8 paragraph">
-            <!--<h3 class="col-lg-4 col-sm-1">PROBLEM</h3> -->
-            <p class="col paragraph">
-                Designed and developed for interior design lovers who incorporate
-                plants into their aesthetic. Marketed to millennials on Instagram who are
-                drawn to the trendy, albeit trickier to maintain, plants. The app sends reminders
-                to users when it is time to water, feed or re-pot.
-                <br><br>
-                The app is sectioned into four regions. One part is the area that houses a collection
-                curated by the user. This collection, aka "The Greenhouse", houses all the plants the user
-                owns. Part of the onboarding process includes searching via name or description for each plant
-                in the database. The second region is the Discover area where users can learn about other kinds
-                of plants, their genesis and tips and tricks. The third region is a discussion board where users
-                can ask more specific questions for plant aficionados to answer, such as uploading a photo of a fairly
-                dead-looking plant and asking, "Is my plant worth saving?" The fourth and final region is
-                the user's account, where they can set their reminder preferences.
-            </p>
-        </div>
-        <figure>
-            <img class="col-sm-12 col-md-8 conceptfig stage" src="../img/plantapp_stage.jpg" alt="displaying all of the screens">
-        </figure>
-        <div class="col-sm-8 paragraph">
-            <p class="col paragraph-2">
-                This app is currently in development. When it is completed, the next step will be to
-                run usability tests for those with and without disabilities. Making sure each interaction
-                is fully functional and the accessibility API is fully operable on the native iOS.
-            </p>
-        </div>
-        <figure>
-            <img class="col-sm-12 col-md-8 conceptfig prototype" src="../img/plantapp-prototype.gif" alt="animated prototype of the app">
-        </figure>
-        <div class="arrow row" role="group">
-            <div class="col-lg-1 col arrow2 align-self-center" aria-label="left arrow">
-                <a href="johnkearney.html" aria-label="previous case study" class="arrow-focus-left"><img src="../img/arrow.svg" class="peach-arrow-left"></a>
-            </div>
-            <div class="col-lg-1 col" aria-label="right arrow">
-                <a href="bodyweight.html" aria-label="next case study" class="arrow-focus-right"><img src="../img/arrow.svg" class="peach-arrow-right"></a>
-            </div>
-        </div>
+<main>
+    <img class="bodyweightimg" src="img/bodyshop.png">
+    <img class="johnkearneyimg" src="img/jk.jpg">
+    <section aria-label="case studies" class="concepts">
+        <a class="greenhouse" href="work/greenhouse.html">
+            <h2 class="greenhouse">Greenhouse</h2>
+            <img class="greenhouseimg" src="img/greenhouse.png">
+        </a>
+        <a class="col bodyweight" href="work/bodyweight.html">
+            <h2 class="bodyweight">Bodyweight</h2>
+        </a>
+        <a class="col johnkearney" href="work/johnkearney.html">
+            <h2 class="johnkearney">Art of Accessibility</h2>
+        </a>
     </section>
 </main>
 
 <!-- JavaScript Sources -->
 <!-- JQUERY -->
-<script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- BOOTSTRAP -->
@@ -149,7 +118,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-<script src="../js/main.js"></script>
+<script src="js/main.js"></script>
+<!--<script src="js/scroll.js"></script>-->
+<script src="js/prism.js"></script>
 <script type="text/javascript">
     // Form Validation
     let err1 = document.getElementById('err1');
@@ -255,6 +226,5 @@
     }
 </script>
 <![endif]-->
-
 </body>
 </html>

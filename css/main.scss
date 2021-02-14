@@ -176,7 +176,6 @@ body {
 
 
 /* ****************  NAV  **************** */
-
 .logo-home {
   z-index: 5;
   width: 90%;
@@ -243,10 +242,10 @@ body {
 }
 
 .nav-link:hover,, .nav-link2:hover, .contact-work:hover {
-  outline: none;
-  -webkit-text-stroke: 1px blue;
-  color: $peach;
-}
+                    outline: none;
+                    -webkit-text-stroke: 1px blue;
+                    color: $peach;
+                  }
 
 .nav-link:focus, .nav-link2:focus, .contact-work:focus,
 .work:focus, .blog-link:focus, .blog-link2:focus {
@@ -318,31 +317,54 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
 }
 
 .concepts {
+  //outline: 1px solid black;
   padding: {
-    top: 9em;
-    bottom: 8em;
+    top: 12em;
+    bottom: 1em;
   }
+}
+
+.greenhouse, .bodyweight, .johnkearney {
+  //outline: 1px solid black;
+  padding: {
+    top: 0.2em;
+    bottom: 0.2em;
+    left: 2em
+  }
+  line-height: 1;
 }
 
 .greenhouseimg {
   display: none;
   position: absolute;
   width: 16%;
-  padding-left: 4em;
-  margin-left: 9em;
-  opacity: 30%;
+  padding-left: 2em;
+  margin: {
+    left: 50%;
+    top: -20%;
+  }
+  opacity: 40%;
   cursor: none;
   z-index: -1;
 }
 
-.darlingimg {
+.johnkearneyimg {
   display: none;
   position: absolute;
-  width: 20%;
-  padding-left: 4em;
-  margin-left: 60em;
-  margin-top: 30em;
-  opacity: 30%;
+  width: 35%;
+  padding: {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  margin: {
+    left: 50%;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+  }
+  opacity: 50%;
   cursor: none;
   z-index: -1;
 }
@@ -351,21 +373,30 @@ form:hover, .arrow-focus-left:hover, .arrow-focus-right:hover {
   display: none;
   position: absolute;
   width: 20%;
-  padding-left: 4em;
-  margin-left: 20em;
-  margin-top: 20em;
-  opacity: 30%;
+  padding: {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  margin: {
+    left: 50%;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+  }
+  opacity: 40%;
   cursor: none;
   z-index: -1;
 }
 
-.greenhouse:focus, .darlingmag:focus, .bodyweight:focus {
+.greenhouse:focus, .johnkearney:focus, .bodyweight:focus {
   outline: none;
   text-decoration: none;
 }
 
 .greenhouse:hover, .greenhouse:focus,
-.darlingmag:hover, .darlingmag:focus,
+.johnkearney:hover, .johnkearney:focus,
 .bodyweight:hover, .bodyweight:focus {
   -webkit-text-fill-color: $peach; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 2px;
@@ -414,6 +445,20 @@ h2 {
   padding-right: 0.2em;
   margin-bottom: 1em;
   margin-top: 12%;
+  line-height: 1;
+  font-size: 4em;
+}
+
+.about-blurb-3 {
+  padding: {
+    left: 0.2em;
+    right: 0.2em;
+    top: 25%;
+  }
+  margin : {
+    bottom: 1em;
+    left: 0;
+  }
   line-height: 1;
   font-size: 4em;
 }
@@ -526,6 +571,18 @@ button {
 
 a:hover {
   color: $cherry;
+}
+
+/* ****************  CV PAGE  **************** */
+.resume {
+  margin: {
+    top: 10em;
+  }
+  padding: {
+    left: 0;
+    right:0;
+  }
+  border: 5px solid blue;
 }
 
 /* ****************  CONTACT FORM  **************** */
@@ -761,6 +818,10 @@ input, textarea, form {
 
 
 /************ Greenhouse App Case Study ************/
+.casestudy {
+  margin-top: 20%;
+}
+
 .star {
   transform: rotate(10deg);
   width: 40%;
@@ -785,35 +846,43 @@ input, textarea, form {
 }
 
 .blog-title {
-  padding-top: 2em;
+  margin-top: -0.2em;
+  padding-left: 1.5%;
+  color: $cherry;
+  line-height: 1;
+  font : {
+    family: $gopher;
+    style: normal;
+    size: 7em;
+  }
 }
 
- h3 {
-   color: $cherry;
-   padding-left: 0.6em;
-   line-height: 1.5;
-   padding : {
-     bottom: 1em;
-   }
-   font : {
-     family: $gopher;
-     weight: 400;
-     size: 1em;
-   }
- }
+h3 {
+  color: $cherry;
+  padding-left: 0.6em;
+  line-height: 1.5;
+  padding : {
+    bottom: 1em;
+  }
+  font : {
+    family: $gopher;
+    weight: 400;
+    size: 1em;
+  }
+}
 
- ul {
-   list-style-type: none;
-   padding-left: 0.3em;
- }
+ul {
+  list-style-type: none;
+  padding-left: 0.3em;
+}
 
- .roles-first {
-   margin-top: 7em;
- }
+.roles-first {
+  margin-top: 7em;
+}
 
- .roles {
-   padding-bottom: 0.7em;
- }
+.roles {
+  padding-bottom: 0.7em;
+}
 
 p {
   color: $cherry;
@@ -986,16 +1055,53 @@ hr {
   }
 
   .about-blurb-2 {
-    margin-top: 0em;
+    margin-top: 0;
     padding : {
       left: 1em;
       right: 1em;
-      top: 0;
+      top: 0.5em;
       bottom: 0;
     }
     line-height: 1.3;
-    font-size: 1.4em;
+    font-size: 1.5em;
+  }
+
+  .about-blurb-3 {
+    margin-top: 0;
+    padding : {
+      left: 1em;
+      right: 1em;
+      top: 8em;
+      bottom: 0;
+    }
+    line-height: 1.3;
+    font-size: 1.8em;
     text-align:left;
+  }
+
+  .about-blurb-3 {
+    padding: {
+      left: 0.2em;
+      right: 0.2em;
+      top: 90%;
+    }
+    margin : {
+      bottom: 1em;
+    }
+    line-height: 1;
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  .paragraph-phone {
+    margin: 0;
+    padding : {
+      left: 1em;
+      right: 1em;
+      top: 4em;
+      bottom: 0;
+    }
+    text-align: center;
   }
 
   .about-note-div {
@@ -1056,8 +1162,8 @@ hr {
   .nav-link {
     // border: 1px solid black;
     padding: {
-      left: 0.5em;
-      right: 0.5em;
+      left: 0.3em;
+      right: 0.3em;
     }
     margin: {
       top: 0;
@@ -1074,8 +1180,10 @@ hr {
   }
 
   .logo-div {
-    padding: 0;
-    margin: 0;
+    margin: {
+      left: 5%;
+      right: 0;
+    }
     // background-color: $peach;
     // outline: 1px solid black;
   }
@@ -1085,13 +1193,13 @@ hr {
     width: 90%;
     padding: {
       top: 0;
-      left: 3em;
-      right: 2em;
+      left: 4em;
+      right: 3em;
       bottom: 0;
     }
     margin: {
       top: 0;
-      left: 1em;
+      left: 3em;
       right: 1em;
       bottom: 0;
     }
@@ -1102,7 +1210,7 @@ hr {
     width: 90%;
     padding: {
       top: 0;
-      left: 2em;
+      left: 0em;
       right: 3em;
       bottom: 0;
     }
@@ -1120,14 +1228,14 @@ hr {
     // border-bottom: 5px solid blue;
     width: 100%;
     margin: {
-      left: 1em;
-      right: 0.5em;
+      left: 0em;
+      right: 0em;
       top: -7em;
       bottom: 0;
     }
     padding: {
-      left: 0.5em;
-      right: 0.5em;
+      left: 1em;
+      right: 0em;
       top: 0;
       bottom: 0;
     }
@@ -1242,8 +1350,90 @@ hr {
     width: 80%;
   }
 
-  .greenhouseimg, .darlingimg {
+  .greenhouse, .bodyweight, .johnkearney {
+    //outline: 1px solid black;
+    padding: {
+      top: 0.2em;
+      bottom: 0.2em;
+      left: 1em
+    }
+    line-height: 1;
+    font-size: 1.5em;
+  }
+
+  .greenhouseimg {
     display: none;
+    position: absolute;
+    width: 40%;
+    padding-left: 1em;
+    margin: {
+      left: 30%;
+      top: -40%;
+    }
+    opacity: 40%;
+    cursor: none;
+    z-index: -1;
+  }
+
+  .johnkearneyimg {
+    display: none;
+    position: absolute;
+    width: 60%;
+    padding: {
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+    margin: {
+      left: 30%;
+      top: 100%;
+      right: 0;
+      bottom: 0;
+    }
+    opacity: 50%;
+    cursor: none;
+    z-index: -1;
+  }
+
+  .bodyweightimg {
+    display: none;
+    position: absolute;
+    width: 40%;
+    padding: {
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+    margin: {
+      left: 20%;
+      top: 60%;
+      right: 0;
+      bottom: 0;
+    }
+    opacity: 40%;
+    cursor: none;
+    z-index: -1;
+  }
+
+  .greenhouse:focus, .johnkearney:focus, .bodyweight:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  .greenhouse:hover, .greenhouse:focus,
+  .johnkearney:hover, .johnkearney:focus,
+  .bodyweight:hover, .bodyweight:focus {
+    -webkit-text-fill-color: $peach; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $cherry;
+    text-decoration: none;
+    cursor: none;
+  }
+
+  .greenhouseimg, .darlingimg {
+    // display: none;
   }
 
   /*
@@ -1269,7 +1459,11 @@ hr {
       left: 0;
       right: 0;
     }
-    display: none;
+    margin : {
+      left: 0;
+      right: 0;
+    }
+    // display: none;
   }
 
 
@@ -1291,7 +1485,7 @@ hr {
   .title {
     color: $cherry;
     padding: {
-      top: -1em;
+      top: 6em;
       left: 0;
       right: 0;
     }
@@ -1350,16 +1544,6 @@ hr {
 
   .roles {
     padding-bottom: 0.4em;
-  }
-
-  .nytimes:visited {
-    color: blue;
-  }
-
-  .userflow {
-    padding : {
-      top: 4em;
-    }
   }
 
   figure {
@@ -1425,33 +1609,6 @@ hr {
     cursor: none;
   }
 
-  .nav-link2 {
-    background-color: transparent;
-    position: relative;
-    right: 0;
-    top: 0.3em;
-    color: $cherry;
-    font : {
-      family: $gopher;
-      size: 1.3em;
-    }
-  }
-
-
-  .blog-link2 {
-    background-color: transparent;
-    position: absolute;
-    cursor: none;
-    bottom: 0.3em;
-    right: 0.6em;
-    top: 0.3em;
-    color: $cherry;
-    font : {
-      family: $gopher;
-      size: 1.3em;
-    }
-  }
-
   /* ********** Blog ********* */
   .blog-main {
     width: 80%;
@@ -1463,7 +1620,11 @@ hr {
   }
 
   .blog-title {
-    padding-top: 5em;
+    padding: {
+      top: 6em;
+      left: 4%;
+    }
+    font-size: 3em;
   }
 
   .blog-paragraph, .li-blog {

@@ -8,6 +8,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
     <!-- CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
@@ -19,7 +20,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="img/x-icon.png"/>
 
-    <title>EMMA KEARNEY</title>
+    <title>EMMA KEARNEY / Contact</title>
     <meta name="description"
           content="Multidisciplinary designer, front end developer and accessibility specialist solving business and user objectives.">
     <meta name="theme-color" content="#fafafa">
@@ -58,8 +59,8 @@
             <div class="nav navbar-nav-div">
                 <ul class="navbar-nav flex-row">
                     <!------ Skip Nav ------>
-                    <li class="nav-item align-self-center">
-                        <a href="index.html#main"><button id="skip" class="nav-link align-self-center">SKIP TO MAIN</button></a>
+                    <li class="nav-item align-self-center active">
+                        <a href="contact.html#main"><button id="skip" class="nav-link align-self-center">SKIP TO MAIN</button></a>
                     </li>
                     <!------ Work ------>
                     <li class="nav-item align-self-center mx-sm-2 ">
@@ -75,7 +76,7 @@
                     </li>
                     <!------ Contact ------>
                     <li class="nav-item align-self-center mx-sm-2">
-                        <a class="nav-link" href="contact.html">
+                        <a class="nav-link active" href="contact.html"><span class="sr-only">(current)</span>
                             CONTACT
                         </a>
                     </li>
@@ -209,61 +210,18 @@
 </header>
 
 <main class="phone-main" id="main">
-    <h2 class="about-blurb-1">Hi. My name is Emma Kearney (she/her). I am a multi-disciplinary
-        designer, front end developer and accessibility specialist.
-    </h2>
-    <h2 class="about-blurb-2">I create unique digital experiences
-        for all types of folks with all types of abilities in all types of industries. I've worked full time for startups, agencies,
-        fortune 500s and with individual clients on a freelance basis. Let's work together.
-    </h2>
-    <div class="about-note-div row">
-        <div class="col"></div>
-        <div class="col-lg-7">
-            <h2 class="holdup">DID YOU KNOW?</h2>
-            <h1 class="about-note">
-                Webflow, Squarespace, WordPress and other website generators use cheap plugins
-                as band-aid solutions to fix a whole slew of accessibility issues that prevent
-                people with disabilities from reading content, interacting with elements and meeting universal
-                compliance. This a big problem, but luckily it's slowly changing for the better.
-                <br><br>
-                While it would have been easier to use one of those generators to create my portfolio,
-                I thought it was important for mine to be as accessible as possible. I designed this site in
-                Figma, developed it from the ground up and programmed it to meet universal web accessibility
-                compliance. This means my portfolio is accessible for people who are blind, visually impaired
-                and/or have cognitive disabilities.
-            </h1>
-        </div>
-        <div class="col"></div>
-    </div>
-    <footer class="next row">
-        <div class="col-lg-8"></div>
-        <a class="col-3 footer-work-div" href="work.html">
-            <h2 class="footer-work">WORK</h2>
+    <h2 class="about-blurb-3">Let's connect.</h2>
+    <p class="paragraph-phone">
+        <a href="mailto: emma@emma-kearney.com" aria-label="clicking this will compose an email">emma@emma-kearney.com</a>
+        <br>
+        <a href="https://www.linkedin.com/in/emmakearney/" target="_blank" aria-label="opens in new tab">LinkedIn</a>
+        <br><br>
+        CV:
+        <a href="pdf/resume-EK.pdf" target="_blank" aria-label="opens in new tab">
+            view/download <abbr>PDF</abbr>
         </a>
-        <div class="col-lg-1 col py-5" aria-label="right arrow home-footer">
-            <a href="work.html" aria-label="see work" class="arrow-focus-right home-footer-arrow"><img src="img/arrow.svg" class="peach-arrow-right"></a>
-        </div>
-    </footer>
-    <!--
-    <img class="greenhouseimg" src="img/greenhouse.png">
-    <img class="bodyweightimg" src="img/bodyshop.png">
-    <img class="darlingimg" src="img/iris-workofart.jpg">
-    <section aria-label="case studies" class="concepts">
-        <a class="greenhouse" href="greenhouse.html">
-            <h2 class="greenhouse">Greenhouse App</h2>
-        </a>
-        <a class="col bodyweight" href="bodyweight.html"><h2 class="bodyweight">Bodyweight</h2></a>
-        <a class="col darlingmag" href="darlingreimagined.html"><h2 class="darlingmag">The Art of Accessibility</h2></a>
-        <!-- <div class="row">
-            <img src="img/plantappconcept.png" alt="Plant App Concept" class="plantapp concept col-sm-12">
-        </div>
-        <div class="row iris">
-            <img src="img/IrisSite.png" alt="Darling Exploration" class="darling concept col-sm-12">
-        </div>
-        <div class="row">
-            <img src="img/FitnessApp.png" alt="Fitness App Concept" class="fitnessapp concept col-sm-12">
-        </div>
-        -->
+    </p>
+    </h2>
 </main>
 
 <!-- JavaScript Sources -->
